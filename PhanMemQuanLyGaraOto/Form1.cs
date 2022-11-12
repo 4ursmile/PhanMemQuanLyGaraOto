@@ -18,24 +18,9 @@ namespace PhanMemQuanLyGaraOto
         {
             InitializeComponent();
             LoiChucInit();
-            UserNameText.GotFocus += UserNameText_GotFocus;
-            UserNameText.LostFocus += UserNameText_LostFocus;
-            SigninButton.Text = "Đăng nhập";
         }
 
-        private void UserNameText_LostFocus(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(UserNameText.Text))
-                UserNameText.Text = "UserName";
-        }
 
-        private void UserNameText_GotFocus(object sender, EventArgs e)
-        {
-            if (UserNameText.Text == "Tài khoản")
-            {
-                UserNameText.Text = "";
-            }
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -71,6 +56,30 @@ namespace PhanMemQuanLyGaraOto
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+        
+        private void SigninButton_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.Hide();
+            MainForm mainForm = new MainForm();
+            mainForm.ShowDialog();
+            mainForm.Dispose();
+            this.Show();
         }
     }
 }

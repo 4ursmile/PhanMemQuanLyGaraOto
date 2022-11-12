@@ -67,10 +67,19 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -123,6 +132,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ManagerAvatat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StaffAvatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-account-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-account-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-car-production-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-invoice-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-tool-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-policy-document-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-garage-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-customer-24.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
