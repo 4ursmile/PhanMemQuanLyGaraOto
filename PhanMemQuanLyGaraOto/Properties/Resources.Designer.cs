@@ -223,6 +223,16 @@ namespace PhanMemQuanLyGaraOto.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_slice_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-slice-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_tool_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-tool-64", resourceCulture);

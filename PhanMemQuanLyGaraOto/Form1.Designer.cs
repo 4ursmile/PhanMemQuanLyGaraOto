@@ -33,19 +33,22 @@
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.Loichucdau = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.UserNameText = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.PassWordText = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.kryptonCheckBox1 = new ComponentFactory.Krypton.Toolkit.KryptonCheckBox();
+            this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.SaveUserCheckBox = new ComponentFactory.Krypton.Toolkit.KryptonCheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.SigninButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.UserComboBox = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.kryptonContextMenuItem1 = new ComponentFactory.Krypton.Toolkit.KryptonContextMenuItem();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserComboBox)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -116,23 +119,6 @@
             this.label1.Text = "Gara oto vui vẻ";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // UserNameText
-            // 
-            this.UserNameText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.UserNameText.Location = new System.Drawing.Point(46, 102);
-            this.UserNameText.Name = "UserNameText";
-            this.UserNameText.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.UserNameText.Size = new System.Drawing.Size(266, 34);
-            this.UserNameText.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.UserNameText.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.UserNameText.StateCommon.Border.Rounding = 12;
-            this.UserNameText.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
-            this.UserNameText.TabIndex = 4;
-            // 
             // PassWordText
             // 
             this.PassWordText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -144,6 +130,7 @@
             this.PassWordText.PasswordChar = '•';
             this.PassWordText.Size = new System.Drawing.Size(265, 34);
             this.PassWordText.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.PassWordText.StateCommon.Border.Color1 = System.Drawing.Color.Black;
             this.PassWordText.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -153,7 +140,8 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.kryptonCheckBox1);
+            this.panel1.Controls.Add(this.kryptonButton1);
+            this.panel1.Controls.Add(this.SaveUserCheckBox);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label1);
@@ -161,22 +149,40 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.PassWordText);
-            this.panel1.Controls.Add(this.UserNameText);
+            this.panel1.Controls.Add(this.UserComboBox);
             this.panel1.Location = new System.Drawing.Point(28, 27);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(382, 444);
             this.panel1.TabIndex = 6;
             // 
-            // kryptonCheckBox1
+            // kryptonButton1
             // 
-            this.kryptonCheckBox1.Location = new System.Drawing.Point(55, 210);
-            this.kryptonCheckBox1.Name = "kryptonCheckBox1";
-            this.kryptonCheckBox1.Size = new System.Drawing.Size(121, 24);
-            this.kryptonCheckBox1.StateCommon.Draw = ComponentFactory.Krypton.Toolkit.InheritBool.True;
-            this.kryptonCheckBox1.StateCommon.Image.ImageColorMap = System.Drawing.Color.Transparent;
-            this.kryptonCheckBox1.StateCommon.Image.ImageColorTo = System.Drawing.Color.Transparent;
-            this.kryptonCheckBox1.TabIndex = 12;
-            this.kryptonCheckBox1.Values.Text = "Nhớ tài khoản";
+            this.kryptonButton1.Location = new System.Drawing.Point(321, 103);
+            this.kryptonButton1.Name = "kryptonButton1";
+            this.kryptonButton1.Size = new System.Drawing.Size(25, 25);
+            this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.MistyRose;
+            this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.MistyRose;
+            this.kryptonButton1.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Stretch;
+            this.kryptonButton1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonButton1.StateCommon.Border.Rounding = 50;
+            this.kryptonButton1.StateTracking.Back.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.FormExitHover;
+            this.kryptonButton1.StateTracking.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Stretch;
+            this.kryptonButton1.TabIndex = 14;
+            this.kryptonButton1.Values.Text = "";
+            this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
+            // 
+            // SaveUserCheckBox
+            // 
+            this.SaveUserCheckBox.Location = new System.Drawing.Point(55, 210);
+            this.SaveUserCheckBox.Name = "SaveUserCheckBox";
+            this.SaveUserCheckBox.Size = new System.Drawing.Size(121, 24);
+            this.SaveUserCheckBox.StateCommon.Draw = ComponentFactory.Krypton.Toolkit.InheritBool.True;
+            this.SaveUserCheckBox.StateCommon.Image.ImageColorMap = System.Drawing.Color.Transparent;
+            this.SaveUserCheckBox.StateCommon.Image.ImageColorTo = System.Drawing.Color.Transparent;
+            this.SaveUserCheckBox.TabIndex = 12;
+            this.SaveUserCheckBox.Values.Text = "Nhớ tài khoản";
             // 
             // button1
             // 
@@ -240,6 +246,26 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Mật khẩu";
             // 
+            // UserComboBox
+            // 
+            this.UserComboBox.DropDownHeight = 150;
+            this.UserComboBox.DropDownWidth = 190;
+            this.UserComboBox.Location = new System.Drawing.Point(45, 99);
+            this.UserComboBox.Name = "UserComboBox";
+            this.UserComboBox.Size = new System.Drawing.Size(265, 33);
+            this.UserComboBox.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.White;
+            this.UserComboBox.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.Black;
+            this.UserComboBox.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.UserComboBox.StateCommon.ComboBox.Border.Rounding = 12;
+            this.UserComboBox.StateCommon.ComboBox.Content.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.UserComboBox.StateCommon.Item.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.UserComboBox.StateCommon.Item.Border.Rounding = 12;
+            this.UserComboBox.TabIndex = 13;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.pictureBox2);
@@ -271,6 +297,10 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // kryptonContextMenuItem1
+            // 
+            this.kryptonContextMenuItem1.Text = "Menu Item";
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -292,6 +322,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserComboBox)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -307,7 +338,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label Loichucdau;
         private System.Windows.Forms.Label label1;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox UserNameText;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox PassWordText;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
@@ -316,7 +346,10 @@
         private System.Windows.Forms.Button SigninButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
-        private ComponentFactory.Krypton.Toolkit.KryptonCheckBox kryptonCheckBox1;
+        private ComponentFactory.Krypton.Toolkit.KryptonCheckBox SaveUserCheckBox;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox UserComboBox;
+        private ComponentFactory.Krypton.Toolkit.KryptonContextMenuItem kryptonContextMenuItem1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
     }
 }
 

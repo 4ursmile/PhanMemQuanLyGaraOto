@@ -5,7 +5,9 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
+using System.Text.Json;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 
@@ -18,15 +20,50 @@ namespace PhanMemQuanLyGaraOto
         {
             InitializeComponent();
             LoiChucInit();
+            users = new ListUser { ListU = new List<User>(), SelectedIndex = 0};
+            LoadUser();
+            AddBinding();
         }
 
-
+        ListUser users;
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
+        void SaveUser()
+        {
+            if (UserComboBox.FindString(UserComboBox.Text) < 0 && SaveUserCheckBox.Checked)
+            {
+                users.ListU.Add(new User { UserName = UserComboBox.Text, Password = PassWordText.Text });
+            }
+            users.isCheckd = SaveUserCheckBox.Checked;
+            users.SelectedIndex = UserComboBox.SelectedIndex;
+            JsonSerializerOptions options = new JsonSerializerOptions { WriteIndented = true };
 
+            string jsonFile = JsonSerializer.Serialize<ListUser>(users, options);
+            if (!Directory.Exists(Application.UserAppDataPath + "/SystemConsoleLog/Mirage"))
+                Directory.CreateDirectory(Application.UserAppDataPath + "/SystemConsoleLog/Mirage");
+            File.WriteAllText(Application.UserAppDataPath + "/SystemConsoleLog/Mirage/isaac32.json", jsonFile);
+        }
+        void LoadUser()
+        {
+            if (File.Exists(Application.UserAppDataPath + "/SystemConsoleLog/Mirage/isaac32.json"))
+            {
+                string path = Application.UserAppDataPath + "/SystemConsoleLog/Mirage/isaac32.json";
+                string jsonfile = File.ReadAllText(path);
+                users = JsonSerializer.Deserialize<ListUser>(jsonfile);
+                List<User> listuser = users.ListU.ToList();
+                UserComboBox.DataSource = listuser;
+                UserComboBox.SelectedIndex = users.SelectedIndex;
+                UserComboBox.DisplayMember = "UserName";
+                SaveUserCheckBox.Checked = users.isCheckd;
+            }
+        }
+        void AddBinding()
+        {
+            PassWordText.DataBindings.Add(new Binding("Text", UserComboBox.DataSource, "Password"));
+        }
         private void kryptonPalette1_PalettePaint(object sender, PaletteLayoutEventArgs e)
         {
 
@@ -75,11 +112,28 @@ namespace PhanMemQuanLyGaraOto
         
         private void SigninButton_MouseClick(object sender, MouseEventArgs e)
         {
+            SaveUser();
             this.Hide();
             MainForm mainForm = new MainForm();
             mainForm.ShowDialog();
             mainForm.Dispose();
+            LoadUser();
             this.Show();
+        }
+        void DeleteUser()
+        {
+            User user = UserComboBox.SelectedValue as User;
+            if (users.ListU.Contains(user))
+            {
+                users.ListU.Remove(user);
+                UserComboBox.DataSource =users.ListU.ToList();
+                users.SelectedIndex = 0;
+            }
+        }
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+            DeleteUser();
         }
     }
 }
