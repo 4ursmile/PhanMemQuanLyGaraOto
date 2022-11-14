@@ -22,7 +22,7 @@ namespace PhanMemQuanLyGaraOto
             LoiChucInit();
             users = new ListUser { ListU = new List<User>(), SelectedIndex = 0};
             LoadUser();
-            AddBinding();
+
         }
 
         ListUser users;
@@ -33,9 +33,13 @@ namespace PhanMemQuanLyGaraOto
         }
         void SaveUser()
         {
-            if (UserComboBox.FindString(UserComboBox.Text) < 0 && SaveUserCheckBox.Checked)
+            int findindex = UserComboBox.FindString(UserComboBox.Text);
+            if (findindex < 0 && SaveUserCheckBox.Checked)
             {
                 users.ListU.Add(new User { UserName = UserComboBox.Text, Password = PassWordText.Text });
+            } else
+            {
+                users.ListU[findindex].Password = PassWordText.Text;
             }
             users.isCheckd = SaveUserCheckBox.Checked;
             users.SelectedIndex = UserComboBox.SelectedIndex;
@@ -55,14 +59,16 @@ namespace PhanMemQuanLyGaraOto
                 users = JsonSerializer.Deserialize<ListUser>(jsonfile);
                 List<User> listuser = users.ListU.ToList();
                 UserComboBox.DataSource = listuser;
-                UserComboBox.SelectedIndex = users.SelectedIndex;
+                UserComboBox.SelectedIndex = listuser.Count == 0? -1: users.SelectedIndex;
                 UserComboBox.DisplayMember = "UserName";
                 SaveUserCheckBox.Checked = users.isCheckd;
+                PassWordText.DataBindings.Clear();
+                AddBinding();
             }
         }
         void AddBinding()
         {
-            PassWordText.DataBindings.Add(new Binding("Text", UserComboBox.DataSource, "Password"));
+            PassWordText.DataBindings.Add("Text", UserComboBox.DataSource, "Password", true);
         }
         private void kryptonPalette1_PalettePaint(object sender, PaletteLayoutEventArgs e)
         {
@@ -127,7 +133,9 @@ namespace PhanMemQuanLyGaraOto
             {
                 users.ListU.Remove(user);
                 UserComboBox.DataSource =users.ListU.ToList();
-                users.SelectedIndex = 0;
+                users.SelectedIndex = users.ListU.Count == 0? -1 : 0;
+                SaveUser();
+                LoadUser();
             }
         }
 

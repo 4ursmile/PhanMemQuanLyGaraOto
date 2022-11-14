@@ -170,6 +170,7 @@
             this.kryptonButton1.StateTracking.Back.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.FormExitHover;
             this.kryptonButton1.StateTracking.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Stretch;
             this.kryptonButton1.TabIndex = 14;
+            this.kryptonButton1.TabStop = false;
             this.kryptonButton1.Values.Text = "";
             this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
