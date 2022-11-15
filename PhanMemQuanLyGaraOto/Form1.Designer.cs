@@ -249,6 +249,8 @@
             // 
             // UserComboBox
             // 
+            this.UserComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.UserComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.UserComboBox.DropDownHeight = 150;
             this.UserComboBox.DropDownWidth = 190;
             this.UserComboBox.Location = new System.Drawing.Point(45, 99);
@@ -276,6 +278,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(534, 447);
             this.panel2.TabIndex = 7;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // pictureBox2
             // 
