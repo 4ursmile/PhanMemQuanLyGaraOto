@@ -137,7 +137,6 @@
             this.PassWordText.StateCommon.Border.Rounding = 12;
             this.PassWordText.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
             this.PassWordText.TabIndex = 5;
-            this.PassWordText.TextChanged += new System.EventHandler(this.PassWordText_TextChanged);
             // 
             // panel1
             // 
@@ -224,7 +223,7 @@
             this.SigninButton.TabIndex = 9;
             this.SigninButton.Text = "Đăng nhập\r\n";
             this.SigninButton.UseVisualStyleBackColor = false;
-            this.SigninButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SigninButton_MouseClick);
+            this.SigninButton.Click += new System.EventHandler(this.SigninButton_Click);
             // 
             // label2
             // 

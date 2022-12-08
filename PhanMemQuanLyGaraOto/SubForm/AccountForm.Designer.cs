@@ -183,9 +183,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDes.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDes.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtDes.Location = new System.Drawing.Point(1, 457);
+            this.txtDes.Location = new System.Drawing.Point(100, 457);
             this.txtDes.Name = "txtDes";
-            this.txtDes.Size = new System.Drawing.Size(809, 47);
+            this.txtDes.Size = new System.Drawing.Size(609, 47);
             this.txtDes.TabIndex = 4;
             this.txtDes.Text = "Quản lý";
             this.txtDes.TextAlign = System.Drawing.ContentAlignment.TopCenter;

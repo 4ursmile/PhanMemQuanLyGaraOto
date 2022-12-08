@@ -28,5 +28,19 @@ namespace PhanMemQuanLyGaraOto.DDo
     public static class ExitInforHolder
     {
         public static bool isQuit;
+        private static bool Logout;
+        public static bool IsLogout
+        {
+            get
+            {
+                if (Logout == true)
+                {
+                    Logout = false;
+                    return true;
+                } 
+                return false;
+            }
+            set { Logout = value; }
+        }
     }
 }

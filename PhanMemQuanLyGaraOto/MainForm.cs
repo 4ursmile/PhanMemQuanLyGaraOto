@@ -98,12 +98,15 @@ namespace PhanMemQuanLyGaraOto
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ExitInforHolder.IsLogout = true;
             ExitInforHolder.isQuit = false;
             this.Close();
         }
 
         private void thoátChươngTrìnhToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Bạn có muốn đóng chương trình?", "Xác nhận đóng chương trình", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            if (result == DialogResult.No) return;
             ExitInforHolder.isQuit = true;
             this.Close();
         }
@@ -126,6 +129,19 @@ namespace PhanMemQuanLyGaraOto
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (ExitInforHolder.isQuit == false)
+            {
+                if (!ExitInforHolder.IsLogout)
+                {
+                    DialogResult result = MessageBox.Show("Bạn có muốn đóng chương trình?", "Xác nhận đóng chương trình", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    if (result == DialogResult.No)
+                    {
+                        e.Cancel = true;
+                        return;
+                    }
+                }
+
+            }
             UniversalAlert.Ins.RemoveListenr(SetInformation);
         }
         #endregion
@@ -134,6 +150,12 @@ namespace PhanMemQuanLyGaraOto
         {
             ChangePassForm cpform = new ChangePassForm();
             cpform.ShowDialog();
+        }
+
+        private void cậpNhậtThôngTinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateInforForm updateInforForm = new UpdateInforForm();
+            updateInforForm.ShowDialog();
         }
     }
 }

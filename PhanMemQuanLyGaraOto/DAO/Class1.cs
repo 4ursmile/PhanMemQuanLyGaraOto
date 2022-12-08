@@ -23,5 +23,13 @@ namespace PhanMemQuanLyGaraOto.DAO
         {
             db = new QUANLYGARAOTOEntities();
         }
+        public void SaveChange()
+        {
+            db.SaveChanges();
+        }
+        public async void SaveChangeAsync()
+        {
+            db.SaveChangesAsync();
+        }
     }
 }

@@ -99,6 +99,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SubForm\SubSubForm\UpdateInforForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\SubSubForm\UpdateInforForm.Designer.cs">
+      <DependentUpon>UpdateInforForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UniversalAlert.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="DAO\Class1.cs" />
@@ -282,6 +288,9 @@
     <EmbeddedResource Include="SubForm\SubSubForm\ChangePassForm.resx">
       <DependentUpon>ChangePassForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\SubSubForm\UpdateInforForm.resx">
+      <DependentUpon>UpdateInforForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SubForm\ToolForm.resx">
       <DependentUpon>ToolForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -374,7 +383,9 @@
   <ItemGroup>
     <None Include="Resources\icons8-slice-30.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Class\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Model\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

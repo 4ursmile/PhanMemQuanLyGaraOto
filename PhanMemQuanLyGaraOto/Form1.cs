@@ -43,10 +43,16 @@ namespace PhanMemQuanLyGaraOto
                 users.ListU.Add(new User { UserName = UserComboBox.Text, Password = PassWordText.Text });
             } else
             {
+                if (users.ListU.Count == 0) goto SAVE;
                 users.ListU[findindex].Password = PassWordText.Text;
             }
+            SAVE:
             users.isCheckd = SaveUserCheckBox.Checked;
-            users.SelectedIndex = UserComboBox.SelectedIndex;
+            users.SelectedIndex = users.ListU.Count == 0 ? -1 : UserComboBox.SelectedIndex;
+            if (users.ListU.Count > 0 && UserComboBox.SelectedIndex == -1)
+            {
+                users.SelectedIndex = 0;
+            }
             JsonSerializerOptions options = new JsonSerializerOptions { WriteIndented = true };
 
             string jsonFile = JsonSerializer.Serialize<ListUser>(users, options);
@@ -58,16 +64,22 @@ namespace PhanMemQuanLyGaraOto
         {
             if (File.Exists(Application.UserAppDataPath + "/SystemConsoleLog/Mirage/isaac32.json"))
             {
+               
                 string path = Application.UserAppDataPath + "/SystemConsoleLog/Mirage/isaac32.json";
                 string jsonfile = File.ReadAllText(path);
                 users = JsonSerializer.Deserialize<ListUser>(jsonfile);
-                List<User> listuser = users.ListU.ToList();
-                UserComboBox.DataSource = listuser;
-                UserComboBox.SelectedIndex = listuser.Count == 0? -1: users.SelectedIndex;
-                UserComboBox.DisplayMember = "UserName";
-                SaveUserCheckBox.Checked = users.isCheckd;
+                
+                UserComboBox.DataSource = users.ListU.ToList();
                 PassWordText.DataBindings.Clear();
                 AddBinding();
+                UserComboBox.SelectedIndex = users.ListU.Count == 0? -1: users.SelectedIndex;
+                if (users.ListU.Count > 0 && UserComboBox.SelectedIndex == -1)
+                {
+                    UserComboBox.SelectedIndex = 0;
+                }
+                UserComboBox.DisplayMember = "UserName";
+                SaveUserCheckBox.Checked = users.isCheckd;
+                
             }
         }
         void AddBinding()
@@ -121,23 +133,21 @@ namespace PhanMemQuanLyGaraOto
 
         }
         
-        private void SigninButton_MouseClick(object sender, MouseEventArgs e)
+        void SwitchStateAll(bool state)
         {
+            foreach (var item in panel1.Controls.OfType<Button>())
+                item.Enabled = state;
+            foreach (var item in panel1.Controls.OfType<ComboBox>())
+                item.Enabled = state;
+            foreach (var item in panel1.Controls.OfType<TextBox>())
+                item.Enabled = state;
 
-            ACCOUNT account;
-            if (DDOpassword.Ins.CheckPassWord(UserComboBox.Text, PassWordText.Text,out account))
-            {
-                SigninAction(account);
-            } else
-            {
-                MessageBox.Show("Sai tên tài khoản hoặc mặt khẩu vui lòng thử lại sau");
-            }
-           
         }
         void SigninAction(ACCOUNT aCCOUNT)
         {
             UniversalUser.Ins.SetUser(aCCOUNT);
             SaveUser();
+            LoadUser();
             this.Hide();
             MainForm mainForm = new MainForm();
             mainForm.ShowDialog();
@@ -157,10 +167,13 @@ namespace PhanMemQuanLyGaraOto
             if (users.ListU.Contains(user))
             {
                 users.ListU.Remove(user);
-                UserComboBox.DataSource =users.ListU.ToList();
                 users.SelectedIndex = users.ListU.Count == 0? -1 : 0;
+                UserComboBox.SelectedIndex = users.SelectedIndex;
+                PassWordText.Text = "";
+
                 SaveUser();
                 LoadUser();
+              
             }
         }
 
@@ -180,8 +193,20 @@ namespace PhanMemQuanLyGaraOto
             System.Diagnostics.Process.Start(target);
         }
 
-        private void PassWordText_TextChanged(object sender, EventArgs e)
+
+        private void SigninButton_Click(object sender, EventArgs e)
         {
+            SwitchStateAll(false);
+            ACCOUNT account;
+            if (DDOpassword.Ins.CheckPassWord(UserComboBox.Text, PassWordText.Text, out account))
+            {
+                SigninAction(account);
+            }
+            else
+            {
+                MessageBox.Show("Sai tên tài khoản hoặc mặt khẩu vui lòng thử lại");
+            }
+            SwitchStateAll(true);
 
         }
     }

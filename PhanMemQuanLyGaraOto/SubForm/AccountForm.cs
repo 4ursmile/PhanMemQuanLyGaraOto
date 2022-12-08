@@ -47,12 +47,15 @@ namespace PhanMemQuanLyGaraOto.SubForm
 
         private void btbExit_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Bạn có muốn đóng chương trình?", "Xác nhận đóng chương trình", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            if (result == DialogResult.No) return;
             ExitInforHolder.isQuit = true;
             MainForm.ActiveForm.Close();
         }
 
         private void btbLogout_Click(object sender, EventArgs e)
         {
+            ExitInforHolder.IsLogout = true;
             ExitInforHolder.isQuit = false;
             MainForm.ActiveForm.Close();
         }
@@ -65,7 +68,8 @@ namespace PhanMemQuanLyGaraOto.SubForm
 
         private void btbInfo_Click(object sender, EventArgs e)
         {
-
+            UpdateInforForm inforForm = new UpdateInforForm();
+            inforForm.ShowDialog();
         }
         private void AccountForm_Load(object sender, EventArgs e)
         {
