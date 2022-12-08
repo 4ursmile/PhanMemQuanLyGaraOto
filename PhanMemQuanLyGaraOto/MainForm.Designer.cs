@@ -33,23 +33,33 @@
             this.AvatarPanel = new System.Windows.Forms.Panel();
             this.DesLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.MainPanel = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.FormNameLabel = new System.Windows.Forms.Label();
             this.AvatarPic = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.AccountButton = new System.Windows.Forms.Button();
             this.Carbutton = new System.Windows.Forms.Button();
-            this.RepairButton = new System.Windows.Forms.Button();
-            this.BillButton = new System.Windows.Forms.Button();
+            this.CustomerButton = new System.Windows.Forms.Button();
+            this.BrandButton = new System.Windows.Forms.Button();
             this.ToolButton = new System.Windows.Forms.Button();
             this.ReportButton = new System.Windows.Forms.Button();
             this.PolicyButton = new System.Windows.Forms.Button();
+            this.MainPanel = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.tàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thoátChươngTrìnhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thayĐổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cậpNhậtThôngTinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DockPanel.SuspendLayout();
             this.AvatarPanel.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AvatarPic)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // DockPanel
@@ -61,9 +71,9 @@
             this.DockPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.DockPanel.Controls.Add(this.AvatarPanel);
             this.DockPanel.Controls.Add(this.flowLayoutPanel1);
-            this.DockPanel.Location = new System.Drawing.Point(0, 0);
+            this.DockPanel.Location = new System.Drawing.Point(0, 27);
             this.DockPanel.Name = "DockPanel";
-            this.DockPanel.Size = new System.Drawing.Size(154, 660);
+            this.DockPanel.Size = new System.Drawing.Size(154, 696);
             this.DockPanel.TabIndex = 0;
             // 
             // AvatarPanel
@@ -80,14 +90,14 @@
             // 
             // DesLabel
             // 
-            this.DesLabel.AutoSize = true;
             this.DesLabel.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DesLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.DesLabel.Location = new System.Drawing.Point(47, 130);
+            this.DesLabel.Location = new System.Drawing.Point(15, 128);
             this.DesLabel.Name = "DesLabel";
-            this.DesLabel.Size = new System.Drawing.Size(51, 16);
+            this.DesLabel.Size = new System.Drawing.Size(112, 28);
             this.DesLabel.TabIndex = 2;
             this.DesLabel.Text = "Quản lý";
+            this.DesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // NameLabel
             // 
@@ -99,56 +109,6 @@
             this.NameLabel.TabIndex = 1;
             this.NameLabel.Text = "Bảo Ly";
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.flowLayoutPanel1.Controls.Add(this.AccountButton);
-            this.flowLayoutPanel1.Controls.Add(this.Carbutton);
-            this.flowLayoutPanel1.Controls.Add(this.RepairButton);
-            this.flowLayoutPanel1.Controls.Add(this.BillButton);
-            this.flowLayoutPanel1.Controls.Add(this.ToolButton);
-            this.flowLayoutPanel1.Controls.Add(this.ReportButton);
-            this.flowLayoutPanel1.Controls.Add(this.PolicyButton);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 162);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(146, 493);
-            this.flowLayoutPanel1.TabIndex = 1;
-            // 
-            // MainPanel
-            // 
-            this.MainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.MainPanel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.MainPanel.Location = new System.Drawing.Point(155, 75);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(907, 534);
-            this.MainPanel.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.FormNameLabel);
-            this.panel1.Location = new System.Drawing.Point(170, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(880, 57);
-            this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // FormNameLabel
-            // 
-            this.FormNameLabel.AutoSize = true;
-            this.FormNameLabel.Font = new System.Drawing.Font("Arial", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormNameLabel.Location = new System.Drawing.Point(18, 10);
-            this.FormNameLabel.Name = "FormNameLabel";
-            this.FormNameLabel.Size = new System.Drawing.Size(170, 38);
-            this.FormNameLabel.TabIndex = 0;
-            this.FormNameLabel.Text = "Tài khoản";
-            this.FormNameLabel.Click += new System.EventHandler(this.FormNameLabel_Click);
-            // 
             // AvatarPic
             // 
             this.AvatarPic.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.ManagerAvatat;
@@ -159,6 +119,22 @@
             this.AvatarPic.TabIndex = 0;
             this.AvatarPic.TabStop = false;
             this.AvatarPic.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.flowLayoutPanel1.Controls.Add(this.AccountButton);
+            this.flowLayoutPanel1.Controls.Add(this.Carbutton);
+            this.flowLayoutPanel1.Controls.Add(this.CustomerButton);
+            this.flowLayoutPanel1.Controls.Add(this.BrandButton);
+            this.flowLayoutPanel1.Controls.Add(this.ToolButton);
+            this.flowLayoutPanel1.Controls.Add(this.ReportButton);
+            this.flowLayoutPanel1.Controls.Add(this.PolicyButton);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 162);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(146, 529);
+            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // AccountButton
             // 
@@ -192,61 +168,61 @@
             this.Carbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
             this.Carbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Carbutton.ForeColor = System.Drawing.Color.Black;
-            this.Carbutton.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.icons8_garage_26;
+            this.Carbutton.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.icons8_car_production_30;
             this.Carbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Carbutton.Location = new System.Drawing.Point(3, 58);
             this.Carbutton.Name = "Carbutton";
             this.Carbutton.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.Carbutton.Size = new System.Drawing.Size(145, 49);
             this.Carbutton.TabIndex = 5;
-            this.Carbutton.Text = "Tiếp nhận xe";
+            this.Carbutton.Text = "Xe";
             this.Carbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Carbutton.UseVisualStyleBackColor = false;
             this.Carbutton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
-            // RepairButton
+            // CustomerButton
             // 
-            this.RepairButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.CustomerButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.RepairButton.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.RepairButton.FlatAppearance.BorderSize = 0;
-            this.RepairButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumTurquoise;
-            this.RepairButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.RepairButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RepairButton.ForeColor = System.Drawing.Color.Black;
-            this.RepairButton.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.icons8_car_production_30;
-            this.RepairButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.RepairButton.Location = new System.Drawing.Point(3, 113);
-            this.RepairButton.Name = "RepairButton";
-            this.RepairButton.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.RepairButton.Size = new System.Drawing.Size(145, 49);
-            this.RepairButton.TabIndex = 9;
-            this.RepairButton.Text = "Sữa chữa";
-            this.RepairButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.RepairButton.UseVisualStyleBackColor = false;
-            this.RepairButton.Click += new System.EventHandler(this.MenuButton_Click);
+            this.CustomerButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CustomerButton.FlatAppearance.BorderSize = 0;
+            this.CustomerButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumTurquoise;
+            this.CustomerButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.CustomerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CustomerButton.ForeColor = System.Drawing.Color.Black;
+            this.CustomerButton.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.icons8_customer_24;
+            this.CustomerButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CustomerButton.Location = new System.Drawing.Point(3, 113);
+            this.CustomerButton.Name = "CustomerButton";
+            this.CustomerButton.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.CustomerButton.Size = new System.Drawing.Size(145, 49);
+            this.CustomerButton.TabIndex = 9;
+            this.CustomerButton.Text = "Khách hàng";
+            this.CustomerButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.CustomerButton.UseVisualStyleBackColor = false;
+            this.CustomerButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
-            // BillButton
+            // BrandButton
             // 
-            this.BillButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.BrandButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.BillButton.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.BillButton.FlatAppearance.BorderSize = 0;
-            this.BillButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumTurquoise;
-            this.BillButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.BillButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BillButton.ForeColor = System.Drawing.Color.Black;
-            this.BillButton.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.icons8_invoice_24;
-            this.BillButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BillButton.Location = new System.Drawing.Point(3, 168);
-            this.BillButton.Name = "BillButton";
-            this.BillButton.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.BillButton.Size = new System.Drawing.Size(145, 49);
-            this.BillButton.TabIndex = 6;
-            this.BillButton.Text = "Hóa đơn";
-            this.BillButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BillButton.UseVisualStyleBackColor = false;
-            this.BillButton.Click += new System.EventHandler(this.MenuButton_Click);
+            this.BrandButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BrandButton.FlatAppearance.BorderSize = 0;
+            this.BrandButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumTurquoise;
+            this.BrandButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.BrandButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BrandButton.ForeColor = System.Drawing.Color.Black;
+            this.BrandButton.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.icons8_garage_26;
+            this.BrandButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BrandButton.Location = new System.Drawing.Point(3, 168);
+            this.BrandButton.Name = "BrandButton";
+            this.BrandButton.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.BrandButton.Size = new System.Drawing.Size(145, 49);
+            this.BrandButton.TabIndex = 6;
+            this.BrandButton.Text = "Hãng xe";
+            this.BrandButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BrandButton.UseVisualStyleBackColor = false;
+            this.BrandButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
             // ToolButton
             // 
@@ -290,6 +266,7 @@
             this.ReportButton.Text = "Báo cáo";
             this.ReportButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ReportButton.UseVisualStyleBackColor = false;
+            this.ReportButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
             // PolicyButton
             // 
@@ -313,25 +290,136 @@
             this.PolicyButton.UseVisualStyleBackColor = false;
             this.PolicyButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
+            // MainPanel
+            // 
+            this.MainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MainPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.MainPanel.Location = new System.Drawing.Point(155, 27);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(1107, 645);
+            this.MainPanel.TabIndex = 1;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tàiKhoảnToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1262, 28);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            // 
+            // tàiKhoảnToolStripMenuItem
+            // 
+            this.tàiKhoảnToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cậpNhậtThôngTinToolStripMenuItem,
+            this.thayĐổiMậtKhẩuToolStripMenuItem,
+            this.đăngXuấtToolStripMenuItem,
+            this.thoátChươngTrìnhToolStripMenuItem});
+            this.tàiKhoảnToolStripMenuItem.Name = "tàiKhoảnToolStripMenuItem";
+            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
+            this.tàiKhoảnToolStripMenuItem.Text = "Tài khoản";
+            // 
+            // đăngXuấtToolStripMenuItem
+            // 
+            this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
+            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
+            // 
+            // thoátChươngTrìnhToolStripMenuItem
+            // 
+            this.thoátChươngTrìnhToolStripMenuItem.Name = "thoátChươngTrìnhToolStripMenuItem";
+            this.thoátChươngTrìnhToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.thoátChươngTrìnhToolStripMenuItem.Text = "Thoát chương trình";
+            this.thoátChươngTrìnhToolStripMenuItem.Click += new System.EventHandler(this.thoátChươngTrìnhToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contentsToolStripMenuItem,
+            this.indexToolStripMenuItem,
+            this.searchToolStripMenuItem,
+            this.toolStripSeparator5,
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.helpToolStripMenuItem.Text = "&Help";
+            // 
+            // contentsToolStripMenuItem
+            // 
+            this.contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
+            this.contentsToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
+            this.contentsToolStripMenuItem.Text = "&Contents";
+            this.contentsToolStripMenuItem.Click += new System.EventHandler(this.contentsToolStripMenuItem_Click);
+            // 
+            // indexToolStripMenuItem
+            // 
+            this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
+            this.indexToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
+            this.indexToolStripMenuItem.Text = "&Index";
+            // 
+            // searchToolStripMenuItem
+            // 
+            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
+            this.searchToolStripMenuItem.Text = "&Search";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(147, 6);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
+            this.aboutToolStripMenuItem.Text = "&About...";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // thayĐổiMậtKhẩuToolStripMenuItem
+            // 
+            this.thayĐổiMậtKhẩuToolStripMenuItem.Name = "thayĐổiMậtKhẩuToolStripMenuItem";
+            this.thayĐổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.thayĐổiMậtKhẩuToolStripMenuItem.Text = "Thay đổi mật khẩu";
+            this.thayĐổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.thayĐổiMậtKhẩuToolStripMenuItem_Click);
+            // 
+            // cậpNhậtThôngTinToolStripMenuItem
+            // 
+            this.cậpNhậtThôngTinToolStripMenuItem.Name = "cậpNhậtThôngTinToolStripMenuItem";
+            this.cậpNhậtThôngTinToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cậpNhậtThôngTinToolStripMenuItem.Text = "Cập nhật thông tin";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1062, 610);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1262, 673);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.DockPanel);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.DockPanel.ResumeLayout(false);
             this.AvatarPanel.ResumeLayout(false);
             this.AvatarPanel.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AvatarPic)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,13 +435,23 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button AccountButton;
         private System.Windows.Forms.Button Carbutton;
-        private System.Windows.Forms.Button BillButton;
+        private System.Windows.Forms.Button BrandButton;
         private System.Windows.Forms.Button ToolButton;
         private System.Windows.Forms.Button PolicyButton;
-        private System.Windows.Forms.Button RepairButton;
+        private System.Windows.Forms.Button CustomerButton;
         private System.Windows.Forms.Panel MainPanel;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label FormNameLabel;
         private System.Windows.Forms.Button ReportButton;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem tàiKhoảnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem thoátChươngTrìnhToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem contentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem indexToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cậpNhậtThôngTinToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem thayĐổiMậtKhẩuToolStripMenuItem;
     }
 }

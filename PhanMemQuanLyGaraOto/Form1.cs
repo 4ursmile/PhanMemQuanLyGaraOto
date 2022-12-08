@@ -10,6 +10,10 @@ using System.Threading.Tasks;
 using System.Text.Json;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using System.Configuration;
+using System.Xml;
+using PhanMemQuanLyGaraOto.Model;
+using PhanMemQuanLyGaraOto.DDo;
 
 namespace PhanMemQuanLyGaraOto
 {
@@ -93,7 +97,8 @@ namespace PhanMemQuanLyGaraOto
 
         private void Loichucdau_Click(object sender, EventArgs e)
         {
-
+            string password = "garavuive";
+            Clipboard.SetText(SuperHash.GetHashPassWord(password));
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -118,13 +123,33 @@ namespace PhanMemQuanLyGaraOto
         
         private void SigninButton_MouseClick(object sender, MouseEventArgs e)
         {
+
+            ACCOUNT account;
+            if (DDOpassword.Ins.CheckPassWord(UserComboBox.Text, PassWordText.Text,out account))
+            {
+                SigninAction(account);
+            } else
+            {
+                MessageBox.Show("Sai tên tài khoản hoặc mặt khẩu vui lòng thử lại sau");
+            }
+           
+        }
+        void SigninAction(ACCOUNT aCCOUNT)
+        {
+            UniversalUser.Ins.SetUser(aCCOUNT);
             SaveUser();
             this.Hide();
             MainForm mainForm = new MainForm();
             mainForm.ShowDialog();
             mainForm.Dispose();
             LoadUser();
-            this.Show();
+            if (ExitInforHolder.isQuit)
+            {
+                Application.Exit();
+            } else
+            {
+                this.Show();
+            }
         }
         void DeleteUser()
         {
@@ -145,6 +170,17 @@ namespace PhanMemQuanLyGaraOto
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string target = "https://www.linkedin.com/in/bao-ly-tran-hoang-252739229/";
+            System.Diagnostics.Process.Start(target);
+        }
+
+        private void PassWordText_TextChanged(object sender, EventArgs e)
         {
 
         }

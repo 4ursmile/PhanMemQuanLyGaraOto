@@ -137,6 +137,7 @@
             this.PassWordText.StateCommon.Border.Rounding = 12;
             this.PassWordText.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
             this.PassWordText.TabIndex = 5;
+            this.PassWordText.TextChanged += new System.EventHandler(this.PassWordText_TextChanged);
             // 
             // panel1
             // 
@@ -197,6 +198,7 @@
             this.button1.TabIndex = 11;
             this.button1.Text = "Liên hệ với quản lý";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
@@ -241,7 +243,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(58, 144);
+            this.label3.Location = new System.Drawing.Point(58, 148);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 16);
             this.label3.TabIndex = 8;

@@ -63,6 +63,16 @@ namespace PhanMemQuanLyGaraOto.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _44_443617_coming_soon_blue_png_transparent_png {
+            get {
+                object obj = ResourceManager.GetObject("44-443617_coming-soon-blue-png-transparent-png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CarIs {
             get {
                 object obj = ResourceManager.GetObject("CarIs", resourceCulture);
@@ -193,6 +203,16 @@ namespace PhanMemQuanLyGaraOto.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_customer_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-customer-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_garage_26 {
             get {
                 object obj = ResourceManager.GetObject("icons8-garage-26", resourceCulture);
@@ -206,6 +226,16 @@ namespace PhanMemQuanLyGaraOto.Properties {
         internal static System.Drawing.Bitmap icons8_invoice_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-invoice-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_pencil_drawing_60 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-pencil-drawing-60", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,6 +273,16 @@ namespace PhanMemQuanLyGaraOto.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_uchiha_eyes_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-uchiha-eyes-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logo1 {
             get {
                 object obj = ResourceManager.GetObject("Logo1", resourceCulture);
@@ -263,9 +303,39 @@ namespace PhanMemQuanLyGaraOto.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ManagerAvatat1 {
+            get {
+                object obj = ResourceManager.GetObject("ManagerAvatat1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap StaffAvatar {
             get {
                 object obj = ResourceManager.GetObject("StaffAvatar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sylvain_sarrailh_panoramique2 {
+            get {
+                object obj = ResourceManager.GetObject("sylvain-sarrailh-panoramique2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wallpapersden_com_forza_horizon_5_car_3840x2160 {
+            get {
+                object obj = ResourceManager.GetObject("wallpapersden.com_forza-horizon-5-car_3840x2160", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

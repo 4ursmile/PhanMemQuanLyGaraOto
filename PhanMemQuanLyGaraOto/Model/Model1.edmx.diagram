@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9d76a7a8476d4e6882f9929703e557a6" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="GARAOTOModel.ACCOUNT" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARAOTOModel.BAOCAO" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARAOTOModel.BAOCAOTON" Width="1.5" PointX="10.5" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARAOTOModel.CHITIET_PSC" Width="1.5" PointX="10.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARAOTOModel.CHUXE" Width="1.5" PointX="3.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARAOTOModel.CT_BCDS" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARAOTOModel.CT_PHIEUNHAP" Width="1.5" PointX="10.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARAOTOModel.HIEUXE" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARAOTOModel.PHIEUNHAP" Width="1.5" PointX="8.25" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARAOTOModel.PHIEUSUACHUA" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARAOTOModel.PHIEUTHUTIEN" Width="1.5" PointX="8.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARAOTOModel.PHUTUNG" Width="1.5" PointX="8.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARAOTOModel.sysdiagram" Width="1.5" PointX="2.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARAOTOModel.THAMSO" Width="1.5" PointX="4.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARAOTOModel.TIENCONG" Width="1.5" PointX="8.25" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARAOTOModel.XE" Width="1.5" PointX="6" PointY="6.125" IsExpanded="true" />
+        <AssociationConnector Association="GARAOTOModel.FK_BCT_PT" ManuallyRouted="false" />
+        <AssociationConnector Association="GARAOTOModel.FK_CT_PH" ManuallyRouted="false" />
+        <AssociationConnector Association="GARAOTOModel.FK_CT_PSC" ManuallyRouted="false" />
+        <AssociationConnector Association="GARAOTOModel.FK_CT_TC" ManuallyRouted="false" />
+        <AssociationConnector Association="GARAOTOModel.FK_XE_CX" ManuallyRouted="false" />
+        <AssociationConnector Association="GARAOTOModel.FK_CTBCDS_HX" ManuallyRouted="false" />
+        <AssociationConnector Association="GARAOTOModel.FK_CT_PN" ManuallyRouted="false" />
+        <AssociationConnector Association="GARAOTOModel.FK_CT_PT" ManuallyRouted="false" />
+        <AssociationConnector Association="GARAOTOModel.FK_XE_HX" ManuallyRouted="false" />
+        <AssociationConnector Association="GARAOTOModel.FK_PSC_XE" ManuallyRouted="false" />
+        <AssociationConnector Association="GARAOTOModel.FK_PTT_XE" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
