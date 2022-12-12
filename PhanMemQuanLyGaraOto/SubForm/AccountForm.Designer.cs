@@ -383,6 +383,7 @@
             this.btbDelete2.TabIndex = 1;
             this.btbDelete2.Text = "Xóa";
             this.btbDelete2.UseVisualStyleBackColor = true;
+            this.btbDelete2.Click += new System.EventHandler(this.btbDelete2_Click);
             // 
             // btbAdd
             // 

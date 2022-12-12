@@ -145,6 +145,12 @@ namespace PhanMemQuanLyGaraOto
 
             }
             UniversalAlert.Ins.RemoveListenr(SetInformation);
+            foreach(var k in dicOfForms)
+            {
+                k.Value.Close();
+                k.Value.Dispose();
+            }
+            this.Dispose();
         }
         #endregion
 

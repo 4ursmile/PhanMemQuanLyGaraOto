@@ -115,7 +115,10 @@ namespace PhanMemQuanLyGaraOto.SubForm
             txtDescription.Text = txtDisplay.Text = txtPassword.Text = txtUser.Text = "";
             btbAdd.Text = "Thêm";
             txtPassword.Enabled = true;
+            txtDisplay.Enabled = true;
+            txtDescription.Enabled = true;
             IsUpdate = false;
+            txtUser.Enabled = true;
 
         }
         void LoadUserToDataGridView()
@@ -124,21 +127,48 @@ namespace PhanMemQuanLyGaraOto.SubForm
             dgvAccounts.DataSource = DataProvider.Instance.db.ACCOUNTs.ToList<ACCOUNT>();
         }
         bool IsUpdate = false;
+        void ResetMainUser()
+        {
+            if (currentSelectAccount.USERID == UniversalUser.Ins.account.USERID)
+            {
+                UniversalUser.Ins.account = currentSelectAccount;
+                UniversalAlert.Ins.Alert();
+            }
+        }
         private void btbAdd_Click(object sender, EventArgs e)
         {
-            if (txtUser.Text == "" || txtPassword.Text == "")
-            {
-                MessageBox.Show("Tên đăng nhập và mật khẩu là bắt buộc!", "Không hợp lệ");
-                return;
-            }            
-            currentSelectAccount.DESCRIPTION = txtDescription.Text;
-            currentSelectAccount.PASSWORD = SuperHash.GetHashPassWord(txtPassword.Text);
-            currentSelectAccount.DISPLAYNAME = txtDisplay.Text;
-            currentSelectAccount.USERNAME = txtUser.Text;
-            currentSelectAccount.TYPE = cbbType.SelectedIndex;
             btbAdd.Enabled = false;
-            DataProvider.Instance.SaveAccount(currentSelectAccount, Reset, LoadUserToDataGridView);
-            btbAdd.Enabled = true;
+            if (IsUpdate)
+            {
+                if (txtPassword.Text != "Edit to change password")
+                    currentSelectAccount.PASSWORD = SuperHash.GetHashPassWord(txtPassword.Text);
+                else
+                    currentSelectAccount.PASSWORD = dgvAccounts.CurrentRow.Cells[2].Value.ToString();
+                currentSelectAccount.DESCRIPTION = txtDescription.Text;
+                currentSelectAccount.DISPLAYNAME = txtDisplay.Text;
+                currentSelectAccount.USERNAME = txtUser.Text;
+                currentSelectAccount.TYPE = cbbType.SelectedIndex;
+
+                DataProvider.Instance.UpdateAccount(currentSelectAccount,ResetMainUser,Reset, LoadUserToDataGridView);
+                btbAdd.Enabled = true;
+            } else
+            {
+                btbAdd.Enabled = false;
+                if (txtUser.Text == "" || txtPassword.Text == "")
+                {
+                    MessageBox.Show("Tên đăng nhập và mật khẩu là bắt buộc!", "Không hợp lệ");
+                    return;
+                }
+                currentSelectAccount.DESCRIPTION = txtDescription.Text;
+                currentSelectAccount.PASSWORD = SuperHash.GetHashPassWord(txtPassword.Text);
+                currentSelectAccount.DISPLAYNAME = txtDisplay.Text;
+                currentSelectAccount.USERNAME = txtUser.Text;
+                currentSelectAccount.TYPE = cbbType.SelectedIndex;
+
+                DataProvider.Instance.SaveAccount(currentSelectAccount, Reset, LoadUserToDataGridView);
+                btbAdd.Enabled = true;
+            }
+
         }
         void UpdateViewData(ACCOUNT cCOUNT)
         {
@@ -147,13 +177,25 @@ namespace PhanMemQuanLyGaraOto.SubForm
             txtUser.Text = cCOUNT.USERNAME;
             txtPassword.Text = cCOUNT.PASSWORD;
             cbbType.SelectedIndex = (int)cCOUNT.TYPE;
-            if ((UniversalUser.Ins.account.TYPE >= cCOUNT.TYPE) || UniversalUser.Ins.account.TYPE > 0)
+            if ((UniversalUser.Ins.account.TYPE >= cCOUNT.TYPE) && UniversalUser.Ins.account.TYPE > 0)
             {
                 txtPassword.Enabled = false;
+                txtDisplay.Enabled = false;
+                txtDescription.Enabled = false;
+                btbDelete2.Enabled = false;
             } else
             {
+                btbDelete2.Enabled = true;
+                txtDisplay.Enabled = true;
                 txtPassword.Enabled = true;
-
+                txtDescription.Enabled = true;
+            }
+            if (UniversalUser.Ins.account.TYPE != 0)
+            {
+                txtUser.Enabled = false;
+            } else
+            {
+                txtUser.Enabled = true;
             }
         }
         private void dgvAccounts_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -174,12 +216,18 @@ namespace PhanMemQuanLyGaraOto.SubForm
                 currentSelectAccount.TYPE = Convert.ToInt32(dgvAccounts.CurrentRow.Cells[5].Value);
                 UpdateViewData(currentSelectAccount);
                 btbAdd.Text = "Cập nhật";
-                btbDelete2.Enabled = true;
                 IsUpdate = true;
             } else
             {
                 Reset();
             }
+        }
+
+        private void btbDelete2_Click(object sender, EventArgs e)
+        {
+            if (currentSelectAccount == null) return;
+            btbDelete2.Enabled = false;
+            DataProvider.Instance.DeleteAccount(currentSelectAccount, Reset, LoadUserToDataGridView);
         }
     }
 }

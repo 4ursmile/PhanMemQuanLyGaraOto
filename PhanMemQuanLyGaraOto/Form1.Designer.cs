@@ -47,11 +47,13 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.kryptonContextMenuItem1 = new ComponentFactory.Krypton.Toolkit.KryptonContextMenuItem();
+            this.ptbOld = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserComboBox)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbOld)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette1
@@ -140,6 +142,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.ptbOld);
             this.panel1.Controls.Add(this.kryptonButton1);
             this.panel1.Controls.Add(this.SaveUserCheckBox);
             this.panel1.Controls.Add(this.button1);
@@ -308,6 +311,20 @@
             // 
             this.kryptonContextMenuItem1.Text = "Menu Item";
             // 
+            // ptbOld
+            // 
+            this.ptbOld.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ptbOld.BackColor = System.Drawing.Color.White;
+            this.ptbOld.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.icons8_uchiha_eyes_24;
+            this.ptbOld.Location = new System.Drawing.Point(280, 166);
+            this.ptbOld.Name = "ptbOld";
+            this.ptbOld.Size = new System.Drawing.Size(25, 23);
+            this.ptbOld.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbOld.TabIndex = 15;
+            this.ptbOld.TabStop = false;
+            this.ptbOld.Click += new System.EventHandler(this.ptbOld_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -334,6 +351,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbOld)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -357,6 +375,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox UserComboBox;
         private ComponentFactory.Krypton.Toolkit.KryptonContextMenuItem kryptonContextMenuItem1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
+        private System.Windows.Forms.PictureBox ptbOld;
     }
 }
 

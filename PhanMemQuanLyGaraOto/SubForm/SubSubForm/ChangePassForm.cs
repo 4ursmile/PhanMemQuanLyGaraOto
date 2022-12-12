@@ -47,6 +47,11 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
                 MessageBox.Show("Mật khẩu cũ không đúng, vui lòng kiểm tra lại!", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (txtNew.Text == "")
+            {
+                MessageBox.Show("Mật khẩu không được để trống", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (txtNew.Text != txtReNew.Text)
             {
                 MessageBox.Show("Xác nhận mật khẩu không đúng vui lòng kiểm tra lại", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);

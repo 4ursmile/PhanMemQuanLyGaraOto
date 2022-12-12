@@ -156,6 +156,8 @@ namespace PhanMemQuanLyGaraOto
                 Application.Exit();
             } else
             {
+                mainForm.Dispose();
+                mainForm.Close();
                 this.Show();
             }
         }
@@ -220,6 +222,15 @@ namespace PhanMemQuanLyGaraOto
         private void UserComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             PassWordText.Text = (UserComboBox.SelectedValue as User).Password;
+        }
+
+        private void ptbOld_Click(object sender, EventArgs e)
+        {
+            char SpecicalChar = '•';
+            if (PassWordText.PasswordChar == SpecicalChar)
+                PassWordText.PasswordChar = '\0';
+            else
+                PassWordText.PasswordChar = SpecicalChar;
         }
     }
 }
