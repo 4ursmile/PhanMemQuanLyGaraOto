@@ -70,8 +70,6 @@ namespace PhanMemQuanLyGaraOto
                 users = JsonSerializer.Deserialize<ListUser>(jsonfile);
                 
                 UserComboBox.DataSource = users.ListU.ToList();
-                PassWordText.DataBindings.Clear();
-                AddBinding();
                 UserComboBox.SelectedIndex = users.ListU.Count == 0? -1: users.SelectedIndex;
                 if (users.ListU.Count > 0 && UserComboBox.SelectedIndex == -1)
                 {
@@ -198,16 +196,30 @@ namespace PhanMemQuanLyGaraOto
         {
             SwitchStateAll(false);
             ACCOUNT account;
-            if (DDOpassword.Ins.CheckPassWord(UserComboBox.Text, PassWordText.Text, out account))
+            int resStatus = DDOpassword.Ins.CheckPassWord(UserComboBox.Text, PassWordText.Text, out account);
+            if (resStatus == 1)
             {
                 SigninAction(account);
             }
-            else
+            else if (resStatus == 0)
             {
                 MessageBox.Show("Sai tên tài khoản hoặc mặt khẩu vui lòng thử lại");
+            } else
+            {
+                MessageBox.Show("Kết nối với máy chủ thất bại, Vui lòng thử lại sau", "Từ chối kết nối", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             SwitchStateAll(true);
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UserComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PassWordText.Text = (UserComboBox.SelectedValue as User).Password;
         }
     }
 }

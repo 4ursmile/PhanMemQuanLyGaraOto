@@ -36,17 +36,26 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
 
         }
 
-        private async void btbSavePassChange_Click(object sender, EventArgs e)
+        private void btbSavePassChange_Click(object sender, EventArgs e)
         {
-            UniversalUser.Ins.account.DISPLAYNAME = txtDisplayName.Text;
-            UniversalUser.Ins.account.DESCRIPTION = txtDesCription.Text;
-            DataProvider.Instance.db.Entry(UniversalUser.Ins.account).State = System.Data.Entity.EntityState.Modified;
-            btbSavePassChange.Enabled = false;
-            button1.Enabled = false;
-            this.Close();
-            DataProvider.Instance.SaveChange();
-            UniversalAlert.Ins.Alert();
-            MessageBox.Show("Cập nhật thông tin người dùng thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);;
+            try
+            {
+                UniversalUser.Ins.account.DISPLAYNAME = txtDisplayName.Text;
+                UniversalUser.Ins.account.DESCRIPTION = txtDesCription.Text;
+                btbSavePassChange.Enabled = false;
+                button1.Enabled = false;
+                DataProvider.Instance.UpdateAccount(UniversalUser.Ins.account);
+                this.Close();
+                UniversalAlert.Ins.Alert();
+                MessageBox.Show("Cập nhật thông tin người dùng thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+            } catch
+            {
+                MessageBox.Show("Cập nhật thông tin người dùng thất bại, một lỗi không mong muốn đã xảy ra", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+
+            }
+
+            
         }
         void CloseThisForm()
         {

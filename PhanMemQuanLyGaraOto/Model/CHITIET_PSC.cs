@@ -17,6 +17,7 @@ namespace PhanMemQuanLyGaraOto.Model
         public int MACTPSC { get; set; }
         public Nullable<int> MAPHIEU { get; set; }
         public Nullable<int> MANDTC { get; set; }
+        public Nullable<decimal> TIENCONG { get; set; }
         public Nullable<int> MAPHUTUNG { get; set; }
         public Nullable<int> SOLUONG { get; set; }
         public Nullable<decimal> DONGIA { get; set; }
@@ -24,6 +25,6 @@ namespace PhanMemQuanLyGaraOto.Model
     
         public virtual PHUTUNG PHUTUNG { get; set; }
         public virtual PHIEUSUACHUA PHIEUSUACHUA { get; set; }
-        public virtual TIENCONG TIENCONG { get; set; }
+        public virtual TIENCONG TIENCONG1 { get; set; }
     }
 }

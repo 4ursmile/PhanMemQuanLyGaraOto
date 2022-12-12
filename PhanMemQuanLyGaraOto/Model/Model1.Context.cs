@@ -15,10 +15,10 @@ namespace PhanMemQuanLyGaraOto.Model
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class QUANLYGARAOTOEntities : DbContext
+    public partial class GARAOTOEntities : DbContext
     {
-        public QUANLYGARAOTOEntities()
-            : base("name=QUANLYGARAOTOEntities")
+        public GARAOTOEntities()
+            : base("name=GARAOTOEntities")
         {
         }
     
@@ -41,70 +41,9 @@ namespace PhanMemQuanLyGaraOto.Model
         public virtual DbSet<PHUTUNG> PHUTUNGs { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<THAMSO> THAMSOes { get; set; }
+        public virtual DbSet<THANGNAM> THANGNAMs { get; set; }
         public virtual DbSet<TIENCONG> TIENCONGs { get; set; }
         public virtual DbSet<XE> XEs { get; set; }
-    
-        public virtual int BAOCAODOANHSO(Nullable<System.DateTime> tHANGNAM)
-        {
-            var tHANGNAMParameter = tHANGNAM.HasValue ?
-                new ObjectParameter("THANGNAM", tHANGNAM) :
-                new ObjectParameter("THANGNAM", typeof(System.DateTime));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("BAOCAODOANHSO", tHANGNAMParameter);
-        }
-    
-        public virtual int DONGPHIEUSUACHUA(Nullable<int> mAPHIEU)
-        {
-            var mAPHIEUParameter = mAPHIEU.HasValue ?
-                new ObjectParameter("MAPHIEU", mAPHIEU) :
-                new ObjectParameter("MAPHIEU", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DONGPHIEUSUACHUA", mAPHIEUParameter);
-        }
-    
-        public virtual ObjectResult<GETBAOCAO_Result> GETBAOCAO(Nullable<int> tHANG, Nullable<int> nAM)
-        {
-            var tHANGParameter = tHANG.HasValue ?
-                new ObjectParameter("THANG", tHANG) :
-                new ObjectParameter("THANG", typeof(int));
-    
-            var nAMParameter = nAM.HasValue ?
-                new ObjectParameter("NAM", nAM) :
-                new ObjectParameter("NAM", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GETBAOCAO_Result>("GETBAOCAO", tHANGParameter, nAMParameter);
-        }
-    
-        public virtual ObjectResult<GETCHITIETBAOCAO_Result> GETCHITIETBAOCAO(Nullable<int> tHANG, Nullable<int> nAM)
-        {
-            var tHANGParameter = tHANG.HasValue ?
-                new ObjectParameter("THANG", tHANG) :
-                new ObjectParameter("THANG", typeof(int));
-    
-            var nAMParameter = nAM.HasValue ?
-                new ObjectParameter("NAM", nAM) :
-                new ObjectParameter("NAM", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GETCHITIETBAOCAO_Result>("GETCHITIETBAOCAO", tHANGParameter, nAMParameter);
-        }
-    
-        public virtual int INITBAOCAODOANHSO(Nullable<System.DateTime> tHANGNAM)
-        {
-            var tHANGNAMParameter = tHANGNAM.HasValue ?
-                new ObjectParameter("THANGNAM", tHANGNAM) :
-                new ObjectParameter("THANGNAM", typeof(System.DateTime));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INITBAOCAODOANHSO", tHANGNAMParameter);
-        }
-    
-        public virtual int INITBAOCAOTON(Nullable<System.DateTime> tHANGNAM)
-        {
-            var tHANGNAMParameter = tHANGNAM.HasValue ?
-                new ObjectParameter("THANGNAM", tHANGNAM) :
-                new ObjectParameter("THANGNAM", typeof(System.DateTime));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INITBAOCAOTON", tHANGNAMParameter);
-        }
     
         public virtual ObjectResult<LOGINACCOUNT_Result> LOGINACCOUNT(string uSERNAME, string pASSWORD)
         {

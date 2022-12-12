@@ -1,5 +1,6 @@
 ﻿using PhanMemQuanLyGaraOto.DAO;
 using PhanMemQuanLyGaraOto.DDo;
+using PhanMemQuanLyGaraOto.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,10 +52,19 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
                 MessageBox.Show("Xác nhận mật khẩu không đúng vui lòng kiểm tra lại", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            UniversalUser.Ins.account.PASSWORD = SuperHash.GetHashPassWord(txtReNew.Text);
-            DataProvider.Instance.db.Entry(UniversalUser.Ins.account).State = System.Data.Entity.EntityState.Modified;
-            DataProvider.Instance.db.SaveChanges();
-            MessageBox.Show("Cập nhật mật khẩu thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                UniversalUser.Ins.account.PASSWORD = SuperHash.GetHashPassWord(txtReNew.Text);
+                DataProvider.Instance.UpdateAccount(UniversalUser.Ins.account);
+                //DataProvider.Instance.db.ACCOUNTs.Attach(UniversalUser.Ins.account);
+                //DataProvider.Instance.db.Entry(UniversalUser.Ins.account).State = System.Data.Entity.EntityState.Modified;
+                //DataProvider.Instance.db.SaveChanges();
+                MessageBox.Show("Cập nhật mật khẩu thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } catch
+            {
+                MessageBox.Show("Cập nhật mật khẩu thất bại, một lỗi không mong muốn đã xảy ra" + UniversalUser.Ins.account.USERID, "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
             this.Close();
         }
 

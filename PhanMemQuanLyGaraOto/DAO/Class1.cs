@@ -1,9 +1,11 @@
-﻿using PhanMemQuanLyGaraOto.Model;
+﻿
+using PhanMemQuanLyGaraOto.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PhanMemQuanLyGaraOto.DAO
 {
@@ -18,18 +20,38 @@ namespace PhanMemQuanLyGaraOto.DAO
                 return instance;
             } 
             private set => instance = value; }
-        public QUANLYGARAOTOEntities db;
+        public GARAOTOEntities db;
         private DataProvider()
         {
-            db = new QUANLYGARAOTOEntities();
+            db = new GARAOTOEntities();
         }
         public void SaveChange()
         {
             db.SaveChanges();
         }
-        public async void SaveChangeAsync()
+        public void SaveAccount(ACCOUNT aCCOUNT,params AlertNonPara[] Loadawhendones)
         {
-            db.SaveChangesAsync();
+            if (aCCOUNT == null) return;
+            ACCOUNT tmp = db.ACCOUNTs.Where(a => a.USERNAME == aCCOUNT.USERNAME).First();
+            if (tmp != null)
+            {
+                MessageBox.Show("Người dùng đã tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            db.ACCOUNTs.Add(aCCOUNT);
+            db.SaveChanges();
+            foreach (var donefunc in Loadawhendones)
+            {
+                donefunc?.Invoke();
+            }
         }
+        public void UpdateAccount(ACCOUNT aCCOUNT)
+        {
+            ACCOUNT tmp = db.ACCOUNTs.Where(a => a.USERID == aCCOUNT.USERID).FirstOrDefault();
+            if (tmp != null)
+                db.Entry(tmp).CurrentValues.SetValues(aCCOUNT);
+            SaveChange();
+        }
+
     }
 }

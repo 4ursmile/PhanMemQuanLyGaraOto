@@ -21,17 +21,26 @@ namespace PhanMemQuanLyGaraOto.DDo
             private set => ins = value; 
         }
         private DDOpassword() { }
-        public bool CheckPassWord(string userName, string passWord, out ACCOUNT aCCOUNT)
+        public int CheckPassWord(string userName, string passWord, out ACCOUNT aCCOUNT)
         {
-            var ListUser = DataProvider.Instance.db.LOGINACCOUNT(userName,SuperHash.GetHashPassWord(passWord)).ToList();
-            if (ListUser.Count == 0)
+            
+            try
+            {
+                var ListUser = DataProvider.Instance.db.LOGINACCOUNT(userName, SuperHash.GetHashPassWord(passWord)).ToList();
+                if (ListUser.Count == 0)
+                {
+                    aCCOUNT = null;
+                    return 0;
+                }
+                var userGet = ListUser.FirstOrDefault();
+                aCCOUNT = new ACCOUNT { USERNAME = userGet.USERNAME, USERID = userGet.USERID, DISPLAYNAME = userGet.DISPLAYNAME, DESCRIPTION = userGet.DESCRIPTION, TYPE = userGet.TYPE, PASSWORD = userGet.PASSWORD };
+                return 1;
+
+            } catch
             {
                 aCCOUNT = null;
-                return false;
+                return -1;
             }
-            var userGet = ListUser.FirstOrDefault();
-            aCCOUNT = new ACCOUNT { USERNAME = userGet.USERNAME, USERID = userGet.USERID, DISPLAYNAME = userGet.DISPLAYNAME, DESCRIPTION = userGet.DESCRIPTION, TYPE = userGet.TYPE, PASSWORD = userGet.PASSWORD };
-            return true;
            
         }
     }

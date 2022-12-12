@@ -101,7 +101,7 @@
             // 
             this.Loichucdau.AutoSize = true;
             this.Loichucdau.Font = new System.Drawing.Font("Corbel", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Loichucdau.Location = new System.Drawing.Point(200, 406);
+            this.Loichucdau.Location = new System.Drawing.Point(135, 367);
             this.Loichucdau.Name = "Loichucdau";
             this.Loichucdau.Size = new System.Drawing.Size(156, 28);
             this.Loichucdau.TabIndex = 2;
@@ -152,7 +152,7 @@
             this.panel1.Controls.Add(this.UserComboBox);
             this.panel1.Location = new System.Drawing.Point(28, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(382, 444);
+            this.panel1.Size = new System.Drawing.Size(382, 414);
             this.panel1.TabIndex = 6;
             // 
             // kryptonButton1
@@ -269,22 +269,23 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.UserComboBox.StateCommon.Item.Border.Rounding = 12;
             this.UserComboBox.TabIndex = 13;
+            this.UserComboBox.SelectedIndexChanged += new System.EventHandler(this.UserComboBox_SelectedIndexChanged);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.Loichucdau);
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(453, 24);
+            this.panel2.Location = new System.Drawing.Point(442, 24);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(534, 447);
+            this.panel2.Size = new System.Drawing.Size(428, 427);
             this.panel2.TabIndex = 7;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.giphy;
-            this.pictureBox2.Location = new System.Drawing.Point(154, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(91, -18);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(254, 185);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -295,12 +296,13 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.CarIs;
-            this.pictureBox1.Location = new System.Drawing.Point(65, 82);
+            this.pictureBox1.Location = new System.Drawing.Point(-6, 59);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(423, 365);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // kryptonContextMenuItem1
             // 
@@ -312,7 +314,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1002, 513);
+            this.ClientSize = new System.Drawing.Size(882, 453);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Default;

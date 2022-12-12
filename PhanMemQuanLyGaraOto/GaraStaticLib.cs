@@ -38,7 +38,7 @@ namespace PhanMemQuanLyGaraOto
     }
     public static class PosNameMap
     {
-        private static string[] map = {"Nhân viên", "Quản trị viên", "Quản lý"};
+        private static string[] map = {"Quản trị viên", "Quản lý", "Nhân viên"};
         public  static string GetAccountPosName(int type)
         {
             return map[type];
