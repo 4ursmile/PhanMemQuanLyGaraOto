@@ -37,13 +37,20 @@ namespace PhanMemQuanLyGaraOto.DAO
         {
             db.SaveChanges();
         }
+        public bool ChangeComfirm(string Action = "Thay đổi")
+        {
+            DialogResult res = MessageBox.Show($"Bạn có chắc chắn muốn {Action} không?", "Xác nhận lại", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
+                return false;
+            return true;
+        }
         #region Noti
-        const string BackEndError = "Kết nối với máy chủ thất bại";
-        const string FrontEndError = "Lỗi không xác định";
-        const string strUpdate = "Cập nhật ";
-        const string strDelete = "Xóa ";
-        const string strSave = "Thêm ";
-        void MakeNotiError(string ActionName = "Thay đổi", string resson = "Kết nối với máy chủ thất bại")
+        public const string BackEndError = "Kết nối với máy chủ thất bại";
+        public const string FrontEndError = "Lỗi không xác định";
+        public const string strUpdate = "Cập nhật ";
+        public const string strDelete = "Xóa ";
+        public const string strSave = "Thêm ";
+        public void MakeNotiError(string ActionName = "Thay đổi", string resson = "Kết nối với máy chủ thất bại")
         {
             string path1 = new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.FullName;
             string path2 = System.IO.Path.Combine(path1, "Resources", "error.jpg");
@@ -57,7 +64,7 @@ namespace PhanMemQuanLyGaraOto.DAO
                 .AddText(resson)
                 .Show(toast => toast.ExpirationTime = DateTime.Now.AddSeconds(1));
         }
-        void MakeNotiSuccess(string ActionName = "Thay đổi")
+        public void MakeNotiSuccess(string ActionName = "Thay đổi")
         {
             string path1 = new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.FullName;
             string path2 = System.IO.Path.Combine(path1, "Resources", "succes.png");
@@ -117,6 +124,8 @@ namespace PhanMemQuanLyGaraOto.DAO
         {
             try
             {
+                if (ChangeComfirm(strUpdate)) return;
+
                 if (aCCOUNT == null) return;
                 ACCOUNT tmp = db.ACCOUNTs.Where(a => a.USERID == aCCOUNT.USERID).FirstOrDefault();
                 if (tmp == null) return;
@@ -138,6 +147,8 @@ namespace PhanMemQuanLyGaraOto.DAO
         {
             try
             {
+                if (ChangeComfirm(strDelete)) return;
+
                 ACCOUNT tmp = db.ACCOUNTs.Where(a => a.USERID == aCCOUNT.USERID).FirstOrDefault();
                 if (tmp == null) return;
                 db.ACCOUNTs.Remove(tmp);
@@ -159,6 +170,7 @@ namespace PhanMemQuanLyGaraOto.DAO
         {
             try
             {
+
                 if (tIENCONG == null) return;
                 db.TIENCONGs.Add(tIENCONG);
                 db.SaveChanges();
@@ -179,6 +191,7 @@ namespace PhanMemQuanLyGaraOto.DAO
         {
             try
             {
+                if (ChangeComfirm(strUpdate)) return;
                 if (tIENCONG == null) return;
                 TIENCONG tmp = db.TIENCONGs.Where(a => a.MANDTC == tIENCONG.MANDTC).FirstOrDefault();
                 if (tmp == null) return;
@@ -202,6 +215,8 @@ namespace PhanMemQuanLyGaraOto.DAO
         {
             try
             {
+                if (ChangeComfirm(strDelete)) return;
+
                 TIENCONG tmp = db.TIENCONGs.Where(a => a.MANDTC == tIENCONG.MANDTC).FirstOrDefault();
                 if (tmp == null) return;
                 db.TIENCONGs.Remove(tmp);
@@ -246,6 +261,7 @@ namespace PhanMemQuanLyGaraOto.DAO
         {
             try
             {
+                if (ChangeComfirm(strUpdate)) return;
                 if (hIEUXE == null) return;
                 HIEUXE tmp = db.HIEUXEs.Where(a => a.MAHIEUXE == hIEUXE.MAHIEUXE).FirstOrDefault();
                 if (tmp == null)
@@ -273,6 +289,7 @@ namespace PhanMemQuanLyGaraOto.DAO
         {
             try
             {
+                if (ChangeComfirm(strDelete)) return;
                 HIEUXE tmp = db.HIEUXEs.Where(a => a.MAHIEUXE == hIEUXE.MAHIEUXE).FirstOrDefault();
                 if (tmp == null)
                 {
@@ -326,6 +343,7 @@ namespace PhanMemQuanLyGaraOto.DAO
         {
             try
             {
+                if (ChangeComfirm(strUpdate)) return;
                 if (CHUXE == null) return;
                 CHUXE tmp = db.CHUXEs.Where(a => a.MACHUXE == CHUXE.MACHUXE).FirstOrDefault();
                 if (tmp == null)
@@ -353,6 +371,7 @@ namespace PhanMemQuanLyGaraOto.DAO
         {
             try
             {
+                if (ChangeComfirm(strDelete)) return;
                 CHUXE tmp = db.CHUXEs.Where(a => a.MACHUXE == CHUXE.MACHUXE).FirstOrDefault();
                 if (tmp == null)
                 {
