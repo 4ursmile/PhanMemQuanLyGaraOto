@@ -286,6 +286,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tabPage2.Controls.Add(this.panel2);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.label1);
@@ -297,7 +298,6 @@
             this.tabPage2.Size = new System.Drawing.Size(1012, 538);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Quản lý tài khoản";
-            this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // panel2

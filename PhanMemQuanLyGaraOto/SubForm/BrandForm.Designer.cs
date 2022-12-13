@@ -32,6 +32,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbcSearchBrand = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -49,6 +52,9 @@
             this.dgvBRAND = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.kryptonDataGridView2 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cbcSearchTienCong = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -67,25 +73,21 @@
             this.panelPo = new System.Windows.Forms.Panel();
             this.dgvTIENCONG = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.dgvAccounts = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbcSearchBrand = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cbcSearchTienCong = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.mAHIEUXEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tENHIEUXEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTBCDSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.xEsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hIEUXEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tIENCONGBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tIENCONGBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.mANDTCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nOIDUNGDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tIENCONG1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cHITIETPSCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tIENCONGBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tIENCONGBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbcSearchBrand)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -94,6 +96,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBRAND)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView2)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbcSearchTienCong)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -101,10 +105,6 @@
             this.panelPo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTIENCONG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).BeginInit();
-            this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbcSearchBrand)).BeginInit();
-            this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbcSearchTienCong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hIEUXEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tIENCONGBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tIENCONGBindingSource1)).BeginInit();
@@ -125,6 +125,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tabPage1.Controls.Add(this.panel8);
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.label8);
@@ -136,7 +137,49 @@
             this.tabPage1.Size = new System.Drawing.Size(1099, 613);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Hãng xe";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panel8
+            // 
+            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel8.BackColor = System.Drawing.Color.White;
+            this.panel8.Controls.Add(this.label4);
+            this.panel8.Controls.Add(this.cbcSearchBrand);
+            this.panel8.Location = new System.Drawing.Point(35, 96);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(423, 69);
+            this.panel8.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label4.Location = new System.Drawing.Point(44, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(174, 16);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Tìm kiếm theo tên hiệu xe";
+            // 
+            // cbcSearchBrand
+            // 
+            this.cbcSearchBrand.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbcSearchBrand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbcSearchBrand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbcSearchBrand.DropDownWidth = 266;
+            this.cbcSearchBrand.FormattingEnabled = true;
+            this.cbcSearchBrand.Location = new System.Drawing.Point(35, 23);
+            this.cbcSearchBrand.Name = "cbcSearchBrand";
+            this.cbcSearchBrand.Size = new System.Drawing.Size(348, 29);
+            this.cbcSearchBrand.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.DimGray;
+            this.cbcSearchBrand.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.cbcSearchBrand.StateCommon.ComboBox.Border.Rounding = 5;
+            this.cbcSearchBrand.StateCommon.ComboBox.Border.Width = 2;
+            this.cbcSearchBrand.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbcSearchBrand.TabIndex = 11;
             // 
             // label9
             // 
@@ -295,7 +338,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label7.Location = new System.Drawing.Point(30, 22);
+            this.label7.Location = new System.Drawing.Point(30, 18);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 16);
             this.label7.TabIndex = 1;
@@ -309,14 +352,14 @@
             this.txtBRANDID.Location = new System.Drawing.Point(21, 35);
             this.txtBRANDID.Name = "txtBRANDID";
             this.txtBRANDID.ReadOnly = true;
-            this.txtBRANDID.Size = new System.Drawing.Size(348, 31);
-            this.txtBRANDID.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.txtBRANDID.Size = new System.Drawing.Size(348, 29);
+            this.txtBRANDID.StateCommon.Back.Color1 = System.Drawing.Color.MistyRose;
             this.txtBRANDID.StateCommon.Border.Color1 = System.Drawing.Color.DimGray;
             this.txtBRANDID.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtBRANDID.StateCommon.Border.Rounding = 5;
-            this.txtBRANDID.StateCommon.Border.Width = 2;
+            this.txtBRANDID.StateCommon.Border.Width = 1;
             this.txtBRANDID.StateCommon.Content.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBRANDID.TabIndex = 0;
             // 
@@ -431,6 +474,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tabPage2.Controls.Add(this.panel9);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.label1);
@@ -443,8 +487,50 @@
             this.tabPage2.Size = new System.Drawing.Size(1099, 613);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Nội dung sữa chữa";
-            this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // panel9
+            // 
+            this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel9.BackColor = System.Drawing.Color.White;
+            this.panel9.Controls.Add(this.label10);
+            this.panel9.Controls.Add(this.cbcSearchTienCong);
+            this.panel9.Location = new System.Drawing.Point(28, 65);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(423, 69);
+            this.panel9.TabIndex = 6;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label10.Location = new System.Drawing.Point(44, 10);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(158, 16);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Tìm kiếm theo nội dung";
+            // 
+            // cbcSearchTienCong
+            // 
+            this.cbcSearchTienCong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbcSearchTienCong.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbcSearchTienCong.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbcSearchTienCong.DropDownWidth = 266;
+            this.cbcSearchTienCong.FormattingEnabled = true;
+            this.cbcSearchTienCong.Location = new System.Drawing.Point(35, 23);
+            this.cbcSearchTienCong.Name = "cbcSearchTienCong";
+            this.cbcSearchTienCong.Size = new System.Drawing.Size(348, 29);
+            this.cbcSearchTienCong.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.DimGray;
+            this.cbcSearchTienCong.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.cbcSearchTienCong.StateCommon.ComboBox.Border.Rounding = 5;
+            this.cbcSearchTienCong.StateCommon.ComboBox.Border.Width = 2;
+            this.cbcSearchTienCong.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbcSearchTienCong.TabIndex = 11;
             // 
             // label2
             // 
@@ -643,7 +729,7 @@
             this.lblDisplay.AutoSize = true;
             this.lblDisplay.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDisplay.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblDisplay.Location = new System.Drawing.Point(30, 22);
+            this.lblDisplay.Location = new System.Drawing.Point(30, 18);
             this.lblDisplay.Name = "lblDisplay";
             this.lblDisplay.Size = new System.Drawing.Size(149, 16);
             this.lblDisplay.TabIndex = 1;
@@ -658,7 +744,7 @@
             this.txtPriceID.Name = "txtPriceID";
             this.txtPriceID.ReadOnly = true;
             this.txtPriceID.Size = new System.Drawing.Size(348, 31);
-            this.txtPriceID.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.txtPriceID.StateCommon.Back.Color1 = System.Drawing.Color.MistyRose;
             this.txtPriceID.StateCommon.Border.Color1 = System.Drawing.Color.DimGray;
             this.txtPriceID.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -777,92 +863,6 @@
             this.dgvAccounts.StateCommon.HeaderRow.Border.Width = 1;
             this.dgvAccounts.TabIndex = 0;
             // 
-            // panel8
-            // 
-            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel8.BackColor = System.Drawing.Color.White;
-            this.panel8.Controls.Add(this.label4);
-            this.panel8.Controls.Add(this.cbcSearchBrand);
-            this.panel8.Location = new System.Drawing.Point(35, 96);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(423, 69);
-            this.panel8.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label4.Location = new System.Drawing.Point(44, 10);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(174, 16);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Tìm kiếm theo tên hiệu xe";
-            // 
-            // cbcSearchBrand
-            // 
-            this.cbcSearchBrand.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbcSearchBrand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbcSearchBrand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbcSearchBrand.DropDownWidth = 266;
-            this.cbcSearchBrand.FormattingEnabled = true;
-            this.cbcSearchBrand.Location = new System.Drawing.Point(35, 23);
-            this.cbcSearchBrand.Name = "cbcSearchBrand";
-            this.cbcSearchBrand.Size = new System.Drawing.Size(348, 29);
-            this.cbcSearchBrand.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.DimGray;
-            this.cbcSearchBrand.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.cbcSearchBrand.StateCommon.ComboBox.Border.Rounding = 5;
-            this.cbcSearchBrand.StateCommon.ComboBox.Border.Width = 2;
-            this.cbcSearchBrand.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbcSearchBrand.TabIndex = 11;
-            // 
-            // panel9
-            // 
-            this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel9.BackColor = System.Drawing.Color.White;
-            this.panel9.Controls.Add(this.label10);
-            this.panel9.Controls.Add(this.cbcSearchTienCong);
-            this.panel9.Location = new System.Drawing.Point(28, 65);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(423, 69);
-            this.panel9.TabIndex = 6;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label10.Location = new System.Drawing.Point(44, 10);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(158, 16);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "Tìm kiếm theo nội dung";
-            // 
-            // cbcSearchTienCong
-            // 
-            this.cbcSearchTienCong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbcSearchTienCong.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbcSearchTienCong.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbcSearchTienCong.DropDownWidth = 266;
-            this.cbcSearchTienCong.FormattingEnabled = true;
-            this.cbcSearchTienCong.Location = new System.Drawing.Point(35, 23);
-            this.cbcSearchTienCong.Name = "cbcSearchTienCong";
-            this.cbcSearchTienCong.Size = new System.Drawing.Size(348, 29);
-            this.cbcSearchTienCong.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.DimGray;
-            this.cbcSearchTienCong.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.cbcSearchTienCong.StateCommon.ComboBox.Border.Rounding = 5;
-            this.cbcSearchTienCong.StateCommon.ComboBox.Border.Width = 2;
-            this.cbcSearchTienCong.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbcSearchTienCong.TabIndex = 11;
-            // 
             // mAHIEUXEDataGridViewTextBoxColumn
             // 
             this.mAHIEUXEDataGridViewTextBoxColumn.DataPropertyName = "MAHIEUXE";
@@ -907,6 +907,14 @@
             // 
             this.hIEUXEBindingSource.DataSource = typeof(PhanMemQuanLyGaraOto.Model.HIEUXE);
             // 
+            // tIENCONGBindingSource
+            // 
+            this.tIENCONGBindingSource.DataSource = typeof(PhanMemQuanLyGaraOto.Model.TIENCONG);
+            // 
+            // tIENCONGBindingSource1
+            // 
+            this.tIENCONGBindingSource1.DataSource = typeof(PhanMemQuanLyGaraOto.Model.TIENCONG);
+            // 
             // mANDTCDataGridViewTextBoxColumn
             // 
             this.mANDTCDataGridViewTextBoxColumn.DataPropertyName = "MANDTC";
@@ -928,7 +936,8 @@
             // tIENCONG1DataGridViewTextBoxColumn
             // 
             this.tIENCONG1DataGridViewTextBoxColumn.DataPropertyName = "TIENCONG1";
-            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.Format = "C0";
+            dataGridViewCellStyle1.NullValue = null;
             this.tIENCONG1DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.tIENCONG1DataGridViewTextBoxColumn.HeaderText = "Tiền công";
             this.tIENCONG1DataGridViewTextBoxColumn.MinimumWidth = 6;
@@ -946,14 +955,6 @@
             this.cHITIETPSCDataGridViewTextBoxColumn.Visible = false;
             this.cHITIETPSCDataGridViewTextBoxColumn.Width = 125;
             // 
-            // tIENCONGBindingSource
-            // 
-            this.tIENCONGBindingSource.DataSource = typeof(PhanMemQuanLyGaraOto.Model.TIENCONG);
-            // 
-            // tIENCONGBindingSource1
-            // 
-            this.tIENCONGBindingSource1.DataSource = typeof(PhanMemQuanLyGaraOto.Model.TIENCONG);
-            // 
             // BrandForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -966,6 +967,9 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbcSearchBrand)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -978,6 +982,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView2)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbcSearchTienCong)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -988,12 +995,6 @@
             this.panelPo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTIENCONG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).EndInit();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbcSearchBrand)).EndInit();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbcSearchTienCong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hIEUXEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tIENCONGBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tIENCONGBindingSource1)).EndInit();
@@ -1026,10 +1027,6 @@
         private System.Windows.Forms.Label label1;
         private ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown nudPrice;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvTIENCONG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mANDTCDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nOIDUNGDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tIENCONG1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cHITIETPSCDataGridViewTextBoxColumn;
         private System.Windows.Forms.Panel panel1;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvBRAND;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView kryptonDataGridView2;
@@ -1057,5 +1054,9 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label10;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbcSearchTienCong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mANDTCDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nOIDUNGDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tIENCONG1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cHITIETPSCDataGridViewTextBoxColumn;
     }
 }
