@@ -1,20 +1,13 @@
-﻿using System;
+﻿using CommunityToolkit.WinUI.Notifications;
+using ComponentFactory.Krypton.Toolkit;
+using PhanMemQuanLyGaraOto.DDo;
+using PhanMemQuanLyGaraOto.Model;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.IO;
-using System.Threading.Tasks;
+using System.Linq;
 using System.Text.Json;
 using System.Windows.Forms;
-using ComponentFactory.Krypton.Toolkit;
-using System.Configuration;
-using System.Xml;
-using PhanMemQuanLyGaraOto.Model;
-using PhanMemQuanLyGaraOto.DDo;
-using CommunityToolkit.WinUI.Notifications;
 
 namespace PhanMemQuanLyGaraOto
 {
@@ -25,7 +18,7 @@ namespace PhanMemQuanLyGaraOto
         {
             InitializeComponent();
             LoiChucInit();
-            users = new ListUser { ListU = new List<User>(), SelectedIndex = 0};
+            users = new ListUser { ListU = new List<User>(), SelectedIndex = 0 };
             LoadUser();
             ToastNotificationManagerCompat.History.Clear();
         }
@@ -42,12 +35,13 @@ namespace PhanMemQuanLyGaraOto
             if (findindex < 0 && SaveUserCheckBox.Checked)
             {
                 users.ListU.Add(new User { UserName = UserComboBox.Text, Password = PassWordText.Text });
-            } else
+            }
+            else
             {
                 if (users.ListU.Count == 0) goto SAVE;
                 users.ListU[findindex].Password = PassWordText.Text;
             }
-            SAVE:
+        SAVE:
             users.isCheckd = SaveUserCheckBox.Checked;
             users.SelectedIndex = users.ListU.Count == 0 ? -1 : UserComboBox.SelectedIndex;
             if (users.ListU.Count > 0 && UserComboBox.SelectedIndex == -1)
@@ -65,20 +59,20 @@ namespace PhanMemQuanLyGaraOto
         {
             if (File.Exists(Application.UserAppDataPath + "/SystemConsoleLog/Mirage/isaac32.json"))
             {
-               
+
                 string path = Application.UserAppDataPath + "/SystemConsoleLog/Mirage/isaac32.json";
                 string jsonfile = File.ReadAllText(path);
                 users = JsonSerializer.Deserialize<ListUser>(jsonfile);
-                
+
                 UserComboBox.DataSource = users.ListU.ToList();
-                UserComboBox.SelectedIndex = users.ListU.Count == 0? -1: users.SelectedIndex;
+                UserComboBox.SelectedIndex = users.ListU.Count == 0 ? -1 : users.SelectedIndex;
                 if (users.ListU.Count > 0 && UserComboBox.SelectedIndex == -1)
                 {
                     UserComboBox.SelectedIndex = 0;
                 }
                 UserComboBox.DisplayMember = "UserName";
                 SaveUserCheckBox.Checked = users.isCheckd;
-                
+
             }
         }
         void AddBinding()
@@ -99,7 +93,7 @@ namespace PhanMemQuanLyGaraOto
                 Loichucdau.Text = "chào buổi trưa";
             else if (timeSpan.Hours >= 13 && timeSpan.Hours < 19)
                 Loichucdau.Text = "chào buổi chiều";
-            else if (timeSpan.Hours >= 19 && timeSpan.Hours <23)
+            else if (timeSpan.Hours >= 19 && timeSpan.Hours < 23)
                 Loichucdau.Text = "Chào buổi tối";
             else
                 Loichucdau.Text = "Chúc ngủ ngon";
@@ -131,7 +125,7 @@ namespace PhanMemQuanLyGaraOto
         {
 
         }
-        
+
         void SwitchStateAll(bool state)
         {
             foreach (var item in panel1.Controls.OfType<Button>())
@@ -155,7 +149,8 @@ namespace PhanMemQuanLyGaraOto
             if (ExitInforHolder.isQuit)
             {
                 Application.Exit();
-            } else
+            }
+            else
             {
                 mainForm.Dispose();
                 mainForm.Close();
@@ -168,13 +163,13 @@ namespace PhanMemQuanLyGaraOto
             if (users.ListU.Contains(user))
             {
                 users.ListU.Remove(user);
-                users.SelectedIndex = users.ListU.Count == 0? -1 : 0;
+                users.SelectedIndex = users.ListU.Count == 0 ? -1 : 0;
                 UserComboBox.SelectedIndex = users.SelectedIndex;
                 PassWordText.Text = "";
 
                 SaveUser();
                 LoadUser();
-              
+
             }
         }
 
@@ -208,7 +203,8 @@ namespace PhanMemQuanLyGaraOto
             else if (resStatus == 0)
             {
                 MessageBox.Show("Sai tên tài khoản hoặc mặt khẩu vui lòng thử lại");
-            } else
+            }
+            else
             {
                 MessageBox.Show("Kết nối với máy chủ thất bại, Vui lòng thử lại sau", "Từ chối kết nối", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

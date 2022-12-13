@@ -3,13 +3,8 @@ using PhanMemQuanLyGaraOto.DDo;
 using PhanMemQuanLyGaraOto.Model;
 using PhanMemQuanLyGaraOto.SubForm.SubSubForm;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PhanMemQuanLyGaraOto.SubForm
@@ -125,7 +120,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
         void LoadUserToDataGridView()
         {
             dgvAccounts.AutoGenerateColumns = false;
-            dgvAccounts.DataSource = DataProvider.Instance.db.ACCOUNTs.Where(a=> a.USERNAME != "admin1" ).ToList<ACCOUNT>();
+            dgvAccounts.DataSource = DataProvider.Instance.db.ACCOUNTs.Where(a => a.USERNAME != "admin1").ToList<ACCOUNT>();
             cbcSearchDisplay.DataSource = dgvAccounts.DataSource;
             cbcSearchDisplay.DisplayMember = "DISPLAYNAME";
             cbcSearchDisplay.Text = "";
@@ -159,9 +154,10 @@ namespace PhanMemQuanLyGaraOto.SubForm
                 currentSelectAccount.USERNAME = txtUser.Text;
                 currentSelectAccount.TYPE = cbbType.SelectedIndex;
 
-                DataProvider.Instance.UpdateAccount(currentSelectAccount,ResetMainUser,Reset, LoadUserToDataGridView);
+                DataProvider.Instance.UpdateAccount(currentSelectAccount, ResetMainUser, Reset, LoadUserToDataGridView);
                 btbAdd.Enabled = true;
-            } else
+            }
+            else
             {
                 btbAdd.Enabled = false;
                 if (txtUser.Text == "" || txtPassword.Text == "")
@@ -194,8 +190,9 @@ namespace PhanMemQuanLyGaraOto.SubForm
                 txtDisplay.Enabled = false;
                 txtDescription.Enabled = false;
                 btbDelete2.Enabled = false;
-                btbAdd.Enabled=false;
-            } else
+                btbAdd.Enabled = false;
+            }
+            else
             {
                 btbDelete2.Enabled = true;
                 txtDisplay.Enabled = true;
@@ -206,14 +203,15 @@ namespace PhanMemQuanLyGaraOto.SubForm
             if (UniversalUser.Ins.account.TYPE != 0)
             {
                 txtUser.Enabled = false;
-            } else
+            }
+            else
             {
                 txtUser.Enabled = true;
             }
         }
         private void dgvAccounts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
         }
 
         private void dgvAccounts_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -230,7 +228,8 @@ namespace PhanMemQuanLyGaraOto.SubForm
                 UpdateViewData(currentSelectAccount);
                 btbAdd.Text = "Cập nhật";
                 IsUpdate = true;
-            } else
+            }
+            else
             {
                 Reset();
             }

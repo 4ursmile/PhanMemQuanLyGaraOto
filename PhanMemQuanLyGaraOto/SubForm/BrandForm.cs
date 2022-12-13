@@ -2,13 +2,7 @@
 using PhanMemQuanLyGaraOto.DDo;
 using PhanMemQuanLyGaraOto.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PhanMemQuanLyGaraOto.SubForm
@@ -33,7 +27,8 @@ namespace PhanMemQuanLyGaraOto.SubForm
                 btbAdd.Enabled = false;
                 txtContent.Enabled = false;
                 nudPrice.Enabled = false;
-            } else
+            }
+            else
             {
                 btbAdd.Enabled = true;
                 txtContent.Enabled = true;
@@ -113,7 +108,8 @@ namespace PhanMemQuanLyGaraOto.SubForm
                 cuurentSelectTienCong.NOIDUNG = txtContent.Text;
                 cuurentSelectTienCong.MANDTC = Convert.ToInt32(txtPriceID.Text);
                 DataProvider.Instance.UpdateTienCong(cuurentSelectTienCong, LoadDataToDGV, Reset);
-            } else
+            }
+            else
             {
                 if (txtContent.Text == "")
                 {
@@ -135,7 +131,8 @@ namespace PhanMemQuanLyGaraOto.SubForm
             if (UniversalUser.Ins.account.TYPE > 1)
             {
                 btbDelete2.Enabled = false;
-            } else
+            }
+            else
             {
                 btbDelete2.Enabled = true;
             }
@@ -194,7 +191,8 @@ namespace PhanMemQuanLyGaraOto.SubForm
                 UpdateViewDataBrand(currentSelectHieuXe);
                 btbADDB.Text = "Cập nhật";
                 isUpdateB = true;
-            } else
+            }
+            else
             {
                 ResetBrand();
             }

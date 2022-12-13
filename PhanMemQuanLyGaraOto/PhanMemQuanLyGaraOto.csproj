@@ -68,6 +68,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\CheckCarModel.cs" />
+    <Compile Include="DDO\CarDBAction.cs" />
+    <Compile Include="DDO\MCheckCar.cs" />
+    <Compile Include="DDO\REMCheckCar.cs" />
     <Compile Include="Model\ACCOUNT.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -267,6 +271,7 @@
     <None Include="Model\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.DDo.MCheckCar.datasource" />
     <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.Model.ACCOUNT.datasource" />
     <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.Model.CHUXE.datasource" />
     <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.Model.HIEUXE.datasource" />
@@ -352,9 +357,7 @@
   <ItemGroup>
     <None Include="Resources\icons8-slice-30.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Class\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\icons8-uchiha-eyes-24.png" />
     <None Include="Resources\44-443617_coming-soon-blue-png-transparent-png.png" />

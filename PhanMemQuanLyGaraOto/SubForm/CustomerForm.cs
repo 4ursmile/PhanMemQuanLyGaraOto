@@ -2,15 +2,8 @@
 using PhanMemQuanLyGaraOto.DDo;
 using PhanMemQuanLyGaraOto.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Windows.UI.Xaml.Input;
 
 namespace PhanMemQuanLyGaraOto.SubForm
 {
@@ -41,7 +34,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
             dgvCustomer.AutoGenerateColumns = false;
             dgvCustomer.DataSource = DataProvider.Instance.db.CHUXEs.ToList<CHUXE>();
             cbcSearchSDT.DataSource = dgvCustomer.DataSource;
-            cbcSearchSDT.DisplayMember = "DIENTHOAI"; 
+            cbcSearchSDT.DisplayMember = "DIENTHOAI";
         }
         private void CustomerForm_Load(object sender, EventArgs e)
         {
