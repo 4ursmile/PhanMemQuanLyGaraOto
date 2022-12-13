@@ -50,6 +50,11 @@
             this.txtBRANDID = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvBRAND = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.mAHIEUXEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tENHIEUXEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTBCDSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.xEsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hIEUXEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kryptonDataGridView2 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -72,18 +77,13 @@
             this.txtPriceID = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.panelPo = new System.Windows.Forms.Panel();
             this.dgvTIENCONG = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.dgvAccounts = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.mAHIEUXEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tENHIEUXEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cTBCDSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.xEsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hIEUXEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tIENCONGBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tIENCONGBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.mANDTCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nOIDUNGDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tIENCONG1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cHITIETPSCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tIENCONGBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dgvAccounts = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.tIENCONGBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -94,6 +94,7 @@
             this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBRAND)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hIEUXEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView2)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -104,9 +105,8 @@
             this.panel4.SuspendLayout();
             this.panelPo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTIENCONG)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hIEUXEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tIENCONGBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tIENCONGBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -398,6 +398,7 @@
             this.dgvBRAND.ReadOnly = true;
             this.dgvBRAND.RowHeadersWidth = 30;
             this.dgvBRAND.RowTemplate.Height = 24;
+            this.dgvBRAND.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBRAND.Size = new System.Drawing.Size(544, 451);
             this.dgvBRAND.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.dgvBRAND.StateCommon.Background.Color2 = System.Drawing.Color.WhiteSmoke;
@@ -428,6 +429,50 @@
             this.dgvBRAND.TabIndex = 9;
             this.dgvBRAND.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBRAND_CellMouseClick);
             this.dgvBRAND.SelectionChanged += new System.EventHandler(this.dgvBRAND_SelectionChanged);
+            // 
+            // mAHIEUXEDataGridViewTextBoxColumn
+            // 
+            this.mAHIEUXEDataGridViewTextBoxColumn.DataPropertyName = "MAHIEUXE";
+            this.mAHIEUXEDataGridViewTextBoxColumn.HeaderText = "MAHIEUXE";
+            this.mAHIEUXEDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.mAHIEUXEDataGridViewTextBoxColumn.Name = "mAHIEUXEDataGridViewTextBoxColumn";
+            this.mAHIEUXEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.mAHIEUXEDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.mAHIEUXEDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tENHIEUXEDataGridViewTextBoxColumn
+            // 
+            this.tENHIEUXEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tENHIEUXEDataGridViewTextBoxColumn.DataPropertyName = "TENHIEUXE";
+            this.tENHIEUXEDataGridViewTextBoxColumn.HeaderText = "TENHIEUXE";
+            this.tENHIEUXEDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tENHIEUXEDataGridViewTextBoxColumn.Name = "tENHIEUXEDataGridViewTextBoxColumn";
+            this.tENHIEUXEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tENHIEUXEDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // cTBCDSDataGridViewTextBoxColumn
+            // 
+            this.cTBCDSDataGridViewTextBoxColumn.DataPropertyName = "CT_BCDS";
+            this.cTBCDSDataGridViewTextBoxColumn.HeaderText = "CT_BCDS";
+            this.cTBCDSDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.cTBCDSDataGridViewTextBoxColumn.Name = "cTBCDSDataGridViewTextBoxColumn";
+            this.cTBCDSDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cTBCDSDataGridViewTextBoxColumn.Visible = false;
+            this.cTBCDSDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // xEsDataGridViewTextBoxColumn
+            // 
+            this.xEsDataGridViewTextBoxColumn.DataPropertyName = "XEs";
+            this.xEsDataGridViewTextBoxColumn.HeaderText = "XEs";
+            this.xEsDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.xEsDataGridViewTextBoxColumn.Name = "xEsDataGridViewTextBoxColumn";
+            this.xEsDataGridViewTextBoxColumn.ReadOnly = true;
+            this.xEsDataGridViewTextBoxColumn.Visible = false;
+            this.xEsDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // hIEUXEBindingSource
+            // 
+            this.hIEUXEBindingSource.DataSource = typeof(PhanMemQuanLyGaraOto.Model.HIEUXE);
             // 
             // kryptonDataGridView2
             // 
@@ -789,6 +834,7 @@
             this.dgvTIENCONG.ReadOnly = true;
             this.dgvTIENCONG.RowHeadersWidth = 30;
             this.dgvTIENCONG.RowTemplate.Height = 24;
+            this.dgvTIENCONG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTIENCONG.Size = new System.Drawing.Size(575, 486);
             this.dgvTIENCONG.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.dgvTIENCONG.StateCommon.Background.Color2 = System.Drawing.Color.WhiteSmoke;
@@ -819,6 +865,50 @@
             this.dgvTIENCONG.TabIndex = 9;
             this.dgvTIENCONG.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.kryptonDataGridView1_CellMouseClick);
             this.dgvTIENCONG.SelectionChanged += new System.EventHandler(this.dgvTIENCONG_SelectionChanged);
+            // 
+            // mANDTCDataGridViewTextBoxColumn
+            // 
+            this.mANDTCDataGridViewTextBoxColumn.DataPropertyName = "MANDTC";
+            this.mANDTCDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.mANDTCDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.mANDTCDataGridViewTextBoxColumn.Name = "mANDTCDataGridViewTextBoxColumn";
+            this.mANDTCDataGridViewTextBoxColumn.ReadOnly = true;
+            this.mANDTCDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // nOIDUNGDataGridViewTextBoxColumn
+            // 
+            this.nOIDUNGDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nOIDUNGDataGridViewTextBoxColumn.DataPropertyName = "NOIDUNG";
+            this.nOIDUNGDataGridViewTextBoxColumn.HeaderText = "Nội dung";
+            this.nOIDUNGDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nOIDUNGDataGridViewTextBoxColumn.Name = "nOIDUNGDataGridViewTextBoxColumn";
+            this.nOIDUNGDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tIENCONG1DataGridViewTextBoxColumn
+            // 
+            this.tIENCONG1DataGridViewTextBoxColumn.DataPropertyName = "TIENCONG1";
+            dataGridViewCellStyle1.Format = "C0";
+            dataGridViewCellStyle1.NullValue = null;
+            this.tIENCONG1DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.tIENCONG1DataGridViewTextBoxColumn.HeaderText = "Tiền công";
+            this.tIENCONG1DataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tIENCONG1DataGridViewTextBoxColumn.Name = "tIENCONG1DataGridViewTextBoxColumn";
+            this.tIENCONG1DataGridViewTextBoxColumn.ReadOnly = true;
+            this.tIENCONG1DataGridViewTextBoxColumn.Width = 130;
+            // 
+            // cHITIETPSCDataGridViewTextBoxColumn
+            // 
+            this.cHITIETPSCDataGridViewTextBoxColumn.DataPropertyName = "CHITIET_PSC";
+            this.cHITIETPSCDataGridViewTextBoxColumn.HeaderText = "CHITIET_PSC";
+            this.cHITIETPSCDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.cHITIETPSCDataGridViewTextBoxColumn.Name = "cHITIETPSCDataGridViewTextBoxColumn";
+            this.cHITIETPSCDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cHITIETPSCDataGridViewTextBoxColumn.Visible = false;
+            this.cHITIETPSCDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tIENCONGBindingSource
+            // 
+            this.tIENCONGBindingSource.DataSource = typeof(PhanMemQuanLyGaraOto.Model.TIENCONG);
             // 
             // dgvAccounts
             // 
@@ -863,97 +953,9 @@
             this.dgvAccounts.StateCommon.HeaderRow.Border.Width = 1;
             this.dgvAccounts.TabIndex = 0;
             // 
-            // mAHIEUXEDataGridViewTextBoxColumn
-            // 
-            this.mAHIEUXEDataGridViewTextBoxColumn.DataPropertyName = "MAHIEUXE";
-            this.mAHIEUXEDataGridViewTextBoxColumn.HeaderText = "MAHIEUXE";
-            this.mAHIEUXEDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.mAHIEUXEDataGridViewTextBoxColumn.Name = "mAHIEUXEDataGridViewTextBoxColumn";
-            this.mAHIEUXEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.mAHIEUXEDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.mAHIEUXEDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // tENHIEUXEDataGridViewTextBoxColumn
-            // 
-            this.tENHIEUXEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tENHIEUXEDataGridViewTextBoxColumn.DataPropertyName = "TENHIEUXE";
-            this.tENHIEUXEDataGridViewTextBoxColumn.HeaderText = "TENHIEUXE";
-            this.tENHIEUXEDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tENHIEUXEDataGridViewTextBoxColumn.Name = "tENHIEUXEDataGridViewTextBoxColumn";
-            this.tENHIEUXEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tENHIEUXEDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // cTBCDSDataGridViewTextBoxColumn
-            // 
-            this.cTBCDSDataGridViewTextBoxColumn.DataPropertyName = "CT_BCDS";
-            this.cTBCDSDataGridViewTextBoxColumn.HeaderText = "CT_BCDS";
-            this.cTBCDSDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.cTBCDSDataGridViewTextBoxColumn.Name = "cTBCDSDataGridViewTextBoxColumn";
-            this.cTBCDSDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cTBCDSDataGridViewTextBoxColumn.Visible = false;
-            this.cTBCDSDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // xEsDataGridViewTextBoxColumn
-            // 
-            this.xEsDataGridViewTextBoxColumn.DataPropertyName = "XEs";
-            this.xEsDataGridViewTextBoxColumn.HeaderText = "XEs";
-            this.xEsDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.xEsDataGridViewTextBoxColumn.Name = "xEsDataGridViewTextBoxColumn";
-            this.xEsDataGridViewTextBoxColumn.ReadOnly = true;
-            this.xEsDataGridViewTextBoxColumn.Visible = false;
-            this.xEsDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // hIEUXEBindingSource
-            // 
-            this.hIEUXEBindingSource.DataSource = typeof(PhanMemQuanLyGaraOto.Model.HIEUXE);
-            // 
-            // tIENCONGBindingSource
-            // 
-            this.tIENCONGBindingSource.DataSource = typeof(PhanMemQuanLyGaraOto.Model.TIENCONG);
-            // 
             // tIENCONGBindingSource1
             // 
             this.tIENCONGBindingSource1.DataSource = typeof(PhanMemQuanLyGaraOto.Model.TIENCONG);
-            // 
-            // mANDTCDataGridViewTextBoxColumn
-            // 
-            this.mANDTCDataGridViewTextBoxColumn.DataPropertyName = "MANDTC";
-            this.mANDTCDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.mANDTCDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.mANDTCDataGridViewTextBoxColumn.Name = "mANDTCDataGridViewTextBoxColumn";
-            this.mANDTCDataGridViewTextBoxColumn.ReadOnly = true;
-            this.mANDTCDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // nOIDUNGDataGridViewTextBoxColumn
-            // 
-            this.nOIDUNGDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nOIDUNGDataGridViewTextBoxColumn.DataPropertyName = "NOIDUNG";
-            this.nOIDUNGDataGridViewTextBoxColumn.HeaderText = "Nội dung";
-            this.nOIDUNGDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nOIDUNGDataGridViewTextBoxColumn.Name = "nOIDUNGDataGridViewTextBoxColumn";
-            this.nOIDUNGDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tIENCONG1DataGridViewTextBoxColumn
-            // 
-            this.tIENCONG1DataGridViewTextBoxColumn.DataPropertyName = "TIENCONG1";
-            dataGridViewCellStyle1.Format = "C0";
-            dataGridViewCellStyle1.NullValue = null;
-            this.tIENCONG1DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.tIENCONG1DataGridViewTextBoxColumn.HeaderText = "Tiền công";
-            this.tIENCONG1DataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tIENCONG1DataGridViewTextBoxColumn.Name = "tIENCONG1DataGridViewTextBoxColumn";
-            this.tIENCONG1DataGridViewTextBoxColumn.ReadOnly = true;
-            this.tIENCONG1DataGridViewTextBoxColumn.Width = 130;
-            // 
-            // cHITIETPSCDataGridViewTextBoxColumn
-            // 
-            this.cHITIETPSCDataGridViewTextBoxColumn.DataPropertyName = "CHITIET_PSC";
-            this.cHITIETPSCDataGridViewTextBoxColumn.HeaderText = "CHITIET_PSC";
-            this.cHITIETPSCDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.cHITIETPSCDataGridViewTextBoxColumn.Name = "cHITIETPSCDataGridViewTextBoxColumn";
-            this.cHITIETPSCDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cHITIETPSCDataGridViewTextBoxColumn.Visible = false;
-            this.cHITIETPSCDataGridViewTextBoxColumn.Width = 125;
             // 
             // BrandForm
             // 
@@ -979,6 +981,7 @@
             this.panel7.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBRAND)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hIEUXEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView2)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -994,9 +997,8 @@
             this.panel4.PerformLayout();
             this.panelPo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTIENCONG)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hIEUXEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tIENCONGBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tIENCONGBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
