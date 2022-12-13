@@ -29,9 +29,25 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btbCANCLEB = new System.Windows.Forms.Button();
+            this.btbDELETEB = new System.Windows.Forms.Button();
+            this.btbADDB = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtBrandName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtBRANDID = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvBRAND = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.kryptonDataGridView2 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,22 +67,12 @@
             this.panelPo = new System.Windows.Forms.Panel();
             this.dgvTIENCONG = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.dgvAccounts = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvBRAND = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.kryptonDataGridView2 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btbCANCLEB = new System.Windows.Forms.Button();
-            this.btbDELETEB = new System.Windows.Forms.Button();
-            this.btbADDB = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.txtBRANDID = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txtBrandName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbcSearchBrand = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cbcSearchTienCong = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.mAHIEUXEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tENHIEUXEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTBCDSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,6 +86,13 @@
             this.tIENCONGBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBRAND)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView2)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -88,13 +101,10 @@
             this.panelPo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTIENCONG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBRAND)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView2)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbcSearchBrand)).BeginInit();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbcSearchTienCong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hIEUXEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tIENCONGBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tIENCONGBindingSource1)).BeginInit();
@@ -115,6 +125,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.panel8);
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.panel2);
@@ -127,8 +138,300 @@
             this.tabPage1.Text = "Hãng xe";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(506, 54);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(191, 24);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Danh sách hãng xe";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(45, 54);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(171, 24);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Thông tin chi tiết";
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.panel6);
+            this.panel2.Controls.Add(this.panel7);
+            this.panel2.Location = new System.Drawing.Point(35, 182);
+            this.panel2.MinimumSize = new System.Drawing.Size(300, 200);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(423, 387);
+            this.panel2.TabIndex = 4;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // panel6
+            // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel6.Controls.Add(this.flowLayoutPanel1);
+            this.panel6.Location = new System.Drawing.Point(13, 297);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(386, 47);
+            this.panel6.TabIndex = 1;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AllowDrop = true;
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel1.Controls.Add(this.btbCANCLEB);
+            this.flowLayoutPanel1.Controls.Add(this.btbDELETEB);
+            this.flowLayoutPanel1.Controls.Add(this.btbADDB);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(5);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(379, 41);
+            this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // btbCANCLEB
+            // 
+            this.btbCANCLEB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btbCANCLEB.AutoSize = true;
+            this.btbCANCLEB.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btbCANCLEB.Location = new System.Drawing.Point(245, 3);
+            this.btbCANCLEB.Name = "btbCANCLEB";
+            this.btbCANCLEB.Size = new System.Drawing.Size(131, 35);
+            this.btbCANCLEB.TabIndex = 2;
+            this.btbCANCLEB.Text = "Hủy bỏ";
+            this.btbCANCLEB.UseVisualStyleBackColor = true;
+            this.btbCANCLEB.Click += new System.EventHandler(this.btbCANCLEB_Click);
+            // 
+            // btbDELETEB
+            // 
+            this.btbDELETEB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btbDELETEB.AutoSize = true;
+            this.btbDELETEB.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btbDELETEB.Location = new System.Drawing.Point(135, 3);
+            this.btbDELETEB.MaximumSize = new System.Drawing.Size(210, 50);
+            this.btbDELETEB.Name = "btbDELETEB";
+            this.btbDELETEB.Size = new System.Drawing.Size(104, 35);
+            this.btbDELETEB.TabIndex = 1;
+            this.btbDELETEB.Text = "Xóa";
+            this.btbDELETEB.UseVisualStyleBackColor = true;
+            this.btbDELETEB.Click += new System.EventHandler(this.btbDELETEB_Click);
+            // 
+            // btbADDB
+            // 
+            this.btbADDB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btbADDB.AutoSize = true;
+            this.btbADDB.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btbADDB.Location = new System.Drawing.Point(3, 3);
+            this.btbADDB.Name = "btbADDB";
+            this.btbADDB.Size = new System.Drawing.Size(126, 35);
+            this.btbADDB.TabIndex = 0;
+            this.btbADDB.Text = "Thêm";
+            this.btbADDB.UseVisualStyleBackColor = true;
+            this.btbADDB.Click += new System.EventHandler(this.btbADDB_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel7.Controls.Add(this.label6);
+            this.panel7.Controls.Add(this.txtBrandName);
+            this.panel7.Controls.Add(this.label7);
+            this.panel7.Controls.Add(this.txtBRANDID);
+            this.panel7.Location = new System.Drawing.Point(13, 15);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(387, 274);
+            this.panel7.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label6.Location = new System.Drawing.Point(30, 116);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(87, 16);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Tên hãng xe";
+            // 
+            // txtBrandName
+            // 
+            this.txtBrandName.AllowDrop = true;
+            this.txtBrandName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBrandName.Location = new System.Drawing.Point(21, 129);
+            this.txtBrandName.MinimumSize = new System.Drawing.Size(0, 90);
+            this.txtBrandName.Name = "txtBrandName";
+            this.txtBrandName.Size = new System.Drawing.Size(348, 90);
+            this.txtBrandName.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.txtBrandName.StateCommon.Border.Color1 = System.Drawing.Color.DimGray;
+            this.txtBrandName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtBrandName.StateCommon.Border.Rounding = 5;
+            this.txtBrandName.StateCommon.Border.Width = 2;
+            this.txtBrandName.StateCommon.Content.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBrandName.TabIndex = 6;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label7.Location = new System.Drawing.Point(30, 22);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(82, 16);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Mã hãng xe";
+            // 
+            // txtBRANDID
+            // 
+            this.txtBRANDID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBRANDID.Enabled = false;
+            this.txtBRANDID.Location = new System.Drawing.Point(21, 35);
+            this.txtBRANDID.Name = "txtBRANDID";
+            this.txtBRANDID.ReadOnly = true;
+            this.txtBRANDID.Size = new System.Drawing.Size(348, 31);
+            this.txtBRANDID.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.txtBRANDID.StateCommon.Border.Color1 = System.Drawing.Color.DimGray;
+            this.txtBRANDID.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtBRANDID.StateCommon.Border.Rounding = 5;
+            this.txtBRANDID.StateCommon.Border.Width = 2;
+            this.txtBRANDID.StateCommon.Content.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBRANDID.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.dgvBRAND);
+            this.panel1.Controls.Add(this.kryptonDataGridView2);
+            this.panel1.Location = new System.Drawing.Point(492, 106);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(5);
+            this.panel1.Size = new System.Drawing.Size(556, 463);
+            this.panel1.TabIndex = 3;
+            // 
+            // dgvBRAND
+            // 
+            this.dgvBRAND.AutoGenerateColumns = false;
+            this.dgvBRAND.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBRAND.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.mAHIEUXEDataGridViewTextBoxColumn,
+            this.tENHIEUXEDataGridViewTextBoxColumn,
+            this.cTBCDSDataGridViewTextBoxColumn,
+            this.xEsDataGridViewTextBoxColumn});
+            this.dgvBRAND.DataSource = this.hIEUXEBindingSource;
+            this.dgvBRAND.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvBRAND.GridStyles.Style = ComponentFactory.Krypton.Toolkit.DataGridViewStyle.Mixed;
+            this.dgvBRAND.GridStyles.StyleBackground = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridHeaderColumnSheet;
+            this.dgvBRAND.GridStyles.StyleColumn = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
+            this.dgvBRAND.GridStyles.StyleDataCells = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
+            this.dgvBRAND.GridStyles.StyleRow = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
+            this.dgvBRAND.Location = new System.Drawing.Point(5, 5);
+            this.dgvBRAND.Name = "dgvBRAND";
+            this.dgvBRAND.ReadOnly = true;
+            this.dgvBRAND.RowHeadersWidth = 30;
+            this.dgvBRAND.RowTemplate.Height = 24;
+            this.dgvBRAND.Size = new System.Drawing.Size(544, 451);
+            this.dgvBRAND.StateCommon.Background.Color1 = System.Drawing.Color.White;
+            this.dgvBRAND.StateCommon.Background.Color2 = System.Drawing.Color.WhiteSmoke;
+            this.dgvBRAND.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridHeaderColumnSheet;
+            this.dgvBRAND.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.Black;
+            this.dgvBRAND.StateCommon.DataCell.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.dgvBRAND.StateCommon.DataCell.Border.Rounding = 0;
+            this.dgvBRAND.StateCommon.DataCell.Border.Width = 1;
+            this.dgvBRAND.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(195)))), ((int)(((byte)(236)))));
+            this.dgvBRAND.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(195)))), ((int)(((byte)(236)))));
+            this.dgvBRAND.StateCommon.HeaderColumn.Border.Color1 = System.Drawing.Color.Black;
+            this.dgvBRAND.StateCommon.HeaderColumn.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.dgvBRAND.StateCommon.HeaderColumn.Border.Rounding = 0;
+            this.dgvBRAND.StateCommon.HeaderColumn.Border.Width = 1;
+            this.dgvBRAND.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvBRAND.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.Transparent;
+            this.dgvBRAND.StateCommon.HeaderRow.Back.Color2 = System.Drawing.Color.Transparent;
+            this.dgvBRAND.StateCommon.HeaderRow.Border.Color1 = System.Drawing.Color.Black;
+            this.dgvBRAND.StateCommon.HeaderRow.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.dgvBRAND.StateCommon.HeaderRow.Border.Rounding = 0;
+            this.dgvBRAND.StateCommon.HeaderRow.Border.Width = 1;
+            this.dgvBRAND.TabIndex = 9;
+            this.dgvBRAND.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBRAND_CellMouseClick);
+            this.dgvBRAND.SelectionChanged += new System.EventHandler(this.dgvBRAND_SelectionChanged);
+            // 
+            // kryptonDataGridView2
+            // 
+            this.kryptonDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.kryptonDataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kryptonDataGridView2.GridStyles.Style = ComponentFactory.Krypton.Toolkit.DataGridViewStyle.Mixed;
+            this.kryptonDataGridView2.GridStyles.StyleBackground = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridHeaderColumnSheet;
+            this.kryptonDataGridView2.GridStyles.StyleColumn = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
+            this.kryptonDataGridView2.GridStyles.StyleDataCells = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
+            this.kryptonDataGridView2.GridStyles.StyleRow = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
+            this.kryptonDataGridView2.Location = new System.Drawing.Point(5, 5);
+            this.kryptonDataGridView2.Name = "kryptonDataGridView2";
+            this.kryptonDataGridView2.ReadOnly = true;
+            this.kryptonDataGridView2.RowHeadersWidth = 30;
+            this.kryptonDataGridView2.RowTemplate.Height = 24;
+            this.kryptonDataGridView2.Size = new System.Drawing.Size(544, 451);
+            this.kryptonDataGridView2.StateCommon.Background.Color1 = System.Drawing.Color.White;
+            this.kryptonDataGridView2.StateCommon.Background.Color2 = System.Drawing.Color.WhiteSmoke;
+            this.kryptonDataGridView2.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridHeaderColumnSheet;
+            this.kryptonDataGridView2.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.Black;
+            this.kryptonDataGridView2.StateCommon.DataCell.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonDataGridView2.StateCommon.DataCell.Border.Rounding = 5;
+            this.kryptonDataGridView2.StateCommon.DataCell.Border.Width = 1;
+            this.kryptonDataGridView2.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(195)))), ((int)(((byte)(236)))));
+            this.kryptonDataGridView2.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(195)))), ((int)(((byte)(236)))));
+            this.kryptonDataGridView2.StateCommon.HeaderColumn.Border.Color1 = System.Drawing.Color.Black;
+            this.kryptonDataGridView2.StateCommon.HeaderColumn.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonDataGridView2.StateCommon.HeaderColumn.Border.Rounding = 3;
+            this.kryptonDataGridView2.StateCommon.HeaderColumn.Border.Width = 1;
+            this.kryptonDataGridView2.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonDataGridView2.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonDataGridView2.StateCommon.HeaderRow.Back.Color2 = System.Drawing.Color.Transparent;
+            this.kryptonDataGridView2.StateCommon.HeaderRow.Border.Color1 = System.Drawing.Color.Black;
+            this.kryptonDataGridView2.StateCommon.HeaderRow.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonDataGridView2.StateCommon.HeaderRow.Border.Rounding = 5;
+            this.kryptonDataGridView2.StateCommon.HeaderRow.Border.Width = 1;
+            this.kryptonDataGridView2.TabIndex = 0;
+            // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.panel9);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.panel3);
@@ -172,10 +475,10 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(28, 65);
+            this.panel3.Location = new System.Drawing.Point(28, 170);
             this.panel3.MinimumSize = new System.Drawing.Size(300, 200);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(423, 498);
+            this.panel3.Size = new System.Drawing.Size(423, 393);
             this.panel3.TabIndex = 3;
             // 
             // panel5
@@ -183,7 +486,7 @@
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.Controls.Add(this.flowLayoutPanel2);
-            this.panel5.Location = new System.Drawing.Point(13, 434);
+            this.panel5.Location = new System.Drawing.Point(13, 329);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(386, 47);
             this.panel5.TabIndex = 1;
@@ -258,9 +561,9 @@
             this.panel4.Controls.Add(this.txtContent);
             this.panel4.Controls.Add(this.lblDisplay);
             this.panel4.Controls.Add(this.txtPriceID);
-            this.panel4.Location = new System.Drawing.Point(13, 21);
+            this.panel4.Location = new System.Drawing.Point(13, 13);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(387, 407);
+            this.panel4.Size = new System.Drawing.Size(387, 310);
             this.panel4.TabIndex = 0;
             // 
             // label3
@@ -268,7 +571,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label3.Location = new System.Drawing.Point(29, 111);
+            this.label3.Location = new System.Drawing.Point(29, 86);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 16);
             this.label3.TabIndex = 3;
@@ -283,7 +586,7 @@
             0,
             0,
             0});
-            this.nudPrice.Location = new System.Drawing.Point(21, 124);
+            this.nudPrice.Location = new System.Drawing.Point(21, 99);
             this.nudPrice.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -309,7 +612,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label5.Location = new System.Drawing.Point(30, 206);
+            this.label5.Location = new System.Drawing.Point(30, 150);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 16);
             this.label5.TabIndex = 7;
@@ -321,7 +624,7 @@
             this.txtContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtContent.Location = new System.Drawing.Point(21, 219);
+            this.txtContent.Location = new System.Drawing.Point(21, 163);
             this.txtContent.MinimumSize = new System.Drawing.Size(0, 90);
             this.txtContent.Name = "txtContent";
             this.txtContent.Size = new System.Drawing.Size(348, 90);
@@ -429,6 +732,7 @@
             this.dgvTIENCONG.StateCommon.HeaderRow.Border.Width = 1;
             this.dgvTIENCONG.TabIndex = 9;
             this.dgvTIENCONG.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.kryptonDataGridView1_CellMouseClick);
+            this.dgvTIENCONG.SelectionChanged += new System.EventHandler(this.dgvTIENCONG_SelectionChanged);
             // 
             // dgvAccounts
             // 
@@ -473,295 +777,91 @@
             this.dgvAccounts.StateCommon.HeaderRow.Border.Width = 1;
             this.dgvAccounts.TabIndex = 0;
             // 
-            // panel1
+            // panel8
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.DarkCyan;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.dgvBRAND);
-            this.panel1.Controls.Add(this.kryptonDataGridView2);
-            this.panel1.Location = new System.Drawing.Point(492, 106);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(556, 443);
-            this.panel1.TabIndex = 3;
+            this.panel8.BackColor = System.Drawing.Color.White;
+            this.panel8.Controls.Add(this.label4);
+            this.panel8.Controls.Add(this.cbcSearchBrand);
+            this.panel8.Location = new System.Drawing.Point(35, 96);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(423, 69);
+            this.panel8.TabIndex = 7;
             // 
-            // dgvBRAND
+            // label4
             // 
-            this.dgvBRAND.AutoGenerateColumns = false;
-            this.dgvBRAND.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBRAND.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.mAHIEUXEDataGridViewTextBoxColumn,
-            this.tENHIEUXEDataGridViewTextBoxColumn,
-            this.cTBCDSDataGridViewTextBoxColumn,
-            this.xEsDataGridViewTextBoxColumn});
-            this.dgvBRAND.DataSource = this.hIEUXEBindingSource;
-            this.dgvBRAND.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvBRAND.GridStyles.Style = ComponentFactory.Krypton.Toolkit.DataGridViewStyle.Mixed;
-            this.dgvBRAND.GridStyles.StyleBackground = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridHeaderColumnSheet;
-            this.dgvBRAND.GridStyles.StyleColumn = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
-            this.dgvBRAND.GridStyles.StyleDataCells = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
-            this.dgvBRAND.GridStyles.StyleRow = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
-            this.dgvBRAND.Location = new System.Drawing.Point(5, 5);
-            this.dgvBRAND.Name = "dgvBRAND";
-            this.dgvBRAND.ReadOnly = true;
-            this.dgvBRAND.RowHeadersWidth = 30;
-            this.dgvBRAND.RowTemplate.Height = 24;
-            this.dgvBRAND.Size = new System.Drawing.Size(544, 431);
-            this.dgvBRAND.StateCommon.Background.Color1 = System.Drawing.Color.White;
-            this.dgvBRAND.StateCommon.Background.Color2 = System.Drawing.Color.WhiteSmoke;
-            this.dgvBRAND.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridHeaderColumnSheet;
-            this.dgvBRAND.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.Black;
-            this.dgvBRAND.StateCommon.DataCell.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label4.Location = new System.Drawing.Point(44, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(174, 16);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Tìm kiếm theo tên hiệu xe";
+            // 
+            // cbcSearchBrand
+            // 
+            this.cbcSearchBrand.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbcSearchBrand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbcSearchBrand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbcSearchBrand.DropDownWidth = 266;
+            this.cbcSearchBrand.FormattingEnabled = true;
+            this.cbcSearchBrand.Location = new System.Drawing.Point(35, 23);
+            this.cbcSearchBrand.Name = "cbcSearchBrand";
+            this.cbcSearchBrand.Size = new System.Drawing.Size(348, 29);
+            this.cbcSearchBrand.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.DimGray;
+            this.cbcSearchBrand.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.dgvBRAND.StateCommon.DataCell.Border.Rounding = 0;
-            this.dgvBRAND.StateCommon.DataCell.Border.Width = 1;
-            this.dgvBRAND.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(195)))), ((int)(((byte)(236)))));
-            this.dgvBRAND.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(195)))), ((int)(((byte)(236)))));
-            this.dgvBRAND.StateCommon.HeaderColumn.Border.Color1 = System.Drawing.Color.Black;
-            this.dgvBRAND.StateCommon.HeaderColumn.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.cbcSearchBrand.StateCommon.ComboBox.Border.Rounding = 5;
+            this.cbcSearchBrand.StateCommon.ComboBox.Border.Width = 2;
+            this.cbcSearchBrand.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbcSearchBrand.TabIndex = 11;
+            // 
+            // panel9
+            // 
+            this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel9.BackColor = System.Drawing.Color.White;
+            this.panel9.Controls.Add(this.label10);
+            this.panel9.Controls.Add(this.cbcSearchTienCong);
+            this.panel9.Location = new System.Drawing.Point(28, 65);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(423, 69);
+            this.panel9.TabIndex = 6;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label10.Location = new System.Drawing.Point(44, 10);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(158, 16);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Tìm kiếm theo nội dung";
+            // 
+            // cbcSearchTienCong
+            // 
+            this.cbcSearchTienCong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbcSearchTienCong.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbcSearchTienCong.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbcSearchTienCong.DropDownWidth = 266;
+            this.cbcSearchTienCong.FormattingEnabled = true;
+            this.cbcSearchTienCong.Location = new System.Drawing.Point(35, 23);
+            this.cbcSearchTienCong.Name = "cbcSearchTienCong";
+            this.cbcSearchTienCong.Size = new System.Drawing.Size(348, 29);
+            this.cbcSearchTienCong.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.DimGray;
+            this.cbcSearchTienCong.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.dgvBRAND.StateCommon.HeaderColumn.Border.Rounding = 0;
-            this.dgvBRAND.StateCommon.HeaderColumn.Border.Width = 1;
-            this.dgvBRAND.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvBRAND.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.Transparent;
-            this.dgvBRAND.StateCommon.HeaderRow.Back.Color2 = System.Drawing.Color.Transparent;
-            this.dgvBRAND.StateCommon.HeaderRow.Border.Color1 = System.Drawing.Color.Black;
-            this.dgvBRAND.StateCommon.HeaderRow.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.dgvBRAND.StateCommon.HeaderRow.Border.Rounding = 0;
-            this.dgvBRAND.StateCommon.HeaderRow.Border.Width = 1;
-            this.dgvBRAND.TabIndex = 9;
-            this.dgvBRAND.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBRAND_CellMouseClick);
-            // 
-            // kryptonDataGridView2
-            // 
-            this.kryptonDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.kryptonDataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonDataGridView2.GridStyles.Style = ComponentFactory.Krypton.Toolkit.DataGridViewStyle.Mixed;
-            this.kryptonDataGridView2.GridStyles.StyleBackground = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridHeaderColumnSheet;
-            this.kryptonDataGridView2.GridStyles.StyleColumn = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
-            this.kryptonDataGridView2.GridStyles.StyleDataCells = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
-            this.kryptonDataGridView2.GridStyles.StyleRow = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
-            this.kryptonDataGridView2.Location = new System.Drawing.Point(5, 5);
-            this.kryptonDataGridView2.Name = "kryptonDataGridView2";
-            this.kryptonDataGridView2.ReadOnly = true;
-            this.kryptonDataGridView2.RowHeadersWidth = 30;
-            this.kryptonDataGridView2.RowTemplate.Height = 24;
-            this.kryptonDataGridView2.Size = new System.Drawing.Size(544, 431);
-            this.kryptonDataGridView2.StateCommon.Background.Color1 = System.Drawing.Color.White;
-            this.kryptonDataGridView2.StateCommon.Background.Color2 = System.Drawing.Color.WhiteSmoke;
-            this.kryptonDataGridView2.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridHeaderColumnSheet;
-            this.kryptonDataGridView2.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.Black;
-            this.kryptonDataGridView2.StateCommon.DataCell.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonDataGridView2.StateCommon.DataCell.Border.Rounding = 5;
-            this.kryptonDataGridView2.StateCommon.DataCell.Border.Width = 1;
-            this.kryptonDataGridView2.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(195)))), ((int)(((byte)(236)))));
-            this.kryptonDataGridView2.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(195)))), ((int)(((byte)(236)))));
-            this.kryptonDataGridView2.StateCommon.HeaderColumn.Border.Color1 = System.Drawing.Color.Black;
-            this.kryptonDataGridView2.StateCommon.HeaderColumn.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonDataGridView2.StateCommon.HeaderColumn.Border.Rounding = 3;
-            this.kryptonDataGridView2.StateCommon.HeaderColumn.Border.Width = 1;
-            this.kryptonDataGridView2.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonDataGridView2.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonDataGridView2.StateCommon.HeaderRow.Back.Color2 = System.Drawing.Color.Transparent;
-            this.kryptonDataGridView2.StateCommon.HeaderRow.Border.Color1 = System.Drawing.Color.Black;
-            this.kryptonDataGridView2.StateCommon.HeaderRow.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonDataGridView2.StateCommon.HeaderRow.Border.Rounding = 5;
-            this.kryptonDataGridView2.StateCommon.HeaderRow.Border.Width = 1;
-            this.kryptonDataGridView2.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.panel6);
-            this.panel2.Controls.Add(this.panel7);
-            this.panel2.Location = new System.Drawing.Point(35, 106);
-            this.panel2.MinimumSize = new System.Drawing.Size(300, 200);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(423, 443);
-            this.panel2.TabIndex = 4;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // panel6
-            // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.Controls.Add(this.flowLayoutPanel1);
-            this.panel6.Location = new System.Drawing.Point(13, 353);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(386, 47);
-            this.panel6.TabIndex = 1;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AllowDrop = true;
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.Controls.Add(this.btbCANCLEB);
-            this.flowLayoutPanel1.Controls.Add(this.btbDELETEB);
-            this.flowLayoutPanel1.Controls.Add(this.btbADDB);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(5);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(379, 41);
-            this.flowLayoutPanel1.TabIndex = 1;
-            // 
-            // btbCANCLEB
-            // 
-            this.btbCANCLEB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btbCANCLEB.AutoSize = true;
-            this.btbCANCLEB.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btbCANCLEB.Location = new System.Drawing.Point(245, 3);
-            this.btbCANCLEB.Name = "btbCANCLEB";
-            this.btbCANCLEB.Size = new System.Drawing.Size(131, 35);
-            this.btbCANCLEB.TabIndex = 2;
-            this.btbCANCLEB.Text = "Hủy bỏ";
-            this.btbCANCLEB.UseVisualStyleBackColor = true;
-            this.btbCANCLEB.Click += new System.EventHandler(this.btbCANCLEB_Click);
-            // 
-            // btbDELETEB
-            // 
-            this.btbDELETEB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btbDELETEB.AutoSize = true;
-            this.btbDELETEB.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btbDELETEB.Location = new System.Drawing.Point(135, 3);
-            this.btbDELETEB.MaximumSize = new System.Drawing.Size(210, 50);
-            this.btbDELETEB.Name = "btbDELETEB";
-            this.btbDELETEB.Size = new System.Drawing.Size(104, 35);
-            this.btbDELETEB.TabIndex = 1;
-            this.btbDELETEB.Text = "Xóa";
-            this.btbDELETEB.UseVisualStyleBackColor = true;
-            this.btbDELETEB.Click += new System.EventHandler(this.btbDELETEB_Click);
-            // 
-            // btbADDB
-            // 
-            this.btbADDB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.btbADDB.AutoSize = true;
-            this.btbADDB.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btbADDB.Location = new System.Drawing.Point(3, 3);
-            this.btbADDB.Name = "btbADDB";
-            this.btbADDB.Size = new System.Drawing.Size(126, 35);
-            this.btbADDB.TabIndex = 0;
-            this.btbADDB.Text = "Thêm";
-            this.btbADDB.UseVisualStyleBackColor = true;
-            this.btbADDB.Click += new System.EventHandler(this.btbADDB_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(45, 54);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(171, 24);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Thông tin chi tiết";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(506, 54);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(191, 24);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "Danh sách hãng xe";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label7.Location = new System.Drawing.Point(30, 46);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(82, 16);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Mã hãng xe";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label6.Location = new System.Drawing.Point(30, 140);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 16);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Tên hãng xe";
-            // 
-            // panel7
-            // 
-            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.Controls.Add(this.label6);
-            this.panel7.Controls.Add(this.txtBrandName);
-            this.panel7.Controls.Add(this.label7);
-            this.panel7.Controls.Add(this.txtBRANDID);
-            this.panel7.Location = new System.Drawing.Point(13, 21);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(387, 285);
-            this.panel7.TabIndex = 0;
-            // 
-            // txtBRANDID
-            // 
-            this.txtBRANDID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBRANDID.Enabled = false;
-            this.txtBRANDID.Location = new System.Drawing.Point(21, 59);
-            this.txtBRANDID.Name = "txtBRANDID";
-            this.txtBRANDID.ReadOnly = true;
-            this.txtBRANDID.Size = new System.Drawing.Size(348, 31);
-            this.txtBRANDID.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.txtBRANDID.StateCommon.Border.Color1 = System.Drawing.Color.DimGray;
-            this.txtBRANDID.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtBRANDID.StateCommon.Border.Rounding = 5;
-            this.txtBRANDID.StateCommon.Border.Width = 2;
-            this.txtBRANDID.StateCommon.Content.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBRANDID.TabIndex = 0;
-            // 
-            // txtBrandName
-            // 
-            this.txtBrandName.AllowDrop = true;
-            this.txtBrandName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBrandName.Location = new System.Drawing.Point(21, 153);
-            this.txtBrandName.MinimumSize = new System.Drawing.Size(0, 90);
-            this.txtBrandName.Name = "txtBrandName";
-            this.txtBrandName.Size = new System.Drawing.Size(348, 90);
-            this.txtBrandName.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.txtBrandName.StateCommon.Border.Color1 = System.Drawing.Color.DimGray;
-            this.txtBrandName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtBrandName.StateCommon.Border.Rounding = 5;
-            this.txtBrandName.StateCommon.Border.Width = 2;
-            this.txtBrandName.StateCommon.Content.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBrandName.TabIndex = 6;
+            this.cbcSearchTienCong.StateCommon.ComboBox.Border.Rounding = 5;
+            this.cbcSearchTienCong.StateCommon.ComboBox.Border.Width = 2;
+            this.cbcSearchTienCong.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbcSearchTienCong.TabIndex = 11;
             // 
             // mAHIEUXEDataGridViewTextBoxColumn
             // 
@@ -828,8 +928,8 @@
             // tIENCONG1DataGridViewTextBoxColumn
             // 
             this.tIENCONG1DataGridViewTextBoxColumn.DataPropertyName = "TIENCONG1";
-            dataGridViewCellStyle2.Format = "N2";
-            this.tIENCONG1DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "N2";
+            this.tIENCONG1DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.tIENCONG1DataGridViewTextBoxColumn.HeaderText = "Tiền công";
             this.tIENCONG1DataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tIENCONG1DataGridViewTextBoxColumn.Name = "tIENCONG1DataGridViewTextBoxColumn";
@@ -866,6 +966,16 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBRAND)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView2)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -878,16 +988,12 @@
             this.panelPo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTIENCONG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).EndInit();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBRAND)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView2)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbcSearchBrand)).EndInit();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbcSearchTienCong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hIEUXEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tIENCONGBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tIENCONGBindingSource1)).EndInit();
@@ -945,5 +1051,11 @@
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtBrandName;
         private System.Windows.Forms.Label label7;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtBRANDID;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label4;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbcSearchBrand;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label10;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbcSearchTienCong;
     }
 }

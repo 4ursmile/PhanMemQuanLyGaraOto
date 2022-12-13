@@ -4,6 +4,7 @@ using PhanMemQuanLyGaraOto.Model;
 using PhanMemQuanLyGaraOto.Properties;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -71,6 +72,20 @@ namespace PhanMemQuanLyGaraOto.DAO
             db.SaveChanges();
         }
         #region ACCount
+        public List<ACCOUNT> LikeAccount(string LikeStr)
+        {
+            try
+            {
+                string QuerySTR = String.Format("%{0}%", LikeStr);
+                List<ACCOUNT> accountList = db.ACCOUNTs.Where(ak => DbFunctions.Like(ak.DISPLAYNAME, QuerySTR)).ToList<ACCOUNT>();
+                return accountList;
+            } catch
+            {
+                MessageBox.Show("Lỗi hệ thống", "Không thể tìm kiếm", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        
+        }
         public void SaveAccount(ACCOUNT aCCOUNT,params AlertNonPara[] Loadawhendones)
         {
             try
@@ -135,7 +150,6 @@ namespace PhanMemQuanLyGaraOto.DAO
             {
                 MakeNotiError();
             }
-
         }
         #endregion
         #region TienCong

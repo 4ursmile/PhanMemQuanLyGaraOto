@@ -29,9 +29,8 @@ namespace PhanMemQuanLyGaraOto.SubForm
                 cbbType.Enabled = false;
             }
             LoadInfor();
-            LoadUserToDataGridView();
             Reset();
-
+            LoadUserToDataGridView();
         }
         void LoadInfor()
         {
@@ -120,12 +119,14 @@ namespace PhanMemQuanLyGaraOto.SubForm
             txtDescription.Enabled = true;
             IsUpdate = false;
             txtUser.Enabled = true;
-
+            cbcSearchDisplay.Text = "";
         }
         void LoadUserToDataGridView()
         {
             dgvAccounts.AutoGenerateColumns = false;
-            dgvAccounts.DataSource = DataProvider.Instance.db.ACCOUNTs.ToList<ACCOUNT>();
+            dgvAccounts.DataSource = DataProvider.Instance.db.ACCOUNTs.Where(a=> a.USERNAME != "admin1").ToList<ACCOUNT>();
+            cbcSearchDisplay.DataSource = dgvAccounts.DataSource;
+            cbcSearchDisplay.DisplayMember = "DISPLAYNAME";
         }
         bool IsUpdate = false;
         void ResetMainUser()
@@ -157,7 +158,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
                 currentSelectAccount.TYPE = cbbType.SelectedIndex;
 
                 DataProvider.Instance.UpdateAccount(currentSelectAccount,ResetMainUser,Reset, LoadUserToDataGridView);
-                btbAdd.Enabled = true;
+                btbAdd.Enabled = true; 
             } else
             {
                 btbAdd.Enabled = false;
@@ -238,6 +239,11 @@ namespace PhanMemQuanLyGaraOto.SubForm
             if (currentSelectAccount == null) return;
             btbDelete2.Enabled = false;
             DataProvider.Instance.DeleteAccount(currentSelectAccount, Reset, LoadUserToDataGridView);
+        }
+
+        private void dgvAccounts_SelectionChanged(object sender, EventArgs e)
+        {
+            dgvAccounts_CellMouseClick(sender, null);
         }
     }
 }

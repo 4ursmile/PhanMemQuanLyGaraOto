@@ -45,6 +45,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
             txtContent.Text = txtPriceID.Text = "";
             nudPrice.Value = 0;
             isUpdate = false;
+            cbcSearchTienCong.Text = "";
 
         }
         bool isUpdateB;
@@ -65,6 +66,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
             btbADDB.Text = "Thêm";
             txtBrandName.Text = txtBRANDID.Text = "";
             isUpdateB = false;
+            cbcSearchBrand.Text = "";
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -92,6 +94,8 @@ namespace PhanMemQuanLyGaraOto.SubForm
         {
             dgvTIENCONG.AutoGenerateColumns = false;
             dgvTIENCONG.DataSource = DataProvider.Instance.db.TIENCONGs.ToList<TIENCONG>();
+            cbcSearchTienCong.DataSource = dgvTIENCONG.DataSource;
+            cbcSearchTienCong.DisplayMember = "NOIDUNG";
         }
         private void btbAdd_Click(object sender, EventArgs e)
         {
@@ -160,7 +164,10 @@ namespace PhanMemQuanLyGaraOto.SubForm
         }
         void LoadDataToDGVBRAND()
         {
+            dgvBRAND.AutoGenerateColumns = false;
             dgvBRAND.DataSource = DataProvider.Instance.db.HIEUXEs.ToList<HIEUXE>();
+            cbcSearchBrand.DataSource = dgvBRAND.DataSource;
+            cbcSearchBrand.DisplayMember = "TENHIEUXE";
         }
         void UpdateViewDataBrand(HIEUXE hIEUXE)
         {
@@ -241,5 +248,16 @@ namespace PhanMemQuanLyGaraOto.SubForm
             btbDELETEB.Enabled = false;
             DataProvider.Instance.DeleteBrand(currentSelectHieuXe, LoadDataToDGVBRAND, ResetBrand);
         }
+
+        private void dgvTIENCONG_SelectionChanged(object sender, EventArgs e)
+        {
+            kryptonDataGridView1_CellMouseClick(sender, null);
+        }
+
+        private void dgvBRAND_SelectionChanged(object sender, EventArgs e)
+        {
+            dgvBRAND_CellMouseClick(sender, null);
+        }
+
     }
 }
