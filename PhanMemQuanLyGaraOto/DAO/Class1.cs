@@ -21,11 +21,6 @@ namespace PhanMemQuanLyGaraOto.DAO
     {
       
         private static DataProvider instance;
-        const string BackEndError = "Kết nối với máy chủ thất bại";
-        const string FrontEndError = "Lỗi không xác định";
-        const string strUpdate = "Cập nhật ";
-        const string strDelete = "Xóa ";
-        const string strSave = "Thêm ";
         public static DataProvider Instance { 
             get
             {
@@ -38,7 +33,16 @@ namespace PhanMemQuanLyGaraOto.DAO
         {
             db = new GARAOTOEntities();
         }
-
+        public void SaveChange()
+        {
+            db.SaveChanges();
+        }
+        #region Noti
+        const string BackEndError = "Kết nối với máy chủ thất bại";
+        const string FrontEndError = "Lỗi không xác định";
+        const string strUpdate = "Cập nhật ";
+        const string strDelete = "Xóa ";
+        const string strSave = "Thêm ";
         void MakeNotiError(string ActionName = "Thay đổi", string resson = "Kết nối với máy chủ thất bại")
         {
             string path1 = new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.FullName;
@@ -67,10 +71,8 @@ namespace PhanMemQuanLyGaraOto.DAO
                 .AddAppLogoOverride(new Uri(path3), ToastGenericAppLogoCrop.Circle)
                 .Show(toast => toast.ExpirationTime = DateTime.Now.AddSeconds(1));
         }
-        public void SaveChange()
-        {
-            db.SaveChanges();
-        }
+        #endregion
+
         #region ACCount
         public List<ACCOUNT> LikeAccount(string LikeStr)
         {
@@ -292,6 +294,97 @@ namespace PhanMemQuanLyGaraOto.DAO
                 return;
             }
 
+        }
+        #endregion
+        #region Customer
+        public void SaveCustomer(CHUXE CHUXE, params AlertNonPara[] Loadawhendones)
+        {
+            try
+            {
+                if (CHUXE == null)
+                {
+                    MakeNotiError(strSave + nameof(CHUXE), FrontEndError);
+                    return ;
+                }
+                db.CHUXEs.Add(CHUXE);
+                db.SaveChanges();
+                foreach (var donefunc in Loadawhendones)
+                {
+                    donefunc?.Invoke();
+                }
+                MakeNotiSuccess(strSave + nameof(CHUXE));
+            }
+            catch
+            {
+                MessageBox.Show("Lưu thất bại, Kết nối với máy chủ bị  gián đoạn", "Lỗi kết nối đến máy chủ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MakeNotiError(strSave + nameof(CHUXE), BackEndError);
+                return;
+            }
+
+        }
+        public void UpdateCustomer(CHUXE CHUXE, params AlertNonPara[] LoadWhendones)
+        {
+            try
+            {
+                if (CHUXE == null) return;
+                CHUXE tmp = db.CHUXEs.Where(a => a.MACHUXE == CHUXE.MACHUXE).FirstOrDefault();
+                if (tmp == null)
+                {
+                    MakeNotiError(strUpdate + nameof(CHUXE), FrontEndError);
+                    return;
+                }
+                db.Entry(tmp).CurrentValues.SetValues(CHUXE);
+                SaveChange();
+                MakeNotiSuccess(strUpdate + nameof(CHUXE));
+                foreach (var func in LoadWhendones)
+                {
+                    func?.Invoke();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Cập nhật thất bại, Kết nối với máy chủ bị gián đoạn", "Lỗi kết nối đến máy chủ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MakeNotiError(strUpdate + nameof(CHUXE), BackEndError);
+                return;
+            }
+
+        }
+        public void DeleteCustomer(CHUXE CHUXE, params AlertNonPara[] LoadWhendones)
+        {
+            try
+            {
+                CHUXE tmp = db.CHUXEs.Where(a => a.MACHUXE == CHUXE.MACHUXE).FirstOrDefault();
+                if (tmp == null)
+                {
+                    MakeNotiError(strDelete + nameof(CHUXE), FrontEndError);
+                    return;
+                }
+                db.CHUXEs.Remove(tmp);
+                db.SaveChanges();
+                MakeNotiSuccess(strDelete + nameof(CHUXE));
+                foreach (var func in LoadWhendones)
+                {
+                    func?.Invoke();
+                }
+            }
+            catch (Exception e)
+            {
+                MakeNotiError(strDelete + nameof(CHUXE), BackEndError);
+                MessageBox.Show("Xóa thất bại ", e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+        }
+        public bool CustomerCheckContainerSDT(string sdt, CHUXE Cus = null)
+        {
+            List<CHUXE> k;
+            if (Cus != null)
+                k = db.CHUXEs.Where(a => a.DIENTHOAI == sdt && a.MACHUXE != Cus.MACHUXE).ToList<CHUXE>();
+            else
+                k = db.CHUXEs.Where(a => a.DIENTHOAI == sdt).ToList<CHUXE>();
+            if (k.Count == 0)
+                return false;
+            return true;
         }
         #endregion
     }
