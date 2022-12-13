@@ -44,6 +44,9 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbcSearchDisplay = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -80,6 +83,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbcSearchDisplay)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -281,6 +286,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.panel2);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.panel3);
@@ -294,12 +300,55 @@
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.cbcSearchDisplay);
+            this.panel2.Location = new System.Drawing.Point(8, 40);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(392, 69);
+            this.panel2.TabIndex = 5;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label7.Location = new System.Drawing.Point(44, 9);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(174, 16);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Tìm kiếm theo tên hiển thị";
+            // 
+            // cbcSearchDisplay
+            // 
+            this.cbcSearchDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbcSearchDisplay.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbcSearchDisplay.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbcSearchDisplay.DropDownWidth = 266;
+            this.cbcSearchDisplay.FormattingEnabled = true;
+            this.cbcSearchDisplay.Location = new System.Drawing.Point(35, 23);
+            this.cbcSearchDisplay.Name = "cbcSearchDisplay";
+            this.cbcSearchDisplay.Size = new System.Drawing.Size(318, 29);
+            this.cbcSearchDisplay.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.DimGray;
+            this.cbcSearchDisplay.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.cbcSearchDisplay.StateCommon.ComboBox.Border.Rounding = 5;
+            this.cbcSearchDisplay.StateCommon.ComboBox.Border.Width = 2;
+            this.cbcSearchDisplay.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbcSearchDisplay.TabIndex = 11;
+            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(414, 16);
+            this.label2.Location = new System.Drawing.Point(414, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(203, 24);
             this.label2.TabIndex = 4;
@@ -309,7 +358,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 16);
+            this.label1.Location = new System.Drawing.Point(16, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(171, 24);
             this.label1.TabIndex = 3;
@@ -324,10 +373,10 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(8, 56);
+            this.panel3.Location = new System.Drawing.Point(8, 115);
             this.panel3.MinimumSize = new System.Drawing.Size(300, 200);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(393, 474);
+            this.panel3.Size = new System.Drawing.Size(393, 415);
             this.panel3.TabIndex = 2;
             // 
             // panel5
@@ -335,7 +384,7 @@
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.Controls.Add(this.flowLayoutPanel2);
-            this.panel5.Location = new System.Drawing.Point(13, 410);
+            this.panel5.Location = new System.Drawing.Point(13, 351);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(356, 47);
             this.panel5.TabIndex = 1;
@@ -414,9 +463,9 @@
             this.panel4.Controls.Add(this.txtUser);
             this.panel4.Controls.Add(this.lblDisplay);
             this.panel4.Controls.Add(this.txtDisplay);
-            this.panel4.Location = new System.Drawing.Point(13, 21);
+            this.panel4.Location = new System.Drawing.Point(13, 14);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(357, 383);
+            this.panel4.Size = new System.Drawing.Size(357, 331);
             this.panel4.TabIndex = 0;
             // 
             // label6
@@ -463,7 +512,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label5.Location = new System.Drawing.Point(30, 259);
+            this.label5.Location = new System.Drawing.Point(30, 244);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(42, 16);
             this.label5.TabIndex = 7;
@@ -475,10 +524,10 @@
             this.txtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDescription.Location = new System.Drawing.Point(21, 272);
-            this.txtDescription.MinimumSize = new System.Drawing.Size(0, 90);
+            this.txtDescription.Location = new System.Drawing.Point(21, 257);
+            this.txtDescription.MinimumSize = new System.Drawing.Size(0, 70);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(318, 90);
+            this.txtDescription.Size = new System.Drawing.Size(318, 70);
             this.txtDescription.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.txtDescription.StateCommon.Border.Color1 = System.Drawing.Color.DimGray;
             this.txtDescription.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -584,10 +633,10 @@
             this.btbDelete.BackColor = System.Drawing.Color.DarkCyan;
             this.btbDelete.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.btbDelete.Controls.Add(this.dgvAccounts);
-            this.btbDelete.Location = new System.Drawing.Point(412, 56);
+            this.btbDelete.Location = new System.Drawing.Point(412, 40);
             this.btbDelete.Name = "btbDelete";
             this.btbDelete.Padding = new System.Windows.Forms.Padding(5);
-            this.btbDelete.Size = new System.Drawing.Size(594, 474);
+            this.btbDelete.Size = new System.Drawing.Size(594, 490);
             this.btbDelete.TabIndex = 1;
             // 
             // dgvAccounts
@@ -613,7 +662,7 @@
             this.dgvAccounts.ReadOnly = true;
             this.dgvAccounts.RowHeadersWidth = 30;
             this.dgvAccounts.RowTemplate.Height = 24;
-            this.dgvAccounts.Size = new System.Drawing.Size(582, 462);
+            this.dgvAccounts.Size = new System.Drawing.Size(582, 478);
             this.dgvAccounts.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.dgvAccounts.StateCommon.Background.Color2 = System.Drawing.Color.WhiteSmoke;
             this.dgvAccounts.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridHeaderColumnSheet;
@@ -643,6 +692,7 @@
             this.dgvAccounts.TabIndex = 0;
             this.dgvAccounts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccounts_CellContentClick);
             this.dgvAccounts.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvAccounts_CellMouseClick);
+            this.dgvAccounts.SelectionChanged += new System.EventHandler(this.dgvAccounts_SelectionChanged);
             // 
             // uSERIDDataGridViewTextBoxColumn
             // 
@@ -675,12 +725,12 @@
             // 
             // dISPLAYNAMEDataGridViewTextBoxColumn
             // 
+            this.dISPLAYNAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dISPLAYNAMEDataGridViewTextBoxColumn.DataPropertyName = "DISPLAYNAME";
             this.dISPLAYNAMEDataGridViewTextBoxColumn.HeaderText = "Tên hiển thị";
             this.dISPLAYNAMEDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dISPLAYNAMEDataGridViewTextBoxColumn.Name = "dISPLAYNAMEDataGridViewTextBoxColumn";
             this.dISPLAYNAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dISPLAYNAMEDataGridViewTextBoxColumn.Width = 125;
             // 
             // dESCRIPTIONDataGridViewTextBoxColumn
             // 
@@ -725,6 +775,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbcSearchDisplay)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -773,17 +826,20 @@
         private System.Windows.Forms.Label label5;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtDescription;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbbType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn uSERIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn uSERNAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pASSWORDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dISPLAYNAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dESCRIPTIONDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tYPEDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btbCancel;
         private System.Windows.Forms.Button btbDelete2;
         private System.Windows.Forms.Button btbAdd;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uSERIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uSERNAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pASSWORDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dISPLAYNAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dESCRIPTIONDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tYPEDataGridViewTextBoxColumn;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbcSearchDisplay;
     }
 }

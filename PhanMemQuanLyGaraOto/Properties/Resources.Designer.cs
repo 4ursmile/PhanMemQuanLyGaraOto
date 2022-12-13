@@ -83,6 +83,16 @@ namespace PhanMemQuanLyGaraOto.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap error {
+            get {
+                object obj = ResourceManager.GetObject("error", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FormExit {
             get {
                 object obj = ResourceManager.GetObject("FormExit", resourceCulture);
@@ -316,6 +326,16 @@ namespace PhanMemQuanLyGaraOto.Properties {
         internal static System.Drawing.Bitmap StaffAvatar {
             get {
                 object obj = ResourceManager.GetObject("StaffAvatar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap succes {
+            get {
+                object obj = ResourceManager.GetObject("succes", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

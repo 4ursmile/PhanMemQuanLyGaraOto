@@ -14,6 +14,7 @@ using System.Configuration;
 using System.Xml;
 using PhanMemQuanLyGaraOto.Model;
 using PhanMemQuanLyGaraOto.DDo;
+using CommunityToolkit.WinUI.Notifications;
 
 namespace PhanMemQuanLyGaraOto
 {
@@ -26,7 +27,7 @@ namespace PhanMemQuanLyGaraOto
             LoiChucInit();
             users = new ListUser { ListU = new List<User>(), SelectedIndex = 0};
             LoadUser();
-
+            ToastNotificationManagerCompat.History.Clear();
         }
 
         ListUser users;
@@ -196,6 +197,7 @@ namespace PhanMemQuanLyGaraOto
 
         private void SigninButton_Click(object sender, EventArgs e)
         {
+
             SwitchStateAll(false);
             ACCOUNT account;
             int resStatus = DDOpassword.Ins.CheckPassWord(UserComboBox.Text, PassWordText.Text, out account);
