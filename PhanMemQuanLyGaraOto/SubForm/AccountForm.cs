@@ -114,6 +114,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
             cbbType.SelectedIndex = 2;
             txtDescription.Text = txtDisplay.Text = txtPassword.Text = txtUser.Text = "";
             btbAdd.Text = "Thêm";
+            btbAdd.Enabled = true;
             txtPassword.Enabled = true;
             txtDisplay.Enabled = true;
             txtDescription.Enabled = true;
@@ -140,6 +141,12 @@ namespace PhanMemQuanLyGaraOto.SubForm
             btbAdd.Enabled = false;
             if (IsUpdate)
             {
+                if (txtUser.Text == "" || txtPassword.Text == "")
+                {
+                    MessageBox.Show("Tên đăng nhập và mật khẩu là bắt buộc!", "Không hợp lệ");
+                    btbAdd.Enabled = true;
+                    return;
+                }
                 if (txtPassword.Text != "Edit to change password")
                     currentSelectAccount.PASSWORD = SuperHash.GetHashPassWord(txtPassword.Text);
                 else
@@ -157,6 +164,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
                 if (txtUser.Text == "" || txtPassword.Text == "")
                 {
                     MessageBox.Show("Tên đăng nhập và mật khẩu là bắt buộc!", "Không hợp lệ");
+                    btbAdd.Enabled = true;
                     return;
                 }
                 currentSelectAccount.DESCRIPTION = txtDescription.Text;
@@ -183,11 +191,13 @@ namespace PhanMemQuanLyGaraOto.SubForm
                 txtDisplay.Enabled = false;
                 txtDescription.Enabled = false;
                 btbDelete2.Enabled = false;
+                btbAdd.Enabled=false;
             } else
             {
                 btbDelete2.Enabled = true;
                 txtDisplay.Enabled = true;
                 txtPassword.Enabled = true;
+                btbAdd.Enabled = true;
                 txtDescription.Enabled = true;
             }
             if (UniversalUser.Ins.account.TYPE != 0)

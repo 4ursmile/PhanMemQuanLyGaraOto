@@ -30,6 +30,8 @@ namespace PhanMemQuanLyGaraOto
             currentButton.BackColor = selectColor;
             MenuButton_Click(AccountButton as object,null);
 
+
+
             SetInformation();
         }
         void SetInformation()
