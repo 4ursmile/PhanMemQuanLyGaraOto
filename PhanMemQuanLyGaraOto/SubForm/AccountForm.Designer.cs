@@ -286,7 +286,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tabPage2.Controls.Add(this.panel2);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.label1);
@@ -298,6 +297,7 @@
             this.tabPage2.Size = new System.Drawing.Size(1012, 538);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Quản lý tài khoản";
+            this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // panel2
@@ -330,7 +330,6 @@
             this.cbcSearchDisplay.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbcSearchDisplay.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbcSearchDisplay.DropDownWidth = 266;
-            this.cbcSearchDisplay.FormattingEnabled = true;
             this.cbcSearchDisplay.Location = new System.Drawing.Point(35, 23);
             this.cbcSearchDisplay.Name = "cbcSearchDisplay";
             this.cbcSearchDisplay.Size = new System.Drawing.Size(318, 29);
