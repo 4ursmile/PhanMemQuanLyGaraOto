@@ -14,8 +14,9 @@ namespace PhanMemQuanLyGaraOto.Model
     
     public partial class BAOCAOTON
     {
-        public System.DateTime THANGNAM { get; set; }
-        public int MAPHUTUNG { get; set; }
+        public int MABAOCAOTON { get; set; }
+        public Nullable<System.DateTime> THANGNAM { get; set; }
+        public Nullable<int> MAPHUTUNG { get; set; }
         public Nullable<int> TONDAU { get; set; }
         public Nullable<int> SLNHAP { get; set; }
         public Nullable<int> SLBAN { get; set; }

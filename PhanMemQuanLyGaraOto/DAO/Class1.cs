@@ -49,7 +49,7 @@ namespace PhanMemQuanLyGaraOto.DAO
                                              {
                                                  CarId = x.MAXE,
                                                  CarBrand = b.TENHIEUXE,
-                                                 CarNumber = x.BIENXO,
+                                                 CarNumber = x.BIENSO,
                                                  CarOwnerName = c.TENCHUXE,
                                                  CarOwnerTele =  c.DIENTHOAI,
                                                  DateIn = x.NGAYTIEPNHAN.Value,
@@ -190,12 +190,13 @@ namespace PhanMemQuanLyGaraOto.DAO
                 if (tIENCONG == null) return;
                 db.TIENCONGs.Add(tIENCONG);
                 db.SaveChanges();
+                ReloadDataEvent.Ins.Alert(DataType.Money);
+
                 foreach (var donefunc in Loadawhendones)
                 {
                     donefunc?.Invoke();
                 }
                 MakeNotiSuccess();
-                ReloadDataEvent.Ins.Alert(DataType.Money);
             }
             catch
             {
@@ -217,11 +218,12 @@ namespace PhanMemQuanLyGaraOto.DAO
                 db.Entry(tmp).CurrentValues.SetValues(tIENCONG);
                 SaveChange();
                 MakeNotiSuccess();
+                ReloadDataEvent.Ins.Alert(DataType.Money);
+
                 foreach (var func in LoadWhendones)
                 {
                     func?.Invoke();
                 }
-                ReloadDataEvent.Ins.Alert(DataType.Money);
             }
             catch
             {
@@ -265,12 +267,13 @@ namespace PhanMemQuanLyGaraOto.DAO
                 if (hIEUXE == null) return;
                 db.HIEUXEs.Add(hIEUXE);
                 db.SaveChanges();
+                ReloadDataEvent.Ins.Alert(DataType.Brand);
+
                 foreach (var donefunc in Loadawhendones)
                 {
                     donefunc?.Invoke();
                 }
                 MakeNotiSuccess(strSave + nameof(HIEUXE));
-                ReloadDataEvent.Ins.Alert(DataType.Brand);
             }
             catch
             {
@@ -341,8 +344,8 @@ namespace PhanMemQuanLyGaraOto.DAO
         #region Customer
         public void SaveCustomer(CHUXE CHUXE, params AlertNonPara[] Loadawhendones)
         {
-            //try
-            //{
+            try
+            {
                 if (CHUXE == null)
                 {
                     MakeNotiError(strSave + nameof(CHUXE), FrontEndError);
@@ -350,21 +353,21 @@ namespace PhanMemQuanLyGaraOto.DAO
                 }
                 db.CHUXEs.Add(CHUXE);
                 db.SaveChanges();
+                ReloadDataEvent.Ins.Alert(DataType.Customer);
                 foreach (var donefunc in Loadawhendones)
                 {
                     donefunc?.Invoke();
                 }
                 MakeNotiSuccess(strSave + nameof(CHUXE));
-                ReloadDataEvent.Ins.Alert(DataType.Customer);
-            //}
-            //catch
-            //{
-            //    MessageBox.Show("Lưu thất bại, Kết nối với máy chủ bị  gián đoạn", "Lỗi kết nối đến máy chủ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    MakeNotiError(strSave + nameof(CHUXE), BackEndError);
-            //    return;
-            //}
+            }
+            catch
+            {
+                MessageBox.Show("Lưu thất bại, Kết nối với máy chủ bị  gián đoạn", "Lỗi kết nối đến máy chủ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MakeNotiError(strSave + nameof(CHUXE), BackEndError);
+                return;
+            }
 
-        }
+}
         public void UpdateCustomer(CHUXE CHUXE, params AlertNonPara[] LoadWhendones)
         {
             try
@@ -380,11 +383,12 @@ namespace PhanMemQuanLyGaraOto.DAO
                 db.Entry(tmp).CurrentValues.SetValues(CHUXE);
                 SaveChange();
                 MakeNotiSuccess(strUpdate + nameof(CHUXE));
+                ReloadDataEvent.Ins.Alert(DataType.Customer);
+
                 foreach (var func in LoadWhendones)
                 {
                     func?.Invoke();
                 }
-                ReloadDataEvent.Ins.Alert(DataType.Customer);
             }
             catch
             {
@@ -408,11 +412,12 @@ namespace PhanMemQuanLyGaraOto.DAO
                 db.CHUXEs.Remove(tmp);
                 db.SaveChanges();
                 MakeNotiSuccess(strDelete + nameof(CHUXE));
+                ReloadDataEvent.Ins.Alert(DataType.Customer);
+
                 foreach (var func in LoadWhendones)
                 {
                     func?.Invoke();
                 }
-                ReloadDataEvent.Ins.Alert(DataType.Customer);
             }
             catch (Exception e)
             {
@@ -451,12 +456,12 @@ namespace PhanMemQuanLyGaraOto.DAO
                 }
                 db.XEs.Add(XE);
                 db.SaveChanges();
+                MakeNotiSuccess(strSave + nameof(XE));
+                ReloadDataEvent.Ins.Alert(DataType.Car);
                 foreach (var donefunc in Loadawhendones)
                 {
                     donefunc?.Invoke();
                 }
-                MakeNotiSuccess(strSave + nameof(XE));
-                ReloadDataEvent.Ins.Alert(DataType.Car);
             }
             catch
             {
@@ -480,12 +485,12 @@ namespace PhanMemQuanLyGaraOto.DAO
                 }
                 db.Entry(tmp).CurrentValues.SetValues(XE);
                 SaveChange();
+                ReloadDataEvent.Ins.Alert(DataType.Car);
                 MakeNotiSuccess(strUpdate + nameof(XE));
                 foreach (var func in LoadWhendones)
                 {
                     func?.Invoke();
                 }
-                ReloadDataEvent.Ins.Alert(DataType.Car);
             }
             catch
             {
@@ -509,11 +514,12 @@ namespace PhanMemQuanLyGaraOto.DAO
                 db.XEs.Remove(tmp);
                 db.SaveChanges();
                 MakeNotiSuccess(strDelete + nameof(XE));
+                ReloadDataEvent.Ins.Alert(DataType.Car);
+
                 foreach (var func in LoadWhendones)
                 {
                     func?.Invoke();
                 }
-                ReloadDataEvent.Ins.Alert(DataType.Car);
             }
             catch (Exception e)
             {

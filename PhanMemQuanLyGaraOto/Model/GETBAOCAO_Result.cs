@@ -11,9 +11,10 @@ namespace PhanMemQuanLyGaraOto.Model
 {
     using System;
     
-    public partial class sp_helpdiagramdefinition_Result
+    public partial class GETBAOCAO_Result
     {
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int MABAOCAO { get; set; }
+        public Nullable<System.DateTime> THANGNAM { get; set; }
+        public Nullable<decimal> TONGDOANHTHU { get; set; }
     }
 }

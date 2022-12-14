@@ -30,20 +30,29 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
                 isUpdate = true;
             LoadWhenDones = func;
             LoadHieuXe();
+            AddCustomerBiding();
             if (isUpdate)
             {
 
             } else
             {
-                AddCustomerBiding();
             }
+            isNewCustomer = false;
         }
         void SwitchStateCustomerInfor(bool State = true)
         {
-            foreach(TextBox txt in pnlCusInfor.Controls.OfType<TextBox>())
+            if (State)
+            {
+                foreach (TextBox txt in pnlCusInfor.Controls.OfType<TextBox>())
+                {
+                    txt.DataBindings.Clear();
+                }
+            }
+            foreach (TextBox txt in pnlCusInfor.Controls.OfType<TextBox>())
             {
                 txt.Enabled = State;
             }
+
         }
         void AddCustomerBiding()
         {
@@ -104,29 +113,33 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
         private void cbcCusSDT_SelectedValueChanged(object sender, EventArgs e)
         {
         }
-
+        bool isNewCustomer;
         private void cbcCusSDT_Leave(object sender, EventArgs e)
         {
             if (cbcCusSDT.FindString(cbcCusSDT.Text) < 0)
             {
                 SwitchStateCustomerInfor(true);
                 txtHoten.Focus();
+                isNewCustomer = true;
             }
         }
 
         private void btbSave_Click(object sender, EventArgs e)
         {
-            currentCustomer = new CHUXE();
-            currentCustomer.DIENTHOAI = cbcCusSDT.Text;
-            currentCustomer.TENCHUXE = txtHoten.Text;
-            currentCustomer.EMAIL = txtEmail.Text;
-            currentCustomer.DIACHI = txtDiaChi.Text;
-            DataProvider.Instance.SaveCustomer(currentCustomer);
-            currentCustomer = DataProvider.Instance.GetCHUXEBYSDT(currentCustomer.DIENTHOAI);
+            if (isNewCustomer)
+            {
+                currentCustomer = new CHUXE();
+                currentCustomer.DIENTHOAI = cbcCusSDT.Text;
+                currentCustomer.TENCHUXE = txtHoten.Text;
+                currentCustomer.EMAIL = txtEmail.Text;
+                currentCustomer.DIACHI = txtDiaChi.Text;
+                DataProvider.Instance.SaveCustomer(currentCustomer);
+            }
+            currentCustomer = DataProvider.Instance.GetCHUXEBYSDT(cbcCusSDT.Text);
             currentXe = new XE();
             currentXe.MAHIEUXE = (cbcBrand.SelectedValue as HIEUXE).MAHIEUXE;
             currentXe.MACHUXE = currentCustomer.MACHUXE;
-            currentXe.BIENXO = txtBienSo.Text;
+            currentXe.BIENSO = txtBienSo.Text;
             currentXe.NGAYTIEPNHAN = dtpTiepNhan.Value;
             currentXe.TONGNO = 0;
             DataProvider.Instance.SaveCar(currentXe);

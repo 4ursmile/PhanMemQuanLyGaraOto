@@ -11,12 +11,11 @@ namespace PhanMemQuanLyGaraOto.Model
 {
     using System;
     
-    public partial class sp_helpdiagrams_Result
+    public partial class GETCHITIETBAOCAO_Result
     {
-        public string Database { get; set; }
-        public string Name { get; set; }
-        public int ID { get; set; }
-        public string Owner { get; set; }
-        public int OwnerID { get; set; }
+        public int MAHIEUXE { get; set; }
+        public Nullable<int> SOLUOTSUA { get; set; }
+        public Nullable<decimal> THANHTIEN { get; set; }
+        public Nullable<double> TYLE { get; set; }
     }
 }

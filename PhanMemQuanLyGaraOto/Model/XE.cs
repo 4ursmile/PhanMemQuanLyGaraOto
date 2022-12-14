@@ -22,7 +22,7 @@ namespace PhanMemQuanLyGaraOto.Model
         }
     
         public int MAXE { get; set; }
-        public string BIENXO { get; set; }
+        public string BIENSO { get; set; }
         public Nullable<int> MAHIEUXE { get; set; }
         public Nullable<int> MACHUXE { get; set; }
         public Nullable<System.DateTime> NGAYTIEPNHAN { get; set; }
