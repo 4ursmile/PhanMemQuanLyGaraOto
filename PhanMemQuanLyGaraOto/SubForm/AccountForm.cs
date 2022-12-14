@@ -80,10 +80,21 @@ namespace PhanMemQuanLyGaraOto.SubForm
         {
             UniversalAlert.Ins.AddListener(LoadInfor);
         }
+        void DiposeToRoot(Control k)
+        {
+            if (k == null) return;
+            foreach (Control e in k.Controls)
+            {
+                e.Dispose();
 
+                DiposeToRoot(e);
+            }
+            k.Dispose();
+        }
         private void AccountForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             UniversalAlert.Ins.RemoveListenr(LoadInfor);
+            DiposeToRoot(this);
         }
 
 

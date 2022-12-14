@@ -59,9 +59,20 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
         {
             this.Close();
         }
+        void DiposeToRoot(Control k)
+        {
+            if (k == null) return;
+            foreach (Control e in k.Controls)
+            {
+                e.Dispose();
 
+                DiposeToRoot(e);
+            }
+            k.Dispose();
+        }
         private void UpdateInforForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            DiposeToRoot(this);
         }
     }
 }

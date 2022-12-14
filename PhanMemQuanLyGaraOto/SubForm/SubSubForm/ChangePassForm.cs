@@ -104,5 +104,21 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
                 txtReNew.PasswordChar = SpecicalChar;
         }
         #endregion
+        void DiposeToRoot(Control k)
+        {
+            if (k == null) return;
+            foreach (Control e in k.Controls)
+            {
+                e.Dispose();
+
+                DiposeToRoot(e);
+            }
+            k.Dispose();
+        }
+        private void ChangePassForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DiposeToRoot(this);
+
+        }
     }
 }

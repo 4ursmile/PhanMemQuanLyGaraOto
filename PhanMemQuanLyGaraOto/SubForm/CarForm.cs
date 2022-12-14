@@ -38,11 +38,21 @@ namespace PhanMemQuanLyGaraOto.SubForm
         {
 
         }
+        void DiposeToRoot(Control k)
+        {
+            if (k == null) return;
+            foreach (Control e in k.Controls)
+            {
+                e.Dispose();
 
+                DiposeToRoot(e);
+            }
+            k.Dispose();
+        }
         private void CarForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             ReloadDataEvent.Ins.RemoveListerner(LoadToDGVCarComplex, DataType.Car, DataType.Brand, DataType.Customer);
-
+            DiposeToRoot(this);
         }
     }
 }

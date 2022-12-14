@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\CheckCarModel.cs" />
+    <Compile Include="DAO\DAOExtend1.cs" />
     <Compile Include="DDO\REMCheckCar.cs" />
     <Compile Include="Model\ACCOUNT.cs">
       <DependentUpon>GaraModel.tt</DependentUpon>
@@ -156,7 +157,7 @@
     </Compile>
     <Compile Include="UniversalAlert.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="DAO\Class1.cs" />
+    <Compile Include="DAO\Dataprovider.cs" />
     <Compile Include="DDO\DDOpassword.cs" />
     <Compile Include="DDO\UniversalUser.cs" />
     <Compile Include="Form1.cs">

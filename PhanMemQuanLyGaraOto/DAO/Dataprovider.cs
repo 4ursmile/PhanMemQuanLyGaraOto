@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace PhanMemQuanLyGaraOto.DAO
 {
-    public class DataProvider
+    public partial class DataProvider
     {
 
         private static DataProvider instance;

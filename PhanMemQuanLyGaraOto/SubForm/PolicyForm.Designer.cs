@@ -38,6 +38,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PolicyForm";
             this.Text = "PolicyForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PolicyForm_FormClosing);
             this.ResumeLayout(false);
 
         }

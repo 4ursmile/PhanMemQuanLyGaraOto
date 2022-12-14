@@ -136,10 +136,21 @@ namespace PhanMemQuanLyGaraOto.SubForm
         {
             dgvCustomer_CellMouseClick(sender, null);
         }
+        void DiposeToRoot(Control k)
+        {
+            if (k == null) return;
+            foreach (Control e in k.Controls)
+            {
+                e.Dispose();
 
+                DiposeToRoot(e);
+            }
+            k.Dispose();
+        }
         private void CustomerForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             ReloadDataEvent.Ins.RemoveListerner(LoadDataCusDGV, DataType.Customer);
+            DiposeToRoot(this);
         }
     }
 }

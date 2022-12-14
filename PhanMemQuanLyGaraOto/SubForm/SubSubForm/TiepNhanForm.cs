@@ -102,6 +102,7 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
 
                 DiposeToRoot(e);
             }
+            k.Dispose();
         }
         private void TiepNhanForm_FormClosing(object sender, FormClosingEventArgs e)
         {

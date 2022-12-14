@@ -34,21 +34,21 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ptbReNew = new System.Windows.Forms.PictureBox();
+            this.ptbNew = new System.Windows.Forms.PictureBox();
+            this.ptbOld = new System.Windows.Forms.PictureBox();
+            this.txtReNew = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtNew = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtOld = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.btbSavePassChange = new System.Windows.Forms.Button();
             this.txtUserName = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtOld = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txtNew = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txtReNew = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.ptbOld = new System.Windows.Forms.PictureBox();
-            this.ptbNew = new System.Windows.Forms.PictureBox();
-            this.ptbReNew = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbOld)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbNew)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbReNew)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbNew)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbOld)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -124,6 +124,88 @@
             this.panel1.Size = new System.Drawing.Size(540, 180);
             this.panel1.TabIndex = 5;
             // 
+            // ptbReNew
+            // 
+            this.ptbReNew.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ptbReNew.BackColor = System.Drawing.Color.White;
+            this.ptbReNew.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.icons8_uchiha_eyes_24;
+            this.ptbReNew.Location = new System.Drawing.Point(499, 122);
+            this.ptbReNew.Name = "ptbReNew";
+            this.ptbReNew.Size = new System.Drawing.Size(25, 23);
+            this.ptbReNew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbReNew.TabIndex = 10;
+            this.ptbReNew.TabStop = false;
+            this.ptbReNew.Click += new System.EventHandler(this.ptbReNew_Click);
+            // 
+            // ptbNew
+            // 
+            this.ptbNew.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ptbNew.BackColor = System.Drawing.Color.White;
+            this.ptbNew.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.icons8_uchiha_eyes_24;
+            this.ptbNew.Location = new System.Drawing.Point(499, 73);
+            this.ptbNew.Name = "ptbNew";
+            this.ptbNew.Size = new System.Drawing.Size(25, 23);
+            this.ptbNew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbNew.TabIndex = 9;
+            this.ptbNew.TabStop = false;
+            this.ptbNew.Click += new System.EventHandler(this.ptbNew_Click);
+            // 
+            // ptbOld
+            // 
+            this.ptbOld.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ptbOld.BackColor = System.Drawing.Color.White;
+            this.ptbOld.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.icons8_uchiha_eyes_24;
+            this.ptbOld.Location = new System.Drawing.Point(499, 20);
+            this.ptbOld.Name = "ptbOld";
+            this.ptbOld.Size = new System.Drawing.Size(25, 23);
+            this.ptbOld.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbOld.TabIndex = 8;
+            this.ptbOld.TabStop = false;
+            this.ptbOld.Click += new System.EventHandler(this.ptbOld_Click);
+            // 
+            // txtReNew
+            // 
+            this.txtReNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtReNew.Location = new System.Drawing.Point(202, 118);
+            this.txtReNew.Name = "txtReNew";
+            this.txtReNew.PasswordChar = '•';
+            this.txtReNew.Size = new System.Drawing.Size(325, 31);
+            this.txtReNew.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtReNew.StateCommon.Border.Rounding = 6;
+            this.txtReNew.TabIndex = 7;
+            this.txtReNew.TextChanged += new System.EventHandler(this.txtReNew_TextChanged);
+            // 
+            // txtNew
+            // 
+            this.txtNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNew.Location = new System.Drawing.Point(202, 69);
+            this.txtNew.Name = "txtNew";
+            this.txtNew.PasswordChar = '•';
+            this.txtNew.Size = new System.Drawing.Size(325, 31);
+            this.txtNew.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtNew.StateCommon.Border.Rounding = 6;
+            this.txtNew.TabIndex = 6;
+            // 
+            // txtOld
+            // 
+            this.txtOld.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtOld.Location = new System.Drawing.Point(202, 16);
+            this.txtOld.Name = "txtOld";
+            this.txtOld.PasswordChar = '•';
+            this.txtOld.Size = new System.Drawing.Size(325, 31);
+            this.txtOld.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtOld.StateCommon.Border.Rounding = 6;
+            this.txtOld.TabIndex = 5;
+            // 
             // btbSavePassChange
             // 
             this.btbSavePassChange.BackColor = System.Drawing.Color.White;
@@ -176,88 +258,6 @@
             this.panel2.Size = new System.Drawing.Size(545, 38);
             this.panel2.TabIndex = 9;
             // 
-            // txtOld
-            // 
-            this.txtOld.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOld.Location = new System.Drawing.Point(202, 16);
-            this.txtOld.Name = "txtOld";
-            this.txtOld.PasswordChar = '•';
-            this.txtOld.Size = new System.Drawing.Size(325, 31);
-            this.txtOld.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtOld.StateCommon.Border.Rounding = 6;
-            this.txtOld.TabIndex = 5;
-            // 
-            // txtNew
-            // 
-            this.txtNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNew.Location = new System.Drawing.Point(202, 69);
-            this.txtNew.Name = "txtNew";
-            this.txtNew.PasswordChar = '•';
-            this.txtNew.Size = new System.Drawing.Size(325, 31);
-            this.txtNew.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtNew.StateCommon.Border.Rounding = 6;
-            this.txtNew.TabIndex = 6;
-            // 
-            // txtReNew
-            // 
-            this.txtReNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtReNew.Location = new System.Drawing.Point(202, 118);
-            this.txtReNew.Name = "txtReNew";
-            this.txtReNew.PasswordChar = '•';
-            this.txtReNew.Size = new System.Drawing.Size(325, 31);
-            this.txtReNew.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtReNew.StateCommon.Border.Rounding = 6;
-            this.txtReNew.TabIndex = 7;
-            this.txtReNew.TextChanged += new System.EventHandler(this.txtReNew_TextChanged);
-            // 
-            // ptbOld
-            // 
-            this.ptbOld.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ptbOld.BackColor = System.Drawing.Color.White;
-            this.ptbOld.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.icons8_uchiha_eyes_24;
-            this.ptbOld.Location = new System.Drawing.Point(499, 20);
-            this.ptbOld.Name = "ptbOld";
-            this.ptbOld.Size = new System.Drawing.Size(25, 23);
-            this.ptbOld.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ptbOld.TabIndex = 8;
-            this.ptbOld.TabStop = false;
-            this.ptbOld.Click += new System.EventHandler(this.ptbOld_Click);
-            // 
-            // ptbNew
-            // 
-            this.ptbNew.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ptbNew.BackColor = System.Drawing.Color.White;
-            this.ptbNew.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.icons8_uchiha_eyes_24;
-            this.ptbNew.Location = new System.Drawing.Point(499, 73);
-            this.ptbNew.Name = "ptbNew";
-            this.ptbNew.Size = new System.Drawing.Size(25, 23);
-            this.ptbNew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ptbNew.TabIndex = 9;
-            this.ptbNew.TabStop = false;
-            this.ptbNew.Click += new System.EventHandler(this.ptbNew_Click);
-            // 
-            // ptbReNew
-            // 
-            this.ptbReNew.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ptbReNew.BackColor = System.Drawing.Color.White;
-            this.ptbReNew.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.icons8_uchiha_eyes_24;
-            this.ptbReNew.Location = new System.Drawing.Point(499, 122);
-            this.ptbReNew.Name = "ptbReNew";
-            this.ptbReNew.Size = new System.Drawing.Size(25, 23);
-            this.ptbReNew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ptbReNew.TabIndex = 10;
-            this.ptbReNew.TabStop = false;
-            this.ptbReNew.Click += new System.EventHandler(this.ptbReNew_Click);
-            // 
             // ChangePassForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -274,12 +274,13 @@
             this.Name = "ChangePassForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ChangePassForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ChangePassForm_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ptbOld)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbNew)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbReNew)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbNew)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbOld)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
