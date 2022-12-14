@@ -13,6 +13,8 @@ namespace PhanMemQuanLyGaraOto.SubForm
         HIEUXE currentSelectHieuXe;
         public BrandForm()
         {
+            ReloadDataEvent.Ins.Addlistener(LoadDataToDGVBRAND, DataType.Brand);
+            ReloadDataEvent.Ins.Addlistener(LoadDataToDGV, DataType.Money);
             InitializeComponent();
             ResetBrand();
             LoadDataToDGVBRAND();
@@ -77,7 +79,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
         {
             if (cuurentSelectTienCong == null) return;
             btbDelete2.Enabled = false;
-            DataProvider.Instance.DeleteTienCong(cuurentSelectTienCong, LoadDataToDGV, Reset);
+            DataProvider.Instance.DeleteTienCong(cuurentSelectTienCong, Reset);
 
         }
 
@@ -107,7 +109,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
                 cuurentSelectTienCong.TIENCONG1 = nudPrice.Value;
                 cuurentSelectTienCong.NOIDUNG = txtContent.Text;
                 cuurentSelectTienCong.MANDTC = Convert.ToInt32(txtPriceID.Text);
-                DataProvider.Instance.UpdateTienCong(cuurentSelectTienCong, LoadDataToDGV, Reset);
+                DataProvider.Instance.UpdateTienCong(cuurentSelectTienCong, Reset);
             }
             else
             {
@@ -120,7 +122,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
                 cuurentSelectTienCong = new TIENCONG();
                 cuurentSelectTienCong.NOIDUNG = txtContent.Text;
                 cuurentSelectTienCong.TIENCONG1 = nudPrice.Value;
-                DataProvider.Instance.SaveTienCong(cuurentSelectTienCong, LoadDataToDGV, Reset);
+                DataProvider.Instance.SaveTienCong(cuurentSelectTienCong, Reset);
             }
         }
         void UpdateViewData(TIENCONG tIENCONG)
@@ -214,7 +216,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
                     return;
                 }
                 currentSelectHieuXe.TENHIEUXE = txtBrandName.Text;
-                DataProvider.Instance.UpdateBrand(currentSelectHieuXe, LoadDataToDGVBRAND, ResetBrand);
+                DataProvider.Instance.UpdateBrand(currentSelectHieuXe, ResetBrand);
             }
             else
             {
@@ -226,7 +228,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
                 }
                 currentSelectHieuXe = new HIEUXE();
                 currentSelectHieuXe.TENHIEUXE = txtBrandName.Text;
-                DataProvider.Instance.SaveBrand(currentSelectHieuXe, LoadDataToDGVBRAND, ResetBrand);
+                DataProvider.Instance.SaveBrand(currentSelectHieuXe, ResetBrand);
 
             }
         }
@@ -244,7 +246,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
                 return;
             }
             btbDELETEB.Enabled = false;
-            DataProvider.Instance.DeleteBrand(currentSelectHieuXe, LoadDataToDGVBRAND, ResetBrand);
+            DataProvider.Instance.DeleteBrand(currentSelectHieuXe, ResetBrand);
         }
 
         private void dgvTIENCONG_SelectionChanged(object sender, EventArgs e)
@@ -256,6 +258,22 @@ namespace PhanMemQuanLyGaraOto.SubForm
         {
             dgvBRAND_CellMouseClick(sender, null);
         }
+        void DiposeToRoot(Control k)
+        {
+            if (k == null) return;
+            foreach (Control e in k.Controls)
+            {
+                e.Dispose();
 
+                DiposeToRoot(e);
+            }
+            k.Dispose();
+        }
+        private void BrandForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ReloadDataEvent.Ins.RemoveListerner(LoadDataToDGVBRAND, DataType.Brand);
+            ReloadDataEvent.Ins.RemoveListerner(LoadDataToDGV, DataType.Money);
+            DiposeToRoot(this);
+        }
     }
 }

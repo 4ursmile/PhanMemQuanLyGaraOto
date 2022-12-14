@@ -966,6 +966,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BrandForm";
             this.Text = "BrandForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BrandForm_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

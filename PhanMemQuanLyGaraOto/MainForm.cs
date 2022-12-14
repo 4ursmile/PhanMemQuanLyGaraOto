@@ -70,7 +70,9 @@ namespace PhanMemQuanLyGaraOto
                 currentButton.BackColor = Color.WhiteSmoke;
                 CurrentForm.Hide();
                 CurrentForm.Enabled = false;
+                CurrentForm.SuspendLayout();
                 CurrentForm = dicOfForms[newButton];
+                CurrentForm.ResumeLayout();
                 CurrentForm.Enabled = true;
                 CurrentForm.Show();
                 currentButton = newButton;
@@ -123,7 +125,18 @@ namespace PhanMemQuanLyGaraOto
             string target = "https://www.linkedin.com/in/bao-ly-tran-hoang-252739229/";
             System.Diagnostics.Process.Start(target);
         }
+        void DiposeToRoot(Control k)
+        {
 
+            if (k == null) return;
+            foreach (Control e in k.Controls)
+            {
+                e.Dispose();
+
+                DiposeToRoot(e);
+            }
+            k.Dispose();
+        }
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (ExitInforHolder.isQuit == false)
@@ -142,9 +155,12 @@ namespace PhanMemQuanLyGaraOto
             UniversalAlert.Ins.RemoveListenr(SetInformation);
             foreach (var k in dicOfForms)
             {
+                k.Value.SuspendLayout();
                 k.Value.Close();
                 k.Value.Dispose();
             }
+            DiposeToRoot(this);
+            this.SuspendLayout();
             this.Dispose();
         }
         #endregion

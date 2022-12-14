@@ -32,6 +32,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btbDelete = new System.Windows.Forms.Panel();
             this.dgvCustomer = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.mACHUXEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tENCHUXEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dIENTHOAIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dIACHIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.xEsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cHUXEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.cbcSearchSDT = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
@@ -53,22 +60,15 @@
             this.txtHOTEN = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.lblDisplay = new System.Windows.Forms.Label();
             this.txtCID = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.mACHUXEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tENCHUXEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dIENTHOAIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dIACHIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.xEsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cHUXEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btbDelete.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cHUXEBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbcSearchSDT)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cHUXEBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -148,6 +148,65 @@
             this.dgvCustomer.TabIndex = 0;
             this.dgvCustomer.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCustomer_CellMouseClick);
             this.dgvCustomer.SelectionChanged += new System.EventHandler(this.dgvCustomer_SelectionChanged);
+            // 
+            // mACHUXEDataGridViewTextBoxColumn
+            // 
+            this.mACHUXEDataGridViewTextBoxColumn.DataPropertyName = "MACHUXE";
+            this.mACHUXEDataGridViewTextBoxColumn.HeaderText = "CID";
+            this.mACHUXEDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.mACHUXEDataGridViewTextBoxColumn.Name = "mACHUXEDataGridViewTextBoxColumn";
+            this.mACHUXEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.mACHUXEDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // tENCHUXEDataGridViewTextBoxColumn
+            // 
+            this.tENCHUXEDataGridViewTextBoxColumn.DataPropertyName = "TENCHUXE";
+            this.tENCHUXEDataGridViewTextBoxColumn.HeaderText = "Họ tên";
+            this.tENCHUXEDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tENCHUXEDataGridViewTextBoxColumn.Name = "tENCHUXEDataGridViewTextBoxColumn";
+            this.tENCHUXEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tENCHUXEDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dIENTHOAIDataGridViewTextBoxColumn
+            // 
+            this.dIENTHOAIDataGridViewTextBoxColumn.DataPropertyName = "DIENTHOAI";
+            this.dIENTHOAIDataGridViewTextBoxColumn.HeaderText = "SDT";
+            this.dIENTHOAIDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dIENTHOAIDataGridViewTextBoxColumn.Name = "dIENTHOAIDataGridViewTextBoxColumn";
+            this.dIENTHOAIDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dIENTHOAIDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // eMAILDataGridViewTextBoxColumn
+            // 
+            this.eMAILDataGridViewTextBoxColumn.DataPropertyName = "EMAIL";
+            this.eMAILDataGridViewTextBoxColumn.HeaderText = "EMAIL";
+            this.eMAILDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.eMAILDataGridViewTextBoxColumn.Name = "eMAILDataGridViewTextBoxColumn";
+            this.eMAILDataGridViewTextBoxColumn.ReadOnly = true;
+            this.eMAILDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // dIACHIDataGridViewTextBoxColumn
+            // 
+            this.dIACHIDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dIACHIDataGridViewTextBoxColumn.DataPropertyName = "DIACHI";
+            this.dIACHIDataGridViewTextBoxColumn.HeaderText = "Địa chỉ";
+            this.dIACHIDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dIACHIDataGridViewTextBoxColumn.Name = "dIACHIDataGridViewTextBoxColumn";
+            this.dIACHIDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // xEsDataGridViewTextBoxColumn
+            // 
+            this.xEsDataGridViewTextBoxColumn.DataPropertyName = "XEs";
+            this.xEsDataGridViewTextBoxColumn.HeaderText = "XEs";
+            this.xEsDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.xEsDataGridViewTextBoxColumn.Name = "xEsDataGridViewTextBoxColumn";
+            this.xEsDataGridViewTextBoxColumn.ReadOnly = true;
+            this.xEsDataGridViewTextBoxColumn.Visible = false;
+            this.xEsDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // cHUXEBindingSource
+            // 
+            this.cHUXEBindingSource.DataSource = typeof(PhanMemQuanLyGaraOto.Model.CHUXE);
             // 
             // panel2
             // 
@@ -461,65 +520,6 @@
             this.txtCID.StateCommon.Content.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCID.TabIndex = 0;
             // 
-            // mACHUXEDataGridViewTextBoxColumn
-            // 
-            this.mACHUXEDataGridViewTextBoxColumn.DataPropertyName = "MACHUXE";
-            this.mACHUXEDataGridViewTextBoxColumn.HeaderText = "CID";
-            this.mACHUXEDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.mACHUXEDataGridViewTextBoxColumn.Name = "mACHUXEDataGridViewTextBoxColumn";
-            this.mACHUXEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.mACHUXEDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // tENCHUXEDataGridViewTextBoxColumn
-            // 
-            this.tENCHUXEDataGridViewTextBoxColumn.DataPropertyName = "TENCHUXE";
-            this.tENCHUXEDataGridViewTextBoxColumn.HeaderText = "Họ tên";
-            this.tENCHUXEDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tENCHUXEDataGridViewTextBoxColumn.Name = "tENCHUXEDataGridViewTextBoxColumn";
-            this.tENCHUXEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tENCHUXEDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dIENTHOAIDataGridViewTextBoxColumn
-            // 
-            this.dIENTHOAIDataGridViewTextBoxColumn.DataPropertyName = "DIENTHOAI";
-            this.dIENTHOAIDataGridViewTextBoxColumn.HeaderText = "SDT";
-            this.dIENTHOAIDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dIENTHOAIDataGridViewTextBoxColumn.Name = "dIENTHOAIDataGridViewTextBoxColumn";
-            this.dIENTHOAIDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dIENTHOAIDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // eMAILDataGridViewTextBoxColumn
-            // 
-            this.eMAILDataGridViewTextBoxColumn.DataPropertyName = "EMAIL";
-            this.eMAILDataGridViewTextBoxColumn.HeaderText = "EMAIL";
-            this.eMAILDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.eMAILDataGridViewTextBoxColumn.Name = "eMAILDataGridViewTextBoxColumn";
-            this.eMAILDataGridViewTextBoxColumn.ReadOnly = true;
-            this.eMAILDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // dIACHIDataGridViewTextBoxColumn
-            // 
-            this.dIACHIDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dIACHIDataGridViewTextBoxColumn.DataPropertyName = "DIACHI";
-            this.dIACHIDataGridViewTextBoxColumn.HeaderText = "Địa chỉ";
-            this.dIACHIDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dIACHIDataGridViewTextBoxColumn.Name = "dIACHIDataGridViewTextBoxColumn";
-            this.dIACHIDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // xEsDataGridViewTextBoxColumn
-            // 
-            this.xEsDataGridViewTextBoxColumn.DataPropertyName = "XEs";
-            this.xEsDataGridViewTextBoxColumn.HeaderText = "XEs";
-            this.xEsDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.xEsDataGridViewTextBoxColumn.Name = "xEsDataGridViewTextBoxColumn";
-            this.xEsDataGridViewTextBoxColumn.ReadOnly = true;
-            this.xEsDataGridViewTextBoxColumn.Visible = false;
-            this.xEsDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // cHUXEBindingSource
-            // 
-            this.cHUXEBindingSource.DataSource = typeof(PhanMemQuanLyGaraOto.Model.CHUXE);
-            // 
             // CustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -533,9 +533,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CustomerForm";
             this.Text = "CustomerForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CustomerForm_FormClosing);
             this.Load += new System.EventHandler(this.CustomerForm_Load);
             this.btbDelete.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cHUXEBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbcSearchSDT)).EndInit();
@@ -546,7 +548,6 @@
             this.flowLayoutPanel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cHUXEBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

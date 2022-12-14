@@ -40,4 +40,16 @@ namespace PhanMemQuanLyGaraOto
         }
 
     }
+    public static class DateTimeFunc
+    {
+        public static bool DateTimeComp(DateTime d1, DateTime d2)
+        {
+            if ((d1.Date == d2.Date)&&(d1.Month == d2.Month)&&(d1.Year == d2.Year))
+            {
+                return true;
+            }
+            return false;
+        }
+    }
+    public delegate void TransferData(out object TransferData);
 }

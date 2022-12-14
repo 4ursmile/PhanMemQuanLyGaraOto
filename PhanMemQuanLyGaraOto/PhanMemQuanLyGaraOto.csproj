@@ -69,8 +69,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\CheckCarModel.cs" />
-    <Compile Include="DDO\CarDBAction.cs" />
-    <Compile Include="DDO\MCheckCar.cs" />
     <Compile Include="DDO\REMCheckCar.cs" />
     <Compile Include="Model\ACCOUNT.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -149,6 +147,12 @@
     </Compile>
     <Compile Include="Model\XE.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\SubSubForm\TiepNhanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\SubSubForm\TiepNhanForm.Designer.cs">
+      <DependentUpon>TiepNhanForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SubForm\SubSubForm\UpdateInforForm.cs">
       <SubType>Form</SubType>
@@ -258,6 +262,9 @@
     <EmbeddedResource Include="SubForm\SubSubForm\ChangePassForm.resx">
       <DependentUpon>ChangePassForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\SubSubForm\TiepNhanForm.resx">
+      <DependentUpon>TiepNhanForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SubForm\SubSubForm\UpdateInforForm.resx">
       <DependentUpon>UpdateInforForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -272,6 +279,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.DDo.MCheckCar.datasource" />
+    <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.DDO.REMCheckCar.datasource" />
     <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.Model.ACCOUNT.datasource" />
     <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.Model.CHUXE.datasource" />
     <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.Model.HIEUXE.datasource" />
@@ -381,6 +389,12 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\free-car-icon-1057-thumb.png" />
+    <None Include="Resources\hinh-anh-backgroud-hoa-dao-no-cuc-ky-dep_034909613.png" />
+    <None Include="Resources\Background-banner-1.jpg" />
+    <None Include="Resources\car-limo.gif" />
+    <None Include="Resources\filter.png" />
+    <None Include="Resources\filter-filled-tool-symbol.png" />
     <None Include="Resources\succes.png" />
     <None Include="Resources\error.jpg" />
   </ItemGroup>
