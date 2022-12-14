@@ -68,83 +68,85 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\CheckCarModel.cs" />
+    <Compile Include="DDO\REMCheckCar.cs" />
     <Compile Include="Model\ACCOUNT.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>GaraModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\BAOCAO.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>GaraModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\BAOCAOTON.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>GaraModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\CHITIET_PSC.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>GaraModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\CHUXE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>GaraModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\CT_BCDS.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>GaraModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\CT_PHIEUNHAP.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>GaraModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GaraModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GaraModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GaraModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GaraModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GaraModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GaraModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GETBAOCAO_Result.cs">
+      <DependentUpon>GaraModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GETCHITIETBAOCAO_Result.cs">
+      <DependentUpon>GaraModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\HIEUXE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>GaraModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\LOGINACCOUNT_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>GaraModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\PHIEUNHAP.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>GaraModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\PHIEUSUACHUA.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>GaraModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\PHIEUTHUTIEN.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>GaraModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\PHUTUNG.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\sp_helpdiagrams_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\sysdiagram.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>GaraModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\THAMSO.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>GaraModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\THANGNAM.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>GaraModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\TIENCONG.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\TRACUUXE_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>GaraModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\XE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>GaraModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\SubSubForm\TiepNhanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\SubSubForm\TiepNhanForm.Designer.cs">
+      <DependentUpon>TiepNhanForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SubForm\SubSubForm\UpdateInforForm.cs">
       <SubType>Form</SubType>
@@ -254,19 +256,24 @@
     <EmbeddedResource Include="SubForm\SubSubForm\ChangePassForm.resx">
       <DependentUpon>ChangePassForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\SubSubForm\TiepNhanForm.resx">
+      <DependentUpon>TiepNhanForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SubForm\SubSubForm\UpdateInforForm.resx">
       <DependentUpon>UpdateInforForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubForm\ToolForm.resx">
       <DependentUpon>ToolForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="Model\Model1.edmx">
+    <EntityDeploy Include="Model\GaraModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <LastGenOutput>GaraModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
+    <None Include="Model\GaraModel.edmx.diagram">
+      <DependentUpon>GaraModel.edmx</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.DDo.MCheckCar.datasource" />
+    <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.DDO.REMCheckCar.datasource" />
     <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.Model.ACCOUNT.datasource" />
     <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.Model.CHUXE.datasource" />
     <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.Model.HIEUXE.datasource" />
@@ -352,9 +359,7 @@
   <ItemGroup>
     <None Include="Resources\icons8-slice-30.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Class\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\icons8-uchiha-eyes-24.png" />
     <None Include="Resources\44-443617_coming-soon-blue-png-transparent-png.png" />
@@ -368,16 +373,12 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
+    <None Include="Resources\free-car-icon-1057-thumb.png" />
+    <None Include="Resources\hinh-anh-backgroud-hoa-dao-no-cuc-ky-dep_034909613.png" />
+    <None Include="Resources\Background-banner-1.jpg" />
+    <None Include="Resources\car-limo.gif" />
+    <None Include="Resources\filter.png" />
+    <None Include="Resources\filter-filled-tool-symbol.png" />
     <None Include="Resources\succes.png" />
     <None Include="Resources\error.jpg" />
   </ItemGroup>
@@ -391,6 +392,18 @@
     <PackageReference Include="System.Text.Json">
       <Version>7.0.0</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\GaraModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GaraModel.edmx</DependentUpon>
+      <LastGenOutput>GaraModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\GaraModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GaraModel.edmx</DependentUpon>
+      <LastGenOutput>GaraModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,14 +1,6 @@
 ﻿using PhanMemQuanLyGaraOto.DAO;
 using PhanMemQuanLyGaraOto.DDo;
-using PhanMemQuanLyGaraOto.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
@@ -65,7 +57,8 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
                 //DataProvider.Instance.db.Entry(UniversalUser.Ins.account).State = System.Data.Entity.EntityState.Modified;
                 //DataProvider.Instance.db.SaveChanges();
                 MessageBox.Show("Cập nhật mật khẩu thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            } catch
+            }
+            catch
             {
                 MessageBox.Show("Cập nhật mật khẩu thất bại, một lỗi không mong muốn đã xảy ra" + UniversalUser.Ins.account.USERID, "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
 

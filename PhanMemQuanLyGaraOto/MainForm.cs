@@ -1,19 +1,12 @@
 ﻿using PhanMemQuanLyGaraOto.DDo;
 using PhanMemQuanLyGaraOto.SubForm.SubSubForm;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PhanMemQuanLyGaraOto
-{ 
+{
 
     public partial class MainForm : Form
     {
@@ -28,7 +21,7 @@ namespace PhanMemQuanLyGaraOto
             currentButton = AccountButton;
             SubFormInit();
             currentButton.BackColor = selectColor;
-            MenuButton_Click(AccountButton as object,null);
+            MenuButton_Click(AccountButton as object, null);
 
 
 
@@ -72,15 +65,17 @@ namespace PhanMemQuanLyGaraOto
         private void MenuButton_Click(object sender, EventArgs e)
         {
             Button newButton = sender as Button;
-            if (currentButton != newButton )
+            if (currentButton != newButton)
             {
                 currentButton.BackColor = Color.WhiteSmoke;
                 CurrentForm.Hide();
                 CurrentForm.Enabled = false;
+                CurrentForm.SuspendLayout();
                 CurrentForm = dicOfForms[newButton];
+                CurrentForm.ResumeLayout();
                 CurrentForm.Enabled = true;
                 CurrentForm.Show();
-                currentButton = newButton; 
+                currentButton = newButton;
                 currentButton.BackColor = selectColor;
             }
         }
@@ -130,7 +125,18 @@ namespace PhanMemQuanLyGaraOto
             string target = "https://www.linkedin.com/in/bao-ly-tran-hoang-252739229/";
             System.Diagnostics.Process.Start(target);
         }
+        void DiposeToRoot(Control k)
+        {
 
+            if (k == null) return;
+            foreach (Control e in k.Controls)
+            {
+                e.Dispose();
+
+                DiposeToRoot(e);
+            }
+            k.Dispose();
+        }
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (ExitInforHolder.isQuit == false)
@@ -147,11 +153,14 @@ namespace PhanMemQuanLyGaraOto
 
             }
             UniversalAlert.Ins.RemoveListenr(SetInformation);
-            foreach(var k in dicOfForms)
+            foreach (var k in dicOfForms)
             {
+                k.Value.SuspendLayout();
                 k.Value.Close();
                 k.Value.Dispose();
             }
+            DiposeToRoot(this);
+            this.SuspendLayout();
             this.Dispose();
         }
         #endregion

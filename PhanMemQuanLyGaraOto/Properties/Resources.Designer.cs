@@ -73,6 +73,26 @@ namespace PhanMemQuanLyGaraOto.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Background_banner_1 {
+            get {
+                object obj = ResourceManager.GetObject("Background-banner-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap car_limo {
+            get {
+                object obj = ResourceManager.GetObject("car-limo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CarIs {
             get {
                 object obj = ResourceManager.GetObject("CarIs", resourceCulture);
@@ -86,6 +106,26 @@ namespace PhanMemQuanLyGaraOto.Properties {
         internal static System.Drawing.Bitmap error {
             get {
                 object obj = ResourceManager.GetObject("error", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap filter {
+            get {
+                object obj = ResourceManager.GetObject("filter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap filter_filled_tool_symbol {
+            get {
+                object obj = ResourceManager.GetObject("filter-filled-tool-symbol", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +203,29 @@ namespace PhanMemQuanLyGaraOto.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap free_car_icon_1057_thumb {
+            get {
+                object obj = ResourceManager.GetObject("free-car-icon-1057-thumb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap giphy {
             get {
                 object obj = ResourceManager.GetObject("giphy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hinh_anh_backgroud_hoa_dao_no_cuc_ky_dep_034909613 {
+            get {
+                object obj = ResourceManager.GetObject("hinh-anh-backgroud-hoa-dao-no-cuc-ky-dep_034909613", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

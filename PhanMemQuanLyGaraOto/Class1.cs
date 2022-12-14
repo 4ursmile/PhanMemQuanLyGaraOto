@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace PhanMemQuanLyGaraOto
 {
@@ -14,7 +10,7 @@ namespace PhanMemQuanLyGaraOto
     public class ListUser
     {
         public bool isCheckd { get; set; }
-        public int SelectedIndex { get; set; } 
+        public int SelectedIndex { get; set; }
         public List<User> ListU { get; set; }
 
     }

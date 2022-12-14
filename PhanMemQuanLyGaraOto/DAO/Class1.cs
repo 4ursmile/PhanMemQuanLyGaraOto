@@ -1,33 +1,29 @@
 ﻿
 using CommunityToolkit.WinUI.Notifications;
+using PhanMemQuanLyGaraOto.DDO;
 using PhanMemQuanLyGaraOto.Model;
-using PhanMemQuanLyGaraOto.Properties;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Windows.System;
-using Windows.UI.Xaml.Shapes;
 
 namespace PhanMemQuanLyGaraOto.DAO
 {
     public class DataProvider
     {
-      
+
         private static DataProvider instance;
-        public static DataProvider Instance { 
+        public static DataProvider Instance
+        {
             get
             {
                 if (instance == null) instance = new DataProvider();
                 return instance;
-            } 
-            private set => instance = value; }
+            }
+            private set => instance = value;
+        }
         public GARAOTOEntities db;
         private DataProvider()
         {
@@ -43,6 +39,24 @@ namespace PhanMemQuanLyGaraOto.DAO
             if (res == DialogResult.Yes)
                 return false;
             return true;
+        }
+        public List<REMCheckCar> GetCheckCar()
+        {
+            List<REMCheckCar> list = (from x in db.XEs
+                                             join c in db.CHUXEs on x.MACHUXE equals c.MACHUXE
+                                             join b in db.HIEUXEs on x.MAHIEUXE equals b.MAHIEUXE
+                                             select new REMCheckCar
+                                             {
+                                                 CarId = x.MAXE,
+                                                 CarBrand = b.TENHIEUXE,
+                                                 CarNumber = x.BIENSO,
+                                                 CarOwnerName = c.TENCHUXE,
+                                                 CarOwnerTele =  c.DIENTHOAI,
+                                                 DateIn = x.NGAYTIEPNHAN.Value,
+                                                 DebtMoney = x.TONGNO.Value
+                                             }).ToList();
+            if (list == null) return new List<REMCheckCar>();
+            return list;
         }
         #region Noti
         public const string BackEndError = "Kết nối với máy chủ thất bại";
@@ -88,14 +102,15 @@ namespace PhanMemQuanLyGaraOto.DAO
                 string QuerySTR = String.Format("%{0}%", LikeStr);
                 List<ACCOUNT> accountList = db.ACCOUNTs.Where(ak => DbFunctions.Like(ak.DISPLAYNAME, QuerySTR)).ToList<ACCOUNT>();
                 return accountList;
-            } catch
+            }
+            catch
             {
                 MessageBox.Show("Lỗi hệ thống", "Không thể tìm kiếm", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
-        
+
         }
-        public void SaveAccount(ACCOUNT aCCOUNT,params AlertNonPara[] Loadawhendones)
+        public void SaveAccount(ACCOUNT aCCOUNT, params AlertNonPara[] Loadawhendones)
         {
             try
             {
@@ -137,7 +152,8 @@ namespace PhanMemQuanLyGaraOto.DAO
                 {
                     func?.Invoke();
                 }
-            } catch
+            }
+            catch
             {
                 MakeNotiError();
             }
@@ -174,18 +190,21 @@ namespace PhanMemQuanLyGaraOto.DAO
                 if (tIENCONG == null) return;
                 db.TIENCONGs.Add(tIENCONG);
                 db.SaveChanges();
+                ReloadDataEvent.Ins.Alert(DataType.Money);
+
                 foreach (var donefunc in Loadawhendones)
                 {
                     donefunc?.Invoke();
                 }
                 MakeNotiSuccess();
-            } catch
+            }
+            catch
             {
                 MessageBox.Show("Lưu thất bại, Kết nối với máy chủ bị  gián đoạn", "Lỗi kết nối đến máy chủ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 MakeNotiError();
                 return;
             }
-            
+
         }
         public void UpdateTienCong(TIENCONG tIENCONG, params AlertNonPara[] LoadWhendones)
         {
@@ -199,11 +218,14 @@ namespace PhanMemQuanLyGaraOto.DAO
                 db.Entry(tmp).CurrentValues.SetValues(tIENCONG);
                 SaveChange();
                 MakeNotiSuccess();
+                ReloadDataEvent.Ins.Alert(DataType.Money);
+
                 foreach (var func in LoadWhendones)
                 {
                     func?.Invoke();
                 }
-            } catch
+            }
+            catch
             {
                 MessageBox.Show("Cập nhật thất bại, Kết nối với máy chủ bị gián đoạn", "Lỗi kết nối đến máy chủ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 MakeNotiError();
@@ -226,13 +248,15 @@ namespace PhanMemQuanLyGaraOto.DAO
                 {
                     func?.Invoke();
                 }
-            } catch
+                ReloadDataEvent.Ins.Alert(DataType.Money);
+            }
+            catch
             {
                 MakeNotiError();
                 MessageBox.Show("Xóa thất bại, Kết nối với máy chủ bị gián đoạn", "Lỗi kết nối đến máy chủ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
+
         }
         #endregion
         #region branD
@@ -243,6 +267,8 @@ namespace PhanMemQuanLyGaraOto.DAO
                 if (hIEUXE == null) return;
                 db.HIEUXEs.Add(hIEUXE);
                 db.SaveChanges();
+                ReloadDataEvent.Ins.Alert(DataType.Brand);
+
                 foreach (var donefunc in Loadawhendones)
                 {
                     donefunc?.Invoke();
@@ -276,6 +302,7 @@ namespace PhanMemQuanLyGaraOto.DAO
                 {
                     func?.Invoke();
                 }
+                ReloadDataEvent.Ins.Alert(DataType.Brand);
             }
             catch
             {
@@ -303,11 +330,12 @@ namespace PhanMemQuanLyGaraOto.DAO
                 {
                     func?.Invoke();
                 }
+                ReloadDataEvent.Ins.Alert(DataType.Brand);
             }
-            catch (Exception e) 
+            catch (Exception e)
             {
                 MakeNotiError(strDelete + nameof(HIEUXE), BackEndError);
-                MessageBox.Show("Xóa thất bại ", e.Message , MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Xóa thất bại ", e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -321,10 +349,11 @@ namespace PhanMemQuanLyGaraOto.DAO
                 if (CHUXE == null)
                 {
                     MakeNotiError(strSave + nameof(CHUXE), FrontEndError);
-                    return ;
+                    return;
                 }
                 db.CHUXEs.Add(CHUXE);
                 db.SaveChanges();
+                ReloadDataEvent.Ins.Alert(DataType.Customer);
                 foreach (var donefunc in Loadawhendones)
                 {
                     donefunc?.Invoke();
@@ -338,7 +367,7 @@ namespace PhanMemQuanLyGaraOto.DAO
                 return;
             }
 
-        }
+}
         public void UpdateCustomer(CHUXE CHUXE, params AlertNonPara[] LoadWhendones)
         {
             try
@@ -354,6 +383,8 @@ namespace PhanMemQuanLyGaraOto.DAO
                 db.Entry(tmp).CurrentValues.SetValues(CHUXE);
                 SaveChange();
                 MakeNotiSuccess(strUpdate + nameof(CHUXE));
+                ReloadDataEvent.Ins.Alert(DataType.Customer);
+
                 foreach (var func in LoadWhendones)
                 {
                     func?.Invoke();
@@ -381,6 +412,8 @@ namespace PhanMemQuanLyGaraOto.DAO
                 db.CHUXEs.Remove(tmp);
                 db.SaveChanges();
                 MakeNotiSuccess(strDelete + nameof(CHUXE));
+                ReloadDataEvent.Ins.Alert(DataType.Customer);
+
                 foreach (var func in LoadWhendones)
                 {
                     func?.Invoke();
@@ -403,6 +436,102 @@ namespace PhanMemQuanLyGaraOto.DAO
                 k = db.CHUXEs.Where(a => a.DIENTHOAI == sdt).ToList<CHUXE>();
             if (k.Count == 0)
                 return false;
+            return true;
+        }
+        public CHUXE GetCHUXEBYSDT(string sdt)
+        {
+            CHUXE cHUXE = db.CHUXEs.Where(a => a.DIENTHOAI == sdt).FirstOrDefault();
+            return cHUXE;
+        }
+        #endregion
+        #region CAR
+        public void SaveCar(XE XE, params AlertNonPara[] Loadawhendones)
+        {
+            try
+            {
+                if (XE == null)
+                {
+                    MakeNotiError(strSave + nameof(XE), FrontEndError);
+                    return;
+                }
+                db.XEs.Add(XE);
+                db.SaveChanges();
+                MakeNotiSuccess(strSave + nameof(XE));
+                ReloadDataEvent.Ins.Alert(DataType.Car);
+                foreach (var donefunc in Loadawhendones)
+                {
+                    donefunc?.Invoke();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Lưu thất bại, Kết nối với máy chủ bị  gián đoạn", "Lỗi kết nối đến máy chủ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MakeNotiError(strSave + nameof(XE), BackEndError);
+                return;
+            }
+
+        }
+        public void UpdateCar(XE XE, params AlertNonPara[] LoadWhendones)
+        {
+            try
+            {
+                if (ChangeComfirm(strUpdate)) return;
+                if (XE == null) return;
+                XE tmp = db.XEs.Where(a => a.MAXE == XE.MAXE).FirstOrDefault();
+                if (tmp == null)
+                {
+                    MakeNotiError(strUpdate + nameof(XE), FrontEndError);
+                    return;
+                }
+                db.Entry(tmp).CurrentValues.SetValues(XE);
+                SaveChange();
+                ReloadDataEvent.Ins.Alert(DataType.Car);
+                MakeNotiSuccess(strUpdate + nameof(XE));
+                foreach (var func in LoadWhendones)
+                {
+                    func?.Invoke();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Cập nhật thất bại, Kết nối với máy chủ bị gián đoạn", "Lỗi kết nối đến máy chủ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MakeNotiError(strUpdate + nameof(XE), BackEndError);
+                return;
+            }
+
+        }
+        public void DeleteCar(XE XE, params AlertNonPara[] LoadWhendones)
+        {
+            try
+            {
+                if (ChangeComfirm(strDelete)) return;
+                XE tmp = db.XEs.Where(a => a.MAXE == XE.MAXE).FirstOrDefault();
+                if (tmp == null)
+                {
+                    MakeNotiError(strDelete + nameof(XE), FrontEndError);
+                    return;
+                }
+                db.XEs.Remove(tmp);
+                db.SaveChanges();
+                MakeNotiSuccess(strDelete + nameof(XE));
+                ReloadDataEvent.Ins.Alert(DataType.Car);
+
+                foreach (var func in LoadWhendones)
+                {
+                    func?.Invoke();
+                }
+            }
+            catch (Exception e)
+            {
+                MakeNotiError(strDelete + nameof(XE), BackEndError);
+                MessageBox.Show("Xóa thất bại ", e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+        }
+        public bool CarCheckContainCarPlate(string plate, XE Cus = null)
+        {
             return true;
         }
         #endregion

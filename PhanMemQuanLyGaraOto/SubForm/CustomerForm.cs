@@ -2,15 +2,8 @@
 using PhanMemQuanLyGaraOto.DDo;
 using PhanMemQuanLyGaraOto.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Windows.UI.Xaml.Input;
 
 namespace PhanMemQuanLyGaraOto.SubForm
 {
@@ -20,6 +13,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
         bool isUpdate = false;
         public CustomerForm()
         {
+            ReloadDataEvent.Ins.Addlistener(LoadDataCusDGV, DataType.Customer);
             InitializeComponent();
             ResetCus();
             if (UniversalUser.Ins.account.TYPE > 0)
@@ -41,7 +35,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
             dgvCustomer.AutoGenerateColumns = false;
             dgvCustomer.DataSource = DataProvider.Instance.db.CHUXEs.ToList<CHUXE>();
             cbcSearchSDT.DataSource = dgvCustomer.DataSource;
-            cbcSearchSDT.DisplayMember = "DIENTHOAI"; 
+            cbcSearchSDT.DisplayMember = "DIENTHOAI";
         }
         private void CustomerForm_Load(object sender, EventArgs e)
         {
@@ -70,7 +64,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
                 currentSelectedCustomer.TENCHUXE = txtHOTEN.Text;
                 currentSelectedCustomer.EMAIL = txtEmail.Text;
                 currentSelectedCustomer.DIACHI = txtDIACHI.Text;
-                DataProvider.Instance.UpdateCustomer(currentSelectedCustomer, ResetCus, LoadDataCusDGV);
+                DataProvider.Instance.UpdateCustomer(currentSelectedCustomer, ResetCus);
             }
             else
             {
@@ -91,7 +85,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
                 currentSelectedCustomer.TENCHUXE = txtHOTEN.Text;
                 currentSelectedCustomer.EMAIL = txtEmail.Text;
                 currentSelectedCustomer.DIACHI = txtDIACHI.Text;
-                DataProvider.Instance.SaveCustomer(currentSelectedCustomer, ResetCus, LoadDataCusDGV);
+                DataProvider.Instance.SaveCustomer(currentSelectedCustomer, ResetCus);
             }
         }
 
@@ -104,7 +98,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
         {
             if (currentSelectedCustomer == null) return;
             btbDelete2.Enabled = false;
-            DataProvider.Instance.DeleteCustomer(currentSelectedCustomer, ResetCus, LoadDataCusDGV);
+            DataProvider.Instance.DeleteCustomer(currentSelectedCustomer, ResetCus);
         }
         void UpdateViewDataCus(CHUXE cHUXE)
         {
@@ -141,6 +135,11 @@ namespace PhanMemQuanLyGaraOto.SubForm
         private void dgvCustomer_SelectionChanged(object sender, EventArgs e)
         {
             dgvCustomer_CellMouseClick(sender, null);
+        }
+
+        private void CustomerForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ReloadDataEvent.Ins.RemoveListerner(LoadDataCusDGV, DataType.Customer);
         }
     }
 }

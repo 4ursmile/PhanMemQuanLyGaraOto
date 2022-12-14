@@ -1,9 +1,4 @@
 ﻿using PhanMemQuanLyGaraOto.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PhanMemQuanLyGaraOto.DDo
 {
@@ -11,13 +6,14 @@ namespace PhanMemQuanLyGaraOto.DDo
     {
         private static UniversalUser ins;
 
-        public static UniversalUser Ins { 
+        public static UniversalUser Ins
+        {
             get
             {
                 if (ins == null) ins = new UniversalUser();
                 return ins;
-            } 
-            private set => ins = value; 
+            }
+            private set => ins = value;
         }
         public ACCOUNT account;
         public void SetUser(ACCOUNT ac)
@@ -37,7 +33,7 @@ namespace PhanMemQuanLyGaraOto.DDo
                 {
                     Logout = false;
                     return true;
-                } 
+                }
                 return false;
             }
             set { Logout = value; }

@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.Core.Metadata.Edm;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PhanMemQuanLyGaraOto
 {
@@ -26,23 +21,35 @@ namespace PhanMemQuanLyGaraOto
             int len = password.Length;
             string hasPass = "";
             long hash1 = 0, hash2 = 0;
-            for(int i = 0; i < len; i++)
+            for (int i = 0; i < len; i++)
             {
                 hash1 = (hash1 % hasMod1 + hashfunction((int)password[i], i) % hasMod1) % hasMod1;
                 hash2 = (hash2 % hasMod2 + hashfunction((int)password[i], i, 2) % hasMod2) % hasMod2;
-                hasPass += function((int)password[i],i).ToString();
+                hasPass += function((int)password[i], i).ToString();
             }
-            hasPass+= "eq|" + hash1.ToString() + hash2.ToString();
+            hasPass += "eq|" + hash1.ToString() + hash2.ToString();
             return hasPass;
         }
     }
     public static class PosNameMap
     {
-        private static string[] map = {"Quản trị viên", "Quản lý", "Nhân viên"};
-        public  static string GetAccountPosName(int type)
+        private static string[] map = { "Quản trị viên", "Quản lý", "Nhân viên" };
+        public static string GetAccountPosName(int type)
         {
             return map[type];
         }
 
     }
+    public static class DateTimeFunc
+    {
+        public static bool DateTimeComp(DateTime d1, DateTime d2)
+        {
+            if ((d1.Date == d2.Date)&&(d1.Month == d2.Month)&&(d1.Year == d2.Year))
+            {
+                return true;
+            }
+            return false;
+        }
+    }
+    public delegate void TransferData(out object TransferData);
 }

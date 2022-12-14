@@ -661,6 +661,7 @@
             this.dgvAccounts.ReadOnly = true;
             this.dgvAccounts.RowHeadersWidth = 30;
             this.dgvAccounts.RowTemplate.Height = 24;
+            this.dgvAccounts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAccounts.Size = new System.Drawing.Size(582, 478);
             this.dgvAccounts.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.dgvAccounts.StateCommon.Background.Color2 = System.Drawing.Color.WhiteSmoke;
