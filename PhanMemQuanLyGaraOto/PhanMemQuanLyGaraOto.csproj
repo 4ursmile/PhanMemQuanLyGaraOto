@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="Class\CheckCarModel.cs" />
     <Compile Include="DAO\DAOExtend1.cs" />
+    <Compile Include="DAO\DataProviderTOOL.cs" />
     <Compile Include="DDO\REMCheckCar.cs" />
     <Compile Include="Model\ACCOUNT.cs">
       <DependentUpon>GaraModel.tt</DependentUpon>
@@ -278,6 +279,7 @@
     <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.Model.ACCOUNT.datasource" />
     <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.Model.CHUXE.datasource" />
     <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.Model.HIEUXE.datasource" />
+    <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.Model.PHUTUNG.datasource" />
     <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.Model.TIENCONG.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -405,6 +407,7 @@
       <DependentUpon>GaraModel.edmx</DependentUpon>
       <LastGenOutput>GaraModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\jimu-art-by-jimu-art-merry-christmas-christmas-illustration.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

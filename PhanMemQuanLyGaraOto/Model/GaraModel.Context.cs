@@ -100,5 +100,23 @@ namespace PhanMemQuanLyGaraOto.Model
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LOGINACCOUNT_Result>("LOGINACCOUNT", uSERNAMEParameter, pASSWORDParameter);
         }
+    
+        public virtual int DONGPHIEUNHAP(Nullable<int> sOPHIEUNHAP)
+        {
+            var sOPHIEUNHAPParameter = sOPHIEUNHAP.HasValue ?
+                new ObjectParameter("SOPHIEUNHAP", sOPHIEUNHAP) :
+                new ObjectParameter("SOPHIEUNHAP", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DONGPHIEUNHAP", sOPHIEUNHAPParameter);
+        }
+    
+        public virtual int INITBAOCAOTON(Nullable<System.DateTime> tHANGNAM)
+        {
+            var tHANGNAMParameter = tHANGNAM.HasValue ?
+                new ObjectParameter("THANGNAM", tHANGNAM) :
+                new ObjectParameter("THANGNAM", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INITBAOCAOTON", tHANGNAMParameter);
+        }
     }
 }

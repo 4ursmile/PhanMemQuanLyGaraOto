@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -47,8 +48,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.cbcBienSo = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btbcollect = new System.Windows.Forms.Button();
+            this.btbUpdate = new System.Windows.Forms.Button();
             this.btbTiepNhan = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.rEMCheckCarBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -99,7 +100,7 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.56939F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.43062F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.43061F));
             this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
@@ -108,7 +109,7 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 569F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1093, 608);
             this.tableLayoutPanel1.TabIndex = 5;
@@ -121,7 +122,7 @@
             this.pictureBox2.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.car_limo;
             this.pictureBox2.Location = new System.Drawing.Point(3, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(142, 54);
+            this.pictureBox2.Size = new System.Drawing.Size(142, 94);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 12;
             this.pictureBox2.TabStop = false;
@@ -130,7 +131,7 @@
             // 
             this.panel1.Controls.Add(this.btbDelete);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(151, 63);
+            this.panel1.Location = new System.Drawing.Point(151, 103);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(939, 563);
             this.panel1.TabIndex = 4;
@@ -202,6 +203,8 @@
             this.dgvCheckCars.StateCommon.HeaderRow.Border.Width = 1;
             this.dgvCheckCars.TabIndex = 0;
             this.dgvCheckCars.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccounts_CellContentClick_1);
+            this.dgvCheckCars.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCheckCars_CellMouseClick);
+            this.dgvCheckCars.SelectionChanged += new System.EventHandler(this.dgvCheckCars_SelectionChanged);
             // 
             // panel2
             // 
@@ -217,7 +220,7 @@
             this.panel2.Controls.Add(this.cbcFilterDebt);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel2.Location = new System.Drawing.Point(3, 63);
+            this.panel2.Location = new System.Drawing.Point(3, 103);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(142, 563);
             this.panel2.TabIndex = 5;
@@ -323,24 +326,22 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.cbcBienSo);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.btbcollect);
+            this.panel3.Controls.Add(this.btbUpdate);
             this.panel3.Controls.Add(this.btbTiepNhan);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(151, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(939, 54);
+            this.panel3.Size = new System.Drawing.Size(939, 94);
             this.panel3.TabIndex = 6;
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(13, 19);
+            this.label3.Location = new System.Drawing.Point(9, 43);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 18);
+            this.label3.Size = new System.Drawing.Size(76, 22);
             this.label3.TabIndex = 9;
             this.label3.Text = "Biển số";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -348,40 +349,41 @@
             // cbcBienSo
             // 
             this.cbcBienSo.FormattingEnabled = true;
-            this.cbcBienSo.Location = new System.Drawing.Point(127, 15);
+            this.cbcBienSo.Location = new System.Drawing.Point(91, 39);
             this.cbcBienSo.Name = "cbcBienSo";
-            this.cbcBienSo.Size = new System.Drawing.Size(199, 26);
+            this.cbcBienSo.Size = new System.Drawing.Size(187, 26);
             this.cbcBienSo.TabIndex = 3;
             // 
-            // button3
+            // btbcollect
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(796, 6);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(132, 35);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Thu tiền";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btbcollect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btbcollect.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btbcollect.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.btbcollect.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btbcollect.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btbcollect.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btbcollect.Location = new System.Drawing.Point(794, 30);
+            this.btbcollect.Name = "btbcollect";
+            this.btbcollect.Size = new System.Drawing.Size(132, 35);
+            this.btbcollect.TabIndex = 2;
+            this.btbcollect.Text = "Thu tiền";
+            this.btbcollect.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btbUpdate
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(672, 7);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 35);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Cập nhật";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btbUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btbUpdate.BackColor = System.Drawing.Color.White;
+            this.btbUpdate.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.btbUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btbUpdate.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btbUpdate.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btbUpdate.Location = new System.Drawing.Point(679, 31);
+            this.btbUpdate.Name = "btbUpdate";
+            this.btbUpdate.Size = new System.Drawing.Size(100, 35);
+            this.btbUpdate.TabIndex = 1;
+            this.btbUpdate.Text = "Cập nhật";
+            this.btbUpdate.UseVisualStyleBackColor = false;
+            this.btbUpdate.Click += new System.EventHandler(this.button2_Click);
             // 
             // btbTiepNhan
             // 
@@ -391,7 +393,7 @@
             this.btbTiepNhan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
             this.btbTiepNhan.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btbTiepNhan.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btbTiepNhan.Location = new System.Drawing.Point(536, 7);
+            this.btbTiepNhan.Location = new System.Drawing.Point(558, 31);
             this.btbTiepNhan.Name = "btbTiepNhan";
             this.btbTiepNhan.Size = new System.Drawing.Size(100, 35);
             this.btbTiepNhan.TabIndex = 0;
@@ -419,6 +421,7 @@
             this.carIdDataGridViewTextBoxColumn.HeaderText = "CID";
             this.carIdDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.carIdDataGridViewTextBoxColumn.Name = "carIdDataGridViewTextBoxColumn";
+            this.carIdDataGridViewTextBoxColumn.Visible = false;
             this.carIdDataGridViewTextBoxColumn.Width = 80;
             // 
             // carBrandDataGridViewTextBoxColumn
@@ -439,14 +442,14 @@
             this.carNumberDataGridViewTextBoxColumn.Name = "carNumberDataGridViewTextBoxColumn";
             this.carNumberDataGridViewTextBoxColumn.ReadOnly = true;
             this.carNumberDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.carNumberDataGridViewTextBoxColumn.Width = 125;
+            this.carNumberDataGridViewTextBoxColumn.Width = 105;
             // 
             // carOwnerNameDataGridViewTextBoxColumn
             // 
             this.carOwnerNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.carOwnerNameDataGridViewTextBoxColumn.DataPropertyName = "CarOwnerName";
             this.carOwnerNameDataGridViewTextBoxColumn.HeaderText = "Tên chủ xe";
-            this.carOwnerNameDataGridViewTextBoxColumn.MinimumWidth = 125;
+            this.carOwnerNameDataGridViewTextBoxColumn.MinimumWidth = 100;
             this.carOwnerNameDataGridViewTextBoxColumn.Name = "carOwnerNameDataGridViewTextBoxColumn";
             this.carOwnerNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -462,11 +465,14 @@
             // dateInDataGridViewTextBoxColumn
             // 
             this.dateInDataGridViewTextBoxColumn.DataPropertyName = "DateIn";
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle1.NullValue = "Không xác định";
+            this.dateInDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.dateInDataGridViewTextBoxColumn.HeaderText = "Ngày tiếp nhận";
             this.dateInDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dateInDataGridViewTextBoxColumn.Name = "dateInDataGridViewTextBoxColumn";
             this.dateInDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateInDataGridViewTextBoxColumn.Width = 125;
+            this.dateInDataGridViewTextBoxColumn.Width = 120;
             // 
             // debtMoneyDataGridViewTextBoxColumn
             // 
@@ -475,7 +481,7 @@
             this.debtMoneyDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.debtMoneyDataGridViewTextBoxColumn.Name = "debtMoneyDataGridViewTextBoxColumn";
             this.debtMoneyDataGridViewTextBoxColumn.ReadOnly = true;
-            this.debtMoneyDataGridViewTextBoxColumn.Width = 125;
+            this.debtMoneyDataGridViewTextBoxColumn.Width = 135;
             // 
             // CarForm
             // 
@@ -522,8 +528,8 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox cbcBienSo;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btbcollect;
+        private System.Windows.Forms.Button btbUpdate;
         private System.Windows.Forms.Button btbTiepNhan;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox3;

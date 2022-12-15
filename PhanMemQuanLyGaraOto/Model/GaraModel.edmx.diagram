@@ -13,7 +13,7 @@
         <EntityTypeShape EntityType="GARAOTOModel.CT_BCDS" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
         <EntityTypeShape EntityType="GARAOTOModel.CT_PHIEUNHAP" Width="1.5" PointX="10.5" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="GARAOTOModel.HIEUXE" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="GARAOTOModel.PHIEUNHAP" Width="1.5" PointX="8.25" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARAOTOModel.PHIEUNHAP" Width="1.5" PointX="12.75" PointY="2.125" IsExpanded="true" />
         <EntityTypeShape EntityType="GARAOTOModel.PHIEUSUACHUA" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="GARAOTOModel.PHIEUTHUTIEN" Width="1.5" PointX="8.25" PointY="8.125" IsExpanded="true" />
         <EntityTypeShape EntityType="GARAOTOModel.PHUTUNG" Width="1.5" PointX="8.25" PointY="1.75" IsExpanded="true" />

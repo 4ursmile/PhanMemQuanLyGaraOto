@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="GARAOTOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="GARAOTOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ACCOUNT">
           <Key>
             <PropertyRef Name="USERID" />
@@ -95,6 +95,7 @@
           <Property Name="SOPHIEUNHAP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NGAYLAP" Type="smalldatetime" />
           <Property Name="TONGTIEN" Type="money" />
+          <Property Name="TINHTRANG" Type="binary" MaxLength="1" />
         </EntityType>
         <EntityType Name="PHIEUSUACHUA">
           <Key>
@@ -290,6 +291,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="DONGPHIEUNHAP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SOPHIEUNHAP" Type="int" Mode="In" />
+        </Function>
         <Function Name="DONGPHIEUSUACHUA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="MAPHIEU" Type="int" Mode="In" />
         </Function>
@@ -301,6 +305,10 @@
           <Parameter Name="THANG" Type="int" Mode="In" />
           <Parameter Name="NAM" Type="int" Mode="In" />
         </Function>
+        <Function Name="GETDOANHTHU" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+          <Parameter Name="THANG" Type="int" Mode="In" />
+          <Parameter Name="NAM" Type="int" Mode="In" />
+        </Function>
         <Function Name="GETSOXETRONGNGAY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
           <Parameter Name="DATE" Type="smalldatetime" Mode="In" />
         </Function>
@@ -308,6 +316,9 @@
           <Parameter Name="MAPHIEU" Type="int" Mode="In" />
         </Function>
         <Function Name="INITBAOCAODOANHSO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="THANGNAM" Type="smalldatetime" Mode="In" />
+        </Function>
+        <Function Name="INITBAOCAOTON" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="THANGNAM" Type="smalldatetime" Mode="In" />
         </Function>
         <Function Name="LOGINACCOUNT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -376,8 +387,7 @@
             <End Role="XE" EntitySet="XE" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GARAOTOModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -482,6 +492,7 @@
           <Property Name="NGAYLAP" Type="DateTime" Precision="0" />
           <Property Name="TONGTIEN" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="CT_PHIEUNHAP" Relationship="Self.FK_CT_PN" FromRole="PHIEUNHAP" ToRole="CT_PHIEUNHAP" />
+          <Property Name="TINHTRANG" Type="Binary" MaxLength="1" FixedLength="true" />
         </EntityType>
         <EntityType Name="PHIEUSUACHUA">
           <Key>
@@ -750,7 +761,7 @@
             <End Role="PHIEUTHUTIEN" EntitySet="PHIEUTHUTIENs" />
           </AssociationSet>
           <FunctionImport Name="DONGPHIEUSUACHUA">
-            <Parameter Name="MAPHIEU" Mode="In" Type="Int32" />
+          <Parameter Name="MAPHIEU" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GETBAOCAO" ReturnType="Collection(GARAOTOModel.GETBAOCAO_Result)">
             <Parameter Name="THANG" Mode="In" Type="Int32" />
@@ -761,11 +772,17 @@
             <Parameter Name="NAM" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="INITBAOCAODOANHSO">
-            <Parameter Name="THANGNAM" Mode="In" Type="DateTime" />
+          <Parameter Name="THANGNAM" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="LOGINACCOUNT" ReturnType="Collection(GARAOTOModel.LOGINACCOUNT_Result)">
             <Parameter Name="USERNAME" Mode="In" Type="String" />
             <Parameter Name="PASSWORD" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="DONGPHIEUNHAP">
+            <Parameter Name="SOPHIEUNHAP" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="INITBAOCAOTON">
+            <Parameter Name="THANGNAM" Mode="In" Type="DateTime" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="GETBAOCAO_Result">
@@ -886,6 +903,7 @@
           <EntitySetMapping Name="PHIEUNHAPs">
             <EntityTypeMapping TypeName="GARAOTOModel.PHIEUNHAP">
               <MappingFragment StoreEntitySet="PHIEUNHAP">
+                <ScalarProperty Name="TINHTRANG" ColumnName="TINHTRANG" />
                 <ScalarProperty Name="SOPHIEUNHAP" ColumnName="SOPHIEUNHAP" />
                 <ScalarProperty Name="NGAYLAP" ColumnName="NGAYLAP" />
                 <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
@@ -994,6 +1012,8 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="DONGPHIEUNHAP" FunctionName="GARAOTOModel.Store.DONGPHIEUNHAP" />
+          <FunctionImportMapping FunctionImportName="INITBAOCAOTON" FunctionName="GARAOTOModel.Store.INITBAOCAOTON" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

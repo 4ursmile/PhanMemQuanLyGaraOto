@@ -9,10 +9,13 @@ namespace PhanMemQuanLyGaraOto.SubForm
 {
     public partial class CarForm : Form
     {
+        REMCheckCar currentCheckCar;
         public CarForm()
         {
             ReloadDataEvent.Ins.Addlistener(LoadToDGVCarComplex, DataType.Car, DataType.Brand, DataType.Customer);
             InitializeComponent();
+            btbcollect.Enabled = false;
+            btbUpdate.Enabled = false;
             LoadToDGVCarComplex();
         }
 
@@ -53,6 +56,33 @@ namespace PhanMemQuanLyGaraOto.SubForm
         {
             ReloadDataEvent.Ins.RemoveListerner(LoadToDGVCarComplex, DataType.Car, DataType.Brand, DataType.Customer);
             DiposeToRoot(this);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            TiepNhanForm tiepNhanForm = new TiepNhanForm(currentCheckCar);
+            tiepNhanForm.ShowDialog();
+            tiepNhanForm.Dispose();
+        }
+
+        private void dgvCheckCars_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (dgvCheckCars.CurrentRow.Index > -1)
+            {
+                DataGridViewRow cRow = dgvCheckCars.CurrentRow;
+                currentCheckCar = (cRow.DataBoundItem as REMCheckCar);
+                btbcollect.Enabled = true;
+                btbUpdate.Enabled = true;
+            } else
+            {
+                btbcollect.Enabled = false;
+                btbUpdate.Enabled = false;
+            }
+        }
+
+        private void dgvCheckCars_SelectionChanged(object sender, EventArgs e)
+        {
+            dgvCheckCars_CellMouseClick(sender, null);
         }
     }
 }

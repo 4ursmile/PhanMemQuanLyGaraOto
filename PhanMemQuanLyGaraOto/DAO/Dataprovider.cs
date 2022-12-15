@@ -8,6 +8,7 @@ using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Windows.Foundation.Metadata;
 
 namespace PhanMemQuanLyGaraOto.DAO
 {
@@ -59,7 +60,7 @@ namespace PhanMemQuanLyGaraOto.DAO
             return list;
         }
         #region Noti
-        public const string BackEndError = "Kết nối với máy chủ thất bại";
+        public const string BackEndError = "Dữ liệu đã bị ràng buộc, bạn không có quyền thục hiện thay đổi này";
         public const string FrontEndError = "Lỗi không xác định";
         public const string strUpdate = "Cập nhật ";
         public const string strDelete = "Xóa ";
@@ -458,18 +459,17 @@ namespace PhanMemQuanLyGaraOto.DAO
                 db.SaveChanges();
                 MakeNotiSuccess(strSave + nameof(XE));
                 ReloadDataEvent.Ins.Alert(DataType.Car);
-                foreach (var donefunc in Loadawhendones)
-                {
-                    donefunc?.Invoke();
-                }
+
             }
             catch
             {
                 MessageBox.Show("Lưu thất bại, Kết nối với máy chủ bị  gián đoạn", "Lỗi kết nối đến máy chủ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 MakeNotiError(strSave + nameof(XE), BackEndError);
-                return;
             }
-
+            foreach (var donefunc in Loadawhendones)
+            {
+                donefunc?.Invoke();
+            }
         }
         public void UpdateCar(XE XE, params AlertNonPara[] LoadWhendones)
         {
@@ -487,16 +487,16 @@ namespace PhanMemQuanLyGaraOto.DAO
                 SaveChange();
                 ReloadDataEvent.Ins.Alert(DataType.Car);
                 MakeNotiSuccess(strUpdate + nameof(XE));
-                foreach (var func in LoadWhendones)
-                {
-                    func?.Invoke();
-                }
+
             }
             catch
             {
                 MessageBox.Show("Cập nhật thất bại, Kết nối với máy chủ bị gián đoạn", "Lỗi kết nối đến máy chủ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 MakeNotiError(strUpdate + nameof(XE), BackEndError);
-                return;
+            }
+            foreach (var func in LoadWhendones)
+            {
+                func?.Invoke();
             }
 
         }
@@ -530,9 +530,12 @@ namespace PhanMemQuanLyGaraOto.DAO
 
 
         }
-        public bool CarCheckContainCarPlate(string plate, XE Cus = null)
+        public bool isUniquePlate(string plate, int Maxe = 0)
         {
-            return true;
+            XE checkXe = db.XEs.Where(a => a.BIENSO == plate && a.MAXE != Maxe).FirstOrDefault();
+            if (checkXe == null)
+                return true;
+            return false;
         }
         #endregion
     }

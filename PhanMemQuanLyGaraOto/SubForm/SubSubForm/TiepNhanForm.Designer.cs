@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cbcCusSDT = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlCusInfor = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -39,34 +41,32 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btbCancle = new System.Windows.Forms.Button();
+            this.btbUpdate = new System.Windows.Forms.Button();
+            this.btbSave = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dtpTiepNhan = new System.Windows.Forms.DateTimePicker();
+            this.cbcBrand = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtBienSo = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtBienSo = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btbSave = new System.Windows.Forms.Button();
-            this.btbDelete = new System.Windows.Forms.Button();
-            this.btbCancle = new System.Windows.Forms.Button();
-            this.cbcCusSDT = new System.Windows.Forms.ComboBox();
-            this.cbcBrand = new System.Windows.Forms.ComboBox();
-            this.dtpTiepNhan = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlCusInfor.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.cbcCusSDT);
@@ -76,18 +76,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(443, 456);
             this.panel1.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.icons8_customer_64;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(443, 56);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label3
             // 
@@ -101,8 +90,51 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Số điện thoại (Duy nhất)";
             // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Arial", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label10.Location = new System.Drawing.Point(23, 381);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(401, 49);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Nhân viên lưu ý, thông tin khách hàng là quan trọng, nên chỉ được phép sửa chữa ở" +
+    " mục khách hàng \r\nTrân trọng cảm ơn!";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // cbcCusSDT
+            // 
+            this.cbcCusSDT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbcCusSDT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbcCusSDT.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbcCusSDT.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbcCusSDT.FormattingEnabled = true;
+            this.cbcCusSDT.Location = new System.Drawing.Point(41, 112);
+            this.cbcCusSDT.Name = "cbcCusSDT";
+            this.cbcCusSDT.Size = new System.Drawing.Size(359, 27);
+            this.cbcCusSDT.TabIndex = 0;
+            this.cbcCusSDT.SelectedValueChanged += new System.EventHandler(this.cbcCusSDT_SelectedValueChanged);
+            this.cbcCusSDT.Leave += new System.EventHandler(this.cbcCusSDT_Leave);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.icons8_customer_64;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(443, 56);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // pnlCusInfor
             // 
+            this.pnlCusInfor.BackColor = System.Drawing.Color.Transparent;
             this.pnlCusInfor.Controls.Add(this.label4);
             this.pnlCusInfor.Controls.Add(this.label6);
             this.pnlCusInfor.Controls.Add(this.txtHoten);
@@ -156,7 +188,7 @@
             this.txtDiaChi.Location = new System.Drawing.Point(19, 158);
             this.txtDiaChi.MinimumSize = new System.Drawing.Size(50, 50);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(358, 50);
+            this.txtDiaChi.Size = new System.Drawing.Size(358, 28);
             this.txtDiaChi.TabIndex = 3;
             // 
             // label5
@@ -183,7 +215,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label7);
@@ -194,61 +226,56 @@
             this.panel2.Size = new System.Drawing.Size(446, 456);
             this.panel2.TabIndex = 1;
             // 
-            // pictureBox2
+            // panel4
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.free_car_icon_1057_thumb;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 15);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(446, 56);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 6;
-            this.pictureBox2.TabStop = false;
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.Controls.Add(this.btbCancle);
+            this.panel4.Controls.Add(this.btbUpdate);
+            this.panel4.Controls.Add(this.btbSave);
+            this.panel4.Location = new System.Drawing.Point(23, 385);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(398, 39);
+            this.panel4.TabIndex = 12;
             // 
-            // label1
+            // btbCancle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 19);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Thông tin chủ xe";
+            this.btbCancle.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btbCancle.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btbCancle.Location = new System.Drawing.Point(296, 2);
+            this.btbCancle.Name = "btbCancle";
+            this.btbCancle.Size = new System.Drawing.Size(99, 35);
+            this.btbCancle.TabIndex = 9;
+            this.btbCancle.Text = "Hủy bỏ";
+            this.btbCancle.UseVisualStyleBackColor = true;
+            this.btbCancle.Click += new System.EventHandler(this.btbCancle_Click);
             // 
-            // label2
+            // btbUpdate
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(488, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 19);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Thông tin xe";
+            this.btbUpdate.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btbUpdate.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btbUpdate.Location = new System.Drawing.Point(150, 4);
+            this.btbUpdate.Name = "btbUpdate";
+            this.btbUpdate.Size = new System.Drawing.Size(98, 35);
+            this.btbUpdate.TabIndex = 8;
+            this.btbUpdate.Text = "Cập nhật";
+            this.btbUpdate.UseVisualStyleBackColor = true;
+            this.btbUpdate.Click += new System.EventHandler(this.btbUpdate_Click);
             // 
-            // label7
+            // btbSave
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label7.Location = new System.Drawing.Point(45, 94);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(142, 16);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Biển số xe (Duy nhất)";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // txtBienSo
-            // 
-            this.txtBienSo.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBienSo.Location = new System.Drawing.Point(42, 112);
-            this.txtBienSo.Name = "txtBienSo";
-            this.txtBienSo.Size = new System.Drawing.Size(360, 28);
-            this.txtBienSo.TabIndex = 4;
+            this.btbSave.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btbSave.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btbSave.Location = new System.Drawing.Point(0, 3);
+            this.btbSave.Name = "btbSave";
+            this.btbSave.Size = new System.Drawing.Size(96, 35);
+            this.btbSave.TabIndex = 7;
+            this.btbSave.Text = "Lưu";
+            this.btbSave.UseVisualStyleBackColor = true;
+            this.btbSave.Click += new System.EventHandler(this.btbSave_Click);
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.dtpTiepNhan);
             this.panel3.Controls.Add(this.cbcBrand);
             this.panel3.Controls.Add(this.label8);
@@ -257,6 +284,28 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(398, 164);
             this.panel3.TabIndex = 11;
+            // 
+            // dtpTiepNhan
+            // 
+            this.dtpTiepNhan.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpTiepNhan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpTiepNhan.Location = new System.Drawing.Point(19, 120);
+            this.dtpTiepNhan.Name = "dtpTiepNhan";
+            this.dtpTiepNhan.Size = new System.Drawing.Size(360, 27);
+            this.dtpTiepNhan.TabIndex = 6;
+            this.dtpTiepNhan.ValueChanged += new System.EventHandler(this.dtpTiepNhan_ValueChanged);
+            // 
+            // cbcBrand
+            // 
+            this.cbcBrand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbcBrand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbcBrand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbcBrand.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbcBrand.FormattingEnabled = true;
+            this.cbcBrand.Location = new System.Drawing.Point(19, 23);
+            this.cbcBrand.Name = "cbcBrand";
+            this.cbcBrand.Size = new System.Drawing.Size(360, 27);
+            this.cbcBrand.TabIndex = 5;
             // 
             // label8
             // 
@@ -282,106 +331,69 @@
             this.label9.TabIndex = 10;
             this.label9.Text = "Ngày tiếp nhận";
             // 
-            // panel4
+            // label7
             // 
-            this.panel4.Controls.Add(this.btbCancle);
-            this.panel4.Controls.Add(this.btbDelete);
-            this.panel4.Controls.Add(this.btbSave);
-            this.panel4.Location = new System.Drawing.Point(23, 385);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(398, 39);
-            this.panel4.TabIndex = 12;
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label7.Location = new System.Drawing.Point(45, 94);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(142, 16);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Biển số xe (Duy nhất)";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // btbSave
+            // txtBienSo
             // 
-            this.btbSave.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btbSave.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btbSave.Location = new System.Drawing.Point(0, 3);
-            this.btbSave.Name = "btbSave";
-            this.btbSave.Size = new System.Drawing.Size(96, 35);
-            this.btbSave.TabIndex = 7;
-            this.btbSave.Text = "Lưu";
-            this.btbSave.UseVisualStyleBackColor = true;
-            this.btbSave.Click += new System.EventHandler(this.btbSave_Click);
+            this.txtBienSo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBienSo.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBienSo.Location = new System.Drawing.Point(42, 112);
+            this.txtBienSo.Name = "txtBienSo";
+            this.txtBienSo.Size = new System.Drawing.Size(360, 28);
+            this.txtBienSo.TabIndex = 4;
+            this.txtBienSo.Leave += new System.EventHandler(this.txtBienSo_Leave);
             // 
-            // btbDelete
+            // pictureBox2
             // 
-            this.btbDelete.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btbDelete.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btbDelete.Location = new System.Drawing.Point(150, 4);
-            this.btbDelete.Name = "btbDelete";
-            this.btbDelete.Size = new System.Drawing.Size(98, 35);
-            this.btbDelete.TabIndex = 8;
-            this.btbDelete.Text = "Cập nhật";
-            this.btbDelete.UseVisualStyleBackColor = true;
-            // 
-            // btbCancle
-            // 
-            this.btbCancle.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btbCancle.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btbCancle.Location = new System.Drawing.Point(296, 2);
-            this.btbCancle.Name = "btbCancle";
-            this.btbCancle.Size = new System.Drawing.Size(99, 35);
-            this.btbCancle.TabIndex = 9;
-            this.btbCancle.Text = "Hủy bỏ";
-            this.btbCancle.UseVisualStyleBackColor = true;
-            this.btbCancle.Click += new System.EventHandler(this.btbCancle_Click);
-            // 
-            // cbcCusSDT
-            // 
-            this.cbcCusSDT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbcCusSDT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbcCusSDT.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbcCusSDT.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbcCusSDT.FormattingEnabled = true;
-            this.cbcCusSDT.Location = new System.Drawing.Point(41, 112);
-            this.cbcCusSDT.Name = "cbcCusSDT";
-            this.cbcCusSDT.Size = new System.Drawing.Size(359, 27);
-            this.cbcCusSDT.TabIndex = 0;
-            this.cbcCusSDT.SelectedValueChanged += new System.EventHandler(this.cbcCusSDT_SelectedValueChanged);
-            this.cbcCusSDT.Leave += new System.EventHandler(this.cbcCusSDT_Leave);
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.free_car_icon_1057_thumb;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 15);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(446, 56);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
             // 
-            // cbcBrand
+            // label1
             // 
-            this.cbcBrand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbcBrand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbcBrand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbcBrand.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbcBrand.FormattingEnabled = true;
-            this.cbcBrand.Location = new System.Drawing.Point(19, 23);
-            this.cbcBrand.Name = "cbcBrand";
-            this.cbcBrand.Size = new System.Drawing.Size(360, 27);
-            this.cbcBrand.TabIndex = 5;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.label1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(27, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(141, 19);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Thông tin chủ xe";
             // 
-            // dtpTiepNhan
+            // label2
             // 
-            this.dtpTiepNhan.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpTiepNhan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTiepNhan.Location = new System.Drawing.Point(19, 120);
-            this.dtpTiepNhan.Name = "dtpTiepNhan";
-            this.dtpTiepNhan.Size = new System.Drawing.Size(360, 27);
-            this.dtpTiepNhan.TabIndex = 6;
-            // 
-            // label10
-            // 
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Arial", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label10.Location = new System.Drawing.Point(23, 381);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(401, 49);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Nhân viên lưu ý, thông tin khách hàng là quan trọng, nên chỉ được phép sửa chữa ở" +
-    " mục khách hàng \r\nTrân trọng cảm ơn!";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label10.Click += new System.EventHandler(this.label10_Click);
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.label2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(486, 47);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 19);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Thông tin xe";
             // 
             // TiepNhanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::PhanMemQuanLyGaraOto.Properties.Resources.hinh_anh_backgroud_hoa_dao_no_cuc_ky_dep_034909613;
+            this.BackgroundImage = global::PhanMemQuanLyGaraOto.Properties.Resources.jimu_art_by_jimu_art_merry_christmas_christmas_illustration;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(966, 591);
             this.Controls.Add(this.label2);
@@ -404,10 +416,10 @@
             this.pnlCusInfor.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -431,7 +443,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btbCancle;
-        private System.Windows.Forms.Button btbDelete;
+        private System.Windows.Forms.Button btbUpdate;
         private System.Windows.Forms.Button btbSave;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label8;

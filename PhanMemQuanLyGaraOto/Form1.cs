@@ -142,6 +142,7 @@ namespace PhanMemQuanLyGaraOto
             SaveUser();
             LoadUser();
             this.Hide();
+            this.SuspendLayout();
             MainForm mainForm = new MainForm();
             mainForm.ShowDialog();
             mainForm.Dispose();
@@ -154,6 +155,7 @@ namespace PhanMemQuanLyGaraOto
             {
                 mainForm.Dispose();
                 mainForm.Close();
+                this.ResumeLayout();
                 this.Show();
             }
         }
