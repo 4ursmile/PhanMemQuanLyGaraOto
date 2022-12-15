@@ -70,7 +70,10 @@
   <ItemGroup>
     <Compile Include="Class\CheckCarModel.cs" />
     <Compile Include="DAO\DAOExtend1.cs" />
+    <Compile Include="DAO\DataProviderFixDetail.cs" />
+    <Compile Include="DAO\DataProviderFix.cs" />
     <Compile Include="DAO\DataProviderTOOL.cs" />
+    <Compile Include="DDO\CustomCTPSC.cs" />
     <Compile Include="DDO\REMCheckCar.cs" />
     <Compile Include="Model\ACCOUNT.cs">
       <DependentUpon>GaraModel.tt</DependentUpon>
@@ -143,6 +146,12 @@
     </Compile>
     <Compile Include="Model\XE.cs">
       <DependentUpon>GaraModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\SubSubForm\FixForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\SubSubForm\FixForm.Designer.cs">
+      <DependentUpon>FixForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SubForm\SubSubForm\TiepNhanForm.cs">
       <SubType>Form</SubType>
@@ -258,6 +267,9 @@
     <EmbeddedResource Include="SubForm\SubSubForm\ChangePassForm.resx">
       <DependentUpon>ChangePassForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\SubSubForm\FixForm.resx">
+      <DependentUpon>FixForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SubForm\SubSubForm\TiepNhanForm.resx">
       <DependentUpon>TiepNhanForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -274,9 +286,11 @@
     <None Include="Model\GaraModel.edmx.diagram">
       <DependentUpon>GaraModel.edmx</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.DDO.CustomCTPSC.datasource" />
     <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.DDo.MCheckCar.datasource" />
     <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.DDO.REMCheckCar.datasource" />
     <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.Model.ACCOUNT.datasource" />
+    <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.Model.CHITIET_PSC.datasource" />
     <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.Model.CHUXE.datasource" />
     <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.Model.HIEUXE.datasource" />
     <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.Model.PHUTUNG.datasource" />
@@ -407,6 +421,9 @@
       <DependentUpon>GaraModel.edmx</DependentUpon>
       <LastGenOutput>GaraModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\ce9b49374132daaca1283aef58454019.jpg" />
+    <None Include="Resources\istockphoto-1288020112-612x612.jpg" />
+    <None Include="Resources\wallpaperflare.com_wallpaper.jpg" />
     <None Include="Resources\jimu-art-by-jimu-art-merry-christmas-christmas-illustration.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

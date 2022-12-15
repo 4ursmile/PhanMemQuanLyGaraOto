@@ -1,96 +1,97 @@
 ﻿using PhanMemQuanLyGaraOto.Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Windows.UI.Xaml.Controls;
 
 namespace PhanMemQuanLyGaraOto.DAO
 {
     public partial class DataProvider
     {
-        public void SaveTool(PHUTUNG PHUTUNG, params AlertNonPara[] Loadawhendones)
+        public void SavePHIEUSUACHUA(PHIEUSUACHUA PHIEUSUACHUA, params AlertNonPara[] Loadawhendones)
         {
             try
             {
-                if (PHUTUNG == null)
+                if (PHIEUSUACHUA == null)
                 {
-                    MakeNotiError(strSave + nameof(PHUTUNG), FrontEndError);
+                    MakeNotiError(strSave + nameof(PHIEUSUACHUA), FrontEndError);
                     return;
                 }
-                db.PHUTUNGs.Add(PHUTUNG);
+                db.PHIEUSUACHUAs.Add(PHIEUSUACHUA);
                 db.SaveChanges();
-                MakeNotiSuccess(strSave + nameof(PHUTUNG));
+                MakeNotiSuccess(strSave + nameof(PHIEUSUACHUA));
                 ReloadDataEvent.Ins.Alert(DataType.Tool);
 
             }
             catch
             {
                 MessageBox.Show("Lưu thất bại, Kết nối với máy chủ bị  gián đoạn", "Lỗi kết nối đến máy chủ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MakeNotiError(strSave + nameof(PHUTUNG), BackEndError);
+                MakeNotiError(strSave + nameof(PHIEUSUACHUA), BackEndError);
             }
             foreach (var donefunc in Loadawhendones)
             {
                 donefunc?.Invoke();
             }
         }
-        public void UpdateTool(PHUTUNG PHUTUNG, params AlertNonPara[] LoadWhendones)
+        public void UpdatePHIEUSUACHUA(PHIEUSUACHUA PHIEUSUACHUA, params AlertNonPara[] LoadWhendones)
         {
             try
             {
                 if (ChangeComfirm(strUpdate)) return;
-                if (PHUTUNG == null) return;
-                PHUTUNG tmp = db.PHUTUNGs.Where(a => a.MAPHUTUNG == PHUTUNG.MAPHUTUNG).FirstOrDefault();
+                if (PHIEUSUACHUA == null) return;
+                PHIEUSUACHUA tmp = db.PHIEUSUACHUAs.Where(a => a.MAPHIEU == PHIEUSUACHUA.MAPHIEU).FirstOrDefault();
                 if (tmp == null)
                 {
-                    MakeNotiError(strUpdate + nameof(PHUTUNG), FrontEndError);
+                    MakeNotiError(strUpdate + nameof(PHIEUSUACHUA), FrontEndError);
                     return;
                 }
-                db.Entry(tmp).CurrentValues.SetValues(PHUTUNG);
+                db.Entry(tmp).CurrentValues.SetValues(PHIEUSUACHUA);
                 SaveChange();
                 ReloadDataEvent.Ins.Alert(DataType.Tool);
-                MakeNotiSuccess(strUpdate + nameof(PHUTUNG));
+                MakeNotiSuccess(strUpdate + nameof(PHIEUSUACHUA));
 
             }
             catch
             {
                 MessageBox.Show("Cập nhật thất bại, Kết nối với máy chủ bị gián đoạn", "Lỗi kết nối đến máy chủ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MakeNotiError(strUpdate + nameof(PHUTUNG), BackEndError);
+                MakeNotiError(strUpdate + nameof(PHIEUSUACHUA), BackEndError);
             }
             foreach (var func in LoadWhendones)
             {
                 func?.Invoke();
             }
         }
-        public void DeleteTool(PHUTUNG PHUTUNG, params AlertNonPara[] LoadWhendones)
+        public void DeletePHIEUSUACHUA(PHIEUSUACHUA PHIEUSUACHUA, params AlertNonPara[] LoadWhendones)
         {
             try
             {
                 if (ChangeComfirm(strDelete)) return;
-                PHUTUNG tmp = db.PHUTUNGs.Where(a => a.MAPHUTUNG == PHUTUNG.MAPHUTUNG).FirstOrDefault();
+                PHIEUSUACHUA tmp = db.PHIEUSUACHUAs.Where(a => a.MAPHIEU == PHIEUSUACHUA.MAPHIEU).FirstOrDefault();
                 if (tmp == null)
                 {
-                    MakeNotiError(strDelete + nameof(PHUTUNG), FrontEndError);
+                    MakeNotiError(strDelete + nameof(PHIEUSUACHUA), FrontEndError);
                     return;
                 }
-                db.PHUTUNGs.Remove(tmp);
+                db.PHIEUSUACHUAs.Remove(tmp);
                 db.SaveChanges();
-                MakeNotiSuccess(strDelete + nameof(PHUTUNG));
+                MakeNotiSuccess(strDelete + nameof(PHIEUSUACHUA));
                 ReloadDataEvent.Ins.Alert(DataType.Tool);
 
 
             }
             catch (Exception e)
             {
-                MakeNotiError(strDelete + nameof(PHUTUNG), BackEndError);
+                MakeNotiError(strDelete + nameof(PHIEUSUACHUA), BackEndError);
                 MessageBox.Show("Xóa thất bại ", e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             foreach (var func in LoadWhendones)
             {
                 func?.Invoke();
             }
-
         }
     }
 }

@@ -37,6 +37,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btbDelete = new System.Windows.Forms.Panel();
             this.dgvCheckCars = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.carIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carBrandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carOwnerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carOwnerTeleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateInDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.debtMoneyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rEMCheckCarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.btbFilter = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -52,14 +60,7 @@
             this.btbUpdate = new System.Windows.Forms.Button();
             this.btbTiepNhan = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.rEMCheckCarBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.carIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carBrandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carOwnerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carOwnerTeleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateInDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.debtMoneyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btbFix = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -67,10 +68,10 @@
             this.panel1.SuspendLayout();
             this.btbDelete.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheckCars)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rEMCheckCarBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rEMCheckCarBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -206,6 +207,78 @@
             this.dgvCheckCars.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCheckCars_CellMouseClick);
             this.dgvCheckCars.SelectionChanged += new System.EventHandler(this.dgvCheckCars_SelectionChanged);
             // 
+            // carIdDataGridViewTextBoxColumn
+            // 
+            this.carIdDataGridViewTextBoxColumn.DataPropertyName = "CarId";
+            this.carIdDataGridViewTextBoxColumn.HeaderText = "CID";
+            this.carIdDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.carIdDataGridViewTextBoxColumn.Name = "carIdDataGridViewTextBoxColumn";
+            this.carIdDataGridViewTextBoxColumn.Visible = false;
+            this.carIdDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // carBrandDataGridViewTextBoxColumn
+            // 
+            this.carBrandDataGridViewTextBoxColumn.DataPropertyName = "CarBrand";
+            this.carBrandDataGridViewTextBoxColumn.HeaderText = "Hiệu xe";
+            this.carBrandDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.carBrandDataGridViewTextBoxColumn.Name = "carBrandDataGridViewTextBoxColumn";
+            this.carBrandDataGridViewTextBoxColumn.ReadOnly = true;
+            this.carBrandDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.carBrandDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // carNumberDataGridViewTextBoxColumn
+            // 
+            this.carNumberDataGridViewTextBoxColumn.DataPropertyName = "CarNumber";
+            this.carNumberDataGridViewTextBoxColumn.HeaderText = "Biển số";
+            this.carNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.carNumberDataGridViewTextBoxColumn.Name = "carNumberDataGridViewTextBoxColumn";
+            this.carNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.carNumberDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.carNumberDataGridViewTextBoxColumn.Width = 105;
+            // 
+            // carOwnerNameDataGridViewTextBoxColumn
+            // 
+            this.carOwnerNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.carOwnerNameDataGridViewTextBoxColumn.DataPropertyName = "CarOwnerName";
+            this.carOwnerNameDataGridViewTextBoxColumn.HeaderText = "Tên chủ xe";
+            this.carOwnerNameDataGridViewTextBoxColumn.MinimumWidth = 100;
+            this.carOwnerNameDataGridViewTextBoxColumn.Name = "carOwnerNameDataGridViewTextBoxColumn";
+            this.carOwnerNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // carOwnerTeleDataGridViewTextBoxColumn
+            // 
+            this.carOwnerTeleDataGridViewTextBoxColumn.DataPropertyName = "CarOwnerTele";
+            this.carOwnerTeleDataGridViewTextBoxColumn.HeaderText = "Số điện thoại";
+            this.carOwnerTeleDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.carOwnerTeleDataGridViewTextBoxColumn.Name = "carOwnerTeleDataGridViewTextBoxColumn";
+            this.carOwnerTeleDataGridViewTextBoxColumn.ReadOnly = true;
+            this.carOwnerTeleDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dateInDataGridViewTextBoxColumn
+            // 
+            this.dateInDataGridViewTextBoxColumn.DataPropertyName = "DateIn";
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle1.NullValue = "Không xác định";
+            this.dateInDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dateInDataGridViewTextBoxColumn.HeaderText = "Ngày tiếp nhận";
+            this.dateInDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateInDataGridViewTextBoxColumn.Name = "dateInDataGridViewTextBoxColumn";
+            this.dateInDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateInDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // debtMoneyDataGridViewTextBoxColumn
+            // 
+            this.debtMoneyDataGridViewTextBoxColumn.DataPropertyName = "DebtMoney";
+            this.debtMoneyDataGridViewTextBoxColumn.HeaderText = "Tổng nợ";
+            this.debtMoneyDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.debtMoneyDataGridViewTextBoxColumn.Name = "debtMoneyDataGridViewTextBoxColumn";
+            this.debtMoneyDataGridViewTextBoxColumn.ReadOnly = true;
+            this.debtMoneyDataGridViewTextBoxColumn.Width = 135;
+            // 
+            // rEMCheckCarBindingSource
+            // 
+            this.rEMCheckCarBindingSource.DataSource = typeof(PhanMemQuanLyGaraOto.DDO.REMCheckCar);
+            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -324,6 +397,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.btbFix);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.cbcBienSo);
             this.panel3.Controls.Add(this.btbcollect);
@@ -377,7 +451,7 @@
             this.btbUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
             this.btbUpdate.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btbUpdate.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btbUpdate.Location = new System.Drawing.Point(679, 31);
+            this.btbUpdate.Location = new System.Drawing.Point(582, 30);
             this.btbUpdate.Name = "btbUpdate";
             this.btbUpdate.Size = new System.Drawing.Size(100, 35);
             this.btbUpdate.TabIndex = 1;
@@ -393,7 +467,7 @@
             this.btbTiepNhan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
             this.btbTiepNhan.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btbTiepNhan.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btbTiepNhan.Location = new System.Drawing.Point(558, 31);
+            this.btbTiepNhan.Location = new System.Drawing.Point(476, 30);
             this.btbTiepNhan.Name = "btbTiepNhan";
             this.btbTiepNhan.Size = new System.Drawing.Size(100, 35);
             this.btbTiepNhan.TabIndex = 0;
@@ -411,77 +485,21 @@
             this.tabPage2.Text = "Sửa chữa";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // rEMCheckCarBindingSource
+            // btbFix
             // 
-            this.rEMCheckCarBindingSource.DataSource = typeof(PhanMemQuanLyGaraOto.DDO.REMCheckCar);
-            // 
-            // carIdDataGridViewTextBoxColumn
-            // 
-            this.carIdDataGridViewTextBoxColumn.DataPropertyName = "CarId";
-            this.carIdDataGridViewTextBoxColumn.HeaderText = "CID";
-            this.carIdDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.carIdDataGridViewTextBoxColumn.Name = "carIdDataGridViewTextBoxColumn";
-            this.carIdDataGridViewTextBoxColumn.Visible = false;
-            this.carIdDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // carBrandDataGridViewTextBoxColumn
-            // 
-            this.carBrandDataGridViewTextBoxColumn.DataPropertyName = "CarBrand";
-            this.carBrandDataGridViewTextBoxColumn.HeaderText = "Hiệu xe";
-            this.carBrandDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.carBrandDataGridViewTextBoxColumn.Name = "carBrandDataGridViewTextBoxColumn";
-            this.carBrandDataGridViewTextBoxColumn.ReadOnly = true;
-            this.carBrandDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.carBrandDataGridViewTextBoxColumn.Width = 110;
-            // 
-            // carNumberDataGridViewTextBoxColumn
-            // 
-            this.carNumberDataGridViewTextBoxColumn.DataPropertyName = "CarNumber";
-            this.carNumberDataGridViewTextBoxColumn.HeaderText = "Biển số";
-            this.carNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.carNumberDataGridViewTextBoxColumn.Name = "carNumberDataGridViewTextBoxColumn";
-            this.carNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            this.carNumberDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.carNumberDataGridViewTextBoxColumn.Width = 105;
-            // 
-            // carOwnerNameDataGridViewTextBoxColumn
-            // 
-            this.carOwnerNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.carOwnerNameDataGridViewTextBoxColumn.DataPropertyName = "CarOwnerName";
-            this.carOwnerNameDataGridViewTextBoxColumn.HeaderText = "Tên chủ xe";
-            this.carOwnerNameDataGridViewTextBoxColumn.MinimumWidth = 100;
-            this.carOwnerNameDataGridViewTextBoxColumn.Name = "carOwnerNameDataGridViewTextBoxColumn";
-            this.carOwnerNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // carOwnerTeleDataGridViewTextBoxColumn
-            // 
-            this.carOwnerTeleDataGridViewTextBoxColumn.DataPropertyName = "CarOwnerTele";
-            this.carOwnerTeleDataGridViewTextBoxColumn.HeaderText = "Số điện thoại";
-            this.carOwnerTeleDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.carOwnerTeleDataGridViewTextBoxColumn.Name = "carOwnerTeleDataGridViewTextBoxColumn";
-            this.carOwnerTeleDataGridViewTextBoxColumn.ReadOnly = true;
-            this.carOwnerTeleDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dateInDataGridViewTextBoxColumn
-            // 
-            this.dateInDataGridViewTextBoxColumn.DataPropertyName = "DateIn";
-            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle1.NullValue = "Không xác định";
-            this.dateInDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dateInDataGridViewTextBoxColumn.HeaderText = "Ngày tiếp nhận";
-            this.dateInDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dateInDataGridViewTextBoxColumn.Name = "dateInDataGridViewTextBoxColumn";
-            this.dateInDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateInDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // debtMoneyDataGridViewTextBoxColumn
-            // 
-            this.debtMoneyDataGridViewTextBoxColumn.DataPropertyName = "DebtMoney";
-            this.debtMoneyDataGridViewTextBoxColumn.HeaderText = "Tổng nợ";
-            this.debtMoneyDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.debtMoneyDataGridViewTextBoxColumn.Name = "debtMoneyDataGridViewTextBoxColumn";
-            this.debtMoneyDataGridViewTextBoxColumn.ReadOnly = true;
-            this.debtMoneyDataGridViewTextBoxColumn.Width = 135;
+            this.btbFix.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btbFix.BackColor = System.Drawing.Color.White;
+            this.btbFix.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.btbFix.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btbFix.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btbFix.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btbFix.Location = new System.Drawing.Point(688, 30);
+            this.btbFix.Name = "btbFix";
+            this.btbFix.Size = new System.Drawing.Size(100, 35);
+            this.btbFix.TabIndex = 10;
+            this.btbFix.Text = "Sửa chữa";
+            this.btbFix.UseVisualStyleBackColor = false;
+            this.btbFix.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // CarForm
             // 
@@ -504,10 +522,10 @@
             this.panel1.ResumeLayout(false);
             this.btbDelete.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheckCars)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rEMCheckCarBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.rEMCheckCarBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -543,5 +561,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn carOwnerTeleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateInDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn debtMoneyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btbFix;
     }
 }

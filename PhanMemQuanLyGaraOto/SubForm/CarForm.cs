@@ -3,6 +3,7 @@ using PhanMemQuanLyGaraOto.DDO;
 using PhanMemQuanLyGaraOto.SubForm.SubSubForm;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Windows.Forms;
 
 namespace PhanMemQuanLyGaraOto.SubForm
@@ -73,16 +74,25 @@ namespace PhanMemQuanLyGaraOto.SubForm
                 currentCheckCar = (cRow.DataBoundItem as REMCheckCar);
                 btbcollect.Enabled = true;
                 btbUpdate.Enabled = true;
+                btbFix.Enabled = true;
             } else
             {
                 btbcollect.Enabled = false;
                 btbUpdate.Enabled = false;
+                btbFix.Enabled = false;
             }
         }
 
         private void dgvCheckCars_SelectionChanged(object sender, EventArgs e)
         {
             dgvCheckCars_CellMouseClick(sender, null);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            FixForm fixform = new FixForm();
+            fixform.ShowDialog();
+            fixform.Dispose();
         }
     }
 }

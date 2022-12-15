@@ -103,6 +103,16 @@ namespace PhanMemQuanLyGaraOto.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ce9b49374132daaca1283aef58454019 {
+            get {
+                object obj = ResourceManager.GetObject("ce9b49374132daaca1283aef58454019", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap error {
             get {
                 object obj = ResourceManager.GetObject("error", resourceCulture);
@@ -353,6 +363,16 @@ namespace PhanMemQuanLyGaraOto.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap istockphoto_1288020112_612x612 {
+            get {
+                object obj = ResourceManager.GetObject("istockphoto-1288020112-612x612", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap jimu_art_by_jimu_art_merry_christmas_christmas_illustration {
             get {
                 object obj = ResourceManager.GetObject("jimu-art-by-jimu-art-merry-christmas-christmas-illustration", resourceCulture);
@@ -416,6 +436,16 @@ namespace PhanMemQuanLyGaraOto.Properties {
         internal static System.Drawing.Bitmap sylvain_sarrailh_panoramique2 {
             get {
                 object obj = ResourceManager.GetObject("sylvain-sarrailh-panoramique2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wallpaperflare_com_wallpaper {
+            get {
+                object obj = ResourceManager.GetObject("wallpaperflare.com_wallpaper", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
