@@ -3,8 +3,11 @@ using PhanMemQuanLyGaraOto.DDO;
 using PhanMemQuanLyGaraOto.SubForm.SubSubForm;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Windows.Forms;
+using Windows.UI;
 
 namespace PhanMemQuanLyGaraOto.SubForm
 {
@@ -13,11 +16,13 @@ namespace PhanMemQuanLyGaraOto.SubForm
         REMCheckCar currentCheckCar;
         public CarForm()
         {
-            ReloadDataEvent.Ins.Addlistener(LoadToDGVCarComplex, DataType.Car, DataType.Brand, DataType.Customer);
+            ReloadDataEvent.Ins.Addlistener(LoadToDGVCarComplex, DataType.Car, DataType.Brand, DataType.Customer, DataType.FixForm);
             InitializeComponent();
             btbcollect.Enabled = false;
             btbUpdate.Enabled = false;
             LoadToDGVCarComplex();
+            cbcFilterFix.SelectedIndex = 0;
+            cbcFilterDebt.SelectedIndex = 0;
         }
 
         private void CarForm_Load(object sender, EventArgs e)
@@ -30,7 +35,47 @@ namespace PhanMemQuanLyGaraOto.SubForm
             cbcBienSo.DataSource = dgvCheckCars.DataSource;
             cbcBienSo.DisplayMember = "CarNumber";
         }
-
+        void LoadToDGVCarComplexFilter()
+        {
+            List < REMCheckCar > listFilter = DataProvider.Instance.GetCheckCar();
+            switch (cbcFilterDebt.SelectedIndex)
+            {
+                case 0:
+                    break;
+                case 1:
+                    listFilter = listFilter.Where(a=>a.DebtMoney == 0).ToList();
+                    break;
+                case 2:
+                    listFilter = listFilter.Where(a=>a.DebtMoney > 0).ToList();
+                    break;
+            }
+          
+            switch (cbcFilterFix.SelectedIndex)
+            {
+                case 0:
+                    break;
+                case 1:
+                    listFilter= listFilter.Where(a=>a.TinhTrang == 0).ToList();
+                    break;
+                case 2:
+                    listFilter = listFilter.Where(a =>a.TinhTrang == 1).ToList();
+                    break;
+            }
+            listFilter = listFilter.Where(a => a.CarOwnerTele.Contains(txtFilterSDT.Text)).ToList<REMCheckCar>();
+            dgvCheckCars.DataSource = listFilter;
+            cbcBienSo.DataSource = dgvCheckCars.DataSource;
+            cbcBienSo.DisplayMember = "CarNumber";
+        }
+        void IsFixingHightlight()
+        {
+            foreach(DataGridViewRow rows in dgvCheckCars.Rows)
+            {
+                if (Convert.ToUInt16(rows.Cells["TinhTrang"].Value) == 0)
+                {
+                    rows.DefaultCellStyle.BackColor = System.Drawing.Color.CadetBlue;
+                }
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             TiepNhanForm tiepNhanForm = new TiepNhanForm();
@@ -55,7 +100,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
         }
         private void CarForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            ReloadDataEvent.Ins.RemoveListerner(LoadToDGVCarComplex, DataType.Car, DataType.Brand, DataType.Customer);
+            ReloadDataEvent.Ins.RemoveListerner(LoadToDGVCarComplex, DataType.Car, DataType.Brand, DataType.Customer, DataType.FixForm);
             DiposeToRoot(this);
         }
 
@@ -90,9 +135,26 @@ namespace PhanMemQuanLyGaraOto.SubForm
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            FixForm fixform = new FixForm();
+            FixForm fixform = new FixForm(currentCheckCar);
             fixform.ShowDialog();
-            fixform.Dispose();
+        }
+
+        private void btbFilter_Click(object sender, EventArgs e)
+        {
+            LoadToDGVCarComplexFilter();
+        }
+
+        private void dgvCheckCars_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+           IsFixingHightlight();
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            txtFilterSDT.Text = "";
+            cbcFilterDebt.SelectedIndex = 0;
+            cbcFilterFix.SelectedIndex = 0;
+            LoadToDGVCarComplex();
         }
     }
 }

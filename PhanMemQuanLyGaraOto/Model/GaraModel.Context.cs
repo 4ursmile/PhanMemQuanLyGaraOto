@@ -118,5 +118,14 @@ namespace PhanMemQuanLyGaraOto.Model
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INITBAOCAOTON", tHANGNAMParameter);
         }
+    
+        public virtual int XOAPHIEUSUACHUA(Nullable<int> mAPHIEU)
+        {
+            var mAPHIEUParameter = mAPHIEU.HasValue ?
+                new ObjectParameter("MAPHIEU", mAPHIEU) :
+                new ObjectParameter("MAPHIEU", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("XOAPHIEUSUACHUA", mAPHIEUParameter);
+        }
     }
 }

@@ -2,16 +2,24 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Windows.ApplicationModel.Calls;
 using Windows.UI.Xaml.Controls;
 
 namespace PhanMemQuanLyGaraOto.DAO
 {
     public partial class DataProvider
     {
+        public PHIEUSUACHUA GetPHIEUSUACHUA(int maxe)
+        {
+           IEnumerable<PHIEUSUACHUA> tmp = db.PHIEUSUACHUAs.Where(a=>a.MAXE == maxe && a.TINHTRANG == 0);
+            int s = tmp.Count();
+            return tmp.FirstOrDefault();
+        }
         public void SavePHIEUSUACHUA(PHIEUSUACHUA PHIEUSUACHUA, params AlertNonPara[] Loadawhendones)
         {
             try
@@ -93,5 +101,6 @@ namespace PhanMemQuanLyGaraOto.DAO
                 func?.Invoke();
             }
         }
+
     }
 }

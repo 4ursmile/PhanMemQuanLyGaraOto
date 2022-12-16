@@ -54,7 +54,8 @@ namespace PhanMemQuanLyGaraOto.DAO
                                                  CarOwnerName = c.TENCHUXE,
                                                  CarOwnerTele =  c.DIENTHOAI,
                                                  DateIn = x.NGAYTIEPNHAN.Value,
-                                                 DebtMoney = x.TONGNO.Value
+                                                 DebtMoney = x.TONGNO.Value,
+                                                 TinhTrang = x.TINHTRANG
                                              }).ToList();
             if (list == null) return new List<REMCheckCar>();
             return list;

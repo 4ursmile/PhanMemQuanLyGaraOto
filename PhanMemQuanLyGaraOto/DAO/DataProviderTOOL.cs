@@ -67,6 +67,8 @@ namespace PhanMemQuanLyGaraOto.DAO
         {
             try
             {
+                MakeNotiError(strDelete + nameof(PHUTUNG), BackEndError);
+                return;
                 if (ChangeComfirm(strDelete)) return;
                 PHUTUNG tmp = db.PHUTUNGs.Where(a => a.MAPHUTUNG == PHUTUNG.MAPHUTUNG).FirstOrDefault();
                 if (tmp == null)

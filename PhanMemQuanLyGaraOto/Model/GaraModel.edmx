@@ -95,7 +95,7 @@
           <Property Name="SOPHIEUNHAP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NGAYLAP" Type="smalldatetime" />
           <Property Name="TONGTIEN" Type="money" />
-          <Property Name="TINHTRANG" Type="binary" MaxLength="1" />
+          <Property Name="TINHTRANG" Type="smallint" />
         </EntityType>
         <EntityType Name="PHIEUSUACHUA">
           <Key>
@@ -105,7 +105,7 @@
           <Property Name="MAXE" Type="int" />
           <Property Name="NGAYLAP" Type="smalldatetime" />
           <Property Name="TONGTIEN" Type="money" />
-          <Property Name="TINHTRANG" Type="binary" MaxLength="1" />
+          <Property Name="TINHTRANG" Type="smallint" />
         </EntityType>
         <EntityType Name="PHIEUTHUTIEN">
           <Key>
@@ -158,6 +158,7 @@
           <Property Name="MACHUXE" Type="int" />
           <Property Name="NGAYTIEPNHAN" Type="smalldatetime" />
           <Property Name="TONGNO" Type="money" />
+          <Property Name="TINHTRANG" Type="smallint" />
         </EntityType>
         <Association Name="FK_BCT_PT">
           <End Role="PHUTUNG" Type="Self.PHUTUNG" Multiplicity="0..1" />
@@ -324,6 +325,9 @@
         <Function Name="LOGINACCOUNT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="USERNAME" Type="nvarchar" Mode="In" />
           <Parameter Name="PASSWORD" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="XOAPHIEUSUACHUA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MAPHIEU" Type="int" Mode="In" />
         </Function>
         <EntityContainer Name="GARAOTOModelStoreContainer">
           <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" Schema="dbo" store:Type="Tables" />
@@ -492,7 +496,7 @@
           <Property Name="NGAYLAP" Type="DateTime" Precision="0" />
           <Property Name="TONGTIEN" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="CT_PHIEUNHAP" Relationship="Self.FK_CT_PN" FromRole="PHIEUNHAP" ToRole="CT_PHIEUNHAP" />
-          <Property Name="TINHTRANG" Type="Binary" MaxLength="1" FixedLength="true" />
+          <Property Name="TINHTRANG" Type="Int16" />
         </EntityType>
         <EntityType Name="PHIEUSUACHUA">
           <Key>
@@ -502,7 +506,7 @@
           <Property Name="MAXE" Type="Int32" />
           <Property Name="NGAYLAP" Type="DateTime" Precision="0" />
           <Property Name="TONGTIEN" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="TINHTRANG" Type="Binary" MaxLength="1" FixedLength="true" />
+          <Property Name="TINHTRANG" Type="Int16" />
           <NavigationProperty Name="CHITIET_PSC" Relationship="Self.FK_CT_PSC" FromRole="PHIEUSUACHUA" ToRole="CHITIET_PSC" />
           <NavigationProperty Name="XE" Relationship="Self.FK_PSC_XE" FromRole="PHIEUSUACHUA" ToRole="XE" />
         </EntityType>
@@ -566,6 +570,7 @@
           <NavigationProperty Name="HIEUXE" Relationship="Self.FK_XE_HX" FromRole="XE" ToRole="HIEUXE" />
           <NavigationProperty Name="PHIEUSUACHUAs" Relationship="Self.FK_PSC_XE" FromRole="XE" ToRole="PHIEUSUACHUA" />
           <NavigationProperty Name="PHIEUTHUTIENs" Relationship="Self.FK_PTT_XE" FromRole="XE" ToRole="PHIEUTHUTIEN" />
+          <Property Name="TINHTRANG" Type="Int16" />
         </EntityType>
         <Association Name="FK_BCT_PT">
           <End Role="PHUTUNG" Type="Self.PHUTUNG" Multiplicity="0..1" />
@@ -779,10 +784,13 @@
             <Parameter Name="PASSWORD" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DONGPHIEUNHAP">
-            <Parameter Name="SOPHIEUNHAP" Mode="In" Type="Int32" />
+          <Parameter Name="SOPHIEUNHAP" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="INITBAOCAOTON">
-            <Parameter Name="THANGNAM" Mode="In" Type="DateTime" />
+          <Parameter Name="THANGNAM" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="XOAPHIEUSUACHUA">
+          <Parameter Name="MAPHIEU" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="GETBAOCAO_Result">
@@ -970,6 +978,7 @@
           <EntitySetMapping Name="XEs">
             <EntityTypeMapping TypeName="GARAOTOModel.XE">
               <MappingFragment StoreEntitySet="XE">
+                <ScalarProperty Name="TINHTRANG" ColumnName="TINHTRANG" />
                 <ScalarProperty Name="MAXE" ColumnName="MAXE" />
                 <ScalarProperty Name="BIENSO" ColumnName="BIENSO" />
                 <ScalarProperty Name="MAHIEUXE" ColumnName="MAHIEUXE" />
@@ -1014,6 +1023,7 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="DONGPHIEUNHAP" FunctionName="GARAOTOModel.Store.DONGPHIEUNHAP" />
           <FunctionImportMapping FunctionImportName="INITBAOCAOTON" FunctionName="GARAOTOModel.Store.INITBAOCAOTON" />
+          <FunctionImportMapping FunctionImportName="XOAPHIEUSUACHUA" FunctionName="GARAOTOModel.Store.XOAPHIEUSUACHUA" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -61,9 +61,9 @@
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kryptonDataGridView2 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btbCloseForm = new System.Windows.Forms.Button();
+            this.btbCancelPhieu = new System.Windows.Forms.Button();
+            this.btbDongPhieu = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mACTPSCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mAPHIEUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -291,7 +291,7 @@
             this.panel7.Controls.Add(this.nudTienCong);
             this.panel7.Controls.Add(this.nudDonGia);
             this.panel7.Controls.Add(this.cbcNoiDung);
-            this.panel7.Location = new System.Drawing.Point(13, 12);
+            this.panel7.Location = new System.Drawing.Point(17, 12);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(428, 340);
             this.panel7.TabIndex = 0;
@@ -459,10 +459,10 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.dgvPHUTUNG);
             this.panel1.Controls.Add(this.kryptonDataGridView2);
-            this.panel1.Location = new System.Drawing.Point(511, 155);
+            this.panel1.Location = new System.Drawing.Point(511, 150);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(717, 424);
+            this.panel1.Size = new System.Drawing.Size(717, 429);
             this.panel1.TabIndex = 13;
             // 
             // dgvPHUTUNG
@@ -495,7 +495,7 @@
             this.dgvPHUTUNG.RowHeadersWidth = 30;
             this.dgvPHUTUNG.RowTemplate.Height = 24;
             this.dgvPHUTUNG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPHUTUNG.Size = new System.Drawing.Size(705, 412);
+            this.dgvPHUTUNG.Size = new System.Drawing.Size(705, 417);
             this.dgvPHUTUNG.StateCommon.Background.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.dgvPHUTUNG.StateCommon.Background.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.dgvPHUTUNG.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridHeaderColumnSheet;
@@ -552,7 +552,7 @@
             this.kryptonDataGridView2.ReadOnly = true;
             this.kryptonDataGridView2.RowHeadersWidth = 30;
             this.kryptonDataGridView2.RowTemplate.Height = 24;
-            this.kryptonDataGridView2.Size = new System.Drawing.Size(705, 412);
+            this.kryptonDataGridView2.Size = new System.Drawing.Size(705, 417);
             this.kryptonDataGridView2.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.kryptonDataGridView2.StateCommon.Background.Color2 = System.Drawing.Color.WhiteSmoke;
             this.kryptonDataGridView2.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridHeaderColumnSheet;
@@ -583,57 +583,58 @@
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.button3);
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.btbCloseForm);
+            this.panel3.Controls.Add(this.btbCancelPhieu);
+            this.panel3.Controls.Add(this.btbDongPhieu);
             this.panel3.Location = new System.Drawing.Point(511, 614);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(717, 47);
             this.panel3.TabIndex = 3;
             // 
-            // button1
+            // btbCloseForm
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btbCloseForm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.AutoSize = true;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(557, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 47);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Đóng";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btbCloseForm.AutoSize = true;
+            this.btbCloseForm.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btbCloseForm.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btbCloseForm.Location = new System.Drawing.Point(557, 0);
+            this.btbCloseForm.Name = "btbCloseForm";
+            this.btbCloseForm.Size = new System.Drawing.Size(161, 47);
+            this.btbCloseForm.TabIndex = 2;
+            this.btbCloseForm.Text = "Đóng";
+            this.btbCloseForm.UseVisualStyleBackColor = true;
+            this.btbCloseForm.Click += new System.EventHandler(this.btbCloseForm_Click);
             // 
-            // button2
+            // btbCancelPhieu
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.button2.AutoSize = true;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(279, 0);
-            this.button2.MaximumSize = new System.Drawing.Size(210, 50);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(182, 47);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Hủy phiếu sửa chữa";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btbCancelPhieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btbCancelPhieu.AutoSize = true;
+            this.btbCancelPhieu.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btbCancelPhieu.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btbCancelPhieu.Location = new System.Drawing.Point(279, 0);
+            this.btbCancelPhieu.MaximumSize = new System.Drawing.Size(210, 50);
+            this.btbCancelPhieu.Name = "btbCancelPhieu";
+            this.btbCancelPhieu.Size = new System.Drawing.Size(182, 47);
+            this.btbCancelPhieu.TabIndex = 1;
+            this.btbCancelPhieu.Text = "Hủy phiếu sửa chữa";
+            this.btbCancelPhieu.UseVisualStyleBackColor = true;
+            this.btbCancelPhieu.Click += new System.EventHandler(this.btbCancelPhieu_Click);
             // 
-            // button3
+            // btbDongPhieu
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btbDongPhieu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.button3.AutoSize = true;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(0, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(193, 47);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Xác nhận";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btbDongPhieu.AutoSize = true;
+            this.btbDongPhieu.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btbDongPhieu.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btbDongPhieu.Location = new System.Drawing.Point(0, 0);
+            this.btbDongPhieu.Name = "btbDongPhieu";
+            this.btbDongPhieu.Size = new System.Drawing.Size(193, 47);
+            this.btbDongPhieu.TabIndex = 0;
+            this.btbDongPhieu.Text = "Xác nhận";
+            this.btbDongPhieu.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -825,9 +826,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dONGIADataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tHANHTIENDataGridViewTextBoxColumn;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btbCloseForm;
+        private System.Windows.Forms.Button btbCancelPhieu;
+        private System.Windows.Forms.Button btbDongPhieu;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

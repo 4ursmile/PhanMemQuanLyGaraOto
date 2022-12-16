@@ -26,7 +26,6 @@ namespace PhanMemQuanLyGaraOto.SubForm
         }
         void ResetToolView()
         {
-            dgvPHUTUNG.ClearSelection();
             btbDELETEB.Enabled = false;
             btbADDB.Enabled = true;
             btbADDB.Text = "Thêm";

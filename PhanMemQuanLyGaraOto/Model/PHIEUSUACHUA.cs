@@ -24,7 +24,7 @@ namespace PhanMemQuanLyGaraOto.Model
         public Nullable<int> MAXE { get; set; }
         public Nullable<System.DateTime> NGAYLAP { get; set; }
         public Nullable<decimal> TONGTIEN { get; set; }
-        public byte[] TINHTRANG { get; set; }
+        public Nullable<short> TINHTRANG { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHITIET_PSC> CHITIET_PSC { get; set; }
