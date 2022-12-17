@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\CheckCarModel.cs" />
+    <Compile Include="Class\MesseageBoxStatic.cs" />
     <Compile Include="DAO\DAOExtend1.cs" />
     <Compile Include="DAO\DataProviderFixDetail.cs" />
     <Compile Include="DAO\DataProviderFix.cs" />
@@ -421,6 +422,11 @@
       <DependentUpon>GaraModel.edmx</DependentUpon>
       <LastGenOutput>GaraModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Loading-unscreen.gif" />
+    <None Include="Resources\a2dc9668f2cf170fe3efeb263128b0-unscreen.gif" />
+    <None Include="Resources\loader.gif" />
+    <None Include="Resources\Curve-Loading.gif" />
+    <None Include="Resources\gif-loader-html-1.gif" />
     <None Include="Resources\ce9b49374132daaca1283aef58454019.jpg" />
     <None Include="Resources\istockphoto-1288020112-612x612.jpg" />
     <None Include="Resources\wallpaperflare.com_wallpaper.jpg" />

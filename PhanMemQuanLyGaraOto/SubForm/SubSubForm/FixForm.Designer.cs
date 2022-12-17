@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FixForm));
             this.panel8 = new System.Windows.Forms.Panel();
             this.dtpNgayLap = new System.Windows.Forms.DateTimePicker();
@@ -38,7 +41,7 @@
             this.txtBienSo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtHieuXe = new System.Windows.Forms.TextBox();
+            this.txtThanhTien = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -46,6 +49,7 @@
             this.btbDELETEB = new System.Windows.Forms.Button();
             this.btbADDB = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.lblMax = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.cbcPhutung = new System.Windows.Forms.ComboBox();
@@ -62,7 +66,6 @@
             this.kryptonDataGridView2 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btbCloseForm = new System.Windows.Forms.Button();
-            this.btbCancelPhieu = new System.Windows.Forms.Button();
             this.btbDongPhieu = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mACTPSCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -102,7 +105,7 @@
             this.panel8.Controls.Add(this.txtBienSo);
             this.panel8.Controls.Add(this.label2);
             this.panel8.Controls.Add(this.label4);
-            this.panel8.Controls.Add(this.txtHieuXe);
+            this.panel8.Controls.Add(this.txtThanhTien);
             this.panel8.Location = new System.Drawing.Point(26, 12);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1202, 119);
@@ -184,15 +187,15 @@
             this.label4.Text = "Phiếu sữa chữa";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtHieuXe
+            // txtThanhTien
             // 
-            this.txtHieuXe.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtHieuXe.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHieuXe.Location = new System.Drawing.Point(810, 65);
-            this.txtHieuXe.Name = "txtHieuXe";
-            this.txtHieuXe.ReadOnly = true;
-            this.txtHieuXe.Size = new System.Drawing.Size(227, 28);
-            this.txtHieuXe.TabIndex = 12;
+            this.txtThanhTien.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtThanhTien.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtThanhTien.Location = new System.Drawing.Point(810, 65);
+            this.txtThanhTien.Name = "txtThanhTien";
+            this.txtThanhTien.ReadOnly = true;
+            this.txtThanhTien.Size = new System.Drawing.Size(227, 28);
+            this.txtThanhTien.TabIndex = 12;
             // 
             // panel2
             // 
@@ -247,6 +250,7 @@
             this.btbCANCLEB.TabIndex = 2;
             this.btbCANCLEB.Text = "Hủy bỏ";
             this.btbCANCLEB.UseVisualStyleBackColor = true;
+            this.btbCANCLEB.Click += new System.EventHandler(this.btbCANCLEB_Click);
             // 
             // btbDELETEB
             // 
@@ -261,6 +265,7 @@
             this.btbDELETEB.TabIndex = 1;
             this.btbDELETEB.Text = "Xóa";
             this.btbDELETEB.UseVisualStyleBackColor = true;
+            this.btbDELETEB.Click += new System.EventHandler(this.btbDELETEB_Click);
             // 
             // btbADDB
             // 
@@ -275,12 +280,14 @@
             this.btbADDB.TabIndex = 0;
             this.btbADDB.Text = "Thêm";
             this.btbADDB.UseVisualStyleBackColor = true;
+            this.btbADDB.Click += new System.EventHandler(this.btbADDB_Click);
             // 
             // panel7
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel7.Controls.Add(this.lblMax);
             this.panel7.Controls.Add(this.label8);
             this.panel7.Controls.Add(this.label9);
             this.panel7.Controls.Add(this.cbcPhutung);
@@ -295,6 +302,17 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(428, 340);
             this.panel7.TabIndex = 0;
+            // 
+            // lblMax
+            // 
+            this.lblMax.BackColor = System.Drawing.Color.Transparent;
+            this.lblMax.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMax.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblMax.Location = new System.Drawing.Point(373, 297);
+            this.lblMax.Name = "lblMax";
+            this.lblMax.Size = new System.Drawing.Size(50, 23);
+            this.lblMax.TabIndex = 19;
+            this.lblMax.Text = "Đơn giá";
             // 
             // label8
             // 
@@ -326,7 +344,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbcPhutung.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbcPhutung.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbcPhutung.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbcPhutung.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbcPhutung.FormattingEnabled = true;
             this.cbcPhutung.Location = new System.Drawing.Point(23, 160);
@@ -341,7 +358,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nudSLT.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudSLT.Increment = new decimal(new int[] {
-            10,
+            2,
             0,
             0,
             0});
@@ -352,7 +369,7 @@
             0,
             0});
             this.nudSLT.Name = "nudSLT";
-            this.nudSLT.Size = new System.Drawing.Size(381, 27);
+            this.nudSLT.Size = new System.Drawing.Size(344, 27);
             this.nudSLT.TabIndex = 15;
             this.nudSLT.ThousandsSeparator = true;
             // 
@@ -398,7 +415,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nudTienCong.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudTienCong.Increment = new decimal(new int[] {
-            10000,
+            100000,
             0,
             0,
             0});
@@ -420,7 +437,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nudDonGia.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudDonGia.Increment = new decimal(new int[] {
-            10,
+            100000,
             0,
             0,
             0});
@@ -441,7 +458,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbcNoiDung.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbcNoiDung.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbcNoiDung.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbcNoiDung.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbcNoiDung.FormattingEnabled = true;
             this.cbcNoiDung.Location = new System.Drawing.Point(23, 29);
@@ -524,6 +540,7 @@
             this.dgvPHUTUNG.StateCommon.HeaderRow.Border.Width = 1;
             this.dgvPHUTUNG.TabIndex = 9;
             this.dgvPHUTUNG.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPHUTUNG_CellContentClick);
+            this.dgvPHUTUNG.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPHUTUNG_CellMouseClick);
             this.dgvPHUTUNG.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvPHUTUNG_RowPostPaint);
             // 
             // STT
@@ -585,11 +602,10 @@
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.btbCloseForm);
-            this.panel3.Controls.Add(this.btbCancelPhieu);
             this.panel3.Controls.Add(this.btbDongPhieu);
-            this.panel3.Location = new System.Drawing.Point(511, 614);
+            this.panel3.Location = new System.Drawing.Point(715, 614);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(717, 47);
+            this.panel3.Size = new System.Drawing.Size(513, 47);
             this.panel3.TabIndex = 3;
             // 
             // btbCloseForm
@@ -599,28 +615,13 @@
             this.btbCloseForm.AutoSize = true;
             this.btbCloseForm.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btbCloseForm.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btbCloseForm.Location = new System.Drawing.Point(557, 0);
+            this.btbCloseForm.Location = new System.Drawing.Point(287, 0);
             this.btbCloseForm.Name = "btbCloseForm";
-            this.btbCloseForm.Size = new System.Drawing.Size(161, 47);
+            this.btbCloseForm.Size = new System.Drawing.Size(227, 47);
             this.btbCloseForm.TabIndex = 2;
             this.btbCloseForm.Text = "Đóng";
             this.btbCloseForm.UseVisualStyleBackColor = true;
             this.btbCloseForm.Click += new System.EventHandler(this.btbCloseForm_Click);
-            // 
-            // btbCancelPhieu
-            // 
-            this.btbCancelPhieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btbCancelPhieu.AutoSize = true;
-            this.btbCancelPhieu.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btbCancelPhieu.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btbCancelPhieu.Location = new System.Drawing.Point(279, 0);
-            this.btbCancelPhieu.MaximumSize = new System.Drawing.Size(210, 50);
-            this.btbCancelPhieu.Name = "btbCancelPhieu";
-            this.btbCancelPhieu.Size = new System.Drawing.Size(182, 47);
-            this.btbCancelPhieu.TabIndex = 1;
-            this.btbCancelPhieu.Text = "Hủy phiếu sửa chữa";
-            this.btbCancelPhieu.UseVisualStyleBackColor = true;
-            this.btbCancelPhieu.Click += new System.EventHandler(this.btbCancelPhieu_Click);
             // 
             // btbDongPhieu
             // 
@@ -631,10 +632,11 @@
             this.btbDongPhieu.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btbDongPhieu.Location = new System.Drawing.Point(0, 0);
             this.btbDongPhieu.Name = "btbDongPhieu";
-            this.btbDongPhieu.Size = new System.Drawing.Size(193, 47);
+            this.btbDongPhieu.Size = new System.Drawing.Size(269, 47);
             this.btbDongPhieu.TabIndex = 0;
             this.btbDongPhieu.Text = "Xác nhận";
             this.btbDongPhieu.UseVisualStyleBackColor = true;
+            this.btbDongPhieu.Click += new System.EventHandler(this.btbDongPhieu_Click);
             // 
             // pictureBox1
             // 
@@ -689,11 +691,13 @@
             // tIENCONGDataGridViewTextBoxColumn
             // 
             this.tIENCONGDataGridViewTextBoxColumn.DataPropertyName = "TIENCONG";
+            dataGridViewCellStyle2.Format = "C0";
+            this.tIENCONGDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.tIENCONGDataGridViewTextBoxColumn.HeaderText = "Tiền công";
             this.tIENCONGDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tIENCONGDataGridViewTextBoxColumn.Name = "tIENCONGDataGridViewTextBoxColumn";
             this.tIENCONGDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tIENCONGDataGridViewTextBoxColumn.Width = 110;
+            this.tIENCONGDataGridViewTextBoxColumn.Width = 115;
             // 
             // mAPHUTUNGDataGridViewTextBoxColumn
             // 
@@ -726,6 +730,8 @@
             // dONGIADataGridViewTextBoxColumn
             // 
             this.dONGIADataGridViewTextBoxColumn.DataPropertyName = "DONGIA";
+            dataGridViewCellStyle3.Format = "C0";
+            this.dONGIADataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.dONGIADataGridViewTextBoxColumn.HeaderText = "Đơn giá";
             this.dONGIADataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dONGIADataGridViewTextBoxColumn.Name = "dONGIADataGridViewTextBoxColumn";
@@ -735,11 +741,14 @@
             // tHANHTIENDataGridViewTextBoxColumn
             // 
             this.tHANHTIENDataGridViewTextBoxColumn.DataPropertyName = "THANHTIEN";
+            dataGridViewCellStyle4.Format = "C0";
+            dataGridViewCellStyle4.NullValue = null;
+            this.tHANHTIENDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.tHANHTIENDataGridViewTextBoxColumn.HeaderText = "Thành tiền";
             this.tHANHTIENDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tHANHTIENDataGridViewTextBoxColumn.Name = "tHANHTIENDataGridViewTextBoxColumn";
             this.tHANHTIENDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tHANHTIENDataGridViewTextBoxColumn.Width = 125;
+            this.tHANHTIENDataGridViewTextBoxColumn.Width = 130;
             // 
             // customCTPSCBindingSource
             // 
@@ -807,13 +816,18 @@
         private System.Windows.Forms.TextBox txtBienSo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtHieuXe;
+        private System.Windows.Forms.TextBox txtThanhTien;
         private System.Windows.Forms.DateTimePicker dtpNgayLap;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown nudSLT;
         private System.Windows.Forms.ComboBox cbcNoiDung;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbcPhutung;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btbCloseForm;
+        private System.Windows.Forms.Button btbDongPhieu;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblMax;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn mACTPSCDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mAPHIEUDataGridViewTextBoxColumn;
@@ -825,10 +839,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sOLUONGDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dONGIADataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tHANHTIENDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btbCloseForm;
-        private System.Windows.Forms.Button btbCancelPhieu;
-        private System.Windows.Forms.Button btbDongPhieu;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -137,6 +137,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
         {
             FixForm fixform = new FixForm(currentCheckCar);
             fixform.ShowDialog();
+            DiposeToRoot(fixform);
         }
 
         private void btbFilter_Click(object sender, EventArgs e)

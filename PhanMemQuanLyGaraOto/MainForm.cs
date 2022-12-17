@@ -69,11 +69,8 @@ namespace PhanMemQuanLyGaraOto
             {
                 currentButton.BackColor = Color.WhiteSmoke;
                 CurrentForm.Hide();
-                CurrentForm.Enabled = false;
-                CurrentForm.SuspendLayout();
+ 
                 CurrentForm = dicOfForms[newButton];
-                CurrentForm.ResumeLayout();
-                CurrentForm.Enabled = true;
                 CurrentForm.Show();
                 currentButton = newButton;
                 currentButton.BackColor = selectColor;

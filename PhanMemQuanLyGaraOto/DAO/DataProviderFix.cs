@@ -16,9 +16,12 @@ namespace PhanMemQuanLyGaraOto.DAO
     {
         public PHIEUSUACHUA GetPHIEUSUACHUA(int maxe)
         {
-           IEnumerable<PHIEUSUACHUA> tmp = db.PHIEUSUACHUAs.Where(a=>a.MAXE == maxe && a.TINHTRANG == 0);
-            int s = tmp.Count();
-            return tmp.FirstOrDefault();
+            using (GARAOTOEntities db = new GARAOTOEntities())
+            {
+                IEnumerable<PHIEUSUACHUA> tmp = db.PHIEUSUACHUAs.Where(a => a.MAXE == maxe && a.TINHTRANG == 0);
+                return tmp.FirstOrDefault();
+            }
+
         }
         public void SavePHIEUSUACHUA(PHIEUSUACHUA PHIEUSUACHUA, params AlertNonPara[] Loadawhendones)
         {
@@ -31,8 +34,8 @@ namespace PhanMemQuanLyGaraOto.DAO
                 }
                 db.PHIEUSUACHUAs.Add(PHIEUSUACHUA);
                 db.SaveChanges();
-                MakeNotiSuccess(strSave + nameof(PHIEUSUACHUA));
-                ReloadDataEvent.Ins.Alert(DataType.Tool);
+                //MakeNotiSuccess(strSave + nameof(PHIEUSUACHUA));
+                ReloadDataEvent.Ins.Alert(DataType.FixForm);
 
             }
             catch
@@ -49,7 +52,6 @@ namespace PhanMemQuanLyGaraOto.DAO
         {
             try
             {
-                if (ChangeComfirm(strUpdate)) return;
                 if (PHIEUSUACHUA == null) return;
                 PHIEUSUACHUA tmp = db.PHIEUSUACHUAs.Where(a => a.MAPHIEU == PHIEUSUACHUA.MAPHIEU).FirstOrDefault();
                 if (tmp == null)
@@ -59,8 +61,8 @@ namespace PhanMemQuanLyGaraOto.DAO
                 }
                 db.Entry(tmp).CurrentValues.SetValues(PHIEUSUACHUA);
                 SaveChange();
-                ReloadDataEvent.Ins.Alert(DataType.Tool);
-                MakeNotiSuccess(strUpdate + nameof(PHIEUSUACHUA));
+                ReloadDataEvent.Ins.Alert(DataType.FixForm);
+                //MakeNotiSuccess(strUpdate + nameof(PHIEUSUACHUA));
 
             }
             catch
@@ -87,7 +89,7 @@ namespace PhanMemQuanLyGaraOto.DAO
                 db.PHIEUSUACHUAs.Remove(tmp);
                 db.SaveChanges();
                 MakeNotiSuccess(strDelete + nameof(PHIEUSUACHUA));
-                ReloadDataEvent.Ins.Alert(DataType.Tool);
+                ReloadDataEvent.Ins.Alert(DataType.FixForm);
 
 
             }
@@ -100,6 +102,17 @@ namespace PhanMemQuanLyGaraOto.DAO
             {
                 func?.Invoke();
             }
+        }
+        public void XoaPhieuSuachua(int maphieu)
+        {
+
+                IEnumerable<CHITIET_PSC> chitiet = db.CHITIET_PSC.Where(a => a.MAPHIEU == maphieu);
+                db.CHITIET_PSC.RemoveRange(chitiet);
+                PHIEUSUACHUA psc = db.PHIEUSUACHUAs.Where(a => a.MAPHIEU == maphieu).FirstOrDefault();
+                db.PHIEUSUACHUAs.Remove(psc);
+                db.SaveChanges();
+                ReloadDataEvent.Ins.Alert(DataType.FixForm);
+
         }
 
     }

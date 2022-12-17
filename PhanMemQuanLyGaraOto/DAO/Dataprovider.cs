@@ -26,6 +26,15 @@ namespace PhanMemQuanLyGaraOto.DAO
             private set => instance = value;
         }
         public GARAOTOEntities db;
+        public GARAOTOEntities refreshDB
+        {
+            get
+            {
+                db.Dispose();
+                db = new GARAOTOEntities();
+                return db;
+            }
+        }
         private DataProvider()
         {
             db = new GARAOTOEntities();
@@ -43,22 +52,25 @@ namespace PhanMemQuanLyGaraOto.DAO
         }
         public List<REMCheckCar> GetCheckCar()
         {
-            List<REMCheckCar> list = (from x in db.XEs
-                                             join c in db.CHUXEs on x.MACHUXE equals c.MACHUXE
-                                             join b in db.HIEUXEs on x.MAHIEUXE equals b.MAHIEUXE
-                                             select new REMCheckCar
-                                             {
-                                                 CarId = x.MAXE,
-                                                 CarBrand = b.TENHIEUXE,
-                                                 CarNumber = x.BIENSO,
-                                                 CarOwnerName = c.TENCHUXE,
-                                                 CarOwnerTele =  c.DIENTHOAI,
-                                                 DateIn = x.NGAYTIEPNHAN.Value,
-                                                 DebtMoney = x.TONGNO.Value,
-                                                 TinhTrang = x.TINHTRANG
-                                             }).ToList();
-            if (list == null) return new List<REMCheckCar>();
-            return list;
+            using(GARAOTOEntities db = new GARAOTOEntities())
+            {
+                List<REMCheckCar> list = (from x in db.XEs
+                                          join c in db.CHUXEs on x.MACHUXE equals c.MACHUXE
+                                          join b in db.HIEUXEs on x.MAHIEUXE equals b.MAHIEUXE
+                                          select new REMCheckCar
+                                          {
+                                              CarId = x.MAXE,
+                                              CarBrand = b.TENHIEUXE,
+                                              CarNumber = x.BIENSO,
+                                              CarOwnerName = c.TENCHUXE,
+                                              CarOwnerTele = c.DIENTHOAI,
+                                              DateIn = x.NGAYTIEPNHAN.Value,
+                                              DebtMoney = x.TONGNO.Value,
+                                              TinhTrang = x.TINHTRANG
+                                          }).ToList();
+                if (list == null) return new List<REMCheckCar>();
+                return list;
+            }
         }
         #region Noti
         public const string BackEndError = "Dữ liệu đã bị ràng buộc, bạn không có quyền thục hiện thay đổi này";

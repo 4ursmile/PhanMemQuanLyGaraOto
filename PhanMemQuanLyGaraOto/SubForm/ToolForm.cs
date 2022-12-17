@@ -1,6 +1,8 @@
 ﻿using PhanMemQuanLyGaraOto.DAO;
 using PhanMemQuanLyGaraOto.Model;
+using PhanMemQuanLyGaraOto.SubForm.SubSubForm;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PhanMemQuanLyGaraOto.SubForm
@@ -14,8 +16,9 @@ namespace PhanMemQuanLyGaraOto.SubForm
             InitializeComponent();
             isUpdateTool = false;
             ReloadDataEvent.Ins.Addlistener(LoadData2DGVPhuTung, DataType.Tool);
-            LoadData2DGVPhuTung();
+            ReloadDataEvent.Ins.Addlistener(LoadData2DGVPHUTUNGasync, DataType.FixDetail);
             ResetToolView();
+            LoadData2DGVPhuTung();
         }
         void LoadData2DGVPhuTung()
         {
@@ -23,6 +26,13 @@ namespace PhanMemQuanLyGaraOto.SubForm
             dgvPHUTUNG.DataSource = DataProvider.Instance.db.PHUTUNGs.ToList<PHUTUNG>();
             cbcTenPT.DataSource = dgvPHUTUNG.DataSource;
             cbcTenPT.DisplayMember = "TENPHUTUNG"; 
+        }
+        async void LoadData2DGVPHUTUNGasync()
+        {
+            dgvPHUTUNG.AutoGenerateColumns = false;
+            dgvPHUTUNG.DataSource = await Task.Run(() => DataProvider.Instance.GetPHUTUNGs());
+            cbcTenPT.DataSource = dgvPHUTUNG.DataSource;
+            cbcTenPT.DisplayMember = "TENPHUTUNG";
         }
         void ResetToolView()
         {
@@ -58,6 +68,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
         private void ToolForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             ReloadDataEvent.Ins.RemoveListerner(LoadData2DGVPhuTung, DataType.Tool);
+            ReloadDataEvent.Ins.RemoveListerner(LoadData2DGVPHUTUNGasync, DataType.FixDetail);
             DiposeToRoot(this);
         }
 
@@ -128,6 +139,11 @@ namespace PhanMemQuanLyGaraOto.SubForm
         private void dgvPHUTUNG_SelectionChanged(object sender, System.EventArgs e)
         {
             dgvPHUTUNG_CellMouseClick(sender, null);
+        }
+
+        private void label4_Click(object sender, System.EventArgs e)
+        {
+            LoadData2DGVPhuTung();
         }
     }
 }

@@ -141,9 +141,9 @@ namespace PhanMemQuanLyGaraOto
             UniversalUser.Ins.SetUser(aCCOUNT);
             SaveUser();
             LoadUser();
+            MainForm mainForm = new MainForm();
             this.Hide();
             this.SuspendLayout();
-            MainForm mainForm = new MainForm();
             mainForm.ShowDialog();
             mainForm.Dispose();
             LoadUser();
@@ -196,6 +196,8 @@ namespace PhanMemQuanLyGaraOto
         {
 
             SwitchStateAll(false);
+            SigninButton.Enabled = false;
+            lblLoad.Visible = true;
             ACCOUNT account;
             int resStatus = DDOpassword.Ins.CheckPassWord(UserComboBox.Text, PassWordText.Text, out account);
             if (resStatus == 1)
@@ -211,6 +213,8 @@ namespace PhanMemQuanLyGaraOto
                 MessageBox.Show("Kết nối với máy chủ thất bại, Vui lòng thử lại sau", "Từ chối kết nối", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             SwitchStateAll(true);
+            SigninButton.Enabled = true;
+            lblLoad.Visible = false;
 
         }
 

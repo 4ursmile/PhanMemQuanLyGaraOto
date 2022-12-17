@@ -92,7 +92,23 @@ namespace PhanMemQuanLyGaraOto.DAO
             {
                 func?.Invoke();
             }
-
+        }
+        public async Task<List<PHUTUNG>> GetPHUTUNGs()
+        {
+            try
+            {
+                using (GARAOTOEntities db = new GARAOTOEntities())
+                {
+                    List<PHUTUNG> pHUTUNGs = await Task.Run(()=> db.PHUTUNGs.ToList<PHUTUNG>());
+                    return pHUTUNGs;
+                }
+            }
+            catch
+            {
+                MakeNotiError(strSave + nameof(PHUTUNG), BackEndError);
+            }
+            return new List<PHUTUNG>();
         }
     }
+
 }

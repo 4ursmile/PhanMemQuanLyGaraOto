@@ -40,7 +40,6 @@
           <Key>
             <PropertyRef Name="MACTPSC" />
           </Key>
-          <Property Name="MACTPSC" Type="int" Nullable="false" />
           <Property Name="MAPHIEU" Type="int" />
           <Property Name="MANDTC" Type="int" />
           <Property Name="TIENCONG" Type="money" />
@@ -48,6 +47,7 @@
           <Property Name="SOLUONG" Type="int" />
           <Property Name="DONGIA" Type="money" />
           <Property Name="THANHTIEN" Type="money" />
+          <Property Name="MACTPSC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="CHUXE">
           <Key>
@@ -297,6 +297,7 @@
         </Function>
         <Function Name="DONGPHIEUSUACHUA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="MAPHIEU" Type="int" Mode="In" />
+          <Parameter Name="TONGTIEN2" Type="money" Mode="In" />
         </Function>
         <Function Name="GETBAOCAO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="THANG" Type="int" Mode="In" />
@@ -766,7 +767,8 @@
             <End Role="PHIEUTHUTIEN" EntitySet="PHIEUTHUTIENs" />
           </AssociationSet>
           <FunctionImport Name="DONGPHIEUSUACHUA">
-          <Parameter Name="MAPHIEU" Mode="In" Type="Int32" />
+            <Parameter Name="MAPHIEU" Mode="In" Type="Int32" />
+            <Parameter Name="TONGTIEN2" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="GETBAOCAO" ReturnType="Collection(GARAOTOModel.GETBAOCAO_Result)">
             <Parameter Name="THANG" Mode="In" Type="Int32" />

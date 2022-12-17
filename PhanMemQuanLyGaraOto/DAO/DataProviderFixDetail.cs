@@ -3,6 +3,7 @@ using PhanMemQuanLyGaraOto.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,43 +14,46 @@ namespace PhanMemQuanLyGaraOto.DAO
     {
         public List<CustomCTPSC> GetChiTietPSC(int MAPHIEU)
         {
-            List<CustomCTPSC> chiTietPSC = (from ct in db.CHITIET_PSC
-                                                  join nd in db.TIENCONGs on ct.MANDTC equals nd.MANDTC
-                                                  join pt in db.PHUTUNGs on ct.MAPHUTUNG equals pt.MAPHUTUNG
-                                                  select new CustomCTPSC
-                                                  {
-                                                      MACTPSC = ct.MACTPSC,
-                                                      MAPHIEU = ct.MAPHIEU,
-                                                      MANDTC = ct.MANDTC,
-                                                      NOIDUNG = nd.NOIDUNG,
-                                                      TIENCONG = ct.TIENCONG,
-                                                      MAPHUTUNG = ct.MAPHUTUNG,
-                                                      TENPHUTUNG = pt.TENPHUTUNG,
-                                                      DONGIA = ct.DONGIA,
-                                                      SOLUONG = ct.SOLUONG,
-                                                      THANHTIEN = ct.THANHTIEN
-                                                  }).Where(a => a.MAPHIEU == MAPHIEU).ToList<CustomCTPSC>();
-            return chiTietPSC;
+            using (GARAOTOEntities db = new GARAOTOEntities())
+            {
+                List<CustomCTPSC> chiTietPSC = (from ct in db.CHITIET_PSC
+                                                join nd in db.TIENCONGs on ct.MANDTC equals nd.MANDTC
+                                                join pt in db.PHUTUNGs on ct.MAPHUTUNG equals pt.MAPHUTUNG
+                                                select new CustomCTPSC
+                                                {
+                                                    MACTPSC = ct.MACTPSC,
+                                                    MAPHIEU = ct.MAPHIEU,
+                                                    MANDTC = ct.MANDTC,
+                                                    NOIDUNG = nd.NOIDUNG,
+                                                    TIENCONG = ct.TIENCONG,
+                                                    MAPHUTUNG = ct.MAPHUTUNG,
+                                                    TENPHUTUNG = pt.TENPHUTUNG,
+                                                    DONGIA = ct.DONGIA,
+                                                    SOLUONG = ct.SOLUONG,
+                                                    THANHTIEN = ct.THANHTIEN
+                                                }).Where(a => a.MAPHIEU == MAPHIEU).ToList<CustomCTPSC>();
+
+                return chiTietPSC;
+            }
+
         }
+
         public void SaveCHITETPHIEUSUACHUA(CHITIET_PSC CHITIET_PSC, params AlertNonPara[] Loadawhendones)
         {
             try
             {
-                if (CHITIET_PSC == null)
-                {
-                    MakeNotiError(strSave + nameof(CHITIET_PSC), FrontEndError);
-                    return;
-                }
-                db.CHITIET_PSC.Add(CHITIET_PSC);
-                db.SaveChanges();
-                MakeNotiSuccess(strSave + nameof(CHITIET_PSC));
-                ReloadDataEvent.Ins.Alert(DataType.Tool);
-
+                    if (CHITIET_PSC == null)
+                    {
+                        MakeNotiError(strSave + nameof(CHITIET_PSC), FrontEndError);
+                        return;
+                    }
+                    db.CHITIET_PSC.Add(CHITIET_PSC);
+                    db.SaveChanges();
+                    ReloadDataEvent.Ins.Alert(DataType.FixDetail);
             }
             catch
             {
                 MessageBox.Show("Lưu thất bại, Kết nối với máy chủ bị  gián đoạn", "Lỗi kết nối đến máy chủ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MakeNotiError(strSave + nameof(CHITIET_PSC), BackEndError);
             }
             foreach (var donefunc in Loadawhendones)
             {
@@ -70,9 +74,7 @@ namespace PhanMemQuanLyGaraOto.DAO
                 }
                 db.Entry(tmp).CurrentValues.SetValues(CHITIET_PSC);
                 SaveChange();
-                ReloadDataEvent.Ins.Alert(DataType.Tool);
-                MakeNotiSuccess(strUpdate + nameof(CHITIET_PSC));
-
+                ReloadDataEvent.Ins.Alert(DataType.FixDetail);
             }
             catch
             {
@@ -97,10 +99,7 @@ namespace PhanMemQuanLyGaraOto.DAO
                 }
                 db.CHITIET_PSC.Remove(tmp);
                 db.SaveChanges();
-                MakeNotiSuccess(strDelete + nameof(CHITIET_PSC));
-                ReloadDataEvent.Ins.Alert(DataType.Tool);
-
-
+                ReloadDataEvent.Ins.Alert(DataType.FixDetail);
             }
             catch (Exception e)
             {
@@ -110,6 +109,17 @@ namespace PhanMemQuanLyGaraOto.DAO
             foreach (var func in LoadWhendones)
             {
                 func?.Invoke();
+            }
+
+        }
+        public float getPhutungProfitRate()
+        {
+            using (GARAOTOEntities db = new GARAOTOEntities())
+            {
+                THAMSO thamso = db.THAMSOes.Where(a => a.TENTHAMSO == "TYLEGIALINHKIENBANRA").FirstOrDefault();
+                if (thamso == null) return 1.05f;
+                float rate = (float)thamso.GIATRI / 100f;
+                return rate;
             }
 
         }

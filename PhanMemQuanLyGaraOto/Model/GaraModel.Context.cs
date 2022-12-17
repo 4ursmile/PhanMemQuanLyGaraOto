@@ -44,13 +44,17 @@ namespace PhanMemQuanLyGaraOto.Model
         public virtual DbSet<TIENCONG> TIENCONGs { get; set; }
         public virtual DbSet<XE> XEs { get; set; }
     
-        public virtual int DONGPHIEUSUACHUA(Nullable<int> mAPHIEU)
+        public virtual int DONGPHIEUSUACHUA(Nullable<int> mAPHIEU, Nullable<decimal> tONGTIEN2)
         {
             var mAPHIEUParameter = mAPHIEU.HasValue ?
                 new ObjectParameter("MAPHIEU", mAPHIEU) :
                 new ObjectParameter("MAPHIEU", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DONGPHIEUSUACHUA", mAPHIEUParameter);
+            var tONGTIEN2Parameter = tONGTIEN2.HasValue ?
+                new ObjectParameter("TONGTIEN2", tONGTIEN2) :
+                new ObjectParameter("TONGTIEN2", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DONGPHIEUSUACHUA", mAPHIEUParameter, tONGTIEN2Parameter);
         }
     
         public virtual ObjectResult<GETBAOCAO_Result> GETBAOCAO(Nullable<int> tHANG, Nullable<int> nAM)
