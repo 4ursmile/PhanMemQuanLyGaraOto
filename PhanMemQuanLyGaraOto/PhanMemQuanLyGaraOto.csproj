@@ -433,6 +433,8 @@
       <DependentUpon>GaraModel.edmx</DependentUpon>
       <LastGenOutput>GaraModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Saigon_skyline_night_view.jpg" />
+    <None Include="Resources\a1d503bc1981ba08dd95d443ba2ebaa2.jpg" />
     <None Include="Resources\highfive1.png" />
     <None Include="Resources\Loading-unscreen.gif" />
     <None Include="Resources\a2dc9668f2cf170fe3efeb263128b0-unscreen.gif" />
