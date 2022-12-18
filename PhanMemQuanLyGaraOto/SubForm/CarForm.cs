@@ -16,10 +16,9 @@ namespace PhanMemQuanLyGaraOto.SubForm
         REMCheckCar currentCheckCar;
         public CarForm()
         {
-            ReloadDataEvent.Ins.Addlistener(LoadToDGVCarComplex, DataType.Car, DataType.Brand, DataType.Customer, DataType.FixForm);
+            ReloadDataEvent.Ins.Addlistener(LoadToDGVCarComplex, DataType.Car, DataType.Brand, DataType.Customer, DataType.FixForm, DataType.Money);
             ReloadDataEvent.Ins.Addlistener(UpdateChar, DataType.TimesFix);
             InitializeComponent();
-            DoubleBuffered = true;
             btbcollect.Enabled = false;
             btbUpdate.Enabled = false;
             LoadToDGVCarComplex();
@@ -134,7 +133,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
         }
         private void CarForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            ReloadDataEvent.Ins.RemoveListerner(LoadToDGVCarComplex, DataType.Car, DataType.Brand, DataType.Customer, DataType.FixForm);
+            ReloadDataEvent.Ins.RemoveListerner(LoadToDGVCarComplex, DataType.Car, DataType.Brand, DataType.Customer, DataType.FixForm, DataType.Money);
             DiposeToRoot(this);
         }
 
@@ -153,6 +152,8 @@ namespace PhanMemQuanLyGaraOto.SubForm
                 currentCheckCar = (cRow.DataBoundItem as REMCheckCar);
                 if (currentCheckCar.DebtMoney > 0)
                     btbcollect.Enabled = true;
+                else
+                    btbcollect.Enabled = false;
                 btbUpdate.Enabled = true;
                 btbFix.Enabled = true;
             } else
@@ -195,6 +196,14 @@ namespace PhanMemQuanLyGaraOto.SubForm
 
         private void chart1_Click(object sender, EventArgs e)
         {
+        }
+
+        private void btbcollect_Click(object sender, EventArgs e)
+        {
+            if (currentCheckCar == null) return;
+            BillForm billForm = new BillForm(currentCheckCar);
+            billForm.ShowDialog();
+            DiposeToRoot(billForm);
         }
     }
 }

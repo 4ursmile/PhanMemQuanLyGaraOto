@@ -70,7 +70,9 @@
   <ItemGroup>
     <Compile Include="Class\CheckCarModel.cs" />
     <Compile Include="Class\MesseageBoxStatic.cs" />
+    <Compile Include="Class\Notification.cs" />
     <Compile Include="DAO\DAOExtend1.cs" />
+    <Compile Include="DAO\DataproviderBill.cs" />
     <Compile Include="DAO\DataProviderFixDetail.cs" />
     <Compile Include="DAO\DataProviderFix.cs" />
     <Compile Include="DAO\DataProviderTOOL.cs" />
@@ -147,6 +149,12 @@
     </Compile>
     <Compile Include="Model\XE.cs">
       <DependentUpon>GaraModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\SubSubForm\BillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\SubSubForm\BillForm.Designer.cs">
+      <DependentUpon>BillForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SubForm\SubSubForm\FixForm.cs">
       <SubType>Form</SubType>
@@ -264,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SubForm\ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\SubSubForm\BillForm.resx">
+      <DependentUpon>BillForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubForm\SubSubForm\ChangePassForm.resx">
       <DependentUpon>ChangePassForm.cs</DependentUpon>
@@ -422,6 +433,7 @@
       <DependentUpon>GaraModel.edmx</DependentUpon>
       <LastGenOutput>GaraModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\highfive1.png" />
     <None Include="Resources\Loading-unscreen.gif" />
     <None Include="Resources\a2dc9668f2cf170fe3efeb263128b0-unscreen.gif" />
     <None Include="Resources\loader.gif" />

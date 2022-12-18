@@ -1,6 +1,7 @@
 ﻿using PhanMemQuanLyGaraOto.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -108,6 +109,17 @@ namespace PhanMemQuanLyGaraOto.DAO
                 MakeNotiError(strSave + nameof(PHUTUNG), BackEndError);
             }
             return new List<PHUTUNG>();
+        }
+        public async Task<String> GetCarOwnerEmailAsync(string sdt)
+        {
+            try
+            {
+                CHUXE res = await db.CHUXEs.Where(a => a.DIENTHOAI == sdt).FirstOrDefaultAsync();
+                return res.EMAIL;
+            } catch
+            {
+                return "abc@gm.uit.edu.vn";
+            }
         }
     }
 

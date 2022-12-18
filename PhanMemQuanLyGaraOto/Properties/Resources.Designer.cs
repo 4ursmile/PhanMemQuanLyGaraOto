@@ -263,6 +263,26 @@ namespace PhanMemQuanLyGaraOto.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap highfive {
+            get {
+                object obj = ResourceManager.GetObject("highfive", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap highfive1 {
+            get {
+                object obj = ResourceManager.GetObject("highfive1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hinh_anh_backgroud_hoa_dao_no_cuc_ky_dep_034909613 {
             get {
                 object obj = ResourceManager.GetObject("hinh-anh-backgroud-hoa-dao-no-cuc-ky-dep_034909613", resourceCulture);
