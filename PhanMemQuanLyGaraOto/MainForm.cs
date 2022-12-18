@@ -33,6 +33,7 @@ namespace PhanMemQuanLyGaraOto
             NameLabel.Text = UniversalUser.Ins.account.DISPLAYNAME;
 
         }
+
         void SubFormInit()
         {
             dicOfForms = new Dictionary<Button, Form>();

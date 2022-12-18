@@ -37,6 +37,7 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
                 currentXe.BIENSO = rEM.CarNumber;
                 currentXe.TONGNO = rEM.DebtMoney;
                 currentXe.NGAYTIEPNHAN = rEM.DateIn;
+                currentXe.TINHTRANG = rEM.TinhTrang;
             }
             dtpTiepNhan.MaxDate = DateTime.Today.AddDays(1);
             LoadWhenDones = func;
@@ -45,7 +46,7 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
             if (isUpdate)
             {
                 btbSave.Enabled = false;
-                cbcCusSDT.Enabled = false;
+                cbcCusSDT.DropDownStyle = ComboBoxStyle.DropDownList;
                 cbcCusSDT.Text = rEM.CarOwnerTele;
                 cbcBrand.Text = rEM.CarBrand;
                 txtBienSo.Text = rEM.CarNumber;

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PhanMemQuanLyGaraOto
@@ -17,6 +18,8 @@ namespace PhanMemQuanLyGaraOto
         public LoginForm()
         {
             InitializeComponent();
+
+            DoubleBuffered =true;
             LoiChucInit();
             users = new ListUser { ListU = new List<User>(), SelectedIndex = 0 };
             LoadUser();
@@ -136,7 +139,7 @@ namespace PhanMemQuanLyGaraOto
                 item.Enabled = state;
 
         }
-        void SigninAction(ACCOUNT aCCOUNT)
+        async void SigninAction(ACCOUNT aCCOUNT)
         {
             UniversalUser.Ins.SetUser(aCCOUNT);
             SaveUser();
@@ -144,7 +147,7 @@ namespace PhanMemQuanLyGaraOto
             MainForm mainForm = new MainForm();
             this.Hide();
             this.SuspendLayout();
-            mainForm.ShowDialog();
+            Invoke((Action)(()=>mainForm.ShowDialog())) ;
             mainForm.Dispose();
             LoadUser();
             if (ExitInforHolder.isQuit)

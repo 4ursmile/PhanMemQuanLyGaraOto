@@ -18,6 +18,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
         {
             ReloadDataEvent.Ins.Addlistener(LoadToDGVCarComplex, DataType.Car, DataType.Brand, DataType.Customer, DataType.FixForm);
             InitializeComponent();
+            DoubleBuffered = true;
             btbcollect.Enabled = false;
             btbUpdate.Enabled = false;
             LoadToDGVCarComplex();
@@ -117,7 +118,8 @@ namespace PhanMemQuanLyGaraOto.SubForm
             {
                 DataGridViewRow cRow = dgvCheckCars.CurrentRow;
                 currentCheckCar = (cRow.DataBoundItem as REMCheckCar);
-                btbcollect.Enabled = true;
+                if (currentCheckCar.DebtMoney > 0)
+                    btbcollect.Enabled = true;
                 btbUpdate.Enabled = true;
                 btbFix.Enabled = true;
             } else
@@ -135,7 +137,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            FixForm fixform = new FixForm(currentCheckCar);
+            FixForm fixform =  new FixForm(currentCheckCar);
             fixform.ShowDialog();
             DiposeToRoot(fixform);
         }

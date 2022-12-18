@@ -63,7 +63,8 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
         }
         void LoadCurrentFixForm()
         {
-            if (checkCar.TinhTrang == 1)
+            currentFixForm = DataProvider.Instance.GetPHIEUSUACHUA(checkCar.CarId);
+            if (currentFixForm == null)
             {
                 currentFixForm = new PHIEUSUACHUA();
                 currentFixForm.MAXE = checkCar.CarId;
