@@ -114,6 +114,10 @@ namespace PhanMemQuanLyGaraOto.DAO
                 ReloadDataEvent.Ins.Alert(DataType.FixForm);
 
         }
-
+        public int GetSoLuotSuaTrongNgay()
+        {
+            int res = db.PHIEUSUACHUAs.Where(a => a.NGAYLAP == DateTime.Today).Count();
+            return res;
+        }
     }
 }

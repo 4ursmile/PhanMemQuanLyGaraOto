@@ -186,7 +186,8 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
             this.Close();
             DataProvider.Instance.UpdatePHIEUSUACHUA(currentFixForm);
             DataProvider.Instance.db.DONGPHIEUSUACHUA(currentFixForm.MAPHIEU, currentFixForm.TONGTIEN);
-            ReloadDataEvent.Ins.Alert(DataType.Car);
+            ReloadDataEvent.Ins.Alert(DataType.Car, DataType.TimesFix);
+
         }
         private void btbADDB_Click(object sender, EventArgs e)
         {

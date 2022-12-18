@@ -29,16 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btbDelete = new System.Windows.Forms.Panel();
             this.dgvCheckCars = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.rEMCheckCarBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.txtFilterSDT = new System.Windows.Forms.TextBox();
@@ -58,6 +60,7 @@
             this.btbUpdate = new System.Windows.Forms.Button();
             this.btbTiepNhan = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.carIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.carBrandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.carNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,18 +68,18 @@
             this.carOwnerTeleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateInDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.debtMoneyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rEMCheckCarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.btbDelete.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheckCars)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rEMCheckCarBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rEMCheckCarBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -107,10 +110,10 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.56939F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.43061F));
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.chart1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -119,19 +122,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 569F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1093, 608);
             this.tableLayoutPanel1.TabIndex = 5;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.car_limo;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(142, 94);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
             // 
             // panel1
             // 
@@ -214,9 +204,14 @@
             this.dgvCheckCars.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvCheckCars_RowPrePaint);
             this.dgvCheckCars.SelectionChanged += new System.EventHandler(this.dgvCheckCars_SelectionChanged);
             // 
-            // rEMCheckCarBindingSource
+            // TinhTrang
             // 
-            this.rEMCheckCarBindingSource.DataSource = typeof(PhanMemQuanLyGaraOto.DDO.REMCheckCar);
+            this.TinhTrang.DataPropertyName = "TinhTrang";
+            this.TinhTrang.HeaderText = "TinhTrang";
+            this.TinhTrang.MinimumWidth = 6;
+            this.TinhTrang.Name = "TinhTrang";
+            this.TinhTrang.Visible = false;
+            this.TinhTrang.Width = 125;
             // 
             // panel2
             // 
@@ -483,6 +478,30 @@
             this.tabPage2.Text = "Sửa chữa";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chart1.Location = new System.Drawing.Point(3, 3);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.IsValueShownAsLabel = true;
+            series1.IsVisibleInLegend = false;
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(142, 94);
+            this.chart1.TabIndex = 7;
+            this.chart1.Text = "chart1";
+            title1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "Số lượt sửa";
+            this.chart1.Titles.Add(title1);
+            this.chart1.Click += new System.EventHandler(this.chart1_Click);
+            // 
             // carIdDataGridViewTextBoxColumn
             // 
             this.carIdDataGridViewTextBoxColumn.DataPropertyName = "CarId";
@@ -554,14 +573,9 @@
             this.debtMoneyDataGridViewTextBoxColumn.ReadOnly = true;
             this.debtMoneyDataGridViewTextBoxColumn.Width = 135;
             // 
-            // TinhTrang
+            // rEMCheckCarBindingSource
             // 
-            this.TinhTrang.DataPropertyName = "TinhTrang";
-            this.TinhTrang.HeaderText = "TinhTrang";
-            this.TinhTrang.MinimumWidth = 6;
-            this.TinhTrang.Name = "TinhTrang";
-            this.TinhTrang.Visible = false;
-            this.TinhTrang.Width = 125;
+            this.rEMCheckCarBindingSource.DataSource = typeof(PhanMemQuanLyGaraOto.DDO.REMCheckCar);
             // 
             // CarForm
             // 
@@ -580,15 +594,15 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.btbDelete.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheckCars)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rEMCheckCarBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rEMCheckCarBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -606,7 +620,6 @@
         private System.Windows.Forms.ComboBox cbcFilterDebt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox cbcBienSo;
         private System.Windows.Forms.Button btbcollect;
@@ -629,5 +642,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateInDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn debtMoneyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrang;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }

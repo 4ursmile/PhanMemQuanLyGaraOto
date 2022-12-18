@@ -17,6 +17,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
         public CarForm()
         {
             ReloadDataEvent.Ins.Addlistener(LoadToDGVCarComplex, DataType.Car, DataType.Brand, DataType.Customer, DataType.FixForm);
+            ReloadDataEvent.Ins.Addlistener(UpdateChar, DataType.TimesFix);
             InitializeComponent();
             DoubleBuffered = true;
             btbcollect.Enabled = false;
@@ -24,11 +25,43 @@ namespace PhanMemQuanLyGaraOto.SubForm
             LoadToDGVCarComplex();
             cbcFilterFix.SelectedIndex = 0;
             cbcFilterDebt.SelectedIndex = 0;
+            LoadLuotSuaToiDa();
+            ChartInit();
         }
 
         private void CarForm_Load(object sender, EventArgs e)
         {
 
+        }
+        int SoLuotSua;
+        int LuotSuaToiDa = 30;
+        void LoadLuotSuaToiDa()
+        {
+            try
+            {
+                LuotSuaToiDa = (int)DataProvider.Instance.db.THAMSOes.Where(a => a.TENTHAMSO == "SOXESUACHUATOIDA").FirstOrDefault().GIATRI;
+            } catch
+            {
+                
+            }
+        }
+        void ChartInit()
+        {
+            SoLuotSua = DataProvider.Instance.GetSoLuotSuaTrongNgay() - 1;
+            chart1.Series[0].Points.AddY(1);
+            chart1.Series[0].Points.AddY(9);
+            UpdateChar();
+        }
+        void UpdateChar()
+        {
+            SoLuotSua++;
+            chart1.Series[0].Points.RemoveAt(0);
+            chart1.Series[0].Points.RemoveAt(0);
+
+            chart1.Series[0].Points.AddY(SoLuotSua);
+            chart1.Series[0].Points.AddY(LuotSuaToiDa - SoLuotSua);
+            chart1.Series[0].Points[0].Color = System.Drawing.Color.HotPink;
+            chart1.Series[0].Points[1].Color = System.Drawing.Color.LawnGreen;
         }
         void LoadToDGVCarComplex()
         {
@@ -158,6 +191,10 @@ namespace PhanMemQuanLyGaraOto.SubForm
             cbcFilterDebt.SelectedIndex = 0;
             cbcFilterFix.SelectedIndex = 0;
             LoadToDGVCarComplex();
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
         }
     }
 }
