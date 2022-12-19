@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Windows.UI;
 
@@ -26,6 +27,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
             cbcFilterDebt.SelectedIndex = 0;
             LoadLuotSuaToiDa();
             ChartInit();
+            ResetButton();
         }
 
         private void CarForm_Load(object sender, EventArgs e)
@@ -111,6 +113,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            Task.WaitAll();
             TiepNhanForm tiepNhanForm = new TiepNhanForm();
             tiepNhanForm.ShowDialog();
             tiepNhanForm.Dispose();
@@ -143,7 +146,12 @@ namespace PhanMemQuanLyGaraOto.SubForm
             tiepNhanForm.ShowDialog();
             tiepNhanForm.Dispose();
         }
-
+        void ResetButton()
+        {
+            btbcollect.Enabled = false;
+            btbUpdate.Enabled = false;
+            btbFix.Enabled = false;
+        }
         private void dgvCheckCars_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (dgvCheckCars.CurrentRow.Index > -1)
@@ -158,9 +166,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
                 btbFix.Enabled = true;
             } else
             {
-                btbcollect.Enabled = false;
-                btbUpdate.Enabled = false;
-                btbFix.Enabled = false;
+                ResetButton();
             }
         }
 
@@ -171,9 +177,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            FixForm fixform =  new FixForm(currentCheckCar);
-            fixform.ShowDialog();
-            DiposeToRoot(fixform);
+          
         }
 
         private void btbFilter_Click(object sender, EventArgs e)
@@ -204,6 +208,26 @@ namespace PhanMemQuanLyGaraOto.SubForm
             BillForm billForm = new BillForm(currentCheckCar);
             billForm.ShowDialog();
             DiposeToRoot(billForm);
+        }
+
+        private void btbFix_Click(object sender, EventArgs e)
+        {
+            FixForm fixform = new FixForm(currentCheckCar);
+            fixform.ShowDialog();
+            DiposeToRoot(fixform);
+        }
+
+        private void dgvCheckCars_SelectionChanged_1(object sender, EventArgs e)
+        {
+            dgvCheckCars_CellMouseClick(sender, null);
+        }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+            txtFilterSDT.Text = "";
+            cbcFilterDebt.SelectedIndex = 0;
+            cbcFilterFix.SelectedIndex = 0;
+            LoadToDGVCarComplex();
         }
     }
 }

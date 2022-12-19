@@ -39,10 +39,19 @@ namespace PhanMemQuanLyGaraOto.Model
         public virtual DbSet<PHIEUSUACHUA> PHIEUSUACHUAs { get; set; }
         public virtual DbSet<PHIEUTHUTIEN> PHIEUTHUTIENs { get; set; }
         public virtual DbSet<PHUTUNG> PHUTUNGs { get; set; }
-        public virtual DbSet<THAMSO> THAMSOes { get; set; }
         public virtual DbSet<THANGNAM> THANGNAMs { get; set; }
         public virtual DbSet<TIENCONG> TIENCONGs { get; set; }
         public virtual DbSet<XE> XEs { get; set; }
+        public virtual DbSet<THAMSO> THAMSOes { get; set; }
+    
+        public virtual int DONGPHIEUNHAP(Nullable<int> sOPHIEUNHAP)
+        {
+            var sOPHIEUNHAPParameter = sOPHIEUNHAP.HasValue ?
+                new ObjectParameter("SOPHIEUNHAP", sOPHIEUNHAP) :
+                new ObjectParameter("SOPHIEUNHAP", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DONGPHIEUNHAP", sOPHIEUNHAPParameter);
+        }
     
         public virtual int DONGPHIEUSUACHUA(Nullable<int> mAPHIEU, Nullable<decimal> tONGTIEN2)
         {
@@ -57,39 +66,13 @@ namespace PhanMemQuanLyGaraOto.Model
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DONGPHIEUSUACHUA", mAPHIEUParameter, tONGTIEN2Parameter);
         }
     
-        public virtual ObjectResult<GETBAOCAO_Result> GETBAOCAO(Nullable<int> tHANG, Nullable<int> nAM)
-        {
-            var tHANGParameter = tHANG.HasValue ?
-                new ObjectParameter("THANG", tHANG) :
-                new ObjectParameter("THANG", typeof(int));
-    
-            var nAMParameter = nAM.HasValue ?
-                new ObjectParameter("NAM", nAM) :
-                new ObjectParameter("NAM", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GETBAOCAO_Result>("GETBAOCAO", tHANGParameter, nAMParameter);
-        }
-    
-        public virtual ObjectResult<GETCHITIETBAOCAO_Result> GETCHITIETBAOCAO(Nullable<int> tHANG, Nullable<int> nAM)
-        {
-            var tHANGParameter = tHANG.HasValue ?
-                new ObjectParameter("THANG", tHANG) :
-                new ObjectParameter("THANG", typeof(int));
-    
-            var nAMParameter = nAM.HasValue ?
-                new ObjectParameter("NAM", nAM) :
-                new ObjectParameter("NAM", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GETCHITIETBAOCAO_Result>("GETCHITIETBAOCAO", tHANGParameter, nAMParameter);
-        }
-    
-        public virtual int INITBAOCAODOANHSO(Nullable<System.DateTime> tHANGNAM)
+        public virtual int INITBAOCAOTON(Nullable<System.DateTime> tHANGNAM)
         {
             var tHANGNAMParameter = tHANGNAM.HasValue ?
                 new ObjectParameter("THANGNAM", tHANGNAM) :
                 new ObjectParameter("THANGNAM", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INITBAOCAODOANHSO", tHANGNAMParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INITBAOCAOTON", tHANGNAMParameter);
         }
     
         public virtual ObjectResult<LOGINACCOUNT_Result> LOGINACCOUNT(string uSERNAME, string pASSWORD)
@@ -105,24 +88,6 @@ namespace PhanMemQuanLyGaraOto.Model
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LOGINACCOUNT_Result>("LOGINACCOUNT", uSERNAMEParameter, pASSWORDParameter);
         }
     
-        public virtual int DONGPHIEUNHAP(Nullable<int> sOPHIEUNHAP)
-        {
-            var sOPHIEUNHAPParameter = sOPHIEUNHAP.HasValue ?
-                new ObjectParameter("SOPHIEUNHAP", sOPHIEUNHAP) :
-                new ObjectParameter("SOPHIEUNHAP", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DONGPHIEUNHAP", sOPHIEUNHAPParameter);
-        }
-    
-        public virtual int INITBAOCAOTON(Nullable<System.DateTime> tHANGNAM)
-        {
-            var tHANGNAMParameter = tHANGNAM.HasValue ?
-                new ObjectParameter("THANGNAM", tHANGNAM) :
-                new ObjectParameter("THANGNAM", typeof(System.DateTime));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INITBAOCAOTON", tHANGNAMParameter);
-        }
-    
         public virtual int XOAPHIEUSUACHUA(Nullable<int> mAPHIEU)
         {
             var mAPHIEUParameter = mAPHIEU.HasValue ?
@@ -130,6 +95,54 @@ namespace PhanMemQuanLyGaraOto.Model
                 new ObjectParameter("MAPHIEU", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("XOAPHIEUSUACHUA", mAPHIEUParameter);
+        }
+    
+        public virtual ObjectResult<GETCHITIETBAOCAO_Result> GETCHITIETBAOCAO(Nullable<int> tHANG, Nullable<int> nAM)
+        {
+            var tHANGParameter = tHANG.HasValue ?
+                new ObjectParameter("THANG", tHANG) :
+                new ObjectParameter("THANG", typeof(int));
+    
+            var nAMParameter = nAM.HasValue ?
+                new ObjectParameter("NAM", nAM) :
+                new ObjectParameter("NAM", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GETCHITIETBAOCAO_Result>("GETCHITIETBAOCAO", tHANGParameter, nAMParameter);
+        }
+    
+        public virtual ObjectResult<GETBAOCAOTON_Result> GETBAOCAOTON(Nullable<int> tHANG, Nullable<int> nAM)
+        {
+            var tHANGParameter = tHANG.HasValue ?
+                new ObjectParameter("THANG", tHANG) :
+                new ObjectParameter("THANG", typeof(int));
+    
+            var nAMParameter = nAM.HasValue ?
+                new ObjectParameter("NAM", nAM) :
+                new ObjectParameter("NAM", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GETBAOCAOTON_Result>("GETBAOCAOTON", tHANGParameter, nAMParameter);
+        }
+    
+        public virtual int GETCURRENTPHUTUNG(Nullable<int> sOPHIEUNHAP)
+        {
+            var sOPHIEUNHAPParameter = sOPHIEUNHAP.HasValue ?
+                new ObjectParameter("SOPHIEUNHAP", sOPHIEUNHAP) :
+                new ObjectParameter("SOPHIEUNHAP", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("GETCURRENTPHUTUNG", sOPHIEUNHAPParameter);
+        }
+    
+        public virtual int SETNUMBERFORALLELEMENT(Nullable<int> sOPHIEUNHAP, Nullable<int> sOLUONG)
+        {
+            var sOPHIEUNHAPParameter = sOPHIEUNHAP.HasValue ?
+                new ObjectParameter("SOPHIEUNHAP", sOPHIEUNHAP) :
+                new ObjectParameter("SOPHIEUNHAP", typeof(int));
+    
+            var sOLUONGParameter = sOLUONG.HasValue ?
+                new ObjectParameter("SOLUONG", sOLUONG) :
+                new ObjectParameter("SOLUONG", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SETNUMBERFORALLELEMENT", sOPHIEUNHAPParameter, sOLUONGParameter);
         }
     }
 }

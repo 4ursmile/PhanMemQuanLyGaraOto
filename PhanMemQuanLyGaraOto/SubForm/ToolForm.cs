@@ -145,5 +145,10 @@ namespace PhanMemQuanLyGaraOto.SubForm
         {
             LoadData2DGVPhuTung();
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

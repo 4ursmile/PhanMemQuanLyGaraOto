@@ -40,6 +40,7 @@
           <Key>
             <PropertyRef Name="MACTPSC" />
           </Key>
+          <Property Name="MACTPSC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MAPHIEU" Type="int" />
           <Property Name="MANDTC" Type="int" />
           <Property Name="TIENCONG" Type="money" />
@@ -47,7 +48,6 @@
           <Property Name="SOLUONG" Type="int" />
           <Property Name="DONGIA" Type="money" />
           <Property Name="THANHTIEN" Type="money" />
-          <Property Name="MACTPSC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="CHUXE">
           <Key>
@@ -121,15 +121,18 @@
             <PropertyRef Name="MAPHUTUNG" />
           </Key>
           <Property Name="MAPHUTUNG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TENPHUTUNG" Type="nvarchar" MaxLength="50" />
+          <Property Name="TENPHUTUNG" Type="nvarchar" MaxLength="500" />
           <Property Name="DONGIA" Type="money" />
           <Property Name="SOLUONGTON" Type="int" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'GARAOTO.dbo.THAMSO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="THAMSO">
           <Key>
-            <PropertyRef Name="TENTHAMSO" />
+            <PropertyRef Name="MATHAMSO" />
           </Key>
-          <Property Name="TENTHAMSO" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="MATHAMSO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENTHAMSO" Type="nvarchar" MaxLength="40" />
           <Property Name="GIATRI" Type="int" />
         </EntityType>
         <EntityType Name="THANGNAM">
@@ -299,7 +302,7 @@
           <Parameter Name="MAPHIEU" Type="int" Mode="In" />
           <Parameter Name="TONGTIEN2" Type="money" Mode="In" />
         </Function>
-        <Function Name="GETBAOCAO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="GETBAOCAOTON" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="THANG" Type="int" Mode="In" />
           <Parameter Name="NAM" Type="int" Mode="In" />
         </Function>
@@ -307,18 +310,8 @@
           <Parameter Name="THANG" Type="int" Mode="In" />
           <Parameter Name="NAM" Type="int" Mode="In" />
         </Function>
-        <Function Name="GETDOANHTHU" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
-          <Parameter Name="THANG" Type="int" Mode="In" />
-          <Parameter Name="NAM" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GETSOXETRONGNGAY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
-          <Parameter Name="DATE" Type="smalldatetime" Mode="In" />
-        </Function>
-        <Function Name="GETTONGTIEN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="money">
-          <Parameter Name="MAPHIEU" Type="int" Mode="In" />
-        </Function>
-        <Function Name="INITBAOCAODOANHSO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="THANGNAM" Type="smalldatetime" Mode="In" />
+        <Function Name="GETCURRENTPHUTUNG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SOPHIEUNHAP" Type="int" Mode="In" />
         </Function>
         <Function Name="INITBAOCAOTON" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="THANGNAM" Type="smalldatetime" Mode="In" />
@@ -326,6 +319,10 @@
         <Function Name="LOGINACCOUNT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="USERNAME" Type="nvarchar" Mode="In" />
           <Parameter Name="PASSWORD" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SETNUMBERFORALLELEMENT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SOPHIEUNHAP" Type="int" Mode="In" />
+          <Parameter Name="SOLUONG" Type="int" Mode="In" />
         </Function>
         <Function Name="XOAPHIEUSUACHUA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="MAPHIEU" Type="int" Mode="In" />
@@ -343,10 +340,16 @@
           <EntitySet Name="PHIEUSUACHUA" EntityType="Self.PHIEUSUACHUA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PHIEUTHUTIEN" EntityType="Self.PHIEUTHUTIEN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PHUTUNG" EntityType="Self.PHUTUNG" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="THAMSO" EntityType="Self.THAMSO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="THANGNAM" EntityType="Self.THANGNAM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TIENCONG" EntityType="Self.TIENCONG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="XE" EntityType="Self.XE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="THAMSO" EntityType="Self.THAMSO" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [THAMSO].[MATHAMSO] AS [MATHAMSO], 
+    [THAMSO].[TENTHAMSO] AS [TENTHAMSO], 
+    [THAMSO].[GIATRI] AS [GIATRI]
+    FROM [dbo].[THAMSO] AS [THAMSO]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_BCT_PT" Association="Self.FK_BCT_PT">
             <End Role="PHUTUNG" EntitySet="PHUTUNG" />
             <End Role="BAOCAOTON" EntitySet="BAOCAOTON" />
@@ -432,7 +435,7 @@
           <Key>
             <PropertyRef Name="MACTPSC" />
           </Key>
-          <Property Name="MACTPSC" Type="Int32" Nullable="false" />
+          <Property Name="MACTPSC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MAPHIEU" Type="Int32" />
           <Property Name="MANDTC" Type="Int32" />
           <Property Name="TIENCONG" Type="Decimal" Precision="19" Scale="4" />
@@ -496,8 +499,8 @@
           <Property Name="SOPHIEUNHAP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NGAYLAP" Type="DateTime" Precision="0" />
           <Property Name="TONGTIEN" Type="Decimal" Precision="19" Scale="4" />
-          <NavigationProperty Name="CT_PHIEUNHAP" Relationship="Self.FK_CT_PN" FromRole="PHIEUNHAP" ToRole="CT_PHIEUNHAP" />
           <Property Name="TINHTRANG" Type="Int16" />
+          <NavigationProperty Name="CT_PHIEUNHAP" Relationship="Self.FK_CT_PN" FromRole="PHIEUNHAP" ToRole="CT_PHIEUNHAP" />
         </EntityType>
         <EntityType Name="PHIEUSUACHUA">
           <Key>
@@ -526,19 +529,12 @@
             <PropertyRef Name="MAPHUTUNG" />
           </Key>
           <Property Name="MAPHUTUNG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TENPHUTUNG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TENPHUTUNG" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="DONGIA" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="SOLUONGTON" Type="Int32" />
           <NavigationProperty Name="BAOCAOTONs" Relationship="Self.FK_BCT_PT" FromRole="PHUTUNG" ToRole="BAOCAOTON" />
           <NavigationProperty Name="CHITIET_PSC" Relationship="Self.FK_CT_PH" FromRole="PHUTUNG" ToRole="CHITIET_PSC" />
           <NavigationProperty Name="CT_PHIEUNHAP" Relationship="Self.FK_CT_PT" FromRole="PHUTUNG" ToRole="CT_PHIEUNHAP" />
-        </EntityType>
-        <EntityType Name="THAMSO">
-          <Key>
-            <PropertyRef Name="TENTHAMSO" />
-          </Key>
-          <Property Name="TENTHAMSO" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="GIATRI" Type="Int32" />
         </EntityType>
         <EntityType Name="THANGNAM">
           <Key>
@@ -567,11 +563,19 @@
           <Property Name="MACHUXE" Type="Int32" />
           <Property Name="NGAYTIEPNHAN" Type="DateTime" Precision="0" />
           <Property Name="TONGNO" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TINHTRANG" Type="Int16" />
           <NavigationProperty Name="CHUXE" Relationship="Self.FK_XE_CX" FromRole="XE" ToRole="CHUXE" />
           <NavigationProperty Name="HIEUXE" Relationship="Self.FK_XE_HX" FromRole="XE" ToRole="HIEUXE" />
           <NavigationProperty Name="PHIEUSUACHUAs" Relationship="Self.FK_PSC_XE" FromRole="XE" ToRole="PHIEUSUACHUA" />
           <NavigationProperty Name="PHIEUTHUTIENs" Relationship="Self.FK_PTT_XE" FromRole="XE" ToRole="PHIEUTHUTIEN" />
-          <Property Name="TINHTRANG" Type="Int16" />
+        </EntityType>
+        <EntityType Name="THAMSO">
+          <Key>
+            <PropertyRef Name="MATHAMSO" />
+          </Key>
+          <Property Name="MATHAMSO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENTHAMSO" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="GIATRI" Type="Int32" />
         </EntityType>
         <Association Name="FK_BCT_PT">
           <End Role="PHUTUNG" Type="Self.PHUTUNG" Multiplicity="0..1" />
@@ -718,10 +722,10 @@
           <EntitySet Name="PHIEUSUACHUAs" EntityType="Self.PHIEUSUACHUA" />
           <EntitySet Name="PHIEUTHUTIENs" EntityType="Self.PHIEUTHUTIEN" />
           <EntitySet Name="PHUTUNGs" EntityType="Self.PHUTUNG" />
-          <EntitySet Name="THAMSOes" EntityType="Self.THAMSO" />
           <EntitySet Name="THANGNAMs" EntityType="Self.THANGNAM" />
           <EntitySet Name="TIENCONGs" EntityType="Self.TIENCONG" />
           <EntitySet Name="XEs" EntityType="Self.XE" />
+          <EntitySet Name="THAMSOes" EntityType="Self.THAMSO" />
           <AssociationSet Name="FK_BCT_PT" Association="Self.FK_BCT_PT">
             <End Role="PHUTUNG" EntitySet="PHUTUNGs" />
             <End Role="BAOCAOTON" EntitySet="BAOCAOTONs" />
@@ -766,46 +770,39 @@
             <End Role="XE" EntitySet="XEs" />
             <End Role="PHIEUTHUTIEN" EntitySet="PHIEUTHUTIENs" />
           </AssociationSet>
+          <FunctionImport Name="DONGPHIEUNHAP">
+          <Parameter Name="SOPHIEUNHAP" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="DONGPHIEUSUACHUA">
             <Parameter Name="MAPHIEU" Mode="In" Type="Int32" />
             <Parameter Name="TONGTIEN2" Mode="In" Type="Decimal" />
           </FunctionImport>
-          <FunctionImport Name="GETBAOCAO" ReturnType="Collection(GARAOTOModel.GETBAOCAO_Result)">
-            <Parameter Name="THANG" Mode="In" Type="Int32" />
-            <Parameter Name="NAM" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="GETCHITIETBAOCAO" ReturnType="Collection(GARAOTOModel.GETCHITIETBAOCAO_Result)">
-            <Parameter Name="THANG" Mode="In" Type="Int32" />
-            <Parameter Name="NAM" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="INITBAOCAODOANHSO">
+          <FunctionImport Name="INITBAOCAOTON">
           <Parameter Name="THANGNAM" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="LOGINACCOUNT" ReturnType="Collection(GARAOTOModel.LOGINACCOUNT_Result)">
             <Parameter Name="USERNAME" Mode="In" Type="String" />
             <Parameter Name="PASSWORD" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="DONGPHIEUNHAP">
-          <Parameter Name="SOPHIEUNHAP" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="INITBAOCAOTON">
-          <Parameter Name="THANGNAM" Mode="In" Type="DateTime" />
-          </FunctionImport>
           <FunctionImport Name="XOAPHIEUSUACHUA">
           <Parameter Name="MAPHIEU" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="GETCHITIETBAOCAO" ReturnType="Collection(GARAOTOModel.GETCHITIETBAOCAO_Result)">
+            <Parameter Name="THANG" Mode="In" Type="Int32" />
+            <Parameter Name="NAM" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GETBAOCAOTON" ReturnType="Collection(GARAOTOModel.GETBAOCAOTON_Result)">
+            <Parameter Name="THANG" Mode="In" Type="Int32" />
+            <Parameter Name="NAM" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GETCURRENTPHUTUNG">
+            <Parameter Name="SOPHIEUNHAP" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SETNUMBERFORALLELEMENT">
+            <Parameter Name="SOPHIEUNHAP" Mode="In" Type="Int32" />
+            <Parameter Name="SOLUONG" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
-        <ComplexType Name="GETBAOCAO_Result">
-          <Property Type="Int32" Name="MABAOCAO" Nullable="false" />
-          <Property Type="DateTime" Name="THANGNAM" Nullable="true" Precision="16" />
-          <Property Type="Decimal" Name="TONGDOANHTHU" Nullable="true" Precision="19" />
-        </ComplexType>
-        <ComplexType Name="GETCHITIETBAOCAO_Result">
-          <Property Type="Int32" Name="MAHIEUXE" Nullable="false" />
-          <Property Type="Int32" Name="SOLUOTSUA" Nullable="true" />
-          <Property Type="Decimal" Name="THANHTIEN" Nullable="true" Precision="19" />
-          <Property Type="Double" Name="TYLE" Nullable="true" />
-        </ComplexType>
         <ComplexType Name="LOGINACCOUNT_Result">
           <Property Type="Int32" Name="USERID" Nullable="false" />
           <Property Type="String" Name="USERNAME" Nullable="false" MaxLength="40" />
@@ -813,6 +810,19 @@
           <Property Type="String" Name="DISPLAYNAME" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="DESCRIPTION" Nullable="true" MaxLength="1000" />
           <Property Type="Int32" Name="TYPE" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GETCHITIETBAOCAO_Result">
+          <Property Type="Int32" Name="MAHIEUXE" Nullable="false" />
+          <Property Type="String" Name="TENHIEUXE" Nullable="true" MaxLength="40" />
+          <Property Type="Int32" Name="SOLUOTSUA" Nullable="true" />
+          <Property Type="Decimal" Name="THANHTIEN" Nullable="true" Precision="19" />
+        </ComplexType>
+        <ComplexType Name="GETBAOCAOTON_Result">
+          <Property Type="String" Name="TENPHUTUNG" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="TONDAU" Nullable="true" />
+          <Property Type="Int32" Name="SLNHAP" Nullable="true" />
+          <Property Type="Int32" Name="SLBAN" Nullable="true" />
+          <Property Type="Int32" Name="TONCUOI" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -913,10 +923,10 @@
           <EntitySetMapping Name="PHIEUNHAPs">
             <EntityTypeMapping TypeName="GARAOTOModel.PHIEUNHAP">
               <MappingFragment StoreEntitySet="PHIEUNHAP">
-                <ScalarProperty Name="TINHTRANG" ColumnName="TINHTRANG" />
                 <ScalarProperty Name="SOPHIEUNHAP" ColumnName="SOPHIEUNHAP" />
                 <ScalarProperty Name="NGAYLAP" ColumnName="NGAYLAP" />
                 <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
+                <ScalarProperty Name="TINHTRANG" ColumnName="TINHTRANG" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -951,14 +961,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="THAMSOes">
-            <EntityTypeMapping TypeName="GARAOTOModel.THAMSO">
-              <MappingFragment StoreEntitySet="THAMSO">
-                <ScalarProperty Name="TENTHAMSO" ColumnName="TENTHAMSO" />
-                <ScalarProperty Name="GIATRI" ColumnName="GIATRI" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="THANGNAMs">
             <EntityTypeMapping TypeName="GARAOTOModel.THANGNAM">
               <MappingFragment StoreEntitySet="THANGNAM">
@@ -980,37 +982,28 @@
           <EntitySetMapping Name="XEs">
             <EntityTypeMapping TypeName="GARAOTOModel.XE">
               <MappingFragment StoreEntitySet="XE">
-                <ScalarProperty Name="TINHTRANG" ColumnName="TINHTRANG" />
                 <ScalarProperty Name="MAXE" ColumnName="MAXE" />
                 <ScalarProperty Name="BIENSO" ColumnName="BIENSO" />
                 <ScalarProperty Name="MAHIEUXE" ColumnName="MAHIEUXE" />
                 <ScalarProperty Name="MACHUXE" ColumnName="MACHUXE" />
                 <ScalarProperty Name="NGAYTIEPNHAN" ColumnName="NGAYTIEPNHAN" />
                 <ScalarProperty Name="TONGNO" ColumnName="TONGNO" />
+                <ScalarProperty Name="TINHTRANG" ColumnName="TINHTRANG" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="THAMSOes">
+            <EntityTypeMapping TypeName="GARAOTOModel.THAMSO">
+              <MappingFragment StoreEntitySet="THAMSO">
+                <ScalarProperty Name="MATHAMSO" ColumnName="MATHAMSO" />
+                <ScalarProperty Name="TENTHAMSO" ColumnName="TENTHAMSO" />
+                <ScalarProperty Name="GIATRI" ColumnName="GIATRI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="DONGPHIEUNHAP" FunctionName="GARAOTOModel.Store.DONGPHIEUNHAP" />
           <FunctionImportMapping FunctionImportName="DONGPHIEUSUACHUA" FunctionName="GARAOTOModel.Store.DONGPHIEUSUACHUA" />
-          <FunctionImportMapping FunctionImportName="GETBAOCAO" FunctionName="GARAOTOModel.Store.GETBAOCAO">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="GARAOTOModel.GETBAOCAO_Result">
-                <ScalarProperty Name="MABAOCAO" ColumnName="MABAOCAO" />
-                <ScalarProperty Name="THANGNAM" ColumnName="THANGNAM" />
-                <ScalarProperty Name="TONGDOANHTHU" ColumnName="TONGDOANHTHU" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GETCHITIETBAOCAO" FunctionName="GARAOTOModel.Store.GETCHITIETBAOCAO">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="GARAOTOModel.GETCHITIETBAOCAO_Result">
-                <ScalarProperty Name="MAHIEUXE" ColumnName="MAHIEUXE" />
-                <ScalarProperty Name="SOLUOTSUA" ColumnName="SOLUOTSUA" />
-                <ScalarProperty Name="THANHTIEN" ColumnName="THANHTIEN" />
-                <ScalarProperty Name="TYLE" ColumnName="TYLE" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="INITBAOCAODOANHSO" FunctionName="GARAOTOModel.Store.INITBAOCAODOANHSO" />
+          <FunctionImportMapping FunctionImportName="INITBAOCAOTON" FunctionName="GARAOTOModel.Store.INITBAOCAOTON" />
           <FunctionImportMapping FunctionImportName="LOGINACCOUNT" FunctionName="GARAOTOModel.Store.LOGINACCOUNT">
             <ResultMapping>
               <ComplexTypeMapping TypeName="GARAOTOModel.LOGINACCOUNT_Result">
@@ -1023,9 +1016,30 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="DONGPHIEUNHAP" FunctionName="GARAOTOModel.Store.DONGPHIEUNHAP" />
-          <FunctionImportMapping FunctionImportName="INITBAOCAOTON" FunctionName="GARAOTOModel.Store.INITBAOCAOTON" />
           <FunctionImportMapping FunctionImportName="XOAPHIEUSUACHUA" FunctionName="GARAOTOModel.Store.XOAPHIEUSUACHUA" />
+          <FunctionImportMapping FunctionImportName="GETCHITIETBAOCAO" FunctionName="GARAOTOModel.Store.GETCHITIETBAOCAO">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GARAOTOModel.GETCHITIETBAOCAO_Result">
+                <ScalarProperty Name="MAHIEUXE" ColumnName="MAHIEUXE" />
+                <ScalarProperty Name="TENHIEUXE" ColumnName="TENHIEUXE" />
+                <ScalarProperty Name="SOLUOTSUA" ColumnName="SOLUOTSUA" />
+                <ScalarProperty Name="THANHTIEN" ColumnName="THANHTIEN" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GETBAOCAOTON" FunctionName="GARAOTOModel.Store.GETBAOCAOTON">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GARAOTOModel.GETBAOCAOTON_Result">
+                <ScalarProperty Name="TENPHUTUNG" ColumnName="TENPHUTUNG" />
+                <ScalarProperty Name="TONDAU" ColumnName="TONDAU" />
+                <ScalarProperty Name="SLNHAP" ColumnName="SLNHAP" />
+                <ScalarProperty Name="SLBAN" ColumnName="SLBAN" />
+                <ScalarProperty Name="TONCUOI" ColumnName="TONCUOI" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GETCURRENTPHUTUNG" FunctionName="GARAOTOModel.Store.GETCURRENTPHUTUNG" />
+          <FunctionImportMapping FunctionImportName="SETNUMBERFORALLELEMENT" FunctionName="GARAOTOModel.Store.SETNUMBERFORALLELEMENT" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

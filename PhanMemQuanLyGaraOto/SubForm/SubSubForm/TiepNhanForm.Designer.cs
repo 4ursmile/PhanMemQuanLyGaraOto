@@ -393,7 +393,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::PhanMemQuanLyGaraOto.Properties.Resources.jimu_art_by_jimu_art_merry_christmas_christmas_illustration;
+            this.BackgroundImage = global::PhanMemQuanLyGaraOto.Properties.Resources.Saigon_skyline_night_view;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(966, 591);
             this.Controls.Add(this.label2);

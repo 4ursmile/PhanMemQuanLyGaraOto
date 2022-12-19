@@ -167,6 +167,7 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
             currentXe.BIENSO = txtBienSo.Text;
             currentXe.NGAYTIEPNHAN = dtpTiepNhan.Value;
             currentXe.TONGNO = 0;
+            currentXe.TINHTRANG = 1;
             DataProvider.Instance.SaveCar(currentXe);
             this.Close();
         }

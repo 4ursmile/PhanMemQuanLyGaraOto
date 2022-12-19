@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlTypes;
+using System.Linq;
 
 namespace PhanMemQuanLyGaraOto
 {
@@ -52,4 +55,39 @@ namespace PhanMemQuanLyGaraOto
         }
     }
     public delegate void TransferData(out object TransferData);
+    public class MonthAndYearList
+    {
+        List<int> Month = new List<int>();
+        List<int> Year;
+        private static MonthAndYearList ins;
+
+        public static MonthAndYearList Ins { 
+            get
+            {
+                if (ins == null)
+                    ins = new MonthAndYearList();
+                return ins;
+            }
+           private set => ins = value; }
+        private MonthAndYearList()
+        {
+            for(int i = 1; i<= 12; i++)
+            {
+                Month.Add(i);
+            }
+            Year = Enumerable.Range(2020, DateTime.Today.Year + 1- 2020).Reverse().ToList(); 
+        }
+        public List<int> getListMonth(int year = 2022)
+        {
+            if (year < DateTime.Today.Year) 
+                return Month;
+            else
+                return Month.Take(DateTime.Today.Month).ToList<int>();
+        }
+        public List<int> getListYear()
+        {
+            return Year;
+        }
+    }
+    
 }

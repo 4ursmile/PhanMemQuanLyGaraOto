@@ -14,8 +14,8 @@ namespace PhanMemQuanLyGaraOto.Model
     public partial class GETCHITIETBAOCAO_Result
     {
         public int MAHIEUXE { get; set; }
+        public string TENHIEUXE { get; set; }
         public Nullable<int> SOLUOTSUA { get; set; }
         public Nullable<decimal> THANHTIEN { get; set; }
-        public Nullable<double> TYLE { get; set; }
     }
 }

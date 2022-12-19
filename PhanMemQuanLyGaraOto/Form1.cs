@@ -1,11 +1,13 @@
 ﻿using CommunityToolkit.WinUI.Notifications;
 using ComponentFactory.Krypton.Toolkit;
+using PhanMemQuanLyGaraOto.DAO;
 using PhanMemQuanLyGaraOto.DDo;
 using PhanMemQuanLyGaraOto.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +19,7 @@ namespace PhanMemQuanLyGaraOto
 
         public LoginForm()
         {
+            InitBaoCaoAync(); 
             InitializeComponent();
 
             DoubleBuffered =true;
@@ -27,7 +30,10 @@ namespace PhanMemQuanLyGaraOto
         }
 
         ListUser users;
-
+        async void InitBaoCaoAync()
+        {
+            await Task.Run(() => DataProvider.Instance.db.INITBAOCAOTON(DateTime.Today));
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -139,7 +145,7 @@ namespace PhanMemQuanLyGaraOto
                 item.Enabled = state;
 
         }
-        async void SigninAction(ACCOUNT aCCOUNT)
+        void SigninAction(ACCOUNT aCCOUNT)
         {
             UniversalUser.Ins.SetUser(aCCOUNT);
             SaveUser();

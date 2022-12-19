@@ -30,7 +30,6 @@ namespace PhanMemQuanLyGaraOto.DAO
         {
             get
             {
-                db.Dispose();
                 db = new GARAOTOEntities();
                 return db;
             }

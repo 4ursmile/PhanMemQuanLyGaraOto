@@ -29,26 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btbDelete = new System.Windows.Forms.Panel();
             this.dgvCheckCars = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.carIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carBrandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carOwnerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carOwnerTeleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateInDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.debtMoneyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rEMCheckCarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.txtFilterSDT = new System.Windows.Forms.TextBox();
@@ -68,42 +58,24 @@
             this.btbUpdate = new System.Windows.Forms.Button();
             this.btbTiepNhan = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.carIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carBrandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carOwnerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carOwnerTeleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateInDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.debtMoneyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rEMCheckCarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.btbDelete.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheckCars)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rEMCheckCarBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rEMCheckCarBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1107, 645);
-            this.tabControl1.TabIndex = 0;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.tableLayoutPanel1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 27);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1099, 614);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Xe";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel1
             // 
@@ -115,21 +87,21 @@
             this.tableLayoutPanel1.Controls.Add(this.panel3, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.chart1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 110F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 569F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1093, 608);
-            this.tableLayoutPanel1.TabIndex = 5;
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1107, 645);
+            this.tableLayoutPanel1.TabIndex = 6;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btbDelete);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(151, 103);
+            this.panel1.Location = new System.Drawing.Point(153, 113);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(939, 563);
+            this.panel1.Size = new System.Drawing.Size(951, 563);
             this.panel1.TabIndex = 4;
             // 
             // btbDelete
@@ -143,7 +115,7 @@
             this.btbDelete.Location = new System.Drawing.Point(5, 4);
             this.btbDelete.Name = "btbDelete";
             this.btbDelete.Padding = new System.Windows.Forms.Padding(5);
-            this.btbDelete.Size = new System.Drawing.Size(930, 546);
+            this.btbDelete.Size = new System.Drawing.Size(942, 546);
             this.btbDelete.TabIndex = 2;
             // 
             // dgvCheckCars
@@ -171,7 +143,7 @@
             this.dgvCheckCars.RowHeadersWidth = 30;
             this.dgvCheckCars.RowTemplate.Height = 24;
             this.dgvCheckCars.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCheckCars.Size = new System.Drawing.Size(918, 534);
+            this.dgvCheckCars.Size = new System.Drawing.Size(930, 534);
             this.dgvCheckCars.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.dgvCheckCars.StateCommon.Background.Color2 = System.Drawing.Color.WhiteSmoke;
             this.dgvCheckCars.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridHeaderColumnSheet;
@@ -199,10 +171,300 @@
             this.dgvCheckCars.StateCommon.HeaderRow.Border.Rounding = 5;
             this.dgvCheckCars.StateCommon.HeaderRow.Border.Width = 1;
             this.dgvCheckCars.TabIndex = 0;
-            this.dgvCheckCars.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccounts_CellContentClick_1);
             this.dgvCheckCars.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCheckCars_CellMouseClick);
-            this.dgvCheckCars.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvCheckCars_RowPrePaint);
-            this.dgvCheckCars.SelectionChanged += new System.EventHandler(this.dgvCheckCars_SelectionChanged);
+            this.dgvCheckCars.SelectionChanged += new System.EventHandler(this.dgvCheckCars_SelectionChanged_1);
+            // 
+            // TinhTrang
+            // 
+            this.TinhTrang.DataPropertyName = "TinhTrang";
+            this.TinhTrang.HeaderText = "TinhTrang";
+            this.TinhTrang.MinimumWidth = 6;
+            this.TinhTrang.Name = "TinhTrang";
+            this.TinhTrang.Visible = false;
+            this.TinhTrang.Width = 125;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.txtFilterSDT);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.cbcFilterFix);
+            this.panel2.Controls.Add(this.btbFilter);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.cbcFilterDebt);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel2.Location = new System.Drawing.Point(3, 113);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(144, 563);
+            this.panel2.TabIndex = 5;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(10, 430);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(122, 35);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Đặt lại";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_3);
+            // 
+            // txtFilterSDT
+            // 
+            this.txtFilterSDT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFilterSDT.Location = new System.Drawing.Point(3, 316);
+            this.txtFilterSDT.Name = "txtFilterSDT";
+            this.txtFilterSDT.Size = new System.Drawing.Size(134, 22);
+            this.txtFilterSDT.TabIndex = 17;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(8, 175);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(126, 18);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Sửa chữa";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cbcFilterFix
+            // 
+            this.cbcFilterFix.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbcFilterFix.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbcFilterFix.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbcFilterFix.FormattingEnabled = true;
+            this.cbcFilterFix.Items.AddRange(new object[] {
+            "Tất cả",
+            "Đang sửa chữa",
+            "Không sửa chữa"});
+            this.cbcFilterFix.Location = new System.Drawing.Point(3, 198);
+            this.cbcFilterFix.Name = "cbcFilterFix";
+            this.cbcFilterFix.Size = new System.Drawing.Size(136, 24);
+            this.cbcFilterFix.TabIndex = 15;
+            // 
+            // btbFilter
+            // 
+            this.btbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btbFilter.BackColor = System.Drawing.Color.White;
+            this.btbFilter.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.btbFilter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btbFilter.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btbFilter.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btbFilter.Location = new System.Drawing.Point(11, 373);
+            this.btbFilter.Name = "btbFilter";
+            this.btbFilter.Size = new System.Drawing.Size(122, 35);
+            this.btbFilter.TabIndex = 10;
+            this.btbFilter.Text = "Lọc";
+            this.btbFilter.UseVisualStyleBackColor = false;
+            this.btbFilter.Click += new System.EventHandler(this.btbFilter_Click);
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label5.Location = new System.Drawing.Point(7, 54);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(126, 26);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Bộ lọc";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(8, 277);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(126, 26);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "SĐT Chủ xe";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 93);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(126, 18);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Tình trạng nợ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cbcFilterDebt
+            // 
+            this.cbcFilterDebt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbcFilterDebt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbcFilterDebt.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbcFilterDebt.FormattingEnabled = true;
+            this.cbcFilterDebt.Items.AddRange(new object[] {
+            "Tất cả",
+            "Đã trả",
+            "Còn nợ"});
+            this.cbcFilterDebt.Location = new System.Drawing.Point(3, 116);
+            this.cbcFilterDebt.Name = "cbcFilterDebt";
+            this.cbcFilterDebt.Size = new System.Drawing.Size(136, 24);
+            this.cbcFilterDebt.TabIndex = 7;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.filter;
+            this.pictureBox1.Location = new System.Drawing.Point(36, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(65, 45);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.btbFix);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.cbcBienSo);
+            this.panel3.Controls.Add(this.btbcollect);
+            this.panel3.Controls.Add(this.btbUpdate);
+            this.panel3.Controls.Add(this.btbTiepNhan);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(153, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(951, 104);
+            this.panel3.TabIndex = 6;
+            // 
+            // btbFix
+            // 
+            this.btbFix.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btbFix.BackColor = System.Drawing.Color.Bisque;
+            this.btbFix.FlatAppearance.BorderColor = System.Drawing.Color.Orange;
+            this.btbFix.FlatAppearance.BorderSize = 2;
+            this.btbFix.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
+            this.btbFix.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btbFix.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btbFix.Location = new System.Drawing.Point(647, 37);
+            this.btbFix.Name = "btbFix";
+            this.btbFix.Size = new System.Drawing.Size(116, 35);
+            this.btbFix.TabIndex = 10;
+            this.btbFix.Text = "Sửa chữa";
+            this.btbFix.UseVisualStyleBackColor = false;
+            this.btbFix.Click += new System.EventHandler(this.btbFix_Click);
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(9, 43);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 22);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Biển số";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cbcBienSo
+            // 
+            this.cbcBienSo.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbcBienSo.FormattingEnabled = true;
+            this.cbcBienSo.Location = new System.Drawing.Point(91, 42);
+            this.cbcBienSo.Name = "cbcBienSo";
+            this.cbcBienSo.Size = new System.Drawing.Size(187, 27);
+            this.cbcBienSo.TabIndex = 3;
+            // 
+            // btbcollect
+            // 
+            this.btbcollect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btbcollect.BackColor = System.Drawing.Color.PaleGreen;
+            this.btbcollect.FlatAppearance.BorderColor = System.Drawing.Color.ForestGreen;
+            this.btbcollect.FlatAppearance.BorderSize = 2;
+            this.btbcollect.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LawnGreen;
+            this.btbcollect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btbcollect.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btbcollect.ForeColor = System.Drawing.Color.Black;
+            this.btbcollect.Location = new System.Drawing.Point(790, 37);
+            this.btbcollect.Name = "btbcollect";
+            this.btbcollect.Size = new System.Drawing.Size(148, 35);
+            this.btbcollect.TabIndex = 2;
+            this.btbcollect.Text = "Thu tiền";
+            this.btbcollect.UseVisualStyleBackColor = false;
+            this.btbcollect.Click += new System.EventHandler(this.btbcollect_Click);
+            // 
+            // btbUpdate
+            // 
+            this.btbUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btbUpdate.BackColor = System.Drawing.Color.White;
+            this.btbUpdate.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.btbUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btbUpdate.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btbUpdate.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btbUpdate.Location = new System.Drawing.Point(510, 37);
+            this.btbUpdate.Name = "btbUpdate";
+            this.btbUpdate.Size = new System.Drawing.Size(109, 35);
+            this.btbUpdate.TabIndex = 1;
+            this.btbUpdate.Text = "Cập nhật";
+            this.btbUpdate.UseVisualStyleBackColor = false;
+            this.btbUpdate.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btbTiepNhan
+            // 
+            this.btbTiepNhan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btbTiepNhan.BackColor = System.Drawing.Color.White;
+            this.btbTiepNhan.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.btbTiepNhan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btbTiepNhan.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btbTiepNhan.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btbTiepNhan.Location = new System.Drawing.Point(352, 37);
+            this.btbTiepNhan.Name = "btbTiepNhan";
+            this.btbTiepNhan.Size = new System.Drawing.Size(124, 35);
+            this.btbTiepNhan.TabIndex = 0;
+            this.btbTiepNhan.Text = "Tiếp nhận";
+            this.btbTiepNhan.UseVisualStyleBackColor = false;
+            this.btbTiepNhan.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // chart1
+            // 
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chart1.Location = new System.Drawing.Point(3, 3);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series4.IsValueShownAsLabel = true;
+            series4.IsVisibleInLegend = false;
+            series4.Name = "Series1";
+            this.chart1.Series.Add(series4);
+            this.chart1.Size = new System.Drawing.Size(144, 104);
+            this.chart1.TabIndex = 7;
+            this.chart1.Text = "chart1";
+            title4.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title4.Name = "Title1";
+            title4.Text = "Số lượt sửa";
+            this.chart1.Titles.Add(title4);
             // 
             // carIdDataGridViewTextBoxColumn
             // 
@@ -254,9 +516,9 @@
             // dateInDataGridViewTextBoxColumn
             // 
             this.dateInDataGridViewTextBoxColumn.DataPropertyName = "DateIn";
-            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle1.NullValue = "Không xác định";
-            this.dateInDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle7.NullValue = "Không xác định";
+            this.dateInDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.dateInDataGridViewTextBoxColumn.HeaderText = "Ngày tiếp nhận";
             this.dateInDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dateInDataGridViewTextBoxColumn.Name = "dateInDataGridViewTextBoxColumn";
@@ -266,317 +528,18 @@
             // debtMoneyDataGridViewTextBoxColumn
             // 
             this.debtMoneyDataGridViewTextBoxColumn.DataPropertyName = "DebtMoney";
-            dataGridViewCellStyle2.Format = "C0";
-            dataGridViewCellStyle2.NullValue = null;
-            this.debtMoneyDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Format = "C0";
+            dataGridViewCellStyle8.NullValue = null;
+            this.debtMoneyDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
             this.debtMoneyDataGridViewTextBoxColumn.HeaderText = "Tổng nợ";
             this.debtMoneyDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.debtMoneyDataGridViewTextBoxColumn.Name = "debtMoneyDataGridViewTextBoxColumn";
             this.debtMoneyDataGridViewTextBoxColumn.ReadOnly = true;
             this.debtMoneyDataGridViewTextBoxColumn.Width = 135;
             // 
-            // TinhTrang
-            // 
-            this.TinhTrang.DataPropertyName = "TinhTrang";
-            this.TinhTrang.HeaderText = "TinhTrang";
-            this.TinhTrang.MinimumWidth = 6;
-            this.TinhTrang.Name = "TinhTrang";
-            this.TinhTrang.Visible = false;
-            this.TinhTrang.Width = 125;
-            // 
             // rEMCheckCarBindingSource
             // 
             this.rEMCheckCarBindingSource.DataSource = typeof(PhanMemQuanLyGaraOto.DDO.REMCheckCar);
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.txtFilterSDT);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.cbcFilterFix);
-            this.panel2.Controls.Add(this.btbFilter);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.cbcFilterDebt);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel2.Location = new System.Drawing.Point(3, 103);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(142, 563);
-            this.panel2.TabIndex = 5;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(10, 430);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 35);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Đặt lại";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
-            // 
-            // txtFilterSDT
-            // 
-            this.txtFilterSDT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFilterSDT.Location = new System.Drawing.Point(3, 316);
-            this.txtFilterSDT.Name = "txtFilterSDT";
-            this.txtFilterSDT.Size = new System.Drawing.Size(132, 25);
-            this.txtFilterSDT.TabIndex = 17;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 175);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 18);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Sửa chữa";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cbcFilterFix
-            // 
-            this.cbcFilterFix.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbcFilterFix.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbcFilterFix.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbcFilterFix.FormattingEnabled = true;
-            this.cbcFilterFix.Items.AddRange(new object[] {
-            "Tất cả",
-            "Đang sửa chữa",
-            "Không sửa chữa"});
-            this.cbcFilterFix.Location = new System.Drawing.Point(3, 198);
-            this.cbcFilterFix.Name = "cbcFilterFix";
-            this.cbcFilterFix.Size = new System.Drawing.Size(134, 24);
-            this.cbcFilterFix.TabIndex = 15;
-            // 
-            // btbFilter
-            // 
-            this.btbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btbFilter.BackColor = System.Drawing.Color.White;
-            this.btbFilter.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
-            this.btbFilter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btbFilter.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btbFilter.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btbFilter.Location = new System.Drawing.Point(11, 373);
-            this.btbFilter.Name = "btbFilter";
-            this.btbFilter.Size = new System.Drawing.Size(120, 35);
-            this.btbFilter.TabIndex = 10;
-            this.btbFilter.Text = "Lọc";
-            this.btbFilter.UseVisualStyleBackColor = false;
-            this.btbFilter.Click += new System.EventHandler(this.btbFilter_Click);
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(7, 54);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(124, 26);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Bộ lọc";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(8, 277);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 26);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "SĐT Chủ xe";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 93);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 18);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Tình trạng nợ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cbcFilterDebt
-            // 
-            this.cbcFilterDebt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbcFilterDebt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbcFilterDebt.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbcFilterDebt.FormattingEnabled = true;
-            this.cbcFilterDebt.Items.AddRange(new object[] {
-            "Tất cả",
-            "Đã trả",
-            "Còn nợ"});
-            this.cbcFilterDebt.Location = new System.Drawing.Point(3, 116);
-            this.cbcFilterDebt.Name = "cbcFilterDebt";
-            this.cbcFilterDebt.Size = new System.Drawing.Size(134, 24);
-            this.cbcFilterDebt.TabIndex = 7;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.filter;
-            this.pictureBox1.Location = new System.Drawing.Point(36, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(63, 45);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.btbFix);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.cbcBienSo);
-            this.panel3.Controls.Add(this.btbcollect);
-            this.panel3.Controls.Add(this.btbUpdate);
-            this.panel3.Controls.Add(this.btbTiepNhan);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(151, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(939, 94);
-            this.panel3.TabIndex = 6;
-            // 
-            // btbFix
-            // 
-            this.btbFix.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btbFix.BackColor = System.Drawing.Color.White;
-            this.btbFix.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
-            this.btbFix.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btbFix.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btbFix.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btbFix.Location = new System.Drawing.Point(663, 30);
-            this.btbFix.Name = "btbFix";
-            this.btbFix.Size = new System.Drawing.Size(116, 35);
-            this.btbFix.TabIndex = 10;
-            this.btbFix.Text = "Sửa chữa";
-            this.btbFix.UseVisualStyleBackColor = false;
-            this.btbFix.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(9, 43);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 22);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Biển số";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cbcBienSo
-            // 
-            this.cbcBienSo.FormattingEnabled = true;
-            this.cbcBienSo.Location = new System.Drawing.Point(91, 39);
-            this.cbcBienSo.Name = "cbcBienSo";
-            this.cbcBienSo.Size = new System.Drawing.Size(187, 26);
-            this.cbcBienSo.TabIndex = 3;
-            // 
-            // btbcollect
-            // 
-            this.btbcollect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btbcollect.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.btbcollect.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
-            this.btbcollect.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btbcollect.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btbcollect.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btbcollect.Location = new System.Drawing.Point(794, 30);
-            this.btbcollect.Name = "btbcollect";
-            this.btbcollect.Size = new System.Drawing.Size(132, 35);
-            this.btbcollect.TabIndex = 2;
-            this.btbcollect.Text = "Thu tiền";
-            this.btbcollect.UseVisualStyleBackColor = false;
-            this.btbcollect.Click += new System.EventHandler(this.btbcollect_Click);
-            // 
-            // btbUpdate
-            // 
-            this.btbUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btbUpdate.BackColor = System.Drawing.Color.White;
-            this.btbUpdate.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
-            this.btbUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btbUpdate.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btbUpdate.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btbUpdate.Location = new System.Drawing.Point(538, 30);
-            this.btbUpdate.Name = "btbUpdate";
-            this.btbUpdate.Size = new System.Drawing.Size(109, 35);
-            this.btbUpdate.TabIndex = 1;
-            this.btbUpdate.Text = "Cập nhật";
-            this.btbUpdate.UseVisualStyleBackColor = false;
-            this.btbUpdate.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btbTiepNhan
-            // 
-            this.btbTiepNhan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btbTiepNhan.BackColor = System.Drawing.Color.White;
-            this.btbTiepNhan.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
-            this.btbTiepNhan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btbTiepNhan.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btbTiepNhan.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btbTiepNhan.Location = new System.Drawing.Point(396, 30);
-            this.btbTiepNhan.Name = "btbTiepNhan";
-            this.btbTiepNhan.Size = new System.Drawing.Size(124, 35);
-            this.btbTiepNhan.TabIndex = 0;
-            this.btbTiepNhan.Text = "Tiếp nhận";
-            this.btbTiepNhan.UseVisualStyleBackColor = false;
-            this.btbTiepNhan.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // chart1
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chart1.Location = new System.Drawing.Point(3, 3);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series1.IsValueShownAsLabel = true;
-            series1.IsVisibleInLegend = false;
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(142, 94);
-            this.chart1.TabIndex = 7;
-            this.chart1.Text = "chart1";
-            title1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title1.Name = "Title1";
-            title1.Text = "Số lượt sửa";
-            this.chart1.Titles.Add(title1);
-            this.chart1.Click += new System.EventHandler(this.chart1_Click);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 27);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1099, 614);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Sửa chữa";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // CarForm
             // 
@@ -585,7 +548,7 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1107, 645);
             this.ControlBox = false;
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CarForm";
@@ -593,49 +556,26 @@
             this.Text = "CarForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CarForm_FormClosing);
             this.Load += new System.EventHandler(this.CarForm_Load);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.btbDelete.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheckCars)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rEMCheckCarBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rEMCheckCarBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.BindingSource rEMCheckCarBindingSource;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel btbDelete;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvCheckCars;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox cbcFilterDebt;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ComboBox cbcBienSo;
-        private System.Windows.Forms.Button btbcollect;
-        private System.Windows.Forms.Button btbUpdate;
-        private System.Windows.Forms.Button btbTiepNhan;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btbFilter;
-        private System.Windows.Forms.Button btbFix;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbcFilterFix;
-        private System.Windows.Forms.TextBox txtFilterSDT;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn carIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn carBrandDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn carNumberDataGridViewTextBoxColumn;
@@ -644,6 +584,24 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateInDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn debtMoneyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrang;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtFilterSDT;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbcFilterFix;
+        private System.Windows.Forms.Button btbFilter;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbcFilterDebt;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btbFix;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbcBienSo;
+        private System.Windows.Forms.Button btbcollect;
+        private System.Windows.Forms.Button btbUpdate;
+        private System.Windows.Forms.Button btbTiepNhan;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
