@@ -141,6 +141,10 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
                 SwitchStateCustomerInfor(true);
                 txtHoten.Focus();
                 isNewCustomer = true;
+            } else
+            {
+                SwitchStateCustomerInfor(false);
+                isNewCustomer = false;
             }
         }
 
