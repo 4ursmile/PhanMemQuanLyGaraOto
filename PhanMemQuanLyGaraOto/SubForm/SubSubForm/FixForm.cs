@@ -20,7 +20,6 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
 {
     public partial class FixForm : Form
     {
-        int maPhieu;
         decimal profitRate = 1;
         REMCheckCar checkCar;
         PHIEUSUACHUA currentFixForm;
@@ -39,10 +38,6 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
             LoadDataToCBC();
             LoadDataToDGVFixDetail();
             ResetPSC();
-        }
-        async void LoadProfitRate()
-        {
-            
         }
         void ResetPSC()
         {
@@ -78,16 +73,7 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
                     MessageBox.Show("Lỗi không mong muốn đã xảy ra");
                     this.Close();
                 }
-            } else
-            {
-                currentFixForm = DataProvider.Instance.GetPHIEUSUACHUA(checkCar.CarId);
-                if (currentFixForm == null)
-                {
-                    MessageBox.Show("Lỗi không mong muốn đã xảy ra");
-                    this.Close();
-                }
-            }
-
+            } 
         }
         async void LoadDataToDGVFixDetail()
         {
@@ -176,17 +162,23 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
             this.Close();
         }
 
-        private async void btbCancelPhieu_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btbDongPhieu_Click(object sender, EventArgs e)
         {
-            this.Close();
-            DataProvider.Instance.UpdatePHIEUSUACHUA(currentFixForm);
-            DataProvider.Instance.db.DONGPHIEUSUACHUA(currentFixForm.MAPHIEU, currentFixForm.TONGTIEN);
-            ReloadDataEvent.Ins.Alert(DataType.Car, DataType.TimesFix);
+            if (MesseageBoxStatic.MessageBoxQuestion($"Bạn có muốn xác nhận phiếu sữa chữa cho xe {checkCar.CarNumber} không?") != DialogResult.Yes)
+                return;
+            try
+            {
+                DataProvider.Instance.UpdatePHIEUSUACHUA(currentFixForm);
+                DataProvider.Instance.db.DONGPHIEUSUACHUA(currentFixForm.MAPHIEU, currentFixForm.TONGTIEN);
+                ReloadDataEvent.Ins.Alert(DataType.Car, DataType.TimesFix);
+                this.Close();
+            }catch
+            {
+                DataProvider.Instance.MakeNotiError("Lập phiếu sữa chữa");
+                this.Close();
+            }
+
 
         }
         private void btbADDB_Click(object sender, EventArgs e)
@@ -251,6 +243,11 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
             currentChiTiet = new CHITIET_PSC();
             currentChiTiet.MACTPSC = currentCTPSC.MACTPSC;
             DataProvider.Instance.DeleteCHITIET_PSC(currentChiTiet);
+        }
+
+        private void FixForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -16,7 +16,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
             InitializeComponent();
             isUpdateTool = false;
             ReloadDataEvent.Ins.Addlistener(LoadData2DGVPhuTung, DataType.Tool);
-            ReloadDataEvent.Ins.Addlistener(LoadData2DGVPHUTUNGasync, DataType.FixDetail);
+            ReloadDataEvent.Ins.Addlistener(LoadData2DGVPHUTUNGasync, DataType.FixDetail, DataType.ImportForm);
             ResetToolView();
             LoadData2DGVPhuTung();
         }
@@ -68,7 +68,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
         private void ToolForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             ReloadDataEvent.Ins.RemoveListerner(LoadData2DGVPhuTung, DataType.Tool);
-            ReloadDataEvent.Ins.RemoveListerner(LoadData2DGVPHUTUNGasync, DataType.FixDetail);
+            ReloadDataEvent.Ins.RemoveListerner(LoadData2DGVPHUTUNGasync, DataType.FixDetail, DataType.ImportForm);
             DiposeToRoot(this);
         }
 
@@ -149,6 +149,13 @@ namespace PhanMemQuanLyGaraOto.SubForm
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btbImport_Click(object sender, System.EventArgs e)
+        {
+            ImportForm form = new ImportForm();
+            form.ShowDialog();
+            DiposeToRoot(form);
         }
     }
 }

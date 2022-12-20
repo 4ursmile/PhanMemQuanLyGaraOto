@@ -63,11 +63,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvPHUTUNG = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kryptonDataGridView2 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btbCloseForm = new System.Windows.Forms.Button();
-            this.btbDongPhieu = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mACTPSCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mAPHIEUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mANDTCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,6 +74,10 @@
             this.dONGIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tHANHTIENDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customCTPSCBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kryptonDataGridView2 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btbCloseForm = new System.Windows.Forms.Button();
+            this.btbDongPhieu = new System.Windows.Forms.Button();
             this.panel8.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -88,17 +87,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudDonGia)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPHUTUNG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customCTPSCBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView2)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customCTPSCBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel8
             // 
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.panel8.BackColor = System.Drawing.Color.White;
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel8.Controls.Add(this.dtpNgayLap);
             this.panel8.Controls.Add(this.label5);
             this.panel8.Controls.Add(this.label3);
@@ -116,7 +115,7 @@
             this.dtpNgayLap.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpNgayLap.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayLap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayLap.Location = new System.Drawing.Point(474, 66);
+            this.dtpNgayLap.Location = new System.Drawing.Point(473, 66);
             this.dtpNgayLap.Name = "dtpNgayLap";
             this.dtpNgayLap.Size = new System.Drawing.Size(204, 27);
             this.dtpNgayLap.TabIndex = 16;
@@ -128,7 +127,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(534, 47);
+            this.label5.Location = new System.Drawing.Point(533, 47);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 18);
             this.label5.TabIndex = 15;
@@ -142,7 +141,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(243, 47);
+            this.label3.Location = new System.Drawing.Point(242, 47);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 18);
             this.label3.TabIndex = 13;
@@ -153,7 +152,7 @@
             // 
             this.txtBienSo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBienSo.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBienSo.Location = new System.Drawing.Point(176, 65);
+            this.txtBienSo.Location = new System.Drawing.Point(175, 65);
             this.txtBienSo.Name = "txtBienSo";
             this.txtBienSo.ReadOnly = true;
             this.txtBienSo.Size = new System.Drawing.Size(198, 28);
@@ -166,7 +165,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(882, 47);
+            this.label2.Location = new System.Drawing.Point(881, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 18);
             this.label2.TabIndex = 11;
@@ -178,11 +177,11 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(496, 12);
+            this.label4.Location = new System.Drawing.Point(495, 12);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(159, 24);
+            this.label4.Size = new System.Drawing.Size(190, 27);
             this.label4.TabIndex = 10;
             this.label4.Text = "Phiếu sữa chữa";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -191,7 +190,7 @@
             // 
             this.txtThanhTien.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtThanhTien.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtThanhTien.Location = new System.Drawing.Point(810, 65);
+            this.txtThanhTien.Location = new System.Drawing.Point(809, 65);
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.ReadOnly = true;
             this.txtThanhTien.Size = new System.Drawing.Size(227, 28);
@@ -201,7 +200,7 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.flowLayoutPanel1);
             this.panel2.Controls.Add(this.panel6);
@@ -248,7 +247,7 @@
             this.btbCANCLEB.Name = "btbCANCLEB";
             this.btbCANCLEB.Size = new System.Drawing.Size(124, 47);
             this.btbCANCLEB.TabIndex = 2;
-            this.btbCANCLEB.Text = "Hủy bỏ";
+            this.btbCANCLEB.Text = "Bỏ chọn";
             this.btbCANCLEB.UseVisualStyleBackColor = true;
             this.btbCANCLEB.Click += new System.EventHandler(this.btbCANCLEB_Click);
             // 
@@ -471,14 +470,14 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.dgvPHUTUNG);
             this.panel1.Controls.Add(this.kryptonDataGridView2);
             this.panel1.Location = new System.Drawing.Point(511, 150);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(717, 429);
+            this.panel1.Size = new System.Drawing.Size(717, 494);
             this.panel1.TabIndex = 13;
             // 
             // dgvPHUTUNG
@@ -511,7 +510,7 @@
             this.dgvPHUTUNG.RowHeadersWidth = 30;
             this.dgvPHUTUNG.RowTemplate.Height = 24;
             this.dgvPHUTUNG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPHUTUNG.Size = new System.Drawing.Size(705, 417);
+            this.dgvPHUTUNG.Size = new System.Drawing.Size(705, 482);
             this.dgvPHUTUNG.StateCommon.Background.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.dgvPHUTUNG.StateCommon.Background.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.dgvPHUTUNG.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridHeaderColumnSheet;
@@ -554,100 +553,6 @@
             this.STT.Name = "STT";
             this.STT.ReadOnly = true;
             this.STT.Width = 50;
-            // 
-            // kryptonDataGridView2
-            // 
-            this.kryptonDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.kryptonDataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonDataGridView2.GridStyles.Style = ComponentFactory.Krypton.Toolkit.DataGridViewStyle.Mixed;
-            this.kryptonDataGridView2.GridStyles.StyleBackground = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridHeaderColumnSheet;
-            this.kryptonDataGridView2.GridStyles.StyleColumn = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
-            this.kryptonDataGridView2.GridStyles.StyleDataCells = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
-            this.kryptonDataGridView2.GridStyles.StyleRow = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
-            this.kryptonDataGridView2.Location = new System.Drawing.Point(5, 5);
-            this.kryptonDataGridView2.Name = "kryptonDataGridView2";
-            this.kryptonDataGridView2.ReadOnly = true;
-            this.kryptonDataGridView2.RowHeadersWidth = 30;
-            this.kryptonDataGridView2.RowTemplate.Height = 24;
-            this.kryptonDataGridView2.Size = new System.Drawing.Size(705, 417);
-            this.kryptonDataGridView2.StateCommon.Background.Color1 = System.Drawing.Color.White;
-            this.kryptonDataGridView2.StateCommon.Background.Color2 = System.Drawing.Color.WhiteSmoke;
-            this.kryptonDataGridView2.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridHeaderColumnSheet;
-            this.kryptonDataGridView2.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.Black;
-            this.kryptonDataGridView2.StateCommon.DataCell.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonDataGridView2.StateCommon.DataCell.Border.Rounding = 5;
-            this.kryptonDataGridView2.StateCommon.DataCell.Border.Width = 1;
-            this.kryptonDataGridView2.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(195)))), ((int)(((byte)(236)))));
-            this.kryptonDataGridView2.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(195)))), ((int)(((byte)(236)))));
-            this.kryptonDataGridView2.StateCommon.HeaderColumn.Border.Color1 = System.Drawing.Color.Black;
-            this.kryptonDataGridView2.StateCommon.HeaderColumn.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonDataGridView2.StateCommon.HeaderColumn.Border.Rounding = 3;
-            this.kryptonDataGridView2.StateCommon.HeaderColumn.Border.Width = 1;
-            this.kryptonDataGridView2.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonDataGridView2.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonDataGridView2.StateCommon.HeaderRow.Back.Color2 = System.Drawing.Color.Transparent;
-            this.kryptonDataGridView2.StateCommon.HeaderRow.Border.Color1 = System.Drawing.Color.Black;
-            this.kryptonDataGridView2.StateCommon.HeaderRow.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonDataGridView2.StateCommon.HeaderRow.Border.Rounding = 5;
-            this.kryptonDataGridView2.StateCommon.HeaderRow.Border.Width = 1;
-            this.kryptonDataGridView2.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.Controls.Add(this.btbCloseForm);
-            this.panel3.Controls.Add(this.btbDongPhieu);
-            this.panel3.Location = new System.Drawing.Point(715, 614);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(513, 47);
-            this.panel3.TabIndex = 3;
-            // 
-            // btbCloseForm
-            // 
-            this.btbCloseForm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btbCloseForm.AutoSize = true;
-            this.btbCloseForm.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btbCloseForm.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btbCloseForm.Location = new System.Drawing.Point(287, 0);
-            this.btbCloseForm.Name = "btbCloseForm";
-            this.btbCloseForm.Size = new System.Drawing.Size(227, 47);
-            this.btbCloseForm.TabIndex = 2;
-            this.btbCloseForm.Text = "Đóng";
-            this.btbCloseForm.UseVisualStyleBackColor = true;
-            this.btbCloseForm.Click += new System.EventHandler(this.btbCloseForm_Click);
-            // 
-            // btbDongPhieu
-            // 
-            this.btbDongPhieu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.btbDongPhieu.AutoSize = true;
-            this.btbDongPhieu.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btbDongPhieu.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btbDongPhieu.Location = new System.Drawing.Point(0, 0);
-            this.btbDongPhieu.Name = "btbDongPhieu";
-            this.btbDongPhieu.Size = new System.Drawing.Size(269, 47);
-            this.btbDongPhieu.TabIndex = 0;
-            this.btbDongPhieu.Text = "Xác nhận";
-            this.btbDongPhieu.UseVisualStyleBackColor = true;
-            this.btbDongPhieu.Click += new System.EventHandler(this.btbDongPhieu_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.ce9b49374132daaca1283aef58454019;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1262, 673);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
             // 
             // mACTPSCDataGridViewTextBoxColumn
             // 
@@ -754,6 +659,99 @@
             // 
             this.customCTPSCBindingSource.DataSource = typeof(PhanMemQuanLyGaraOto.DDO.CustomCTPSC);
             // 
+            // kryptonDataGridView2
+            // 
+            this.kryptonDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.kryptonDataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kryptonDataGridView2.GridStyles.Style = ComponentFactory.Krypton.Toolkit.DataGridViewStyle.Mixed;
+            this.kryptonDataGridView2.GridStyles.StyleBackground = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridHeaderColumnSheet;
+            this.kryptonDataGridView2.GridStyles.StyleColumn = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
+            this.kryptonDataGridView2.GridStyles.StyleDataCells = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
+            this.kryptonDataGridView2.GridStyles.StyleRow = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
+            this.kryptonDataGridView2.Location = new System.Drawing.Point(5, 5);
+            this.kryptonDataGridView2.Name = "kryptonDataGridView2";
+            this.kryptonDataGridView2.ReadOnly = true;
+            this.kryptonDataGridView2.RowHeadersWidth = 30;
+            this.kryptonDataGridView2.RowTemplate.Height = 24;
+            this.kryptonDataGridView2.Size = new System.Drawing.Size(705, 482);
+            this.kryptonDataGridView2.StateCommon.Background.Color1 = System.Drawing.Color.White;
+            this.kryptonDataGridView2.StateCommon.Background.Color2 = System.Drawing.Color.WhiteSmoke;
+            this.kryptonDataGridView2.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridHeaderColumnSheet;
+            this.kryptonDataGridView2.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.Black;
+            this.kryptonDataGridView2.StateCommon.DataCell.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonDataGridView2.StateCommon.DataCell.Border.Rounding = 5;
+            this.kryptonDataGridView2.StateCommon.DataCell.Border.Width = 1;
+            this.kryptonDataGridView2.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(195)))), ((int)(((byte)(236)))));
+            this.kryptonDataGridView2.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(195)))), ((int)(((byte)(236)))));
+            this.kryptonDataGridView2.StateCommon.HeaderColumn.Border.Color1 = System.Drawing.Color.Black;
+            this.kryptonDataGridView2.StateCommon.HeaderColumn.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonDataGridView2.StateCommon.HeaderColumn.Border.Rounding = 3;
+            this.kryptonDataGridView2.StateCommon.HeaderColumn.Border.Width = 1;
+            this.kryptonDataGridView2.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonDataGridView2.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonDataGridView2.StateCommon.HeaderRow.Back.Color2 = System.Drawing.Color.Transparent;
+            this.kryptonDataGridView2.StateCommon.HeaderRow.Border.Color1 = System.Drawing.Color.Black;
+            this.kryptonDataGridView2.StateCommon.HeaderRow.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonDataGridView2.StateCommon.HeaderRow.Border.Rounding = 5;
+            this.kryptonDataGridView2.StateCommon.HeaderRow.Border.Width = 1;
+            this.kryptonDataGridView2.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.btbCloseForm);
+            this.panel3.Controls.Add(this.btbDongPhieu);
+            this.panel3.Location = new System.Drawing.Point(26, 597);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(465, 47);
+            this.panel3.TabIndex = 3;
+            // 
+            // btbCloseForm
+            // 
+            this.btbCloseForm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btbCloseForm.AutoSize = true;
+            this.btbCloseForm.BackColor = System.Drawing.Color.LavenderBlush;
+            this.btbCloseForm.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
+            this.btbCloseForm.FlatAppearance.BorderSize = 2;
+            this.btbCloseForm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Coral;
+            this.btbCloseForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cornsilk;
+            this.btbCloseForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btbCloseForm.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btbCloseForm.Location = new System.Drawing.Point(246, 0);
+            this.btbCloseForm.Name = "btbCloseForm";
+            this.btbCloseForm.Size = new System.Drawing.Size(220, 47);
+            this.btbCloseForm.TabIndex = 2;
+            this.btbCloseForm.Text = "Đóng";
+            this.btbCloseForm.UseVisualStyleBackColor = false;
+            this.btbCloseForm.Click += new System.EventHandler(this.btbCloseForm_Click);
+            // 
+            // btbDongPhieu
+            // 
+            this.btbDongPhieu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btbDongPhieu.AutoSize = true;
+            this.btbDongPhieu.BackColor = System.Drawing.Color.LightGreen;
+            this.btbDongPhieu.FlatAppearance.BorderColor = System.Drawing.Color.ForestGreen;
+            this.btbDongPhieu.FlatAppearance.BorderSize = 2;
+            this.btbDongPhieu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btbDongPhieu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGreen;
+            this.btbDongPhieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btbDongPhieu.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btbDongPhieu.Location = new System.Drawing.Point(0, 0);
+            this.btbDongPhieu.Name = "btbDongPhieu";
+            this.btbDongPhieu.Size = new System.Drawing.Size(220, 47);
+            this.btbDongPhieu.TabIndex = 0;
+            this.btbDongPhieu.Text = "Xác nhận";
+            this.btbDongPhieu.UseVisualStyleBackColor = false;
+            this.btbDongPhieu.Click += new System.EventHandler(this.btbDongPhieu_Click);
+            // 
             // FixForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -764,12 +762,12 @@
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FixForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Phiếu sữa chữa";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FixForm_FormClosing);
+            this.Load += new System.EventHandler(this.FixForm_Load);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -783,11 +781,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudDonGia)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPHUTUNG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customCTPSCBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customCTPSCBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -826,7 +823,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btbCloseForm;
         private System.Windows.Forms.Button btbDongPhieu;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblMax;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn mACTPSCDataGridViewTextBoxColumn;

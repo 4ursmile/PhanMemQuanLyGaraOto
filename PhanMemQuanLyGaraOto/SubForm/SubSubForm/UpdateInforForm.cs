@@ -7,10 +7,8 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
 {
     public partial class UpdateInforForm : Form
     {
-        bool isLoadl;
         public UpdateInforForm()
         {
-            isLoadl = false;
             InitializeComponent();
             LoadInfo();
         }

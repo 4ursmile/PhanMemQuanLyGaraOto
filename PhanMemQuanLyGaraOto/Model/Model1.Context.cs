@@ -144,5 +144,27 @@ namespace PhanMemQuanLyGaraOto.Model
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SETNUMBERFORALLELEMENT", sOPHIEUNHAPParameter, sOLUONGParameter);
         }
+    
+        public virtual ObjectResult<GETCURRENTPHUTUNGTOSELECT_Result> GETCURRENTPHUTUNGTOSELECT(Nullable<int> sOPHIEUNHAP)
+        {
+            var sOPHIEUNHAPParameter = sOPHIEUNHAP.HasValue ?
+                new ObjectParameter("SOPHIEUNHAP", sOPHIEUNHAP) :
+                new ObjectParameter("SOPHIEUNHAP", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GETCURRENTPHUTUNGTOSELECT_Result>("GETCURRENTPHUTUNGTOSELECT", sOPHIEUNHAPParameter);
+        }
+    
+        public virtual int SETPRICE4ALLELEMENT(Nullable<int> sOPHIEUNHAP, Nullable<decimal> gIA)
+        {
+            var sOPHIEUNHAPParameter = sOPHIEUNHAP.HasValue ?
+                new ObjectParameter("SOPHIEUNHAP", sOPHIEUNHAP) :
+                new ObjectParameter("SOPHIEUNHAP", typeof(int));
+    
+            var gIAParameter = gIA.HasValue ?
+                new ObjectParameter("GIA", gIA) :
+                new ObjectParameter("GIA", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SETPRICE4ALLELEMENT", sOPHIEUNHAPParameter, gIAParameter);
+        }
     }
 }

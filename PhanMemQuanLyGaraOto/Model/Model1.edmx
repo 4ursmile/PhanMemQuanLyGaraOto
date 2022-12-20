@@ -125,8 +125,6 @@
           <Property Name="DONGIA" Type="money" />
           <Property Name="SOLUONGTON" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'GARAOTO.dbo.THAMSO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="THAMSO">
           <Key>
             <PropertyRef Name="MATHAMSO" />
@@ -313,6 +311,9 @@ warning 6002: The table/view 'GARAOTO.dbo.THAMSO' does not have a primary key de
         <Function Name="GETCURRENTPHUTUNG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="SOPHIEUNHAP" Type="int" Mode="In" />
         </Function>
+        <Function Name="GETCURRENTPHUTUNGTOSELECT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SOPHIEUNHAP" Type="int" Mode="In" />
+        </Function>
         <Function Name="INITBAOCAOTON" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="THANGNAM" Type="smalldatetime" Mode="In" />
         </Function>
@@ -323,6 +324,10 @@ warning 6002: The table/view 'GARAOTO.dbo.THAMSO' does not have a primary key de
         <Function Name="SETNUMBERFORALLELEMENT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="SOPHIEUNHAP" Type="int" Mode="In" />
           <Parameter Name="SOLUONG" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SETPRICE4ALLELEMENT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SOPHIEUNHAP" Type="int" Mode="In" />
+          <Parameter Name="GIA" Type="money" Mode="In" />
         </Function>
         <Function Name="XOAPHIEUSUACHUA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="MAPHIEU" Type="int" Mode="In" />
@@ -340,16 +345,10 @@ warning 6002: The table/view 'GARAOTO.dbo.THAMSO' does not have a primary key de
           <EntitySet Name="PHIEUSUACHUA" EntityType="Self.PHIEUSUACHUA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PHIEUTHUTIEN" EntityType="Self.PHIEUTHUTIEN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PHUTUNG" EntityType="Self.PHUTUNG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="THAMSO" EntityType="Self.THAMSO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="THANGNAM" EntityType="Self.THANGNAM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TIENCONG" EntityType="Self.TIENCONG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="XE" EntityType="Self.XE" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="THAMSO" EntityType="Self.THAMSO" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [THAMSO].[MATHAMSO] AS [MATHAMSO], 
-    [THAMSO].[TENTHAMSO] AS [TENTHAMSO], 
-    [THAMSO].[GIATRI] AS [GIATRI]
-    FROM [dbo].[THAMSO] AS [THAMSO]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_BCT_PT" Association="Self.FK_BCT_PT">
             <End Role="PHUTUNG" EntitySet="PHUTUNG" />
             <End Role="BAOCAOTON" EntitySet="BAOCAOTON" />
@@ -796,11 +795,18 @@ warning 6002: The table/view 'GARAOTO.dbo.THAMSO' does not have a primary key de
             <Parameter Name="NAM" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GETCURRENTPHUTUNG">
-            <Parameter Name="SOPHIEUNHAP" Mode="In" Type="Int32" />
+          <Parameter Name="SOPHIEUNHAP" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SETNUMBERFORALLELEMENT">
             <Parameter Name="SOPHIEUNHAP" Mode="In" Type="Int32" />
             <Parameter Name="SOLUONG" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GETCURRENTPHUTUNGTOSELECT" ReturnType="Collection(GARAOTOModel.GETCURRENTPHUTUNGTOSELECT_Result)">
+          <Parameter Name="SOPHIEUNHAP" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SETPRICE4ALLELEMENT">
+            <Parameter Name="SOPHIEUNHAP" Mode="In" Type="Int32" />
+            <Parameter Name="GIA" Mode="In" Type="Decimal" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="LOGINACCOUNT_Result">
@@ -823,6 +829,12 @@ warning 6002: The table/view 'GARAOTO.dbo.THAMSO' does not have a primary key de
           <Property Type="Int32" Name="SLNHAP" Nullable="true" />
           <Property Type="Int32" Name="SLBAN" Nullable="true" />
           <Property Type="Int32" Name="TONCUOI" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GETCURRENTPHUTUNGTOSELECT_Result">
+          <Property Type="Int32" Name="MAPHUTUNG" Nullable="false" />
+          <Property Type="String" Name="TENPHUTUNG" Nullable="true" MaxLength="500" />
+          <Property Type="Decimal" Name="DONGIA" Nullable="true" Precision="19" />
+          <Property Type="Int32" Name="SOLUONGTON" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1040,6 +1052,17 @@ warning 6002: The table/view 'GARAOTO.dbo.THAMSO' does not have a primary key de
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GETCURRENTPHUTUNG" FunctionName="GARAOTOModel.Store.GETCURRENTPHUTUNG" />
           <FunctionImportMapping FunctionImportName="SETNUMBERFORALLELEMENT" FunctionName="GARAOTOModel.Store.SETNUMBERFORALLELEMENT" />
+          <FunctionImportMapping FunctionImportName="GETCURRENTPHUTUNGTOSELECT" FunctionName="GARAOTOModel.Store.GETCURRENTPHUTUNGTOSELECT">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GARAOTOModel.GETCURRENTPHUTUNGTOSELECT_Result">
+                <ScalarProperty Name="MAPHUTUNG" ColumnName="MAPHUTUNG" />
+                <ScalarProperty Name="TENPHUTUNG" ColumnName="TENPHUTUNG" />
+                <ScalarProperty Name="DONGIA" ColumnName="DONGIA" />
+                <ScalarProperty Name="SOLUONGTON" ColumnName="SOLUONGTON" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SETPRICE4ALLELEMENT" FunctionName="GARAOTOModel.Store.SETPRICE4ALLELEMENT" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1055,7 +1078,7 @@ warning 6002: The table/view 'GARAOTO.dbo.THAMSO' does not have a primary key de
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="true" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>

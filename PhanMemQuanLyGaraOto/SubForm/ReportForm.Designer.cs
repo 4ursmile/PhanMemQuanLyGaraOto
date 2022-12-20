@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -204,8 +204,8 @@
             // 
             // STT
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.STT.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.STT.DefaultCellStyle = dataGridViewCellStyle21;
             this.STT.HeaderText = "STT";
             this.STT.MinimumWidth = 6;
             this.STT.Name = "STT";
@@ -215,8 +215,8 @@
             // 
             this.tenHangXeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.tenHangXeDataGridViewTextBoxColumn.DataPropertyName = "tenHangXe";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.tenHangXeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.tenHangXeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle22;
             this.tenHangXeDataGridViewTextBoxColumn.HeaderText = "Tên hãng xe";
             this.tenHangXeDataGridViewTextBoxColumn.MinimumWidth = 125;
             this.tenHangXeDataGridViewTextBoxColumn.Name = "tenHangXeDataGridViewTextBoxColumn";
@@ -224,8 +224,8 @@
             // soLuotSuaDataGridViewTextBoxColumn
             // 
             this.soLuotSuaDataGridViewTextBoxColumn.DataPropertyName = "soLuotSua";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.soLuotSuaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.soLuotSuaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle23;
             this.soLuotSuaDataGridViewTextBoxColumn.HeaderText = "Số lượt sửa";
             this.soLuotSuaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.soLuotSuaDataGridViewTextBoxColumn.Name = "soLuotSuaDataGridViewTextBoxColumn";
@@ -234,8 +234,8 @@
             // tongTienDataGridViewTextBoxColumn
             // 
             this.tongTienDataGridViewTextBoxColumn.DataPropertyName = "tongTien";
-            dataGridViewCellStyle14.Format = "C2";
-            this.tongTienDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle24.Format = "C2";
+            this.tongTienDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle24;
             this.tongTienDataGridViewTextBoxColumn.HeaderText = "Tổng tiền";
             this.tongTienDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tongTienDataGridViewTextBoxColumn.Name = "tongTienDataGridViewTextBoxColumn";
@@ -244,10 +244,10 @@
             // tyLeDataGridViewTextBoxColumn
             // 
             this.tyLeDataGridViewTextBoxColumn.DataPropertyName = "tyLe";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.Format = "N2";
-            dataGridViewCellStyle15.NullValue = "0";
-            this.tyLeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle25.Format = "N2";
+            dataGridViewCellStyle25.NullValue = "0";
+            this.tyLeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle25;
             this.tyLeDataGridViewTextBoxColumn.HeaderText = "Tỷ lệ(%)";
             this.tyLeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tyLeDataGridViewTextBoxColumn.Name = "tyLeDataGridViewTextBoxColumn";
@@ -308,15 +308,19 @@
             // 
             // btbBaoCao
             // 
-            this.btbBaoCao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btbBaoCao.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btbBaoCao.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btbBaoCao.BackColor = System.Drawing.Color.PeachPuff;
+            this.btbBaoCao.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btbBaoCao.FlatAppearance.BorderSize = 2;
+            this.btbBaoCao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSalmon;
+            this.btbBaoCao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btbBaoCao.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btbBaoCao.Location = new System.Drawing.Point(690, 52);
             this.btbBaoCao.Name = "btbBaoCao";
             this.btbBaoCao.Size = new System.Drawing.Size(122, 32);
             this.btbBaoCao.TabIndex = 18;
             this.btbBaoCao.Text = "Xem báo cáo";
-            this.btbBaoCao.UseVisualStyleBackColor = true;
+            this.btbBaoCao.UseVisualStyleBackColor = false;
             this.btbBaoCao.Click += new System.EventHandler(this.button1_Click);
             // 
             // cbcYear
@@ -503,8 +507,8 @@
             // 
             // dataGridViewTextBoxColumn5
             // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle26;
             this.dataGridViewTextBoxColumn5.HeaderText = "STT";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
@@ -521,8 +525,8 @@
             // tONDAUDataGridViewTextBoxColumn
             // 
             this.tONDAUDataGridViewTextBoxColumn.DataPropertyName = "TONDAU";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.tONDAUDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.tONDAUDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle27;
             this.tONDAUDataGridViewTextBoxColumn.HeaderText = "Tồn đầu";
             this.tONDAUDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tONDAUDataGridViewTextBoxColumn.Name = "tONDAUDataGridViewTextBoxColumn";
@@ -531,8 +535,8 @@
             // sLNHAPDataGridViewTextBoxColumn
             // 
             this.sLNHAPDataGridViewTextBoxColumn.DataPropertyName = "SLNHAP";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.sLNHAPDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.sLNHAPDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle28;
             this.sLNHAPDataGridViewTextBoxColumn.HeaderText = "SL nhập";
             this.sLNHAPDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.sLNHAPDataGridViewTextBoxColumn.Name = "sLNHAPDataGridViewTextBoxColumn";
@@ -541,8 +545,8 @@
             // sLBANDataGridViewTextBoxColumn
             // 
             this.sLBANDataGridViewTextBoxColumn.DataPropertyName = "SLBAN";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.sLBANDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.sLBANDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle29;
             this.sLBANDataGridViewTextBoxColumn.HeaderText = "SL bán";
             this.sLBANDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.sLBANDataGridViewTextBoxColumn.Name = "sLBANDataGridViewTextBoxColumn";
@@ -551,8 +555,8 @@
             // tONCUOIDataGridViewTextBoxColumn
             // 
             this.tONCUOIDataGridViewTextBoxColumn.DataPropertyName = "TONCUOI";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.tONCUOIDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.tONCUOIDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle30;
             this.tONCUOIDataGridViewTextBoxColumn.HeaderText = "Tồn Cuối";
             this.tONCUOIDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tONCUOIDataGridViewTextBoxColumn.Name = "tONCUOIDataGridViewTextBoxColumn";
@@ -612,14 +616,18 @@
             // btbBaocaoTon
             // 
             this.btbBaocaoTon.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btbBaocaoTon.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btbBaocaoTon.BackColor = System.Drawing.Color.MistyRose;
+            this.btbBaocaoTon.FlatAppearance.BorderColor = System.Drawing.Color.Sienna;
+            this.btbBaocaoTon.FlatAppearance.BorderSize = 2;
+            this.btbBaocaoTon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSalmon;
+            this.btbBaocaoTon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btbBaocaoTon.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btbBaocaoTon.Location = new System.Drawing.Point(449, 114);
             this.btbBaocaoTon.Name = "btbBaocaoTon";
             this.btbBaocaoTon.Size = new System.Drawing.Size(122, 32);
             this.btbBaocaoTon.TabIndex = 18;
             this.btbBaocaoTon.Text = "Xem báo cáo";
-            this.btbBaocaoTon.UseVisualStyleBackColor = true;
+            this.btbBaocaoTon.UseVisualStyleBackColor = false;
             this.btbBaocaoTon.Click += new System.EventHandler(this.btbBaocaoTon_Click);
             // 
             // cbcNamTon

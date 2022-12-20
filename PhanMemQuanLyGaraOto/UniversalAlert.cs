@@ -75,6 +75,6 @@ namespace PhanMemQuanLyGaraOto
     }
     public enum DataType
     {
-        Car, Customer, Tool, Brand, Money, FixForm, FixDetail, ImportForm, TimesFix
+        Car, Customer, Tool, Brand, Money, FixForm, FixDetail, ImportForm, TimesFix, ImportDetail
     }
 }

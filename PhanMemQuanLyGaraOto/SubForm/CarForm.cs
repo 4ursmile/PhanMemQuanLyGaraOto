@@ -97,6 +97,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
                     break;
             }
             listFilter = listFilter.Where(a => a.CarOwnerTele.Contains(txtFilterSDT.Text)).ToList<REMCheckCar>();
+            listFilter = listFilter.Where(a => a.CarNumber.Contains(txtCarNumber.Text)).ToList<REMCheckCar>();
             dgvCheckCars.DataSource = listFilter;
             cbcBienSo.DataSource = dgvCheckCars.DataSource;
             cbcBienSo.DisplayMember = "CarNumber";
@@ -192,7 +193,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            txtFilterSDT.Text = "";
+            txtFilterSDT.Text = txtCarNumber.Text = "";
             cbcFilterDebt.SelectedIndex = 0;
             cbcFilterFix.SelectedIndex = 0;
             LoadToDGVCarComplex();
@@ -228,6 +229,11 @@ namespace PhanMemQuanLyGaraOto.SubForm
             cbcFilterDebt.SelectedIndex = 0;
             cbcFilterFix.SelectedIndex = 0;
             LoadToDGVCarComplex();
+        }
+
+        private void dgvCheckCars_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            dgvCheckCars.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
         }
     }
 }

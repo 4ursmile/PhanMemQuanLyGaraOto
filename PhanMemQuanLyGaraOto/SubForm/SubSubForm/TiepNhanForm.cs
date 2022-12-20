@@ -18,7 +18,6 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
     {
         bool isUpdate;
         CHUXE currentCustomer;
-        HIEUXE currentHieuXe;
         XE currentXe;
         AlertNonPara[] LoadWhenDones;
         public TiepNhanForm(REMCheckCar rEM = null,params AlertNonPara[] func)

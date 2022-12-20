@@ -29,17 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btbDelete = new System.Windows.Forms.Panel();
             this.dgvCheckCars = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtCarNumber = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.txtFilterSDT = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,6 +60,8 @@
             this.btbUpdate = new System.Windows.Forms.Button();
             this.btbTiepNhan = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.carIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.carBrandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.carNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -123,6 +127,7 @@
             this.dgvCheckCars.AutoGenerateColumns = false;
             this.dgvCheckCars.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCheckCars.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
             this.carIdDataGridViewTextBoxColumn,
             this.carBrandDataGridViewTextBoxColumn,
             this.carNumberDataGridViewTextBoxColumn,
@@ -172,16 +177,9 @@
             this.dgvCheckCars.StateCommon.HeaderRow.Border.Width = 1;
             this.dgvCheckCars.TabIndex = 0;
             this.dgvCheckCars.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCheckCars_CellMouseClick);
+            this.dgvCheckCars.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvCheckCars_RowPostPaint);
+            this.dgvCheckCars.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvCheckCars_RowPrePaint);
             this.dgvCheckCars.SelectionChanged += new System.EventHandler(this.dgvCheckCars_SelectionChanged_1);
-            // 
-            // TinhTrang
-            // 
-            this.TinhTrang.DataPropertyName = "TinhTrang";
-            this.TinhTrang.HeaderText = "TinhTrang";
-            this.TinhTrang.MinimumWidth = 6;
-            this.TinhTrang.Name = "TinhTrang";
-            this.TinhTrang.Visible = false;
-            this.TinhTrang.Width = 125;
             // 
             // panel2
             // 
@@ -189,6 +187,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.txtCarNumber);
+            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.txtFilterSDT);
             this.panel2.Controls.Add(this.label2);
@@ -205,16 +205,37 @@
             this.panel2.Size = new System.Drawing.Size(144, 563);
             this.panel2.TabIndex = 5;
             // 
+            // txtCarNumber
+            // 
+            this.txtCarNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCarNumber.Location = new System.Drawing.Point(3, 364);
+            this.txtCarNumber.Name = "txtCarNumber";
+            this.txtCarNumber.Size = new System.Drawing.Size(134, 22);
+            this.txtCarNumber.TabIndex = 20;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(8, 335);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(126, 26);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Biển số";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(10, 430);
+            this.button1.Location = new System.Drawing.Point(10, 479);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(122, 35);
             this.button1.TabIndex = 18;
@@ -226,7 +247,7 @@
             // 
             this.txtFilterSDT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFilterSDT.Location = new System.Drawing.Point(3, 316);
+            this.txtFilterSDT.Location = new System.Drawing.Point(3, 287);
             this.txtFilterSDT.Name = "txtFilterSDT";
             this.txtFilterSDT.Size = new System.Drawing.Size(134, 22);
             this.txtFilterSDT.TabIndex = 17;
@@ -236,7 +257,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 175);
+            this.label2.Location = new System.Drawing.Point(8, 169);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(126, 18);
             this.label2.TabIndex = 16;
@@ -254,21 +275,21 @@
             "Tất cả",
             "Đang sửa chữa",
             "Không sửa chữa"});
-            this.cbcFilterFix.Location = new System.Drawing.Point(3, 198);
+            this.cbcFilterFix.Location = new System.Drawing.Point(3, 192);
             this.cbcFilterFix.Name = "cbcFilterFix";
             this.cbcFilterFix.Size = new System.Drawing.Size(136, 24);
             this.cbcFilterFix.TabIndex = 15;
             // 
             // btbFilter
             // 
-            this.btbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btbFilter.BackColor = System.Drawing.Color.White;
             this.btbFilter.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
             this.btbFilter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
             this.btbFilter.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btbFilter.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btbFilter.Location = new System.Drawing.Point(11, 373);
+            this.btbFilter.Location = new System.Drawing.Point(11, 422);
             this.btbFilter.Name = "btbFilter";
             this.btbFilter.Size = new System.Drawing.Size(122, 35);
             this.btbFilter.TabIndex = 10;
@@ -294,7 +315,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(8, 277);
+            this.label4.Location = new System.Drawing.Point(8, 258);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(126, 26);
             this.label4.TabIndex = 13;
@@ -419,7 +440,7 @@
             this.btbUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
             this.btbUpdate.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btbUpdate.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btbUpdate.Location = new System.Drawing.Point(510, 37);
+            this.btbUpdate.Location = new System.Drawing.Point(497, 37);
             this.btbUpdate.Name = "btbUpdate";
             this.btbUpdate.Size = new System.Drawing.Size(109, 35);
             this.btbUpdate.TabIndex = 1;
@@ -445,26 +466,49 @@
             // 
             // chart1
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
+            this.chart1.BorderlineColor = System.Drawing.Color.Black;
+            this.chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            this.chart1.BorderSkin.BackColor = System.Drawing.Color.Black;
+            this.chart1.BorderSkin.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            this.chart1.BorderSkin.PageColor = System.Drawing.Color.IndianRed;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chart1.Location = new System.Drawing.Point(3, 3);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series4.IsValueShownAsLabel = true;
-            series4.IsVisibleInLegend = false;
-            series4.Name = "Series1";
-            this.chart1.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.IsValueShownAsLabel = true;
+            series1.IsVisibleInLegend = false;
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(144, 104);
             this.chart1.TabIndex = 7;
             this.chart1.Text = "chart1";
-            title4.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title4.Name = "Title1";
-            title4.Text = "Số lượt sửa";
-            this.chart1.Titles.Add(title4);
+            title1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "Số lượt sửa";
+            this.chart1.Titles.Add(title1);
+            // 
+            // Column1
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column1.HeaderText = "STT";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 50;
+            // 
+            // TinhTrang
+            // 
+            this.TinhTrang.DataPropertyName = "TinhTrang";
+            this.TinhTrang.HeaderText = "TinhTrang";
+            this.TinhTrang.MinimumWidth = 6;
+            this.TinhTrang.Name = "TinhTrang";
+            this.TinhTrang.Visible = false;
+            this.TinhTrang.Width = 125;
             // 
             // carIdDataGridViewTextBoxColumn
             // 
@@ -516,9 +560,9 @@
             // dateInDataGridViewTextBoxColumn
             // 
             this.dateInDataGridViewTextBoxColumn.DataPropertyName = "DateIn";
-            dataGridViewCellStyle7.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle7.NullValue = "Không xác định";
-            this.dateInDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle2.NullValue = "Không xác định";
+            this.dateInDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.dateInDataGridViewTextBoxColumn.HeaderText = "Ngày tiếp nhận";
             this.dateInDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dateInDataGridViewTextBoxColumn.Name = "dateInDataGridViewTextBoxColumn";
@@ -528,9 +572,9 @@
             // debtMoneyDataGridViewTextBoxColumn
             // 
             this.debtMoneyDataGridViewTextBoxColumn.DataPropertyName = "DebtMoney";
-            dataGridViewCellStyle8.Format = "C0";
-            dataGridViewCellStyle8.NullValue = null;
-            this.debtMoneyDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Format = "C0";
+            dataGridViewCellStyle3.NullValue = null;
+            this.debtMoneyDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.debtMoneyDataGridViewTextBoxColumn.HeaderText = "Tổng nợ";
             this.debtMoneyDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.debtMoneyDataGridViewTextBoxColumn.Name = "debtMoneyDataGridViewTextBoxColumn";
@@ -576,14 +620,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel btbDelete;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvCheckCars;
-        private System.Windows.Forms.DataGridViewTextBoxColumn carIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn carBrandDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn carNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn carOwnerNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn carOwnerTeleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateInDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn debtMoneyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrang;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtFilterSDT;
@@ -603,5 +639,16 @@
         private System.Windows.Forms.Button btbUpdate;
         private System.Windows.Forms.Button btbTiepNhan;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.TextBox txtCarNumber;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn carIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn carBrandDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn carNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn carOwnerNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn carOwnerTeleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateInDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn debtMoneyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrang;
     }
 }

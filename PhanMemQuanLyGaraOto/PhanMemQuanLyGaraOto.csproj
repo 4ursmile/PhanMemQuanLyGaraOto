@@ -76,8 +76,11 @@
     <Compile Include="DAO\DataproviderBill.cs" />
     <Compile Include="DAO\DataProviderFixDetail.cs" />
     <Compile Include="DAO\DataProviderFix.cs" />
+    <Compile Include="DAO\DataProviderImport.cs" />
+    <Compile Include="DAO\DataProviderImportDetail.cs" />
     <Compile Include="DAO\DataproviderReport.cs" />
     <Compile Include="DAO\DataProviderTOOL.cs" />
+    <Compile Include="DDO\CImportTool.cs" />
     <Compile Include="DDO\CustomBaoCao.cs" />
     <Compile Include="DDO\CustomCTPSC.cs" />
     <Compile Include="DDO\REMCheckCar.cs" />
@@ -106,6 +109,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\GETCHITIETBAOCAO_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GETCURRENTPHUTUNGTOSELECT_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\HIEUXE.cs">
@@ -164,6 +170,12 @@
     </Compile>
     <Compile Include="SubForm\SubSubForm\FixForm.Designer.cs">
       <DependentUpon>FixForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\SubSubForm\ImportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\SubSubForm\ImportForm.Designer.cs">
+      <DependentUpon>ImportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SubForm\SubSubForm\TiepNhanForm.cs">
       <SubType>Form</SubType>
@@ -285,6 +297,9 @@
     <EmbeddedResource Include="SubForm\SubSubForm\FixForm.resx">
       <DependentUpon>FixForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\SubSubForm\ImportForm.resx">
+      <DependentUpon>ImportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SubForm\SubSubForm\TiepNhanForm.resx">
       <DependentUpon>TiepNhanForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -301,6 +316,7 @@
     <None Include="Model\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.DDO.CImportTool.datasource" />
     <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.DDO.CustomBaoCao.datasource" />
     <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.DDO.CustomCTPSC.datasource" />
     <None Include="Properties\DataSources\PhanMemQuanLyGaraOto.DDo.MCheckCar.datasource" />
