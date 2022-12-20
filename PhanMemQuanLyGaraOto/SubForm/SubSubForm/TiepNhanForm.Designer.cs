@@ -306,6 +306,7 @@
             this.cbcBrand.Name = "cbcBrand";
             this.cbcBrand.Size = new System.Drawing.Size(360, 27);
             this.cbcBrand.TabIndex = 5;
+            this.cbcBrand.SelectedIndexChanged += new System.EventHandler(this.cbcBrand_SelectedIndexChanged);
             // 
             // label8
             // 

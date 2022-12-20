@@ -87,6 +87,7 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
         }
         void LoadHieuXe()
         {
+            Task.WaitAll();
             cbcBrand.DataSource = DataProvider.Instance.db.HIEUXEs.ToList<HIEUXE>();
             cbcBrand.DisplayMember = "TENHIEUXE";
         }
@@ -217,6 +218,11 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
         }
 
         private void dtpTiepNhan_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbcBrand_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

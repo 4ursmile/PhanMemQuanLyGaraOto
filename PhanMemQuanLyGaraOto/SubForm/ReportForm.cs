@@ -61,7 +61,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
             Task.WaitAll();
             int thang = Convert.ToInt16(cbcMonth.Text);
             int nam = Convert.ToInt16(cbcYear.Text);
-            dgvCheckCars.DataSource = await DataProvider.Instance.GetBaoCaos(thang,nam);
+            dgvCheckCars.DataSource = await DataProvider.Instance.GetBaoCaosAsync(thang,nam);
             decimal Total = (decimal)(dgvCheckCars.DataSource as List<CustomBaoCao>).Sum(a => a.tongTien);
             txtThanhTien.Text = Total.ToString("c0");
         }
@@ -70,7 +70,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
             Task.WaitAll();
             int thang = Convert.ToInt16(cbcThangTon.Text);
             int nam = Convert.ToInt16(cbcNamTon.Text);
-            dgvBaoCaoTon.DataSource = await Task.Run(() => DataProvider.Instance.refreshDB.GETBAOCAOTON(thang, nam));
+            dgvBaoCaoTon.DataSource = await DataProvider.Instance.GETBAOCAOTONsAsync(thang,nam);
         }
 
         private void dgvCheckCars_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)

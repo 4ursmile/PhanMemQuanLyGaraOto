@@ -30,7 +30,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
         async void LoadData2DGVPHUTUNGasync()
         {
             dgvPHUTUNG.AutoGenerateColumns = false;
-            dgvPHUTUNG.DataSource = await Task.Run(() => DataProvider.Instance.GetPHUTUNGs());
+            dgvPHUTUNG.DataSource = await DataProvider.Instance.GetPHUTUNGsAsync();
             cbcTenPT.DataSource = dgvPHUTUNG.DataSource;
             cbcTenPT.DisplayMember = "TENPHUTUNG";
         }

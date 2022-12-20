@@ -107,9 +107,9 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
         }
         async void LoadDataToCBC()
         {
-            cbcNoiDung.DataSource = DataProvider.Instance.refreshDB.TIENCONGs.ToList<TIENCONG>();
+            cbcNoiDung.DataSource = DataProvider.Instance.db.TIENCONGs.ToList<TIENCONG>();
             cbcNoiDung.DisplayMember = "NOIDUNG";
-            cbcPhutung.DataSource = await DataProvider.Instance.GetPHUTUNGs();
+            cbcPhutung.DataSource = await DataProvider.Instance.GetPHUTUNGsAsync();
             cbcPhutung.DisplayMember = "TENPHUTUNG";
             cbcPhutung.SelectedIndex = -1;
         }

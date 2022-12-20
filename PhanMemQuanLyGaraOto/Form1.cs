@@ -203,7 +203,7 @@ namespace PhanMemQuanLyGaraOto
 
         private void SigninButton_Click(object sender, EventArgs e)
         {
-
+            lblLoad.Visible = true;
             SwitchStateAll(false);
             SigninButton.Enabled = false;
             lblLoad.Visible = true;

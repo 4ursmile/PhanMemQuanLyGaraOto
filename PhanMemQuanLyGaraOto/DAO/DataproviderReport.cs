@@ -12,11 +12,11 @@ namespace PhanMemQuanLyGaraOto.DAO
 {
     public partial class DataProvider
     {
-       public async Task<List<CustomBaoCao>> GetBaoCaos(int thang, int nam)
+       public async Task<List<CustomBaoCao>> GetBaoCaosAsync(int thang, int nam)
         {
             try
             {
-                using (db = new GARAOTOEntities())
+                using (var db = new GARAOTOEntities())
                 {
                     decimal Total = (decimal)await db.PHIEUSUACHUAs.Where(j => j.NGAYLAP.Value.Month == thang && j.NGAYLAP.Value.Year == nam).SumAsync(a => a.TONGTIEN);
                     var baocao = await Task.Run(() => db.GETCHITIETBAOCAO(thang, nam).Select(a => new CustomBaoCao
@@ -32,8 +32,22 @@ namespace PhanMemQuanLyGaraOto.DAO
             {
                 return new List<CustomBaoCao>();
             }
-
-
+        }
+        public async Task<List<GETBAOCAOTON_Result>> GETBAOCAOTONsAsync(int thang, int nam)
+        {
+            try
+            {
+                using (var db = new GARAOTOEntities())
+                {
+                    List<GETBAOCAOTON_Result> results = await Task.Run(() => db.GETBAOCAOTON(thang, nam).ToList<GETBAOCAOTON_Result>());
+                    return results;
+                }
+            }
+            catch
+            {
+                return new List<GETBAOCAOTON_Result>();
+            }
         }
     }
+
 }

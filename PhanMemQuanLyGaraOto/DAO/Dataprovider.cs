@@ -26,14 +26,6 @@ namespace PhanMemQuanLyGaraOto.DAO
             private set => instance = value;
         }
         public GARAOTOEntities db;
-        public GARAOTOEntities refreshDB
-        {
-            get
-            {
-                db = new GARAOTOEntities();
-                return db;
-            }
-        }
         private DataProvider()
         {
             db = new GARAOTOEntities();
@@ -66,7 +58,7 @@ namespace PhanMemQuanLyGaraOto.DAO
                                               DateIn = x.NGAYTIEPNHAN.Value,
                                               DebtMoney = x.TONGNO.Value,
                                               TinhTrang = x.TINHTRANG
-                                          }).ToList();
+                                          }).OrderByDescending(a=> a.DebtMoney).ToList();
                 if (list == null) return new List<REMCheckCar>();
                 return list;
             }

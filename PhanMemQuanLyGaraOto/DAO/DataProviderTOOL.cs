@@ -94,13 +94,13 @@ namespace PhanMemQuanLyGaraOto.DAO
                 func?.Invoke();
             }
         }
-        public async Task<List<PHUTUNG>> GetPHUTUNGs()
+        public async Task<List<PHUTUNG>> GetPHUTUNGsAsync()
         {
             try
             {
                 using (GARAOTOEntities db = new GARAOTOEntities())
                 {
-                    List<PHUTUNG> pHUTUNGs = await Task.Run(()=> db.PHUTUNGs.ToList<PHUTUNG>());
+                    List<PHUTUNG> pHUTUNGs = await  db.PHUTUNGs.ToListAsync<PHUTUNG>();
                     return pHUTUNGs;
                 }
             }
