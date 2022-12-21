@@ -22,11 +22,10 @@ namespace PhanMemQuanLyGaraOto.DAO
                 }
                 XE xE = db.XEs.Where(a => a.MAXE == PHIEUTHUTIEN.MAXE).FirstOrDefault();
                 xE.TONGNO = xE.TONGNO - PHIEUTHUTIEN.SOTIENTHU;
-                if (xE.TONGNO < 1) xE.TONGNO = 0;
                 XE tmp = db.XEs.Where(a => a.MAXE == xE.MAXE).FirstOrDefault();
                 db.Entry(tmp).CurrentValues.SetValues(xE);
                 db.PHIEUTHUTIENs.Add(PHIEUTHUTIEN);
-                await db.SaveChangesAsync();
+                db.SaveChanges();
                 Notification.MakePaymentSuccesNoti(xE.BIENSO,(decimal)PHIEUTHUTIEN.SOTIENTHU,(decimal)xE.TONGNO);
                 //MakeNotiSuccess(strSave + nameof(PHIEUTHUTIEN));
                 ReloadDataEvent.Ins.Alert(DataType.Money);

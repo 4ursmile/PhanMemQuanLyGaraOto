@@ -14,7 +14,6 @@ namespace PhanMemQuanLyGaraOto.DAO
         {
             try
             {
-                if (ChangeComfirm(strUpdate)) return;
                 if (THAMSO == null) return;
                 THAMSO tmp = db.THAMSOes.Where(a => a.MATHAMSO == THAMSO.MATHAMSO).FirstOrDefault();
                 if (tmp == null)
@@ -24,7 +23,6 @@ namespace PhanMemQuanLyGaraOto.DAO
                 }
                 db.Entry(tmp).CurrentValues.SetValues(THAMSO);
                 SaveChange();
-                ReloadDataEvent.Ins.Alert(DataType.Policy);
             }
             catch
             {

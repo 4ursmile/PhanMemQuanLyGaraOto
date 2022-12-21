@@ -1,5 +1,6 @@
 ﻿
 using CommunityToolkit.WinUI.Notifications;
+using PhanMemQuanLyGaraOto.Class;
 using PhanMemQuanLyGaraOto.DDO;
 using PhanMemQuanLyGaraOto.Model;
 using System;
@@ -71,6 +72,7 @@ namespace PhanMemQuanLyGaraOto.DAO
         public const string strSave = "Thêm ";
         public void MakeNotiError(string ActionName = "Thay đổi", string resson = "Kết nối với máy chủ thất bại")
         {
+            if (!UniversalSetting.Instance.isNotiDataOn) return;
             string path1 = new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.FullName;
             string path2 = System.IO.Path.Combine(path1, "Resources", "error.jpg");
             if (!File.Exists(path2)) path2 = @"https://picsum.photos/200";
@@ -85,6 +87,7 @@ namespace PhanMemQuanLyGaraOto.DAO
         }
         public void MakeNotiSuccess(string ActionName = "Thay đổi")
         {
+            if (!UniversalSetting.Instance.isNotiDataOn) return;
             string path1 = new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.FullName;
             string path2 = System.IO.Path.Combine(path1, "Resources", "succes.png");
             if (!File.Exists(path2)) path2 = @"https://picsum.photos/200";

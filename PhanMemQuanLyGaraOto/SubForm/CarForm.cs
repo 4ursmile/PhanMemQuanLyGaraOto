@@ -98,7 +98,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
                 case 0:
                     break;
                 case 1:
-                    listFilter = listFilter.Where(a=>a.DebtMoney == 0).ToList();
+                    listFilter = listFilter.Where(a=>a.DebtMoney <= 0).ToList();
                     break;
                 case 2:
                     listFilter = listFilter.Where(a=>a.DebtMoney > 0).ToList();

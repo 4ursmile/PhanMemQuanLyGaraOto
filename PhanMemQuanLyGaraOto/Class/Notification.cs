@@ -14,6 +14,7 @@ namespace PhanMemQuanLyGaraOto.Class
     {
         public static void MakePaymentSuccesNoti(string carName,decimal paymentValue,  decimal remainDebt)
         {
+            if (!UniversalSetting.Instance.isNotiGeneralOn) return;
             string ConStr = $"Thanh toán {paymentValue.ToString("c0")} cho xe có biển số {carName} thành công, ";
             if (remainDebt > 0)
                 ConStr += $"dư nợ còn lại là {remainDebt.ToString("c0")}.";
@@ -33,6 +34,7 @@ namespace PhanMemQuanLyGaraOto.Class
         }
         public static void MakeImportSuccesNoti(string Total)
         {
+            if (!UniversalSetting.Instance.isNotiGeneralOn) return;
             string ConStr = $"Nhập hàng thành công, tổng giá trị phiếu nhập là {Total}";
             string path1 = new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.FullName;
             string path2 = System.IO.Path.Combine(path1, "Resources", "import.jpg");

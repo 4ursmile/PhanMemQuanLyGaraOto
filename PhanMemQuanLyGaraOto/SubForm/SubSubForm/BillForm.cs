@@ -33,7 +33,11 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
             txtSDT.Text = checkCar.CarOwnerTele;
             txtBienSo.Text = checkCar.CarNumber;
             dtpNgayLap.MaxDate = DateTime.Today;
-            numericUpDown1.Maximum = checkCar.DebtMoney;
+            THAMSO thuvuotchi = DataProvider.Instance.getBoolInOverOut();
+            if (thuvuotchi.GIATRI == 0)
+                numericUpDown1.Maximum = checkCar.DebtMoney;
+            else
+                numericUpDown1.Maximum = int.MaxValue;
             numericUpDown1.Value = checkCar.DebtMoney;
             txtEmail.Text = await DataProvider.Instance.GetCarOwnerEmailAsync(checkCar.CarOwnerTele);
 
