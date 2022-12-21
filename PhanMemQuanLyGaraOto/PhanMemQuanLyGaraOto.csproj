@@ -78,6 +78,7 @@
     <Compile Include="DAO\DataProviderFix.cs" />
     <Compile Include="DAO\DataProviderImport.cs" />
     <Compile Include="DAO\DataProviderImportDetail.cs" />
+    <Compile Include="DAO\DataProviderPolicy.cs" />
     <Compile Include="DAO\DataproviderReport.cs" />
     <Compile Include="DAO\DataProviderTOOL.cs" />
     <Compile Include="DDO\CImportTool.cs" />
@@ -474,6 +475,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\import.jpg" />
+    <None Include="Resources\delivary.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

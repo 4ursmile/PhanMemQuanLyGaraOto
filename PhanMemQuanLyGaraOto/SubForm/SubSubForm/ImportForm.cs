@@ -142,7 +142,7 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
             {
                 DataProvider.Instance.db.DONGPHIEUNHAP(currentPhieuNhap.SOPHIEUNHAP);
                 ReloadDataEvent.Ins.Alert(DataType.ImportForm);
-                Notification.MakeImportSuccesNoti();
+                Notification.MakeImportSuccesNoti(txtThanhTien.Text);
                 this.Close();
             } catch
             {

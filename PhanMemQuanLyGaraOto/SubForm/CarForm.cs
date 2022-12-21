@@ -19,6 +19,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
         {
             ReloadDataEvent.Ins.Addlistener(LoadToDGVCarComplex, DataType.Car, DataType.Brand, DataType.Customer, DataType.FixForm, DataType.Money);
             ReloadDataEvent.Ins.Addlistener(UpdateChar, DataType.TimesFix);
+            ReloadDataEvent.Ins.Addlistener(UpdateMaxChart, DataType.Policy);
             InitializeComponent();
             btbcollect.Enabled = false;
             btbUpdate.Enabled = false;
@@ -56,6 +57,25 @@ namespace PhanMemQuanLyGaraOto.SubForm
         void UpdateChar()
         {
             SoLuotSua++;
+            chart1.Series[0].Points.RemoveAt(0);
+            chart1.Series[0].Points.RemoveAt(0);
+
+            chart1.Series[0].Points.AddY(SoLuotSua);
+            chart1.Series[0].Points.AddY(LuotSuaToiDa - SoLuotSua);
+            chart1.Series[0].Points[0].Color = System.Drawing.Color.HotPink;
+            chart1.Series[0].Points[1].Color = System.Drawing.Color.LawnGreen;
+        }
+        void UpdateMaxChart()
+        {
+
+            try
+            {
+                LuotSuaToiDa = (int)DataProvider.Instance.db.THAMSOes.Where(a => a.TENTHAMSO == "SOXESUACHUATOIDA").FirstOrDefault().GIATRI;
+            }
+            catch
+            {
+                return;
+            }
             chart1.Series[0].Points.RemoveAt(0);
             chart1.Series[0].Points.RemoveAt(0);
 
@@ -138,6 +158,8 @@ namespace PhanMemQuanLyGaraOto.SubForm
         private void CarForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             ReloadDataEvent.Ins.RemoveListerner(LoadToDGVCarComplex, DataType.Car, DataType.Brand, DataType.Customer, DataType.FixForm, DataType.Money);
+            ReloadDataEvent.Ins.RemoveListerner(UpdateChar, DataType.TimesFix);
+            ReloadDataEvent.Ins.RemoveListerner(UpdateMaxChart, DataType.Policy);
             DiposeToRoot(this);
         }
 
