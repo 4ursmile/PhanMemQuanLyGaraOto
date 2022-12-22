@@ -235,9 +235,16 @@ namespace PhanMemQuanLyGaraOto.SubForm
 
         private void btbFix_Click(object sender, EventArgs e)
         {
-            FixForm fixform = new FixForm(currentCheckCar);
-            fixform.ShowDialog();
-            DiposeToRoot(fixform);
+            if (SoLuotSua < LuotSuaToiDa)
+            {
+                FixForm fixform = new FixForm(currentCheckCar);
+                fixform.ShowDialog();
+                DiposeToRoot(fixform);
+            }
+            else
+            {
+                MessageBox.Show("Số lượt sửa chữa đã đạt đến tối đa, vui lòng không sữa chữa thêm xe", "Quá mức");
+            }
         }
 
         private void dgvCheckCars_SelectionChanged_1(object sender, EventArgs e)
