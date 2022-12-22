@@ -42,6 +42,14 @@
             this.txtThanhTien = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvCT_PHIEUNHAP = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sophieunhapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maphutungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenphutungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dongiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soluongnhapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thanhtienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cImportToolBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kryptonDataGridView2 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -60,25 +68,18 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.btbImportAll = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btbSetNumberAll = new System.Windows.Forms.Button();
+            this.nudSetNumberAll = new System.Windows.Forms.NumericUpDown();
             this.btbSetPriceAll = new System.Windows.Forms.Button();
             this.nudSetPriceall = new System.Windows.Forms.NumericUpDown();
-            this.nudSetNumberAll = new System.Windows.Forms.NumericUpDown();
-            this.btbSetNumberAll = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btbAccect = new System.Windows.Forms.Button();
             this.btbCancel = new System.Windows.Forms.Button();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sophieunhapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maphutungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenphutungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dongiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soluongnhapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thanhtienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cImportToolBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btbAccect = new System.Windows.Forms.Button();
             this.panel8.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCT_PHIEUNHAP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cImportToolBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView2)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -87,11 +88,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudDonGia)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSetPriceall)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSetNumberAll)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSetNumberAll)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSetPriceall)).BeginInit();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cImportToolBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel8
@@ -246,6 +246,85 @@
             this.dgvCT_PHIEUNHAP.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvCT_PHIEUNHAP_RowPostPaint);
             this.dgvCT_PHIEUNHAP.SelectionChanged += new System.EventHandler(this.dgvCT_PHIEUNHAP_SelectionChanged);
             // 
+            // STT
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = null;
+            this.STT.DefaultCellStyle = dataGridViewCellStyle1;
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            this.STT.Width = 50;
+            // 
+            // sophieunhapDataGridViewTextBoxColumn
+            // 
+            this.sophieunhapDataGridViewTextBoxColumn.DataPropertyName = "sophieunhap";
+            this.sophieunhapDataGridViewTextBoxColumn.HeaderText = "sophieunhap";
+            this.sophieunhapDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sophieunhapDataGridViewTextBoxColumn.Name = "sophieunhapDataGridViewTextBoxColumn";
+            this.sophieunhapDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sophieunhapDataGridViewTextBoxColumn.Visible = false;
+            this.sophieunhapDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // maphutungDataGridViewTextBoxColumn
+            // 
+            this.maphutungDataGridViewTextBoxColumn.DataPropertyName = "maphutung";
+            this.maphutungDataGridViewTextBoxColumn.HeaderText = "maphutung";
+            this.maphutungDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maphutungDataGridViewTextBoxColumn.Name = "maphutungDataGridViewTextBoxColumn";
+            this.maphutungDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maphutungDataGridViewTextBoxColumn.Visible = false;
+            this.maphutungDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tenphutungDataGridViewTextBoxColumn
+            // 
+            this.tenphutungDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tenphutungDataGridViewTextBoxColumn.DataPropertyName = "tenphutung";
+            this.tenphutungDataGridViewTextBoxColumn.HeaderText = "Tên phụ tùng";
+            this.tenphutungDataGridViewTextBoxColumn.MinimumWidth = 125;
+            this.tenphutungDataGridViewTextBoxColumn.Name = "tenphutungDataGridViewTextBoxColumn";
+            this.tenphutungDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dongiaDataGridViewTextBoxColumn
+            // 
+            this.dongiaDataGridViewTextBoxColumn.DataPropertyName = "dongia";
+            dataGridViewCellStyle2.Format = "C0";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dongiaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dongiaDataGridViewTextBoxColumn.HeaderText = "Đơn giá";
+            this.dongiaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dongiaDataGridViewTextBoxColumn.Name = "dongiaDataGridViewTextBoxColumn";
+            this.dongiaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dongiaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // soluongnhapDataGridViewTextBoxColumn
+            // 
+            this.soluongnhapDataGridViewTextBoxColumn.DataPropertyName = "soluongnhap";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.soluongnhapDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.soluongnhapDataGridViewTextBoxColumn.HeaderText = "SL Nhập";
+            this.soluongnhapDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.soluongnhapDataGridViewTextBoxColumn.Name = "soluongnhapDataGridViewTextBoxColumn";
+            this.soluongnhapDataGridViewTextBoxColumn.ReadOnly = true;
+            this.soluongnhapDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // thanhtienDataGridViewTextBoxColumn
+            // 
+            this.thanhtienDataGridViewTextBoxColumn.DataPropertyName = "thanhtien";
+            dataGridViewCellStyle4.Format = "C0";
+            this.thanhtienDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.thanhtienDataGridViewTextBoxColumn.HeaderText = "Thành tiền";
+            this.thanhtienDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.thanhtienDataGridViewTextBoxColumn.Name = "thanhtienDataGridViewTextBoxColumn";
+            this.thanhtienDataGridViewTextBoxColumn.ReadOnly = true;
+            this.thanhtienDataGridViewTextBoxColumn.Width = 135;
+            // 
+            // cImportToolBindingSource
+            // 
+            this.cImportToolBindingSource.DataSource = typeof(PhanMemQuanLyGaraOto.DDO.CImportTool);
+            // 
             // kryptonDataGridView2
             // 
             this.kryptonDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -370,7 +449,7 @@
             this.btbADDB.Location = new System.Drawing.Point(0, 0);
             this.btbADDB.Name = "btbADDB";
             this.btbADDB.Size = new System.Drawing.Size(126, 47);
-            this.btbADDB.TabIndex = 0;
+            this.btbADDB.TabIndex = 3;
             this.btbADDB.Text = "Thêm";
             this.btbADDB.UseVisualStyleBackColor = true;
             this.btbADDB.Click += new System.EventHandler(this.btbADDB_Click);
@@ -434,12 +513,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbcPhutung.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbcPhutung.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbcPhutung.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbcPhutung.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbcPhutung.FormattingEnabled = true;
             this.cbcPhutung.Location = new System.Drawing.Point(23, 27);
             this.cbcPhutung.Name = "cbcPhutung";
             this.cbcPhutung.Size = new System.Drawing.Size(327, 27);
-            this.cbcPhutung.TabIndex = 18;
+            this.cbcPhutung.TabIndex = 0;
             this.cbcPhutung.SelectedIndexChanged += new System.EventHandler(this.cbcPhutung_SelectedIndexChanged);
             // 
             // nudSLT
@@ -460,7 +540,7 @@
             0});
             this.nudSLT.Name = "nudSLT";
             this.nudSLT.Size = new System.Drawing.Size(327, 27);
-            this.nudSLT.TabIndex = 15;
+            this.nudSLT.TabIndex = 2;
             this.nudSLT.ThousandsSeparator = true;
             // 
             // label1
@@ -493,7 +573,7 @@
             0});
             this.nudDonGia.Name = "nudDonGia";
             this.nudDonGia.Size = new System.Drawing.Size(327, 27);
-            this.nudDonGia.TabIndex = 13;
+            this.nudDonGia.TabIndex = 1;
             this.nudDonGia.ThousandsSeparator = true;
             // 
             // panel4
@@ -538,6 +618,66 @@
             this.panel3.Size = new System.Drawing.Size(764, 67);
             this.panel3.TabIndex = 22;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.btbSetNumberAll, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.nudSetNumberAll, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btbSetPriceAll, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.nudSetPriceall, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(762, 65);
+            this.tableLayoutPanel1.TabIndex = 17;
+            // 
+            // btbSetNumberAll
+            // 
+            this.btbSetNumberAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btbSetNumberAll.AutoSize = true;
+            this.btbSetNumberAll.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btbSetNumberAll.FlatAppearance.BorderSize = 2;
+            this.btbSetNumberAll.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btbSetNumberAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Turquoise;
+            this.btbSetNumberAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btbSetNumberAll.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btbSetNumberAll.Location = new System.Drawing.Point(580, 17);
+            this.btbSetNumberAll.Margin = new System.Windows.Forms.Padding(10);
+            this.btbSetNumberAll.Name = "btbSetNumberAll";
+            this.btbSetNumberAll.Size = new System.Drawing.Size(169, 30);
+            this.btbSetNumberAll.TabIndex = 15;
+            this.btbSetNumberAll.Text = "Đặt SL hàng loạt";
+            this.btbSetNumberAll.UseVisualStyleBackColor = true;
+            this.btbSetNumberAll.Click += new System.EventHandler(this.btbSetNumberAll_Click);
+            // 
+            // nudSetNumberAll
+            // 
+            this.nudSetNumberAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudSetNumberAll.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudSetNumberAll.Increment = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nudSetNumberAll.Location = new System.Drawing.Point(391, 19);
+            this.nudSetNumberAll.Margin = new System.Windows.Forms.Padding(10);
+            this.nudSetNumberAll.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.nudSetNumberAll.Name = "nudSetNumberAll";
+            this.nudSetNumberAll.Size = new System.Drawing.Size(166, 27);
+            this.nudSetNumberAll.TabIndex = 16;
+            this.nudSetNumberAll.ThousandsSeparator = true;
+            // 
             // btbSetPriceAll
             // 
             this.btbSetPriceAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -578,66 +718,6 @@
             this.nudSetPriceall.TabIndex = 14;
             this.nudSetPriceall.ThousandsSeparator = true;
             // 
-            // nudSetNumberAll
-            // 
-            this.nudSetNumberAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudSetNumberAll.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudSetNumberAll.Increment = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.nudSetNumberAll.Location = new System.Drawing.Point(391, 19);
-            this.nudSetNumberAll.Margin = new System.Windows.Forms.Padding(10);
-            this.nudSetNumberAll.Maximum = new decimal(new int[] {
-            1410065407,
-            2,
-            0,
-            0});
-            this.nudSetNumberAll.Name = "nudSetNumberAll";
-            this.nudSetNumberAll.Size = new System.Drawing.Size(166, 27);
-            this.nudSetNumberAll.TabIndex = 16;
-            this.nudSetNumberAll.ThousandsSeparator = true;
-            // 
-            // btbSetNumberAll
-            // 
-            this.btbSetNumberAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btbSetNumberAll.AutoSize = true;
-            this.btbSetNumberAll.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
-            this.btbSetNumberAll.FlatAppearance.BorderSize = 2;
-            this.btbSetNumberAll.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.btbSetNumberAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Turquoise;
-            this.btbSetNumberAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btbSetNumberAll.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btbSetNumberAll.Location = new System.Drawing.Point(580, 17);
-            this.btbSetNumberAll.Margin = new System.Windows.Forms.Padding(10);
-            this.btbSetNumberAll.Name = "btbSetNumberAll";
-            this.btbSetNumberAll.Size = new System.Drawing.Size(169, 30);
-            this.btbSetNumberAll.TabIndex = 15;
-            this.btbSetNumberAll.Text = "Đặt SL hàng loạt";
-            this.btbSetNumberAll.UseVisualStyleBackColor = true;
-            this.btbSetNumberAll.Click += new System.EventHandler(this.btbSetNumberAll_Click);
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.btbSetNumberAll, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.nudSetNumberAll, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btbSetPriceAll, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.nudSetPriceall, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(762, 65);
-            this.tableLayoutPanel1.TabIndex = 17;
-            // 
             // panel5
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -649,25 +729,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(413, 67);
             this.panel5.TabIndex = 22;
-            // 
-            // btbAccect
-            // 
-            this.btbAccect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.btbAccect.AutoSize = true;
-            this.btbAccect.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
-            this.btbAccect.FlatAppearance.BorderSize = 2;
-            this.btbAccect.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.btbAccect.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Turquoise;
-            this.btbAccect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btbAccect.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btbAccect.Location = new System.Drawing.Point(21, 15);
-            this.btbAccect.Name = "btbAccect";
-            this.btbAccect.Size = new System.Drawing.Size(166, 40);
-            this.btbAccect.TabIndex = 1;
-            this.btbAccect.Text = "Xác nhận";
-            this.btbAccect.UseVisualStyleBackColor = true;
-            this.btbAccect.Click += new System.EventHandler(this.btbAccect_Click);
             // 
             // btbCancel
             // 
@@ -688,84 +749,24 @@
             this.btbCancel.UseVisualStyleBackColor = true;
             this.btbCancel.Click += new System.EventHandler(this.btbCancel_Click);
             // 
-            // STT
+            // btbAccect
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Format = "N0";
-            dataGridViewCellStyle1.NullValue = null;
-            this.STT.DefaultCellStyle = dataGridViewCellStyle1;
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            this.STT.Width = 50;
-            // 
-            // sophieunhapDataGridViewTextBoxColumn
-            // 
-            this.sophieunhapDataGridViewTextBoxColumn.DataPropertyName = "sophieunhap";
-            this.sophieunhapDataGridViewTextBoxColumn.HeaderText = "sophieunhap";
-            this.sophieunhapDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sophieunhapDataGridViewTextBoxColumn.Name = "sophieunhapDataGridViewTextBoxColumn";
-            this.sophieunhapDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sophieunhapDataGridViewTextBoxColumn.Visible = false;
-            this.sophieunhapDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // maphutungDataGridViewTextBoxColumn
-            // 
-            this.maphutungDataGridViewTextBoxColumn.DataPropertyName = "maphutung";
-            this.maphutungDataGridViewTextBoxColumn.HeaderText = "maphutung";
-            this.maphutungDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maphutungDataGridViewTextBoxColumn.Name = "maphutungDataGridViewTextBoxColumn";
-            this.maphutungDataGridViewTextBoxColumn.ReadOnly = true;
-            this.maphutungDataGridViewTextBoxColumn.Visible = false;
-            this.maphutungDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // tenphutungDataGridViewTextBoxColumn
-            // 
-            this.tenphutungDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tenphutungDataGridViewTextBoxColumn.DataPropertyName = "tenphutung";
-            this.tenphutungDataGridViewTextBoxColumn.HeaderText = "Tên phụ tùng";
-            this.tenphutungDataGridViewTextBoxColumn.MinimumWidth = 125;
-            this.tenphutungDataGridViewTextBoxColumn.Name = "tenphutungDataGridViewTextBoxColumn";
-            this.tenphutungDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dongiaDataGridViewTextBoxColumn
-            // 
-            this.dongiaDataGridViewTextBoxColumn.DataPropertyName = "dongia";
-            dataGridViewCellStyle2.Format = "C0";
-            dataGridViewCellStyle2.NullValue = null;
-            this.dongiaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dongiaDataGridViewTextBoxColumn.HeaderText = "Đơn giá";
-            this.dongiaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dongiaDataGridViewTextBoxColumn.Name = "dongiaDataGridViewTextBoxColumn";
-            this.dongiaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dongiaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // soluongnhapDataGridViewTextBoxColumn
-            // 
-            this.soluongnhapDataGridViewTextBoxColumn.DataPropertyName = "soluongnhap";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.soluongnhapDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.soluongnhapDataGridViewTextBoxColumn.HeaderText = "SL Nhập";
-            this.soluongnhapDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.soluongnhapDataGridViewTextBoxColumn.Name = "soluongnhapDataGridViewTextBoxColumn";
-            this.soluongnhapDataGridViewTextBoxColumn.ReadOnly = true;
-            this.soluongnhapDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // thanhtienDataGridViewTextBoxColumn
-            // 
-            this.thanhtienDataGridViewTextBoxColumn.DataPropertyName = "thanhtien";
-            dataGridViewCellStyle4.Format = "C0";
-            this.thanhtienDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.thanhtienDataGridViewTextBoxColumn.HeaderText = "Thành tiền";
-            this.thanhtienDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.thanhtienDataGridViewTextBoxColumn.Name = "thanhtienDataGridViewTextBoxColumn";
-            this.thanhtienDataGridViewTextBoxColumn.ReadOnly = true;
-            this.thanhtienDataGridViewTextBoxColumn.Width = 135;
-            // 
-            // cImportToolBindingSource
-            // 
-            this.cImportToolBindingSource.DataSource = typeof(PhanMemQuanLyGaraOto.DDO.CImportTool);
+            this.btbAccect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btbAccect.AutoSize = true;
+            this.btbAccect.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btbAccect.FlatAppearance.BorderSize = 2;
+            this.btbAccect.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btbAccect.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Turquoise;
+            this.btbAccect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btbAccect.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btbAccect.Location = new System.Drawing.Point(21, 15);
+            this.btbAccect.Name = "btbAccect";
+            this.btbAccect.Size = new System.Drawing.Size(166, 40);
+            this.btbAccect.TabIndex = 1;
+            this.btbAccect.Text = "Xác nhận";
+            this.btbAccect.UseVisualStyleBackColor = true;
+            this.btbAccect.Click += new System.EventHandler(this.btbAccect_Click);
             // 
             // ImportForm
             // 
@@ -788,6 +789,7 @@
             this.panel8.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCT_PHIEUNHAP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cImportToolBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -800,13 +802,12 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudSetPriceall)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSetNumberAll)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSetNumberAll)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSetPriceall)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cImportToolBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

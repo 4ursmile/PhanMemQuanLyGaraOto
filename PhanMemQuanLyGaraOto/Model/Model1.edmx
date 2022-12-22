@@ -146,7 +146,7 @@
             <PropertyRef Name="MANDTC" />
           </Key>
           <Property Name="MANDTC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NOIDUNG" Type="nvarchar" MaxLength="100" />
+          <Property Name="NOIDUNG" Type="nvarchar" MaxLength="500" />
           <Property Name="TIENCONG" Type="money" />
         </EntityType>
         <EntityType Name="XE">
@@ -548,7 +548,7 @@
             <PropertyRef Name="MANDTC" />
           </Key>
           <Property Name="MANDTC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NOIDUNG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NOIDUNG" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="TIENCONG1" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="CHITIET_PSC" Relationship="Self.FK_CT_TC" FromRole="TIENCONG" ToRole="CHITIET_PSC" />
         </EntityType>

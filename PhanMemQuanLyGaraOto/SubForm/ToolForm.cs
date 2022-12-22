@@ -1,4 +1,5 @@
 ﻿using PhanMemQuanLyGaraOto.DAO;
+using PhanMemQuanLyGaraOto.DDo;
 using PhanMemQuanLyGaraOto.Model;
 using PhanMemQuanLyGaraOto.SubForm.SubSubForm;
 using System.Linq;
@@ -49,8 +50,13 @@ namespace PhanMemQuanLyGaraOto.SubForm
             txtTenPT.Text = pHUTUNG.TENPHUTUNG;
             nudSLPT.Value = (int)pHUTUNG.SOLUONGTON;
             nudGiaPT.Value = (decimal)pHUTUNG.DONGIA;
-            btbDELETEB.Enabled = true;
-            btbADDB.Text = "Cập nhật";
+            if (UniversalUser.Ins.account.TYPE < 2)
+                btbDELETEB.Enabled = true;
+            if (UniversalUser.Ins.account.TYPE > 1)
+            {
+                btbADDB.Enabled = false;
+            }
+                btbADDB.Text = "Cập nhật";
             isUpdateTool = true;
 
         }
@@ -156,6 +162,11 @@ namespace PhanMemQuanLyGaraOto.SubForm
             ImportForm form = new ImportForm();
             form.ShowDialog();
             DiposeToRoot(form);
+        }
+
+        private void nudSLPT_ValueChanged(object sender, System.EventArgs e)
+        {
+
         }
     }
 }

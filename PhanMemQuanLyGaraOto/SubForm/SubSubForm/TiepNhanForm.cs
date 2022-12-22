@@ -37,6 +37,7 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
                 currentXe.TONGNO = rEM.DebtMoney;
                 currentXe.NGAYTIEPNHAN = rEM.DateIn;
                 currentXe.TINHTRANG = rEM.TinhTrang;
+                btbDelete.Visible = true;
             }
             dtpTiepNhan.MaxDate = DateTime.Today.AddDays(1);
             LoadWhenDones = func;
@@ -228,6 +229,12 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
         private void cbcBrand_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btbDelete_Click(object sender, EventArgs e)
+        {
+            if (currentXe == null) return;
+            DataProvider.Instance.DeleteCar(currentXe);
         }
     }
 }

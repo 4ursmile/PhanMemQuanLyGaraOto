@@ -30,7 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.cbcCusSDT = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlCusInfor = new System.Windows.Forms.Panel();
@@ -55,6 +54,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btbDelete = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlCusInfor.SuspendLayout();
@@ -68,7 +68,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.cbcCusSDT);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.pnlCusInfor);
@@ -89,20 +88,6 @@
             this.label3.Size = new System.Drawing.Size(160, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "Số điện thoại (Duy nhất)";
-            // 
-            // label10
-            // 
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Arial", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label10.Location = new System.Drawing.Point(23, 381);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(401, 49);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Nhân viên lưu ý, thông tin khách hàng là quan trọng, nên chỉ được phép sửa chữa ở" +
-    " mục khách hàng \r\nTrân trọng cảm ơn!";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // cbcCusSDT
             // 
@@ -141,7 +126,7 @@
             this.pnlCusInfor.Controls.Add(this.txtDiaChi);
             this.pnlCusInfor.Controls.Add(this.label5);
             this.pnlCusInfor.Controls.Add(this.txtEmail);
-            this.pnlCusInfor.Location = new System.Drawing.Point(23, 148);
+            this.pnlCusInfor.Location = new System.Drawing.Point(23, 149);
             this.pnlCusInfor.Name = "pnlCusInfor";
             this.pnlCusInfor.Size = new System.Drawing.Size(401, 230);
             this.pnlCusInfor.TabIndex = 0;
@@ -390,6 +375,24 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Thông tin xe";
             // 
+            // btbDelete
+            // 
+            this.btbDelete.BackColor = System.Drawing.Color.MistyRose;
+            this.btbDelete.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btbDelete.FlatAppearance.BorderSize = 2;
+            this.btbDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkRed;
+            this.btbDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btbDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btbDelete.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btbDelete.Location = new System.Drawing.Point(789, 544);
+            this.btbDelete.Name = "btbDelete";
+            this.btbDelete.Size = new System.Drawing.Size(142, 35);
+            this.btbDelete.TabIndex = 10;
+            this.btbDelete.Text = "Xóa";
+            this.btbDelete.UseVisualStyleBackColor = false;
+            this.btbDelete.Visible = false;
+            this.btbDelete.Click += new System.EventHandler(this.btbDelete_Click);
+            // 
             // TiepNhanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -397,6 +400,7 @@
             this.BackgroundImage = global::PhanMemQuanLyGaraOto.Properties.Resources.Saigon_skyline_night_view;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(966, 591);
+            this.Controls.Add(this.btbDelete);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
@@ -452,8 +456,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtBienSo;
         private System.Windows.Forms.ComboBox cbcCusSDT;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dtpTiepNhan;
         private System.Windows.Forms.ComboBox cbcBrand;
+        private System.Windows.Forms.Button btbDelete;
     }
 }

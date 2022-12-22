@@ -79,7 +79,7 @@ namespace PhanMemQuanLyGaraOto.DAO
             string path3 = System.IO.Path.Combine(path1, "Resources", "StaffAvatar.png");
             if (!File.Exists(path3)) path3 = @"https://picsum.photos/200";
             new ToastContentBuilder()
-                .AddText(ActionName + " không thành công, một lỗi không mong muốn đã xảy ra")
+                .AddText(ActionName + " không thành công")
                 .AddInlineImage(new Uri(path2))
                 .AddAppLogoOverride(new Uri(path3), ToastGenericAppLogoCrop.Circle)
                 .AddText(resson)
@@ -530,8 +530,7 @@ namespace PhanMemQuanLyGaraOto.DAO
             }
             catch (Exception e)
             {
-                MakeNotiError(strDelete + nameof(XE), BackEndError);
-                MessageBox.Show("Xóa thất bại ", e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MakeNotiError(strDelete + nameof(XE), "Xe đã thực hiện các dịch vụ của gara nên gara cần lưu lại thông tin xe này");
                 return;
             }
 

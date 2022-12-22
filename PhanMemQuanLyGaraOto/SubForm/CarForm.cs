@@ -128,7 +128,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
             {
                 if (Convert.ToUInt16(rows.Cells["TinhTrang"].Value) == 0)
                 {
-                    rows.DefaultCellStyle.BackColor = System.Drawing.Color.CadetBlue;
+                    rows.DefaultCellStyle.BackColor = System.Drawing.Color.CornflowerBlue;
                 }
             }
         }
@@ -256,6 +256,11 @@ namespace PhanMemQuanLyGaraOto.SubForm
         private void dgvCheckCars_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             dgvCheckCars.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
+        }
+
+        private void dgvCheckCars_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

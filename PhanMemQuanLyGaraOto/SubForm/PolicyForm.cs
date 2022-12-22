@@ -140,5 +140,10 @@ namespace PhanMemQuanLyGaraOto.SubForm
             string target = "https://github.com/UIT-21521109/PhanMemQuanLyGaraOto";
             System.Diagnostics.Process.Start(target);
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

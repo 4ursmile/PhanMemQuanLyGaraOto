@@ -343,6 +343,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbcPhutung.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbcPhutung.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbcPhutung.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbcPhutung.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbcPhutung.FormattingEnabled = true;
             this.cbcPhutung.Location = new System.Drawing.Point(23, 160);
@@ -457,6 +458,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbcNoiDung.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbcNoiDung.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbcNoiDung.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbcNoiDung.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbcNoiDung.FormattingEnabled = true;
             this.cbcNoiDung.Location = new System.Drawing.Point(23, 29);
