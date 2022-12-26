@@ -131,6 +131,9 @@
     <Compile Include="Model\GETBAOCAOTON_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\GETBAOCAO_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\GETCHITIETBAOCAO_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
