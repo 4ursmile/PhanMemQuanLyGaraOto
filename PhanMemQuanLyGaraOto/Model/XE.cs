@@ -27,6 +27,7 @@ namespace PhanMemQuanLyGaraOto.Model
         public Nullable<int> MACHUXE { get; set; }
         public Nullable<System.DateTime> NGAYTIEPNHAN { get; set; }
         public Nullable<decimal> TONGNO { get; set; }
+        public Nullable<short> TINHTRANG { get; set; }
     
         public virtual CHUXE CHUXE { get; set; }
         public virtual HIEUXE HIEUXE { get; set; }

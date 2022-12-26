@@ -3,6 +3,7 @@ using PhanMemQuanLyGaraOto.SubForm.SubSubForm;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PhanMemQuanLyGaraOto
@@ -33,6 +34,7 @@ namespace PhanMemQuanLyGaraOto
             NameLabel.Text = UniversalUser.Ins.account.DISPLAYNAME;
 
         }
+
         void SubFormInit()
         {
             dicOfForms = new Dictionary<Button, Form>();
@@ -69,11 +71,8 @@ namespace PhanMemQuanLyGaraOto
             {
                 currentButton.BackColor = Color.WhiteSmoke;
                 CurrentForm.Hide();
-                CurrentForm.Enabled = false;
-                CurrentForm.SuspendLayout();
+ 
                 CurrentForm = dicOfForms[newButton];
-                CurrentForm.ResumeLayout();
-                CurrentForm.Enabled = true;
                 CurrentForm.Show();
                 currentButton = newButton;
                 currentButton.BackColor = selectColor;
@@ -175,6 +174,42 @@ namespace PhanMemQuanLyGaraOto
         {
             UpdateInforForm updateInforForm = new UpdateInforForm();
             updateInforForm.ShowDialog();
+        }
+
+        private void facebookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string target = "https://www.facebook.com/ly7733";
+            System.Diagnostics.Process.Start(target);
+        }
+
+        private void linkedinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string target = "https://www.linkedin.com/in/bao-ly-tran-hoang-252739229/";
+            System.Diagnostics.Process.Start(target);
+        }
+
+        private void githubToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string target = "https://github.com/UIT-21521109";
+            System.Diagnostics.Process.Start(target);
+        }
+
+        private void điĐếnTrangCàiĐặtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MenuButton_Click(PolicyButton, null);
+        }
+
+        private void đếnTrangXeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MenuButton_Click(Carbutton, null);
+        }
+
+        private void tiếpNhậnXeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Task.WaitAll();
+            TiepNhanForm tiepNhanForm = new TiepNhanForm();
+            tiepNhanForm.ShowDialog();
+            tiepNhanForm.Dispose();
         }
     }
 }

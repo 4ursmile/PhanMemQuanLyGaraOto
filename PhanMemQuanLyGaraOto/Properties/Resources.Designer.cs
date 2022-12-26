@@ -73,6 +73,26 @@ namespace PhanMemQuanLyGaraOto.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap a1d503bc1981ba08dd95d443ba2ebaa2 {
+            get {
+                object obj = ResourceManager.GetObject("a1d503bc1981ba08dd95d443ba2ebaa2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap a2dc9668f2cf170fe3efeb263128b0_unscreen {
+            get {
+                object obj = ResourceManager.GetObject("a2dc9668f2cf170fe3efeb263128b0-unscreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Background_banner_1 {
             get {
                 object obj = ResourceManager.GetObject("Background-banner-1", resourceCulture);
@@ -96,6 +116,36 @@ namespace PhanMemQuanLyGaraOto.Properties {
         internal static System.Drawing.Bitmap CarIs {
             get {
                 object obj = ResourceManager.GetObject("CarIs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ce9b49374132daaca1283aef58454019 {
+            get {
+                object obj = ResourceManager.GetObject("ce9b49374132daaca1283aef58454019", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Curve_Loading {
+            get {
+                object obj = ResourceManager.GetObject("Curve-Loading", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap delivary {
+            get {
+                object obj = ResourceManager.GetObject("delivary", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,9 +263,39 @@ namespace PhanMemQuanLyGaraOto.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gif_loader_html_1 {
+            get {
+                object obj = ResourceManager.GetObject("gif-loader-html-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap giphy {
             get {
                 object obj = ResourceManager.GetObject("giphy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap highfive {
+            get {
+                object obj = ResourceManager.GetObject("highfive", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap highfive1 {
+            get {
+                object obj = ResourceManager.GetObject("highfive1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -323,6 +403,26 @@ namespace PhanMemQuanLyGaraOto.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_search_more_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-search-more-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_search_more_80 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-search-more-80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_slice_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-slice-30", resourceCulture);
@@ -346,6 +446,56 @@ namespace PhanMemQuanLyGaraOto.Properties {
         internal static System.Drawing.Bitmap icons8_uchiha_eyes_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-uchiha-eyes-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap import {
+            get {
+                object obj = ResourceManager.GetObject("import", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap istockphoto_1288020112_612x612 {
+            get {
+                object obj = ResourceManager.GetObject("istockphoto-1288020112-612x612", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap jimu_art_by_jimu_art_merry_christmas_christmas_illustration {
+            get {
+                object obj = ResourceManager.GetObject("jimu-art-by-jimu-art-merry-christmas-christmas-illustration", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loader {
+            get {
+                object obj = ResourceManager.GetObject("loader", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Loading_unscreen {
+            get {
+                object obj = ResourceManager.GetObject("Loading-unscreen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -383,6 +533,16 @@ namespace PhanMemQuanLyGaraOto.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Saigon_skyline_night_view {
+            get {
+                object obj = ResourceManager.GetObject("Saigon_skyline_night_view", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap StaffAvatar {
             get {
                 object obj = ResourceManager.GetObject("StaffAvatar", resourceCulture);
@@ -406,6 +566,16 @@ namespace PhanMemQuanLyGaraOto.Properties {
         internal static System.Drawing.Bitmap sylvain_sarrailh_panoramique2 {
             get {
                 object obj = ResourceManager.GetObject("sylvain-sarrailh-panoramique2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wallpaperflare_com_wallpaper {
+            get {
+                object obj = ResourceManager.GetObject("wallpaperflare.com_wallpaper", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

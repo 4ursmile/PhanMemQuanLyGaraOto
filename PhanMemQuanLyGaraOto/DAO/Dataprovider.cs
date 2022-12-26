@@ -1,5 +1,6 @@
 ﻿
 using CommunityToolkit.WinUI.Notifications;
+using PhanMemQuanLyGaraOto.Class;
 using PhanMemQuanLyGaraOto.DDO;
 using PhanMemQuanLyGaraOto.Model;
 using System;
@@ -7,7 +8,9 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using Windows.Foundation.Metadata;
 
 namespace PhanMemQuanLyGaraOto.DAO
 {
@@ -42,37 +45,42 @@ namespace PhanMemQuanLyGaraOto.DAO
         }
         public List<REMCheckCar> GetCheckCar()
         {
-            List<REMCheckCar> list = (from x in db.XEs
-                                             join c in db.CHUXEs on x.MACHUXE equals c.MACHUXE
-                                             join b in db.HIEUXEs on x.MAHIEUXE equals b.MAHIEUXE
-                                             select new REMCheckCar
-                                             {
-                                                 CarId = x.MAXE,
-                                                 CarBrand = b.TENHIEUXE,
-                                                 CarNumber = x.BIENSO,
-                                                 CarOwnerName = c.TENCHUXE,
-                                                 CarOwnerTele =  c.DIENTHOAI,
-                                                 DateIn = x.NGAYTIEPNHAN.Value,
-                                                 DebtMoney = x.TONGNO.Value
-                                             }).ToList();
-            if (list == null) return new List<REMCheckCar>();
-            return list;
+            using(GARAOTOEntities db = new GARAOTOEntities())
+            {
+                List<REMCheckCar> list = (from x in db.XEs
+                                          join c in db.CHUXEs on x.MACHUXE equals c.MACHUXE
+                                          join b in db.HIEUXEs on x.MAHIEUXE equals b.MAHIEUXE
+                                          select new REMCheckCar
+                                          {
+                                              CarId = x.MAXE,
+                                              CarBrand = b.TENHIEUXE,
+                                              CarNumber = x.BIENSO,
+                                              CarOwnerName = c.TENCHUXE,
+                                              CarOwnerTele = c.DIENTHOAI,
+                                              DateIn = x.NGAYTIEPNHAN.Value,
+                                              DebtMoney = x.TONGNO.Value,
+                                              TinhTrang = x.TINHTRANG
+                                          }).OrderByDescending(a=> a.DebtMoney).ToList();
+                if (list == null) return new List<REMCheckCar>();
+                return list;
+            }
         }
         #region Noti
-        public const string BackEndError = "Kết nối với máy chủ thất bại";
+        public const string BackEndError = "Dữ liệu đã bị ràng buộc, bạn không có quyền thục hiện thay đổi này";
         public const string FrontEndError = "Lỗi không xác định";
         public const string strUpdate = "Cập nhật ";
         public const string strDelete = "Xóa ";
         public const string strSave = "Thêm ";
         public void MakeNotiError(string ActionName = "Thay đổi", string resson = "Kết nối với máy chủ thất bại")
         {
+            if (!UniversalSetting.Instance.isNotiDataOn) return;
             string path1 = new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.FullName;
             string path2 = System.IO.Path.Combine(path1, "Resources", "error.jpg");
             if (!File.Exists(path2)) path2 = @"https://picsum.photos/200";
             string path3 = System.IO.Path.Combine(path1, "Resources", "StaffAvatar.png");
             if (!File.Exists(path3)) path3 = @"https://picsum.photos/200";
             new ToastContentBuilder()
-                .AddText(ActionName + " không thành công, một lỗi không mong muốn đã xảy ra")
+                .AddText(ActionName + " không thành công")
                 .AddInlineImage(new Uri(path2))
                 .AddAppLogoOverride(new Uri(path3), ToastGenericAppLogoCrop.Circle)
                 .AddText(resson)
@@ -80,6 +88,7 @@ namespace PhanMemQuanLyGaraOto.DAO
         }
         public void MakeNotiSuccess(string ActionName = "Thay đổi")
         {
+            if (!UniversalSetting.Instance.isNotiDataOn) return;
             string path1 = new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.FullName;
             string path2 = System.IO.Path.Combine(path1, "Resources", "succes.png");
             if (!File.Exists(path2)) path2 = @"https://picsum.photos/200";
@@ -340,6 +349,12 @@ namespace PhanMemQuanLyGaraOto.DAO
             }
 
         }
+        public async Task<List<HIEUXE>> GetHIEUXEsAsync()
+        {
+            Task.WaitAll();
+            List<HIEUXE> hIEUXEs = await db.HIEUXEs.ToListAsync<HIEUXE>();
+            return hIEUXEs;
+        }
         #endregion
         #region Customer
         public void SaveCustomer(CHUXE CHUXE, params AlertNonPara[] Loadawhendones)
@@ -458,18 +473,17 @@ namespace PhanMemQuanLyGaraOto.DAO
                 db.SaveChanges();
                 MakeNotiSuccess(strSave + nameof(XE));
                 ReloadDataEvent.Ins.Alert(DataType.Car);
-                foreach (var donefunc in Loadawhendones)
-                {
-                    donefunc?.Invoke();
-                }
+
             }
             catch
             {
                 MessageBox.Show("Lưu thất bại, Kết nối với máy chủ bị  gián đoạn", "Lỗi kết nối đến máy chủ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 MakeNotiError(strSave + nameof(XE), BackEndError);
-                return;
             }
-
+            foreach (var donefunc in Loadawhendones)
+            {
+                donefunc?.Invoke();
+            }
         }
         public void UpdateCar(XE XE, params AlertNonPara[] LoadWhendones)
         {
@@ -487,16 +501,16 @@ namespace PhanMemQuanLyGaraOto.DAO
                 SaveChange();
                 ReloadDataEvent.Ins.Alert(DataType.Car);
                 MakeNotiSuccess(strUpdate + nameof(XE));
-                foreach (var func in LoadWhendones)
-                {
-                    func?.Invoke();
-                }
+
             }
             catch
             {
                 MessageBox.Show("Cập nhật thất bại, Kết nối với máy chủ bị gián đoạn", "Lỗi kết nối đến máy chủ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 MakeNotiError(strUpdate + nameof(XE), BackEndError);
-                return;
+            }
+            foreach (var func in LoadWhendones)
+            {
+                func?.Invoke();
             }
 
         }
@@ -523,16 +537,18 @@ namespace PhanMemQuanLyGaraOto.DAO
             }
             catch (Exception e)
             {
-                MakeNotiError(strDelete + nameof(XE), BackEndError);
-                MessageBox.Show("Xóa thất bại ", e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MakeNotiError(strDelete + nameof(XE), "Xe đã thực hiện các dịch vụ của gara nên gara cần lưu lại thông tin xe này");
                 return;
             }
 
 
         }
-        public bool CarCheckContainCarPlate(string plate, XE Cus = null)
+        public bool isUniquePlate(string plate, int Maxe = 0)
         {
-            return true;
+            XE checkXe = db.XEs.Where(a => a.BIENSO == plate && a.MAXE != Maxe).FirstOrDefault();
+            if (checkXe == null)
+                return true;
+            return false;
         }
         #endregion
     }

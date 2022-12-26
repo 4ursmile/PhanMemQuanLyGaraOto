@@ -11,10 +11,12 @@ namespace PhanMemQuanLyGaraOto.Model
 {
     using System;
     
-    public partial class GETBAOCAO_Result
+    public partial class GETBAOCAOTON_Result
     {
-        public int MABAOCAO { get; set; }
-        public Nullable<System.DateTime> THANGNAM { get; set; }
-        public Nullable<decimal> TONGDOANHTHU { get; set; }
+        public string TENPHUTUNG { get; set; }
+        public Nullable<int> TONDAU { get; set; }
+        public Nullable<int> SLNHAP { get; set; }
+        public Nullable<int> SLBAN { get; set; }
+        public Nullable<int> TONCUOI { get; set; }
     }
 }

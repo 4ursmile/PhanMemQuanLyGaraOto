@@ -262,6 +262,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::PhanMemQuanLyGaraOto.Properties.Resources.ManagerAvatat1;
             this.pictureBox2.Location = new System.Drawing.Point(319, 206);
             this.pictureBox2.Name = "pictureBox2";

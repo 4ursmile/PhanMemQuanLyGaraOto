@@ -14,6 +14,7 @@ namespace PhanMemQuanLyGaraOto.Model
     
     public partial class THAMSO
     {
+        public int MATHAMSO { get; set; }
         public string TENTHAMSO { get; set; }
         public Nullable<int> GIATRI { get; set; }
     }

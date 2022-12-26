@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Runtime.Serialization;
 
 namespace PhanMemQuanLyGaraOto
 {
@@ -33,7 +34,7 @@ namespace PhanMemQuanLyGaraOto
     }
     public class ReloadDataEvent
     {
-        private AlertNonPara[] AlertHoler = new AlertNonPara[5];
+        private AlertNonPara[] AlertHoler = new AlertNonPara[Enum.GetNames(typeof(DataType)).Length];
         private static ReloadDataEvent ins;
         public static ReloadDataEvent Ins { 
             get
@@ -74,6 +75,6 @@ namespace PhanMemQuanLyGaraOto
     }
     public enum DataType
     {
-        Car, Customer, Tool, Brand, Money
+        Car, Customer, Tool, Brand, Money, FixForm, FixDetail, ImportForm, TimesFix, ImportDetail, Policy
     }
 }

@@ -18,24 +18,42 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
     {
         bool isUpdate;
         CHUXE currentCustomer;
-        HIEUXE currentHieuXe;
         XE currentXe;
         AlertNonPara[] LoadWhenDones;
         public TiepNhanForm(REMCheckCar rEM = null,params AlertNonPara[] func)
         {
             InitializeComponent();
+            dtpTiepNhan.CustomFormat = "dd/MM/yyyy";
             if (rEM == null)
+            {
                 isUpdate = false;
+            }
             else
+            {
                 isUpdate = true;
+                currentXe = new XE();
+                currentXe.MAXE = rEM.CarId;
+                currentXe.BIENSO = rEM.CarNumber;
+                currentXe.TONGNO = rEM.DebtMoney;
+                currentXe.NGAYTIEPNHAN = rEM.DateIn;
+                currentXe.TINHTRANG = rEM.TinhTrang;
+                btbDelete.Visible = true;
+            }
+            dtpTiepNhan.MaxDate = DateTime.Today.AddDays(1);
             LoadWhenDones = func;
             LoadHieuXe();
             AddCustomerBiding();
             if (isUpdate)
             {
-
+                btbSave.Enabled = false;
+                cbcCusSDT.DropDownStyle = ComboBoxStyle.DropDownList;
+                cbcCusSDT.Text = rEM.CarOwnerTele;
+                cbcBrand.Text = rEM.CarBrand;
+                txtBienSo.Text = rEM.CarNumber;
+                dtpTiepNhan.Value = rEM.DateIn;
             } else
             {
+                btbUpdate.Enabled = false;
             }
             isNewCustomer = false;
         }
@@ -69,6 +87,7 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
         }
         void LoadHieuXe()
         {
+            Task.WaitAll();
             cbcBrand.DataSource = DataProvider.Instance.db.HIEUXEs.ToList<HIEUXE>();
             cbcBrand.DisplayMember = "TENHIEUXE";
         }
@@ -122,11 +141,21 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
                 SwitchStateCustomerInfor(true);
                 txtHoten.Focus();
                 isNewCustomer = true;
+            } else
+            {
+                SwitchStateCustomerInfor(false);
+                isNewCustomer = false;
             }
         }
 
         private void btbSave_Click(object sender, EventArgs e)
         {
+            if (!DataProvider.Instance.isUniquePlate(txtBienSo.Text))
+            {
+                DialogResult result = MessageBox.Show("Biển Số xe bị trùng, Vui lòng nhập lại", "Trùng biển số", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
             if (isNewCustomer)
             {
                 currentCustomer = new CHUXE();
@@ -143,8 +172,69 @@ namespace PhanMemQuanLyGaraOto.SubForm.SubSubForm
             currentXe.BIENSO = txtBienSo.Text;
             currentXe.NGAYTIEPNHAN = dtpTiepNhan.Value;
             currentXe.TONGNO = 0;
+            currentXe.TINHTRANG = 1;
             DataProvider.Instance.SaveCar(currentXe);
             this.Close();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btbUpdate_Click(object sender, EventArgs e)
+        {
+            if (!DataProvider.Instance.isUniquePlate(txtBienSo.Text, currentXe.MAXE))
+            {
+                DialogResult result = MessageBox.Show("Biển Số xe bị trùng, Vui lòng nhập lại", "Trùng biển số", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+            currentXe.MAHIEUXE = (cbcBrand.SelectedValue as HIEUXE).MAHIEUXE;
+            currentXe.MACHUXE = (cbcCusSDT.SelectedValue as CHUXE).MACHUXE;
+            currentXe.BIENSO = txtBienSo.Text;
+            currentXe.NGAYTIEPNHAN = dtpTiepNhan.Value;
+            DataProvider.Instance.UpdateCar(currentXe);
+            this.Close();
+        }
+
+        private void txtBienSo_Leave(object sender, EventArgs e)
+        {
+            bool isUnique = true;
+            if (isUpdate)
+            {
+                isUnique = DataProvider.Instance.isUniquePlate(txtBienSo.Text, currentXe.MAXE);
+            } else
+            {
+                isUnique = DataProvider.Instance.isUniquePlate(txtBienSo.Text);
+            }
+            if (!isUnique)
+            {
+                DialogResult result = MessageBox.Show("Biển Số xe bị trùng, bạn có muốn nhập lại không?", "Trùng biển số", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    txtBienSo.Focus();
+                } else
+                {
+                    btbCancle_Click(null, null);
+                }
+            }
+        }
+
+        private void dtpTiepNhan_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbcBrand_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btbDelete_Click(object sender, EventArgs e)
+        {
+            if (currentXe == null) return;
+            DataProvider.Instance.DeleteCar(currentXe);
         }
     }
 }

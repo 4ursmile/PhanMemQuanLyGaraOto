@@ -23,6 +23,7 @@ namespace PhanMemQuanLyGaraOto.Model
         public int SOPHIEUNHAP { get; set; }
         public Nullable<System.DateTime> NGAYLAP { get; set; }
         public Nullable<decimal> TONGTIEN { get; set; }
+        public Nullable<short> TINHTRANG { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_PHIEUNHAP> CT_PHIEUNHAP { get; set; }

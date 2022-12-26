@@ -12,6 +12,6 @@ namespace PhanMemQuanLyGaraOto.DDO
         public string CarOwnerTele { get; set; }
         public DateTime DateIn { get; set; }
         public decimal DebtMoney { get; set; }
-
+        public short? TinhTrang { get; set; }
     }
 }

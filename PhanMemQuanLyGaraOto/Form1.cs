@@ -1,12 +1,15 @@
 ﻿using CommunityToolkit.WinUI.Notifications;
 using ComponentFactory.Krypton.Toolkit;
+using PhanMemQuanLyGaraOto.DAO;
 using PhanMemQuanLyGaraOto.DDo;
 using PhanMemQuanLyGaraOto.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text.Json;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PhanMemQuanLyGaraOto
@@ -16,7 +19,10 @@ namespace PhanMemQuanLyGaraOto
 
         public LoginForm()
         {
+            InitBaoCaoAync(); 
             InitializeComponent();
+
+            DoubleBuffered =true;
             LoiChucInit();
             users = new ListUser { ListU = new List<User>(), SelectedIndex = 0 };
             LoadUser();
@@ -24,7 +30,10 @@ namespace PhanMemQuanLyGaraOto
         }
 
         ListUser users;
-
+        async void InitBaoCaoAync()
+        {
+            await Task.Run(() => DataProvider.Instance.db.INITBAOCAOTON(DateTime.Today));
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -141,9 +150,10 @@ namespace PhanMemQuanLyGaraOto
             UniversalUser.Ins.SetUser(aCCOUNT);
             SaveUser();
             LoadUser();
-            this.Hide();
             MainForm mainForm = new MainForm();
-            mainForm.ShowDialog();
+            this.Hide();
+            this.SuspendLayout();
+            Invoke((Action)(()=>mainForm.ShowDialog())) ;
             mainForm.Dispose();
             LoadUser();
             if (ExitInforHolder.isQuit)
@@ -154,6 +164,7 @@ namespace PhanMemQuanLyGaraOto
             {
                 mainForm.Dispose();
                 mainForm.Close();
+                this.ResumeLayout();
                 this.Show();
             }
         }
@@ -192,8 +203,10 @@ namespace PhanMemQuanLyGaraOto
 
         private void SigninButton_Click(object sender, EventArgs e)
         {
-
+            lblLoad.Visible = true;
             SwitchStateAll(false);
+            SigninButton.Enabled = false;
+            lblLoad.Visible = true;
             ACCOUNT account;
             int resStatus = DDOpassword.Ins.CheckPassWord(UserComboBox.Text, PassWordText.Text, out account);
             if (resStatus == 1)
@@ -209,6 +222,8 @@ namespace PhanMemQuanLyGaraOto
                 MessageBox.Show("Kết nối với máy chủ thất bại, Vui lòng thử lại sau", "Từ chối kết nối", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             SwitchStateAll(true);
+            SigninButton.Enabled = true;
+            lblLoad.Visible = false;
 
         }
 
