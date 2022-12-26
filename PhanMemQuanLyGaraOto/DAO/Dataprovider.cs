@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Windows.Foundation.Metadata;
 
@@ -347,6 +348,12 @@ namespace PhanMemQuanLyGaraOto.DAO
                 return;
             }
 
+        }
+        public async Task<List<HIEUXE>> GetHIEUXEsAsync()
+        {
+            Task.WaitAll();
+            List<HIEUXE> hIEUXEs = await db.HIEUXEs.ToListAsync<HIEUXE>();
+            return hIEUXEs;
         }
         #endregion
         #region Customer

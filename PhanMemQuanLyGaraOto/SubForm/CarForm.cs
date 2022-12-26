@@ -1,5 +1,6 @@
 ﻿using PhanMemQuanLyGaraOto.DAO;
 using PhanMemQuanLyGaraOto.DDO;
+using PhanMemQuanLyGaraOto.Model;
 using PhanMemQuanLyGaraOto.SubForm.SubSubForm;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
             ReloadDataEvent.Ins.Addlistener(LoadToDGVCarComplex, DataType.Car, DataType.Brand, DataType.Customer, DataType.FixForm, DataType.Money);
             ReloadDataEvent.Ins.Addlistener(UpdateChar, DataType.TimesFix);
             ReloadDataEvent.Ins.Addlistener(UpdateMaxChart, DataType.Policy);
+            ReloadDataEvent.Ins.Addlistener(LoadTocbcBrand, DataType.Brand);
             InitializeComponent();
             btbcollect.Enabled = false;
             btbUpdate.Enabled = false;
@@ -30,7 +32,14 @@ namespace PhanMemQuanLyGaraOto.SubForm
             ChartInit();
             ResetButton();
         }
-
+        async void LoadTocbcBrand()
+        {
+            List<HIEUXE> hIEUXEs = await DataProvider.Instance.GetHIEUXEsAsync();
+            HIEUXE hIEUXE = new HIEUXE { MAHIEUXE = 0, TENHIEUXE = "Tát cả" };
+            hIEUXEs.Insert(0, hIEUXE);
+            cbcHieuXe.DataSource = hIEUXEs;
+            cbcHieuXe.DisplayMember = "TENHIEUXE";
+        }
         private void CarForm_Load(object sender, EventArgs e)
         {
 
@@ -90,6 +99,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
             cbcBienSo.DataSource = dgvCheckCars.DataSource;
             cbcBienSo.DisplayMember = "CarNumber";
         }
+
         void LoadToDGVCarComplexFilter()
         {
             List < REMCheckCar > listFilter = DataProvider.Instance.GetCheckCar();
@@ -116,8 +126,12 @@ namespace PhanMemQuanLyGaraOto.SubForm
                     listFilter = listFilter.Where(a =>a.TinhTrang == 1).ToList();
                     break;
             }
-            listFilter = listFilter.Where(a => a.CarOwnerTele.Contains(txtFilterSDT.Text)).ToList<REMCheckCar>();
-            listFilter = listFilter.Where(a => a.CarNumber.Contains(txtCarNumber.Text)).ToList<REMCheckCar>();
+            if (cbcHieuXe.SelectedIndex > 0)
+            {
+                listFilter = listFilter.Where(a => a.CarBrand.Contains(cbcHieuXe.Text)).ToList<REMCheckCar>();
+
+            }
+            listFilter = listFilter.Where(a => a.CarOwnerTele.Contains(txtFilterSDT.Text) && a.CarNumber.Contains(txtCarNumber.Text)).ToList<REMCheckCar>();
             dgvCheckCars.DataSource = listFilter;
             cbcBienSo.DataSource = dgvCheckCars.DataSource;
             cbcBienSo.DisplayMember = "CarNumber";
@@ -160,6 +174,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
             ReloadDataEvent.Ins.RemoveListerner(LoadToDGVCarComplex, DataType.Car, DataType.Brand, DataType.Customer, DataType.FixForm, DataType.Money);
             ReloadDataEvent.Ins.RemoveListerner(UpdateChar, DataType.TimesFix);
             ReloadDataEvent.Ins.RemoveListerner(UpdateMaxChart, DataType.Policy);
+            ReloadDataEvent.Ins.RemoveListerner(LoadTocbcBrand, DataType.Brand);
             DiposeToRoot(this);
         }
 
@@ -257,6 +272,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
             txtFilterSDT.Text = "";
             cbcFilterDebt.SelectedIndex = 0;
             cbcFilterFix.SelectedIndex = 0;
+            cbcHieuXe.SelectedIndex = 0;
             LoadToDGVCarComplex();
         }
 
@@ -268,6 +284,13 @@ namespace PhanMemQuanLyGaraOto.SubForm
         private void dgvCheckCars_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+        bool firstTime = true;
+        private void cbcHieuXe_Enter(object sender, EventArgs e)
+        {
+            if (!firstTime) return;
+            LoadTocbcBrand();
+            firstTime = false;
         }
     }
 }

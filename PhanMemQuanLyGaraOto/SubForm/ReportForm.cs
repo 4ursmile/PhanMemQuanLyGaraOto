@@ -3,6 +3,7 @@ using PhanMemQuanLyGaraOto.DDO;
 using PhanMemQuanLyGaraOto.Model;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -92,7 +93,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
         {
             dgvBaoCaoTon.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
         }
-        void ExportExecel(DataGridView dgv)
+        void ExportExecelCheckCar(DataGridView dgv)
         {
             Microsoft.Office.Interop.Excel.ApplicationClass excelSheet = new Microsoft.Office.Interop.Excel.ApplicationClass();
             excelSheet.Application.Workbooks.Add(Type.Missing);
@@ -104,8 +105,35 @@ namespace PhanMemQuanLyGaraOto.SubForm
             {
                 for (int j = 0; j < dgv.Columns.Count; j++)
                 {
-                        excelSheet.Cells[i + 2, j + 1] = dgv.Rows[i].Cells[j].Value?.ToString()??"0";
+                    string str = dgv.Rows[i].Cells[j].Value?.ToString() ?? "0";
+                    float sdd;
+                    bool isFloat = float.TryParse(str, out sdd);
+                    if (isFloat)
+                        excelSheet.Cells[i + 2, j + 1] = sdd.ToString("N");
+                    else
+                        excelSheet.Cells[i + 2, j + 1] = str;
 
+
+                }
+            }
+            excelSheet.Columns.AutoFit();
+            excelSheet.Visible = true;
+
+        }
+        void ExportExecelSLTON(DataGridView dgv)
+        {
+            Microsoft.Office.Interop.Excel.ApplicationClass excelSheet = new Microsoft.Office.Interop.Excel.ApplicationClass();
+            excelSheet.Application.Workbooks.Add(Type.Missing);
+            for (int i = 1; i < dgv.Columns.Count + 1; i++)
+            {
+                excelSheet.Cells[1, i] = dgv.Columns[i - 1].HeaderText;
+            }
+            for (int i = 0; i < dgv.Rows.Count; i++)
+            {
+                for (int j = 0; j < dgv.Columns.Count; j++)
+                {
+                    string str = dgv.Rows[i].Cells[j].Value?.ToString() ?? "0";
+                    excelSheet.Cells[i + 2, j + 1] = str;
                 }
             }
             excelSheet.Columns.AutoFit();
@@ -117,7 +145,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
             btbBaocaoTon.Enabled = false;
             if (dgvBaoCaoTon.Rows.Count > 0)
             {
-                await Task.Run(() => ExportExecel(dgvBaoCaoTon));
+                await Task.Run(() => ExportExecelSLTON(dgvBaoCaoTon));
             }
             btbBaocaoTon.Enabled = true;
         }
@@ -127,7 +155,7 @@ namespace PhanMemQuanLyGaraOto.SubForm
             btbBaoCao.Enabled = false;
             if (dgvCheckCars.Rows.Count > 0)
             {
-                await Task.Run(() => ExportExecel(dgvCheckCars));
+                await Task.Run(() => ExportExecelCheckCar(dgvCheckCars));
             }
             btbBaoCao.Enabled = true;
         }

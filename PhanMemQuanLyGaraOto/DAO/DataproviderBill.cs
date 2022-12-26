@@ -11,7 +11,7 @@ namespace PhanMemQuanLyGaraOto.DAO
 {
     public partial class DataProvider
     {
-        public async void SavePHIEUTHU(PHIEUTHUTIEN PHIEUTHUTIEN, params AlertNonPara[] Loadawhendones)
+        public void SavePHIEUTHU(PHIEUTHUTIEN PHIEUTHUTIEN, params AlertNonPara[] Loadawhendones)
         {
             try
             {
