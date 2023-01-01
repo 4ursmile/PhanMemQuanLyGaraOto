@@ -43,13 +43,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvCT_PHIEUNHAP = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sophieunhapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maphutungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenphutungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dongiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soluongnhapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thanhtienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cImportToolBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kryptonDataGridView2 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -76,10 +69,16 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.btbCancel = new System.Windows.Forms.Button();
             this.btbAccect = new System.Windows.Forms.Button();
+            this.sophieunhapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maphutungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenphutungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dongiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soluongnhapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thanhtienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cImportToolBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel8.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCT_PHIEUNHAP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cImportToolBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView2)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -92,6 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudSetNumberAll)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSetPriceall)).BeginInit();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cImportToolBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel8
@@ -257,73 +257,6 @@
             this.STT.Name = "STT";
             this.STT.ReadOnly = true;
             this.STT.Width = 50;
-            // 
-            // sophieunhapDataGridViewTextBoxColumn
-            // 
-            this.sophieunhapDataGridViewTextBoxColumn.DataPropertyName = "sophieunhap";
-            this.sophieunhapDataGridViewTextBoxColumn.HeaderText = "sophieunhap";
-            this.sophieunhapDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sophieunhapDataGridViewTextBoxColumn.Name = "sophieunhapDataGridViewTextBoxColumn";
-            this.sophieunhapDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sophieunhapDataGridViewTextBoxColumn.Visible = false;
-            this.sophieunhapDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // maphutungDataGridViewTextBoxColumn
-            // 
-            this.maphutungDataGridViewTextBoxColumn.DataPropertyName = "maphutung";
-            this.maphutungDataGridViewTextBoxColumn.HeaderText = "maphutung";
-            this.maphutungDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maphutungDataGridViewTextBoxColumn.Name = "maphutungDataGridViewTextBoxColumn";
-            this.maphutungDataGridViewTextBoxColumn.ReadOnly = true;
-            this.maphutungDataGridViewTextBoxColumn.Visible = false;
-            this.maphutungDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // tenphutungDataGridViewTextBoxColumn
-            // 
-            this.tenphutungDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tenphutungDataGridViewTextBoxColumn.DataPropertyName = "tenphutung";
-            this.tenphutungDataGridViewTextBoxColumn.HeaderText = "Tên phụ tùng";
-            this.tenphutungDataGridViewTextBoxColumn.MinimumWidth = 125;
-            this.tenphutungDataGridViewTextBoxColumn.Name = "tenphutungDataGridViewTextBoxColumn";
-            this.tenphutungDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dongiaDataGridViewTextBoxColumn
-            // 
-            this.dongiaDataGridViewTextBoxColumn.DataPropertyName = "dongia";
-            dataGridViewCellStyle2.Format = "C0";
-            dataGridViewCellStyle2.NullValue = null;
-            this.dongiaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dongiaDataGridViewTextBoxColumn.HeaderText = "Đơn giá";
-            this.dongiaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dongiaDataGridViewTextBoxColumn.Name = "dongiaDataGridViewTextBoxColumn";
-            this.dongiaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dongiaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // soluongnhapDataGridViewTextBoxColumn
-            // 
-            this.soluongnhapDataGridViewTextBoxColumn.DataPropertyName = "soluongnhap";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.soluongnhapDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.soluongnhapDataGridViewTextBoxColumn.HeaderText = "SL Nhập";
-            this.soluongnhapDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.soluongnhapDataGridViewTextBoxColumn.Name = "soluongnhapDataGridViewTextBoxColumn";
-            this.soluongnhapDataGridViewTextBoxColumn.ReadOnly = true;
-            this.soluongnhapDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // thanhtienDataGridViewTextBoxColumn
-            // 
-            this.thanhtienDataGridViewTextBoxColumn.DataPropertyName = "thanhtien";
-            dataGridViewCellStyle4.Format = "C0";
-            this.thanhtienDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.thanhtienDataGridViewTextBoxColumn.HeaderText = "Thành tiền";
-            this.thanhtienDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.thanhtienDataGridViewTextBoxColumn.Name = "thanhtienDataGridViewTextBoxColumn";
-            this.thanhtienDataGridViewTextBoxColumn.ReadOnly = true;
-            this.thanhtienDataGridViewTextBoxColumn.Width = 135;
-            // 
-            // cImportToolBindingSource
-            // 
-            this.cImportToolBindingSource.DataSource = typeof(PhanMemQuanLyGaraOto.DDO.CImportTool);
             // 
             // kryptonDataGridView2
             // 
@@ -578,7 +511,6 @@
             // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.btbImportAll);
@@ -608,7 +540,7 @@
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -768,6 +700,73 @@
             this.btbAccect.UseVisualStyleBackColor = true;
             this.btbAccect.Click += new System.EventHandler(this.btbAccect_Click);
             // 
+            // sophieunhapDataGridViewTextBoxColumn
+            // 
+            this.sophieunhapDataGridViewTextBoxColumn.DataPropertyName = "sophieunhap";
+            this.sophieunhapDataGridViewTextBoxColumn.HeaderText = "sophieunhap";
+            this.sophieunhapDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sophieunhapDataGridViewTextBoxColumn.Name = "sophieunhapDataGridViewTextBoxColumn";
+            this.sophieunhapDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sophieunhapDataGridViewTextBoxColumn.Visible = false;
+            this.sophieunhapDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // maphutungDataGridViewTextBoxColumn
+            // 
+            this.maphutungDataGridViewTextBoxColumn.DataPropertyName = "maphutung";
+            this.maphutungDataGridViewTextBoxColumn.HeaderText = "maphutung";
+            this.maphutungDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maphutungDataGridViewTextBoxColumn.Name = "maphutungDataGridViewTextBoxColumn";
+            this.maphutungDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maphutungDataGridViewTextBoxColumn.Visible = false;
+            this.maphutungDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tenphutungDataGridViewTextBoxColumn
+            // 
+            this.tenphutungDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tenphutungDataGridViewTextBoxColumn.DataPropertyName = "tenphutung";
+            this.tenphutungDataGridViewTextBoxColumn.HeaderText = "Tên phụ tùng";
+            this.tenphutungDataGridViewTextBoxColumn.MinimumWidth = 125;
+            this.tenphutungDataGridViewTextBoxColumn.Name = "tenphutungDataGridViewTextBoxColumn";
+            this.tenphutungDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dongiaDataGridViewTextBoxColumn
+            // 
+            this.dongiaDataGridViewTextBoxColumn.DataPropertyName = "dongia";
+            dataGridViewCellStyle2.Format = "C0";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dongiaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dongiaDataGridViewTextBoxColumn.HeaderText = "Đơn giá";
+            this.dongiaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dongiaDataGridViewTextBoxColumn.Name = "dongiaDataGridViewTextBoxColumn";
+            this.dongiaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dongiaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // soluongnhapDataGridViewTextBoxColumn
+            // 
+            this.soluongnhapDataGridViewTextBoxColumn.DataPropertyName = "soluongnhap";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.soluongnhapDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.soluongnhapDataGridViewTextBoxColumn.HeaderText = "SL Nhập";
+            this.soluongnhapDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.soluongnhapDataGridViewTextBoxColumn.Name = "soluongnhapDataGridViewTextBoxColumn";
+            this.soluongnhapDataGridViewTextBoxColumn.ReadOnly = true;
+            this.soluongnhapDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // thanhtienDataGridViewTextBoxColumn
+            // 
+            this.thanhtienDataGridViewTextBoxColumn.DataPropertyName = "thanhtien";
+            dataGridViewCellStyle4.Format = "C0";
+            this.thanhtienDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.thanhtienDataGridViewTextBoxColumn.HeaderText = "Thành tiền";
+            this.thanhtienDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.thanhtienDataGridViewTextBoxColumn.Name = "thanhtienDataGridViewTextBoxColumn";
+            this.thanhtienDataGridViewTextBoxColumn.ReadOnly = true;
+            this.thanhtienDataGridViewTextBoxColumn.Width = 135;
+            // 
+            // cImportToolBindingSource
+            // 
+            this.cImportToolBindingSource.DataSource = typeof(PhanMemQuanLyGaraOto.DDO.CImportTool);
+            // 
             // ImportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -789,7 +788,6 @@
             this.panel8.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCT_PHIEUNHAP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cImportToolBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -808,6 +806,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudSetPriceall)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cImportToolBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

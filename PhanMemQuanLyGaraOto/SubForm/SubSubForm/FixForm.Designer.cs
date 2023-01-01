@@ -706,7 +706,7 @@
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel3.Controls.Add(this.btbCloseForm);
             this.panel3.Controls.Add(this.btbDongPhieu);
             this.panel3.Location = new System.Drawing.Point(26, 597);
