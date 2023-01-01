@@ -396,11 +396,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(80, 77);
+            this.label13.Location = new System.Drawing.Point(104, 77);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(173, 19);
+            this.label13.Size = new System.Drawing.Size(128, 19);
             this.label13.TabIndex = 13;
-            this.label13.Text = "Bản lưu hành cục bộ";
+            this.label13.Text = "Bản trực tuyến";
             // 
             // label12
             // 
@@ -435,9 +435,9 @@
             this.label8.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.label8.Location = new System.Drawing.Point(119, 51);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(94, 16);
+            this.label8.Size = new System.Drawing.Size(102, 16);
             this.label8.TabIndex = 9;
-            this.label8.Text = "Phiên bản 1.0";
+            this.label8.Text = "Phiên bản 1.0b";
             // 
             // label9
             // 

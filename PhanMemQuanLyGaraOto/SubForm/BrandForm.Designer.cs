@@ -50,11 +50,6 @@
             this.txtBRANDID = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvBRAND = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.mAHIEUXEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tENHIEUXEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cTBCDSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.xEsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hIEUXEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kryptonDataGridView2 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -77,12 +72,17 @@
             this.txtPriceID = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.panelPo = new System.Windows.Forms.Panel();
             this.dgvTIENCONG = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.dgvAccounts = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.mAHIEUXEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tENHIEUXEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTBCDSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.xEsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hIEUXEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mANDTCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nOIDUNGDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tIENCONG1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cHITIETPSCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tIENCONGBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dgvAccounts = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.tIENCONGBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -94,7 +94,6 @@
             this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBRAND)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hIEUXEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView2)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -105,8 +104,9 @@
             this.panel4.SuspendLayout();
             this.panelPo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTIENCONG)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tIENCONGBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hIEUXEBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tIENCONGBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tIENCONGBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -219,8 +219,7 @@
             // 
             // panel6
             // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.Controls.Add(this.flowLayoutPanel1);
             this.panel6.Location = new System.Drawing.Point(13, 297);
             this.panel6.Name = "panel6";
@@ -429,50 +428,6 @@
             this.dgvBRAND.TabIndex = 9;
             this.dgvBRAND.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBRAND_CellMouseClick);
             this.dgvBRAND.SelectionChanged += new System.EventHandler(this.dgvBRAND_SelectionChanged);
-            // 
-            // mAHIEUXEDataGridViewTextBoxColumn
-            // 
-            this.mAHIEUXEDataGridViewTextBoxColumn.DataPropertyName = "MAHIEUXE";
-            this.mAHIEUXEDataGridViewTextBoxColumn.HeaderText = "MAHIEUXE";
-            this.mAHIEUXEDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.mAHIEUXEDataGridViewTextBoxColumn.Name = "mAHIEUXEDataGridViewTextBoxColumn";
-            this.mAHIEUXEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.mAHIEUXEDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.mAHIEUXEDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // tENHIEUXEDataGridViewTextBoxColumn
-            // 
-            this.tENHIEUXEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tENHIEUXEDataGridViewTextBoxColumn.DataPropertyName = "TENHIEUXE";
-            this.tENHIEUXEDataGridViewTextBoxColumn.HeaderText = "TENHIEUXE";
-            this.tENHIEUXEDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tENHIEUXEDataGridViewTextBoxColumn.Name = "tENHIEUXEDataGridViewTextBoxColumn";
-            this.tENHIEUXEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tENHIEUXEDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // cTBCDSDataGridViewTextBoxColumn
-            // 
-            this.cTBCDSDataGridViewTextBoxColumn.DataPropertyName = "CT_BCDS";
-            this.cTBCDSDataGridViewTextBoxColumn.HeaderText = "CT_BCDS";
-            this.cTBCDSDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.cTBCDSDataGridViewTextBoxColumn.Name = "cTBCDSDataGridViewTextBoxColumn";
-            this.cTBCDSDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cTBCDSDataGridViewTextBoxColumn.Visible = false;
-            this.cTBCDSDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // xEsDataGridViewTextBoxColumn
-            // 
-            this.xEsDataGridViewTextBoxColumn.DataPropertyName = "XEs";
-            this.xEsDataGridViewTextBoxColumn.HeaderText = "XEs";
-            this.xEsDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.xEsDataGridViewTextBoxColumn.Name = "xEsDataGridViewTextBoxColumn";
-            this.xEsDataGridViewTextBoxColumn.ReadOnly = true;
-            this.xEsDataGridViewTextBoxColumn.Visible = false;
-            this.xEsDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // hIEUXEBindingSource
-            // 
-            this.hIEUXEBindingSource.DataSource = typeof(PhanMemQuanLyGaraOto.Model.HIEUXE);
             // 
             // kryptonDataGridView2
             // 
@@ -866,6 +821,93 @@
             this.dgvTIENCONG.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.kryptonDataGridView1_CellMouseClick);
             this.dgvTIENCONG.SelectionChanged += new System.EventHandler(this.dgvTIENCONG_SelectionChanged);
             // 
+            // dgvAccounts
+            // 
+            this.dgvAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAccounts.GridStyles.Style = ComponentFactory.Krypton.Toolkit.DataGridViewStyle.Mixed;
+            this.dgvAccounts.GridStyles.StyleBackground = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridHeaderColumnSheet;
+            this.dgvAccounts.GridStyles.StyleColumn = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
+            this.dgvAccounts.GridStyles.StyleDataCells = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
+            this.dgvAccounts.GridStyles.StyleRow = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
+            this.dgvAccounts.Location = new System.Drawing.Point(5, 5);
+            this.dgvAccounts.Name = "dgvAccounts";
+            this.dgvAccounts.ReadOnly = true;
+            this.dgvAccounts.RowHeadersWidth = 30;
+            this.dgvAccounts.RowTemplate.Height = 24;
+            this.dgvAccounts.Size = new System.Drawing.Size(575, 486);
+            this.dgvAccounts.StateCommon.Background.Color1 = System.Drawing.Color.White;
+            this.dgvAccounts.StateCommon.Background.Color2 = System.Drawing.Color.WhiteSmoke;
+            this.dgvAccounts.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridHeaderColumnSheet;
+            this.dgvAccounts.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.Black;
+            this.dgvAccounts.StateCommon.DataCell.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.dgvAccounts.StateCommon.DataCell.Border.Rounding = 5;
+            this.dgvAccounts.StateCommon.DataCell.Border.Width = 1;
+            this.dgvAccounts.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(195)))), ((int)(((byte)(236)))));
+            this.dgvAccounts.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(195)))), ((int)(((byte)(236)))));
+            this.dgvAccounts.StateCommon.HeaderColumn.Border.Color1 = System.Drawing.Color.Black;
+            this.dgvAccounts.StateCommon.HeaderColumn.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.dgvAccounts.StateCommon.HeaderColumn.Border.Rounding = 3;
+            this.dgvAccounts.StateCommon.HeaderColumn.Border.Width = 1;
+            this.dgvAccounts.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvAccounts.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.Transparent;
+            this.dgvAccounts.StateCommon.HeaderRow.Back.Color2 = System.Drawing.Color.Transparent;
+            this.dgvAccounts.StateCommon.HeaderRow.Border.Color1 = System.Drawing.Color.Black;
+            this.dgvAccounts.StateCommon.HeaderRow.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.dgvAccounts.StateCommon.HeaderRow.Border.Rounding = 5;
+            this.dgvAccounts.StateCommon.HeaderRow.Border.Width = 1;
+            this.dgvAccounts.TabIndex = 0;
+            // 
+            // mAHIEUXEDataGridViewTextBoxColumn
+            // 
+            this.mAHIEUXEDataGridViewTextBoxColumn.DataPropertyName = "MAHIEUXE";
+            this.mAHIEUXEDataGridViewTextBoxColumn.HeaderText = "MAHIEUXE";
+            this.mAHIEUXEDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.mAHIEUXEDataGridViewTextBoxColumn.Name = "mAHIEUXEDataGridViewTextBoxColumn";
+            this.mAHIEUXEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.mAHIEUXEDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.mAHIEUXEDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tENHIEUXEDataGridViewTextBoxColumn
+            // 
+            this.tENHIEUXEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tENHIEUXEDataGridViewTextBoxColumn.DataPropertyName = "TENHIEUXE";
+            this.tENHIEUXEDataGridViewTextBoxColumn.HeaderText = "TENHIEUXE";
+            this.tENHIEUXEDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tENHIEUXEDataGridViewTextBoxColumn.Name = "tENHIEUXEDataGridViewTextBoxColumn";
+            this.tENHIEUXEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tENHIEUXEDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // cTBCDSDataGridViewTextBoxColumn
+            // 
+            this.cTBCDSDataGridViewTextBoxColumn.DataPropertyName = "CT_BCDS";
+            this.cTBCDSDataGridViewTextBoxColumn.HeaderText = "CT_BCDS";
+            this.cTBCDSDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.cTBCDSDataGridViewTextBoxColumn.Name = "cTBCDSDataGridViewTextBoxColumn";
+            this.cTBCDSDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cTBCDSDataGridViewTextBoxColumn.Visible = false;
+            this.cTBCDSDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // xEsDataGridViewTextBoxColumn
+            // 
+            this.xEsDataGridViewTextBoxColumn.DataPropertyName = "XEs";
+            this.xEsDataGridViewTextBoxColumn.HeaderText = "XEs";
+            this.xEsDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.xEsDataGridViewTextBoxColumn.Name = "xEsDataGridViewTextBoxColumn";
+            this.xEsDataGridViewTextBoxColumn.ReadOnly = true;
+            this.xEsDataGridViewTextBoxColumn.Visible = false;
+            this.xEsDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // hIEUXEBindingSource
+            // 
+            this.hIEUXEBindingSource.DataSource = typeof(PhanMemQuanLyGaraOto.Model.HIEUXE);
+            // 
             // mANDTCDataGridViewTextBoxColumn
             // 
             this.mANDTCDataGridViewTextBoxColumn.DataPropertyName = "MANDTC";
@@ -910,49 +952,6 @@
             // 
             this.tIENCONGBindingSource.DataSource = typeof(PhanMemQuanLyGaraOto.Model.TIENCONG);
             // 
-            // dgvAccounts
-            // 
-            this.dgvAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvAccounts.GridStyles.Style = ComponentFactory.Krypton.Toolkit.DataGridViewStyle.Mixed;
-            this.dgvAccounts.GridStyles.StyleBackground = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridHeaderColumnSheet;
-            this.dgvAccounts.GridStyles.StyleColumn = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
-            this.dgvAccounts.GridStyles.StyleDataCells = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
-            this.dgvAccounts.GridStyles.StyleRow = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
-            this.dgvAccounts.Location = new System.Drawing.Point(5, 5);
-            this.dgvAccounts.Name = "dgvAccounts";
-            this.dgvAccounts.ReadOnly = true;
-            this.dgvAccounts.RowHeadersWidth = 30;
-            this.dgvAccounts.RowTemplate.Height = 24;
-            this.dgvAccounts.Size = new System.Drawing.Size(575, 486);
-            this.dgvAccounts.StateCommon.Background.Color1 = System.Drawing.Color.White;
-            this.dgvAccounts.StateCommon.Background.Color2 = System.Drawing.Color.WhiteSmoke;
-            this.dgvAccounts.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridHeaderColumnSheet;
-            this.dgvAccounts.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.Black;
-            this.dgvAccounts.StateCommon.DataCell.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.dgvAccounts.StateCommon.DataCell.Border.Rounding = 5;
-            this.dgvAccounts.StateCommon.DataCell.Border.Width = 1;
-            this.dgvAccounts.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(195)))), ((int)(((byte)(236)))));
-            this.dgvAccounts.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(195)))), ((int)(((byte)(236)))));
-            this.dgvAccounts.StateCommon.HeaderColumn.Border.Color1 = System.Drawing.Color.Black;
-            this.dgvAccounts.StateCommon.HeaderColumn.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.dgvAccounts.StateCommon.HeaderColumn.Border.Rounding = 3;
-            this.dgvAccounts.StateCommon.HeaderColumn.Border.Width = 1;
-            this.dgvAccounts.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvAccounts.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.Transparent;
-            this.dgvAccounts.StateCommon.HeaderRow.Back.Color2 = System.Drawing.Color.Transparent;
-            this.dgvAccounts.StateCommon.HeaderRow.Border.Color1 = System.Drawing.Color.Black;
-            this.dgvAccounts.StateCommon.HeaderRow.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.dgvAccounts.StateCommon.HeaderRow.Border.Rounding = 5;
-            this.dgvAccounts.StateCommon.HeaderRow.Border.Width = 1;
-            this.dgvAccounts.TabIndex = 0;
-            // 
             // tIENCONGBindingSource1
             // 
             this.tIENCONGBindingSource1.DataSource = typeof(PhanMemQuanLyGaraOto.Model.TIENCONG);
@@ -982,7 +981,6 @@
             this.panel7.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBRAND)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hIEUXEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView2)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -998,8 +996,9 @@
             this.panel4.PerformLayout();
             this.panelPo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTIENCONG)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tIENCONGBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hIEUXEBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tIENCONGBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tIENCONGBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
